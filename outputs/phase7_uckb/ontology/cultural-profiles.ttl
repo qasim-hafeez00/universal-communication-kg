@@ -1,0 +1,268 @@
+@prefix cc: <https://uckb.io/ontology/crosscultural#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cc:CulturalAdaptationRule a owl:Class ;
+    rdfs:label "Cultural Adaptation Rule" ;
+    rdfs:comment "A specific behavioral change the agent applies when interacting within a given cultural context." ;
+    rdfs:subClassOf uckb:PsychologicalConstruct .
+
+cc:CultureArabWorld a owl:NamedIndividual,
+        cc:CulturalProfile ;
+    rdfs:label "Arab World" ;
+    cc:createdInPhase 7 ;
+    cc:faceSaving true ;
+    cc:geographicRegions "Middle East, North Africa, Gulf States" ;
+    cc:hallContextLevel "high" ;
+    cc:hofstedeIDV 38 ;
+    cc:hofstedeIVR 34 ;
+    cc:hofstedeLTO 23 ;
+    cc:hofstedeMAS 53 ;
+    cc:hofstedePDI 80 ;
+    cc:hofstedeUAI 68 ;
+    cc:indirectCommunication true ;
+    cc:lewisModel "multi-active" ;
+    cc:timeOrientation "polychronic" .
+
+cc:CultureChina a owl:NamedIndividual,
+        cc:CulturalProfile ;
+    rdfs:label "China" ;
+    cc:createdInPhase 7 ;
+    cc:faceSaving true ;
+    cc:geographicRegions "East Asia, China, Taiwan, Singapore" ;
+    cc:hallContextLevel "high" ;
+    cc:hofstedeIDV 20 ;
+    cc:hofstedeIVR 24 ;
+    cc:hofstedeLTO 87 ;
+    cc:hofstedeMAS 66 ;
+    cc:hofstedePDI 80 ;
+    cc:hofstedeUAI 30 ;
+    cc:indirectCommunication true ;
+    cc:lewisModel "reactive" ;
+    cc:timeOrientation "polychronic" .
+
+cc:CultureEastAfrica a owl:NamedIndividual,
+        cc:CulturalProfile ;
+    rdfs:label "East Africa" ;
+    cc:createdInPhase 7 ;
+    cc:faceSaving true ;
+    cc:geographicRegions "Sub-Saharan Africa, Kenya, Tanzania, Uganda, Ethiopia" ;
+    cc:hallContextLevel "high" ;
+    cc:hofstedeIDV 27 ;
+    cc:hofstedeIVR 40 ;
+    cc:hofstedeLTO 32 ;
+    cc:hofstedeMAS 41 ;
+    cc:hofstedePDI 64 ;
+    cc:hofstedeUAI 52 ;
+    cc:indirectCommunication true ;
+    cc:lewisModel "multi-active" ;
+    cc:timeOrientation "polychronic" .
+
+cc:CultureGermany a owl:NamedIndividual,
+        cc:CulturalProfile ;
+    rdfs:label "Germany" ;
+    cc:createdInPhase 7 ;
+    cc:faceSaving false ;
+    cc:geographicRegions "Western Europe, Germany, Austria, Switzerland" ;
+    cc:hallContextLevel "low" ;
+    cc:hofstedeIDV 67 ;
+    cc:hofstedeIVR 40 ;
+    cc:hofstedeLTO 83 ;
+    cc:hofstedeMAS 66 ;
+    cc:hofstedePDI 35 ;
+    cc:hofstedeUAI 65 ;
+    cc:indirectCommunication false ;
+    cc:lewisModel "linear-active" ;
+    cc:timeOrientation "monochronic" .
+
+cc:CultureIndia a owl:NamedIndividual,
+        cc:CulturalProfile ;
+    rdfs:label "India" ;
+    cc:createdInPhase 7 ;
+    cc:faceSaving true ;
+    cc:geographicRegions "South Asia, India, Pakistan, Bangladesh, Sri Lanka" ;
+    cc:hallContextLevel "high" ;
+    cc:hofstedeIDV 48 ;
+    cc:hofstedeIVR 26 ;
+    cc:hofstedeLTO 51 ;
+    cc:hofstedeMAS 56 ;
+    cc:hofstedePDI 77 ;
+    cc:hofstedeUAI 40 ;
+    cc:indirectCommunication true ;
+    cc:lewisModel "multi-active" ;
+    cc:timeOrientation "polychronic" .
+
+cc:CultureJapan a owl:NamedIndividual,
+        cc:CulturalProfile ;
+    rdfs:label "Japan" ;
+    cc:createdInPhase 7 ;
+    cc:faceSaving true ;
+    cc:geographicRegions "East Asia, Japan" ;
+    cc:hallContextLevel "high" ;
+    cc:hofstedeIDV 46 ;
+    cc:hofstedeIVR 42 ;
+    cc:hofstedeLTO 88 ;
+    cc:hofstedeMAS 95 ;
+    cc:hofstedePDI 54 ;
+    cc:hofstedeUAI 92 ;
+    cc:indirectCommunication true ;
+    cc:lewisModel "reactive" ;
+    cc:timeOrientation "polychronic" .
+
+cc:CultureLatinAmerica a owl:NamedIndividual,
+        cc:CulturalProfile ;
+    rdfs:label "Latin America" ;
+    cc:createdInPhase 7 ;
+    cc:faceSaving true ;
+    cc:geographicRegions "South America, Central America, Mexico, Caribbean" ;
+    cc:hallContextLevel "high" ;
+    cc:hofstedeIDV 21 ;
+    cc:hofstedeIVR 76 ;
+    cc:hofstedeLTO 30 ;
+    cc:hofstedeMAS 49 ;
+    cc:hofstedePDI 70 ;
+    cc:hofstedeUAI 76 ;
+    cc:indirectCommunication true ;
+    cc:lewisModel "multi-active" ;
+    cc:timeOrientation "polychronic" .
+
+cc:CultureNordic a owl:NamedIndividual,
+        cc:CulturalProfile ;
+    rdfs:label "Nordic Countries" ;
+    cc:createdInPhase 7 ;
+    cc:faceSaving false ;
+    cc:geographicRegions "Scandinavia, Sweden, Norway, Denmark, Finland" ;
+    cc:hallContextLevel "low" ;
+    cc:hofstedeIDV 74 ;
+    cc:hofstedeIVR 55 ;
+    cc:hofstedeLTO 35 ;
+    cc:hofstedeMAS 16 ;
+    cc:hofstedePDI 31 ;
+    cc:hofstedeUAI 29 ;
+    cc:indirectCommunication false ;
+    cc:lewisModel "linear-active" ;
+    cc:timeOrientation "monochronic" .
+
+cc:CultureUK a owl:NamedIndividual,
+        cc:CulturalProfile ;
+    rdfs:label "UK Mainstream" ;
+    cc:createdInPhase 7 ;
+    cc:faceSaving false ;
+    cc:geographicRegions "Western Europe, United Kingdom, Ireland" ;
+    cc:hallContextLevel "low" ;
+    cc:hofstedeIDV 89 ;
+    cc:hofstedeIVR 69 ;
+    cc:hofstedeLTO 51 ;
+    cc:hofstedeMAS 66 ;
+    cc:hofstedePDI 35 ;
+    cc:hofstedeUAI 35 ;
+    cc:indirectCommunication false ;
+    cc:lewisModel "linear-active" ;
+    cc:timeOrientation "monochronic" .
+
+cc:CultureUSA a owl:NamedIndividual,
+        cc:CulturalProfile ;
+    rdfs:label "USA Mainstream" ;
+    cc:createdInPhase 7 ;
+    cc:faceSaving false ;
+    cc:geographicRegions "North America, United States" ;
+    cc:hallContextLevel "low" ;
+    cc:hofstedeIDV 91 ;
+    cc:hofstedeIVR 68 ;
+    cc:hofstedeLTO 26 ;
+    cc:hofstedeMAS 62 ;
+    cc:hofstedePDI 40 ;
+    cc:hofstedeUAI 46 ;
+    cc:indirectCommunication false ;
+    cc:lewisModel "linear-active" ;
+    cc:timeOrientation "monochronic" .
+
+cc:adaptsFor a owl:ObjectProperty ;
+    rdfs:comment "Links a Technique to the CulturalContext it is preferred in" .
+
+cc:agentAdaptation a owl:DatatypeProperty ;
+    rdfs:comment "Agent response strategy when this style is detected" ;
+    rdfs:range xsd:string .
+
+cc:agentBehavior a owl:DatatypeProperty ;
+    rdfs:comment "Prescribed agent behavior when rule activates" ;
+    rdfs:range xsd:string .
+
+cc:appliesRule a owl:ObjectProperty ;
+    rdfs:comment "Links CulturalProfile/CulturalContext to a CulturalAdaptationRule" .
+
+cc:faceSaving a owl:DatatypeProperty ;
+    rdfs:comment "Whether face-saving is a primary cultural driver" ;
+    rdfs:range xsd:boolean .
+
+cc:hallContextLevel a owl:DatatypeProperty ;
+    rdfs:comment "Hall's context level: 'high' or 'low'" ;
+    rdfs:range xsd:string .
+
+cc:hasDimension a owl:ObjectProperty ;
+    rdfs:comment "Links CulturalProfile to a CulturalContext dimensional descriptor" .
+
+cc:hofstedeIDV a owl:DatatypeProperty ;
+    rdfs:comment "Hofstede Individualism score (0-100)" ;
+    rdfs:range xsd:integer .
+
+cc:hofstedeIVR a owl:DatatypeProperty ;
+    rdfs:comment "Hofstede Indulgence score (0-100)" ;
+    rdfs:range xsd:integer .
+
+cc:hofstedeLTO a owl:DatatypeProperty ;
+    rdfs:comment "Hofstede Long-Term Orientation (0-100)" ;
+    rdfs:range xsd:integer .
+
+cc:hofstedeMAS a owl:DatatypeProperty ;
+    rdfs:comment "Hofstede Masculinity score (0-100)" ;
+    rdfs:range xsd:integer .
+
+cc:hofstedePDI a owl:DatatypeProperty ;
+    rdfs:comment "Hofstede Power Distance Index (0-100)" ;
+    rdfs:range xsd:integer .
+
+cc:hofstedeUAI a owl:DatatypeProperty ;
+    rdfs:comment "Hofstede Uncertainty Avoidance Index (0-100)" ;
+    rdfs:range xsd:integer .
+
+cc:indirectCommunication a owl:DatatypeProperty ;
+    rdfs:comment "Whether indirect communication is the norm" ;
+    rdfs:range xsd:boolean .
+
+cc:lewisModel a owl:DatatypeProperty ;
+    rdfs:comment "Lewis model type: linear-active|multi-active|reactive" ;
+    rdfs:range xsd:string .
+
+cc:preferredEvidence a owl:DatatypeProperty ;
+    rdfs:comment "emotional | factual | mixed" ;
+    rdfs:range xsd:string .
+
+cc:prefersStyle a owl:ObjectProperty ;
+    rdfs:comment "CulturalContext dimensional node predicts this CommunicationStyle" .
+
+cc:primaryStyle a owl:DatatypeProperty ;
+    rdfs:comment "CommunicationStyle name this profile represents" ;
+    rdfs:range xsd:string .
+
+cc:recalibrateIn a owl:ObjectProperty ;
+    rdfs:comment "Nonverbal signal meaning must be reinterpreted in this CulturalContext" .
+
+cc:styleSuggests a owl:ObjectProperty ;
+    rdfs:comment "Links BehavioralStyleProfile to a recommended Technique" .
+
+cc:timeOrientation a owl:DatatypeProperty ;
+    rdfs:comment "monochronic or polychronic" ;
+    rdfs:range xsd:string .
+
+cc:trigger a owl:DatatypeProperty ;
+    rdfs:comment "Cultural dimension(s) or event that activates this rule" ;
+    rdfs:range xsd:string .
+
+cc:CulturalProfile a owl:Class ;
+    rdfs:label "Cultural Profile" ;
+    rdfs:comment "A named regional or national cultural cluster aggregating Hofstede dimensional scores and communication style descriptors." ;
+    rdfs:subClassOf uckb:PsychologicalConstruct .
+

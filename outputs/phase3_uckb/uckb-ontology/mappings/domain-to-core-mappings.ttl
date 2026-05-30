@@ -1,0 +1,111 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+
+uckb:ChallengerInsight a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:NeedsAssessment .
+
+uckb:ClinicalEmpathy a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:EmpathicValidation .
+
+uckb:ClinicalGrounding a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:Grounding .
+
+uckb:CollaborativeProblSolving a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:NeedsAssessment .
+
+uckb:CrisisEmpathy a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:EmpathicValidation .
+
+uckb:Empathy a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Empathy" ;
+    rdfs:comment "Core empathy expression framework." .
+
+uckb:HarvardPrincipledNeg a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:Negotiation .
+
+uckb:MEDDIC_Qualification a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:NeedsAssessment .
+
+uckb:MotivationalInterviewing a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Motivational Interviewing" ;
+    rdfs:comment "Core MI protocol for ambivalence resolution." .
+
+uckb:MotivationalListening a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:ActiveListening .
+
+uckb:NegotiationRapport a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:Rapport .
+
+uckb:ReflectiveListening a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:ActiveListening .
+
+uckb:SOLER a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:ActiveListening .
+
+uckb:SPIKES_SupportStep a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:EmpathicValidation .
+
+uckb:SPIN_Selling a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:NeedsAssessment .
+
+uckb:SafetyPlanning a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:ConflictDeEscalation .
+
+uckb:SalesEmpathy a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:EmpathicValidation .
+
+uckb:SandlerPainFunnel a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:NeedsAssessment .
+
+uckb:TacticalEmpathy a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:ActiveListening .
+
+uckb:TeachBackVerification a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:InformationGathering .
+
+uckb:TraumaInformedGrounding a owl:NamedIndividual ;
+    uckb:DOMAIN_VARIANT_OF uckb:Grounding .
+
+uckb:ConflictDeEscalation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Conflict De-escalation" ;
+    rdfs:comment "Core de-escalation framework." .
+
+uckb:InformationGathering a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Information Gathering" ;
+    rdfs:comment "Core structured elicitation framework." .
+
+uckb:Negotiation a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Negotiation" ;
+    rdfs:comment "Core negotiation framework." .
+
+uckb:Rapport a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Rapport" ;
+    rdfs:comment "Core rapport-building framework." .
+
+uckb:Grounding a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Grounding" ;
+    rdfs:comment "Core present-focus grounding framework." .
+
+uckb:ActiveListening a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Active Listening" ;
+    rdfs:comment "Core universal active listening framework." .
+
+uckb:EmpathicValidation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Empathic Validation" ;
+    rdfs:comment "Core universal empathic validation framework." .
+
+uckb:NeedsAssessment a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Needs Assessment" ;
+    rdfs:comment "Core needs-elicitation framework." .
+

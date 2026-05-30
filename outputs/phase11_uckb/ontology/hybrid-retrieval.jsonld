@@ -1,0 +1,191 @@
+{
+  "@context": {
+    "owl":     "http://www.w3.org/2002/07/owl#",
+    "rdf":     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs":    "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd":     "http://www.w3.org/2001/XMLSchema#",
+    "skos":    "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "uckb":    "https://uckb.io/ontology#",
+    "hybrid":  "https://uckb.io/ontology/hybrid#"
+  },
+  "@graph": [
+    {
+      "@id": "https://uckb.io/ontology/hybrid-retrieval",
+      "@type": "owl:Ontology",
+      "dcterms:title": "UCKB Hybrid Retrieval Ontology",
+      "dcterms:description": "OWL ontology for Phase 11 Real-Time Hybrid Retrieval Engine.",
+      "dcterms:created": { "@value": "2026-05-31", "@type": "xsd:date" },
+      "owl:versionInfo": "1.0",
+      "owl:imports": { "@id": "https://uckb.io/ontology/dsmart" }
+    },
+    {
+      "@id": "hybrid:FullTextIndex",
+      "@type": "owl:Class",
+      "rdfs:label": "Full Text Index",
+      "rdfs:comment": "Metadata node for the BM25 Lucene full-text index covering Technique, SignalMarker, and ProtocolStep nodes.",
+      "rdfs:subClassOf": { "@id": "uckb:KnowledgeNode" },
+      "skos:example": "indexId=uckb_fulltext_v1; analyzer=standard-no-stopwords"
+    },
+    {
+      "@id": "hybrid:VectorIndex",
+      "@type": "owl:Class",
+      "rdfs:label": "Vector Index",
+      "rdfs:comment": "Metadata node for the 384-dim cosine vector index on Technique.embedding.",
+      "rdfs:subClassOf": { "@id": "uckb:KnowledgeNode" },
+      "skos:example": "indexId=uckb_vector_v1; dims=384; similarity=cosine; model=all-MiniLM-L6-v2"
+    },
+    {
+      "@id": "hybrid:FusionConfig",
+      "@type": "owl:Class",
+      "rdfs:label": "Fusion Configuration",
+      "rdfs:comment": "Per-domain RRF config: k=60, domain-tuned leg weights summing to 1.0.",
+      "rdfs:subClassOf": { "@id": "uckb:KnowledgeNode" },
+      "skos:example": "domain=dispatch; k=60; bm25=0.15; vector=0.25; cypher=0.60"
+    },
+    {
+      "@id": "hybrid:HybridQuery",
+      "@type": "owl:Class",
+      "rdfs:label": "Hybrid Query",
+      "rdfs:comment": "Registered 3-leg query template storing BM25 fields, vector property, and Cypher template.",
+      "rdfs:subClassOf": { "@id": "uckb:KnowledgeNode" },
+      "skos:example": "queryId=hq_dispatch_v1; domain=dispatch"
+    },
+    {
+      "@id": "hybrid:RetrievalLeg",
+      "@type": "owl:Class",
+      "rdfs:label": "Retrieval Leg",
+      "rdfs:comment": "Single-leg pre-fusion result: legType, rank, rawScore, techniqueId.",
+      "rdfs:subClassOf": { "@id": "uckb:KnowledgeNode" },
+      "skos:example": "legId=leg_dispatch_bm25_01; legType=bm25; rank=1; rawScore=4.812"
+    },
+    {
+      "@id": "hybrid:HybridResult",
+      "@type": "owl:Class",
+      "rdfs:label": "Hybrid Result",
+      "rdfs:comment": "Fused top-ranked result after weighted-RRF fusion and safety filtering.",
+      "rdfs:subClassOf": { "@id": "uckb:KnowledgeNode" },
+      "skos:example": "resultId=hresult_dispatch_01; rrfScore=0.016327; fusedRank=1; safetyValidated=true"
+    },
+    {
+      "@id": "hybrid:usesFusion",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "uses fusion",
+      "rdfs:domain": { "@id": "hybrid:HybridQuery" },
+      "rdfs:range":  { "@id": "hybrid:FusionConfig" }
+    },
+    {
+      "@id": "hybrid:queriesIndex",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "queries index",
+      "rdfs:domain": { "@id": "hybrid:HybridQuery" },
+      "rdfs:range":  { "@id": "owl:Thing" }
+    },
+    {
+      "@id": "hybrid:filtersBy",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "filters by",
+      "rdfs:domain": { "@id": "hybrid:HybridQuery" },
+      "rdfs:range":  { "@id": "uckb:SchemaFilterRegistry" }
+    },
+    {
+      "@id": "hybrid:hasLeg",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "has leg",
+      "rdfs:domain": { "@id": "hybrid:HybridQuery" },
+      "rdfs:range":  { "@id": "hybrid:RetrievalLeg" }
+    },
+    {
+      "@id": "hybrid:producedBy",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "produced by",
+      "rdfs:domain": { "@id": "hybrid:HybridResult" },
+      "rdfs:range":  { "@id": "hybrid:RetrievalLeg" }
+    },
+    {
+      "@id": "hybrid:fusedInto",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label":   "fused into",
+      "owl:inverseOf": { "@id": "hybrid:producedBy" },
+      "rdfs:domain": { "@id": "hybrid:RetrievalLeg" },
+      "rdfs:range":  { "@id": "hybrid:HybridResult" }
+    },
+    {
+      "@id": "hybrid:safeFor",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "safe for",
+      "rdfs:domain": { "@id": "hybrid:HybridResult" },
+      "rdfs:range":  { "@id": "uckb:SchemaFilterRegistry" }
+    },
+    {
+      "@id": "hybrid:coIndexWith",
+      "@type": ["owl:ObjectProperty", "owl:SymmetricProperty"],
+      "rdfs:label": "co-index with",
+      "rdfs:domain": { "@id": "hybrid:FullTextIndex" },
+      "rdfs:range":  { "@id": "hybrid:VectorIndex" }
+    },
+    {
+      "@id": "hybrid:bm25Weight",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "BM25 weight",
+      "rdfs:domain": { "@id": "hybrid:FusionConfig" },
+      "rdfs:range":  { "@id": "xsd:decimal" }
+    },
+    {
+      "@id": "hybrid:vectorWeight",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "vector weight",
+      "rdfs:domain": { "@id": "hybrid:FusionConfig" },
+      "rdfs:range":  { "@id": "xsd:decimal" }
+    },
+    {
+      "@id": "hybrid:cypherWeight",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "Cypher weight",
+      "rdfs:domain": { "@id": "hybrid:FusionConfig" },
+      "rdfs:range":  { "@id": "xsd:decimal" }
+    },
+    {
+      "@id": "hybrid:rrfK",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "RRF k constant",
+      "rdfs:domain": { "@id": "hybrid:FusionConfig" },
+      "rdfs:range":  { "@id": "xsd:integer" }
+    },
+    {
+      "@id": "hybrid:rrfScore",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "RRF score",
+      "rdfs:domain": { "@id": "hybrid:HybridResult" },
+      "rdfs:range":  { "@id": "xsd:decimal" }
+    },
+    {
+      "@id": "hybrid:legType",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "leg type",
+      "rdfs:domain": { "@id": "hybrid:RetrievalLeg" },
+      "rdfs:range":  { "@id": "xsd:string" }
+    },
+    {
+      "@id": "hybrid:rawScore",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "raw score",
+      "rdfs:domain": { "@id": "hybrid:RetrievalLeg" },
+      "rdfs:range":  { "@id": "xsd:decimal" }
+    },
+    {
+      "@id": "hybrid:safetyValidated",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "safety validated",
+      "rdfs:domain": { "@id": "hybrid:HybridResult" },
+      "rdfs:range":  { "@id": "xsd:boolean" }
+    },
+    {
+      "@id": "hybrid:dims",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "embedding dimensions",
+      "rdfs:domain": { "@id": "hybrid:VectorIndex" },
+      "rdfs:range":  { "@id": "xsd:integer" }
+    }
+  ]
+}

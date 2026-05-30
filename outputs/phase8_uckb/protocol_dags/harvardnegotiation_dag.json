@@ -1,0 +1,33 @@
+{
+  "id": "harvard_dag",
+  "name": "Harvard Principled Negotiation",
+  "domain": "Sales & Negotiation",
+  "description": "Fisher/Ury Getting to Yes: 4 principles.",
+  "steps": [
+    {
+      "id": "harv_step_1",
+      "name": "Separate People from Problem",
+      "stepNumber": 1,
+      "gate": null
+    },
+    {
+      "id": "harv_step_2",
+      "name": "Focus on Interests Not Positions",
+      "stepNumber": 2,
+      "gate": null
+    },
+    {
+      "id": "harv_step_3",
+      "name": "Invent Options for Mutual Gain",
+      "stepNumber": 3,
+      "gate": null
+    },
+    {
+      "id": "harv_step_4",
+      "name": "Insist on Objective Criteria",
+      "stepNumber": 4,
+      "gate": null
+    }
+  ],
+  "gates": []
+}

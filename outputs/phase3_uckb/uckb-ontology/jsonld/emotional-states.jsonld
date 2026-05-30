@@ -1,0 +1,727 @@
+[
+  {
+    "@id": "https://uckb.io/ontology#Hopeless",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Belief that change is impossible; may require Motivational Interviewing."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Hopeless"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "low"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Overwhelmed",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Cognitive and emotional resources exhausted; grounding required."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Overwhelmed"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "high"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Confused",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Disorientation and cognitive overload; triggers simplification routing."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Confused"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "medium"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "neutral"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Ambivalent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Co-existing motivations for and against change; target state for MI techniques."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Ambivalent"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "medium"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "neutral"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Resistant",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Active opposition to agent suggestions or protocol steps."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Resistant"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "medium"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Shame",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Inward-directed self-attack; may silence or immobilise the interlocutor."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Shame"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "low"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Guilt",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Other-directed sense of wrongdoing; different routing from Shame."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Guilt"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "medium"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Fear",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Threat-activated state; reduces cognitive bandwidth."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Fear"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "high"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Dissociated",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Disconnection from emotional or physical experience; flat affect, minimal response."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Dissociated"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "low"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Vulnerable",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Open and emotionally exposed; requires protective framing."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Vulnerable"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "low"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "neutral"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Hostile",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Sustained antagonistic orientation toward the agent."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Hostile"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "high"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Anger",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "High-arousal negative affect; may present as volume spike or absolutist language."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Anger"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "high"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Compliant",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Cooperative engagement with agent requests."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Compliant"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "low"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "positive"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Suicidal_Ideation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Active suicidal ideation; requires immediate safety protocol activation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Suicidal Ideation"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "high"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Panic",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Acute fear response with cognitive fragmentation and fight-or-flight activation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Panic"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "high"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Grief",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Profound sadness following loss; requires validation before information exchange."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Grief"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "low"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Calm",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Regulated baseline state; full cognitive bandwidth available."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Calm"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "low"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "positive"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Helpless",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Perceived loss of agency; Victim-role marker in Karpman Drama Triangle."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Helpless"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "low"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Defensive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Protective stance against perceived criticism or threat."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Defensive"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "medium"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Denial",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Refusal to acknowledge facts or emotional reality."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Denial"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "medium"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Contemptuous",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Expressed contempt — a strong predictor of relationship or compliance breakdown."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Contemptuous"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "medium"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Receptive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Open and ready to receive information or guidance."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Receptive"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "medium"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "positive"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#CognitiveOverload",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Exceeds working memory capacity; requires reduction in linguistic density."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Cognitive Overload"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "high"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Distress",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "General high-arousal negative affect not yet classified to specific emotion."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Distress"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "high"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#ActivePsychoticEpisode",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EmotionalState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Contraindication for persuasion and validation techniques requiring insight."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Active Psychotic Episode"
+      }
+    ],
+    "https://uckb.io/ontology#arousal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "high"
+      }
+    ],
+    "https://uckb.io/ontology#valence": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "negative"
+      }
+    ]
+  }
+]

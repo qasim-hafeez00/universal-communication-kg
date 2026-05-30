@@ -1,0 +1,95 @@
+UCKB Phase 5 — Validation Report
+Generated: 2026-05-30 06:06:31
+======================================================================
+
+ACCEPTANCE CRITERIA
+----------------------------------------------------------------------
+  AC-1  [PASS]  All 6 ISO dimensions present as DialogueDimension nodes
+            total=6 (Feedback, OwnComm, PartnerComm, SocialObligations, Task, TurnTaking)
+
+  AC-2  [PASS]  >=30 DialogueAct communicativeFunction types present
+            total=35 (need >=30)
+
+  AC-3  [PASS]  >=90% DialogueActs linked via TRIGGERS to Technique
+            linked=35/35 (100.0% — need >=90%)
+
+  AC-4  [PASS]  DomainSlot nodes per domain == 5 (Dispatch, Clinical, Sales)
+            Clinical=5, Crisis Dispatch=5, Sales=5 (need 5 each)
+
+  AC-5  [PASS]  FUNCTIONAL_DEPENDENCY relationships >= 10
+            total=20 (need >=10)
+
+  AC-6  [PASS]  Zero Phase 1 violations: influence acts lack prereqs
+            violations=0 (need 0)
+
+  AC-7  [PASS]  All DialogueAct nodes carry all 8 ISO mandatory properties
+            complete=35/35 (100.0% — need 100%)
+
+  AC-8  [PASS]  BDI B6 full-turn query returns >=1 result per domain
+            Crisis Dispatch=1, Clinical=1, Sales=1 (need >=1 each)
+
+======================================================================
+  OVERALL: ALL PASS
+======================================================================
+
+DIAGNOSTICS
+----------------------------------------------------------------------
+
+Phase 5 node counts:
+  BDIState                  3
+  DialogueAct               35
+  DialogueDimension         6
+  DomainSlot                15
+
+Phase 5 relationship counts:
+  BELONGS_TO_DIMENSION           35
+  REQUIRES_ACT                   24
+  FUNCTIONAL_DEPENDENCY          20
+  HAS_SLOT                       15
+
+DialogueActs by dimension:
+  Feedback                  5
+  OwnComm                   4
+  PartnerComm               3
+  SocialObligations         7
+  Task                      11
+  TurnTaking                5
+
+TRIGGERS coverage (DialogueAct → Technique):
+  Apology                        24 techniques
+  DeclineProposal                20 techniques
+  Disagreement                   17 techniques
+  AcceptProposal                 16 techniques
+  AlloPositive                   14 techniques
+  IndicateUnderstanding          14 techniques
+  Approval                       14 techniques
+  Request                        13 techniques
+  Agreement                      13 techniques
+  AutoPositive                   13 techniques
+  Retraction                     13 techniques
+  Thanking                       13 techniques
+  Correction                     12 techniques
+  Farewell                       12 techniques
+  AlloNegative                   11 techniques
+  SelfCorrection                 11 techniques
+  Goodbye                        11 techniques
+  TakeTurn                       10 techniques
+  GiveTurn                       8 techniques
+  AutoNegative                   8 techniques
+  Welcome                        8 techniques
+  Inform                         7 techniques
+  Confirm                        6 techniques
+  Interrupt                      6 techniques
+  ContactCheck                   6 techniques
+  Answer                         5 techniques
+  Stalling                       5 techniques
+  Greeting                       5 techniques
+  Reformulation                  4 techniques
+  Disconfirm                     3 techniques
+  Proposal                       3 techniques
+  OfferTurn                      3 techniques
+  HoldTurn                       3 techniques
+  RequestRepair                  3 techniques
+  ClarificationRequest           3 techniques
+
+======================================================================

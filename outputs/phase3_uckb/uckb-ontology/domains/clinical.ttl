@@ -1,0 +1,1388 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+uckb:clinical_001_spikes_setting a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "SPIKES Setting" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_disclosure_setting ;
+    uckb:PRECEDES uckb:SPIKES_Perception ;
+    uckb:REQUIRES uckb:consent-sensitive_setup ;
+    uckb:cardId "clinical_001_spikes_setting"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium"^^xsd:string ;
+    uckb:contraindications "Do not disclose sensitive information in unsafe setting unless clinically necessary."^^xsd:string ;
+    uckb:culturalNotes "Family involvement norms vary; ask preference."^^xsd:string ;
+    uckb:description "Prepares privacy, participants, time, and environment for serious disclosure."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Request; Confirm"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis disclosure setting"^^xsd:string ;
+    uckb:failureSignals "Patient is distracted, unsafe, or unsupported."^^xsd:string ;
+    uckb:name "SPIKES Setting"^^xsd:string ;
+    uckb:requiredEdges "PRECEDES SPIKES Perception; REQUIRES consent-sensitive setup"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Arrange privacy; confirm participants; reduce interruptions; establish agenda."^^xsd:string ;
+    uckb:successSignals "Patient indicates readiness and privacy is adequate."^^xsd:string ;
+    uckb:switchTo "SPIKES Perception; Invitation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "privacy_concern; anxiety_signal"^^xsd:string ;
+    uckb:whenNotToUse "Immediate life-saving instruction is required."^^xsd:string ;
+    uckb:whenToUse "Before delivering serious or sensitive clinical information."^^xsd:string .
+
+uckb:clinical_002_spikes_perception a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "SPIKES Perception" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Negotiation_baseline_elicitation ;
+    uckb:FOLLOWS uckb:Setting ;
+    uckb:PRECEDES uckb:Invitation ;
+    uckb:cardId "clinical_002_spikes_perception"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium"^^xsd:string ;
+    uckb:contraindications "Do not quiz or shame the patient."^^xsd:string ;
+    uckb:culturalNotes "Use face-saving correction."^^xsd:string ;
+    uckb:description "Elicits patient understanding before disclosure."^^xsd:string ;
+    uckb:dialogueActLinks "Question; Inform; Feedback"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Negotiation baseline elicitation"^^xsd:string ;
+    uckb:failureSignals "Patient becomes more confused or distressed."^^xsd:string ;
+    uckb:name "SPIKES Perception"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Setting; PRECEDES Invitation"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Ask what patient understands; listen; correct gently."^^xsd:string ;
+    uckb:successSignals "Baseline understanding is clear."^^xsd:string ;
+    uckb:switchTo "SPIKES Invitation; Teach-Back"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; misunderstanding"^^xsd:string ;
+    uckb:whenNotToUse "Patient is unstable and needs immediate intervention."^^xsd:string ;
+    uckb:whenToUse "Before giving bad news or complex diagnosis."^^xsd:string .
+
+uckb:clinical_003_spikes_invitation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "SPIKES Invitation" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Consent_checkpoint ;
+    uckb:FOLLOWS uckb:Perception ;
+    uckb:PRECEDES uckb:Knowledge ;
+    uckb:cardId "clinical_003_spikes_invitation"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low"^^xsd:string ;
+    uckb:contraindications "Do not dump information without invitation."^^xsd:string ;
+    uckb:culturalNotes "Preference for family-mediated disclosure varies."^^xsd:string ;
+    uckb:description "Asks how much detail the patient wants and whether to proceed."^^xsd:string ;
+    uckb:dialogueActLinks "Request; Accept; Decline"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Consent checkpoint"^^xsd:string ;
+    uckb:failureSignals "Patient feels abandoned or overwhelmed."^^xsd:string ;
+    uckb:name "SPIKES Invitation"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Perception; PRECEDES Knowledge"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Ask preference; honor limits; offer to pause."^^xsd:string ;
+    uckb:successSignals "Patient chooses level of detail."^^xsd:string ;
+    uckb:switchTo "SPIKES Knowledge; Pause"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "anxiety_signal; silence_after_prompt"^^xsd:string ;
+    uckb:whenNotToUse "Required emergency disclosure cannot wait."^^xsd:string ;
+    uckb:whenToUse "Before detailed disclosure."^^xsd:string .
+
+uckb:clinical_004_spikes_knowledge a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "SPIKES Knowledge" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_knowledge_delivery ;
+    uckb:FOLLOWS uckb:Invitation ;
+    uckb:PRECEDES uckb:Emotion ;
+    uckb:cardId "clinical_004_spikes_knowledge"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium"^^xsd:string ;
+    uckb:contraindications "Avoid jargon, false certainty, or excessive detail."^^xsd:string ;
+    uckb:culturalNotes "Adjust directness and family norms."^^xsd:string ;
+    uckb:description "Delivers medical information in small, plain-language chunks."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Check-Question"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis knowledge delivery"^^xsd:string ;
+    uckb:failureSignals "Patient shuts down, dissociates, or asks repeated repair."^^xsd:string ;
+    uckb:name "SPIKES Knowledge"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Invitation; PRECEDES Emotion"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Warn gently; state key point; pause; check understanding."^^xsd:string ;
+    uckb:successSignals "Patient can restate key information."^^xsd:string ;
+    uckb:switchTo "SPIKES Emotion; Teach-Back"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; grief_marker"^^xsd:string ;
+    uckb:whenNotToUse "Patient is overwhelmed or has declined detail."^^xsd:string ;
+    uckb:whenToUse "Patient has invited information."^^xsd:string .
+
+uckb:clinical_005_spikes_emotion a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "SPIKES Emotion" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_empathic_validation ;
+    uckb:FOLLOWS uckb:Knowledge ;
+    uckb:PRECEDES uckb:Strategy ;
+    uckb:cardId "clinical_005_spikes_emotion"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low"^^xsd:string ;
+    uckb:contraindications "Do not problem-solve before emotion is acknowledged."^^xsd:string ;
+    uckb:culturalNotes "Silence may be respect, grief, or processing."^^xsd:string ;
+    uckb:description "Responds to emotion with empathic naming and support."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Feedback"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis empathic validation"^^xsd:string ;
+    uckb:failureSignals "Patient feels dismissed or rushed."^^xsd:string ;
+    uckb:name "SPIKES Emotion"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Knowledge; PRECEDES Strategy"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Observe emotion; name gently; validate; pause."^^xsd:string ;
+    uckb:successSignals "Patient continues engagement or accepts support."^^xsd:string ;
+    uckb:switchTo "SPIKES Strategy; Motivational Interviewing"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "grief_marker; silence_after_prompt"^^xsd:string ;
+    uckb:whenNotToUse "Patient needs immediate medical action first."^^xsd:string ;
+    uckb:whenToUse "Patient shows grief, anger, fear, or silence after news."^^xsd:string .
+
+uckb:clinical_006_spikes_strategy a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "SPIKES Strategy" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Negotiation_mutual_action_plan_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:FOLLOWS uckb:Emotion ;
+    uckb:cardId "clinical_006_spikes_strategy"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium"^^xsd:string ;
+    uckb:contraindications "Do not force decision under overload."^^xsd:string ;
+    uckb:culturalNotes "Include family/authority preferences with consent."^^xsd:string ;
+    uckb:description "Collaborative plan after disclosure and emotional response."^^xsd:string ;
+    uckb:dialogueActLinks "Suggest; Offer; Confirm"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Negotiation mutual action plan analogue"^^xsd:string ;
+    uckb:failureSignals "Patient cannot restate plan."^^xsd:string ;
+    uckb:name "SPIKES Strategy"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Emotion; ENHANCES Teach-Back"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Summarize; offer options; agree next step; check support."^^xsd:string ;
+    uckb:successSignals "Patient understands plan and next contact."^^xsd:string ;
+    uckb:switchTo "Teach-Back; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "teach_back_failure; overload"^^xsd:string ;
+    uckb:whenNotToUse "Patient remains in acute shock or confusion."^^xsd:string ;
+    uckb:whenToUse "Patient is oriented enough to discuss next steps."^^xsd:string .
+
+uckb:clinical_007_motivational_interviewing_oars a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Motivational Interviewing OARS" ;
+    uckb:CONTRADICTS uckb:Directive_Shaming ;
+    uckb:DOMAIN_VARIANT_OF uckb:Sales_discovery_analogue ;
+    uckb:ENHANCES uckb:Change_Talk ;
+    uckb:cardId "clinical_007_motivational_interviewing_oars"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium"^^xsd:string ;
+    uckb:contraindications "Do not use as covert persuasion."^^xsd:string ;
+    uckb:culturalNotes "Autonomy language should fit cultural decision norms."^^xsd:string ;
+    uckb:description "Open questions, affirmations, reflections, and summaries that support autonomy."^^xsd:string ;
+    uckb:dialogueActLinks "Question; Acknowledge; Summarize"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Sales discovery analogue"^^xsd:string ;
+    uckb:failureSignals "Patient feels judged or coerced."^^xsd:string ;
+    uckb:name "Motivational Interviewing OARS"^^xsd:string ;
+    uckb:requiredEdges "ENHANCES Change Talk; CONTRADICTS Directive Shaming"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Ask open question; affirm strength; reflect; summarize change talk."^^xsd:string ;
+    uckb:successSignals "Patient articulates own reason for change."^^xsd:string ;
+    uckb:switchTo "Change Talk Elicitation; Teach-Back"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "ambivalence; sustain_talk"^^xsd:string ;
+    uckb:whenNotToUse "Acute crisis or coercive context."^^xsd:string ;
+    uckb:whenToUse "Behavior change conversation with ambivalence."^^xsd:string .
+
+uckb:clinical_008_teach_back a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Teach-Back" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_instruction_confirmation ;
+    uckb:FOLLOWS uckb:Knowledge ;
+    uckb:RESOLVES uckb:Comprehension_Gap ;
+    uckb:cardId "clinical_008_teach_back"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low"^^xsd:string ;
+    uckb:contraindications "Never frame as testing patient intelligence."^^xsd:string ;
+    uckb:culturalNotes "Use humble clinician framing."^^xsd:string ;
+    uckb:description "Asks patient to explain plan in their own words to verify comprehension."^^xsd:string ;
+    uckb:dialogueActLinks "Check-Question; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis instruction confirmation"^^xsd:string ;
+    uckb:failureSignals "Patient cannot explain plan or feels tested."^^xsd:string ;
+    uckb:name "Teach-Back"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Knowledge; RESOLVES Comprehension Gap"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Normalize check; ask patient to restate; clarify; re-check."^^xsd:string ;
+    uckb:successSignals "Patient accurately restates plan."^^xsd:string ;
+    uckb:switchTo "Plain-Language Rephrase; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; nodding_without_restatement"^^xsd:string ;
+    uckb:whenNotToUse "Patient is too distressed and needs stabilization first."^^xsd:string ;
+    uckb:whenToUse "After instructions, diagnosis, medication plan, or discharge plan."^^xsd:string .
+
+uckb:clinical_009_plain_language_rephrase a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Plain-Language Rephrase" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_plain_instruction ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:TRIGGERED_BY uckb:Repair_Request ;
+    uckb:cardId "clinical_009_plain_language_rephrase"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low"^^xsd:string ;
+    uckb:contraindications "Do not oversimplify safety-critical distinctions."^^xsd:string ;
+    uckb:culturalNotes "Use culturally familiar examples only when safe."^^xsd:string ;
+    uckb:description "Re-expresses clinical information without jargon."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Repair"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis plain instruction"^^xsd:string ;
+    uckb:failureSignals "Patient repeats misunderstanding."^^xsd:string ;
+    uckb:name "Plain-Language Rephrase"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY Repair Request; ENHANCES Teach-Back"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Use common words; define unavoidable term; check understanding."^^xsd:string ;
+    uckb:successSignals "Patient asks relevant next question."^^xsd:string ;
+    uckb:switchTo "Teach-Back; Visual Analogy"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "medical_jargon_confusion; repair_request"^^xsd:string ;
+    uckb:whenNotToUse "Precision would be lost and clinician must retain exact term with explanation."^^xsd:string ;
+    uckb:whenToUse "Patient shows confusion or low health literacy signs."^^xsd:string .
+
+uckb:clinical_010_follow_up_safety_net a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Follow-Up Safety Net" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_callback_instruction ;
+    uckb:FOLLOWS uckb:Strategy ;
+    uckb:REQUIRES uckb:Teach-Back_where_possible ;
+    uckb:cardId "clinical_010_follow_up_safety_net"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low"^^xsd:string ;
+    uckb:contraindications "Do not provide false reassurance."^^xsd:string ;
+    uckb:culturalNotes "Adapt contact route to local access and family support."^^xsd:string ;
+    uckb:description "Clear guidance on what to watch for and when to seek help."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Directive; Confirm"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis callback instruction"^^xsd:string ;
+    uckb:failureSignals "Patient leaves with vague reassurance only."^^xsd:string ;
+    uckb:name "Follow-Up Safety Net"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Strategy; REQUIRES Teach-Back where possible"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "State warning signs; state contact path; confirm ability."^^xsd:string ;
+    uckb:successSignals "Patient knows next action if condition changes."^^xsd:string ;
+    uckb:switchTo "Teach-Back; Escalation Protocol"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "uncertainty; anxiety_signal"^^xsd:string ;
+    uckb:whenNotToUse "Immediate emergency action required now."^^xsd:string ;
+    uckb:whenToUse "After plan, discharge, uncertainty, or watchful waiting."^^xsd:string .
+
+uckb:clinical_011_ask_tell_ask a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Ask-Tell-Ask" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_011_ask_tell_ask"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Three-step MI-derived exchange that tests existing knowledge, provides targeted information, and confirms comprehension afterward."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Ask-Tell-Ask"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Ask what the patient already knows about the topic; tell only what is needed to address the specific gaps identified; ask again what the patient understood from what you told them; adjust the next tell based on what they demonstrate."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_012_elicit_provide_elicit a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Elicit-Provide-Elicit" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_012_elicit_provide_elicit"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "MI-aligned information exchange that elicits current understanding, provides tailored information, and elicits the patient's response."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Elicit-Provide-Elicit"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Elicit the patient's current understanding or concern; provide information in direct response to what they asked or expressed; elicit the patient's reaction to what was provided; repeat the cycle until comprehension and acceptance are confirmed."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_013_change_talk_elicitation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Change Talk Elicitation" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_013_change_talk_elicitation"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Motivational Interviewing technique that amplifies patient-generated statements about desire, ability, reasons, and need for change."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Change Talk Elicitation"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Ask open questions about the patient's own reasons for change; specifically elicit desire, ability, reasons, and need for change (DARN); reinforce and reflect change talk when it appears; avoid directly arguing against resistance."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_014_sustain_talk_reflection a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Sustain Talk Reflection" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_014_sustain_talk_reflection"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "MI technique for handling resistance by reflecting sustain-talk without reinforcing it, preserving autonomy and avoiding argumentation."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Sustain Talk Reflection"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "When the patient voices resistance, reflect it without reinforcing it; avoid arguing, persuading, or correcting; shift focus to the patient's own autonomous reasons for change; roll with resistance rather than opposing it."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_015_decisional_balance a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Decisional Balance" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_015_decisional_balance"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "MI technique exploring the advantages and disadvantages of both change and status quo, supporting autonomous patient decision-making."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Decisional Balance"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Ask the patient to explore the benefits of changing; then ask them to explore the costs of changing; then the benefits of staying the same; then the costs of staying the same; reflect the tension; support autonomous decision without pushing."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_016_autonomy_support a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Autonomy Support" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_016_autonomy_support"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Communication stance that explicitly affirms the patient's right to make their own decisions without coercion or unsolicited advice."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Autonomy Support"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "State explicitly that the choice belongs to the patient; use non-directive language throughout: 'Some people find it helpful to…'; offer information without requiring uptake; affirm the patient's right to decline."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_017_affirmation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Affirmation" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_017_affirmation"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "MI technique of naming a genuine, specific patient strength or effort to reinforce self-efficacy and the therapeutic alliance."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Affirmation"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Identify a genuine, specific strength or effort the patient has demonstrated; state it directly and specifically; connect it to the clinical goal; do not use generic or hollow praise."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_018_complex_reflection a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Complex Reflection" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_018_complex_reflection"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Advanced MI technique that reflects the inferred meaning, emotion, or values behind a patient statement, going beyond its surface content."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Complex Reflection"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Listen for the deeper meaning or emotion beneath the patient's statement; reflect that inferred meaning rather than the surface content; check accuracy: 'Does that capture it?'; adjust if the patient corrects the reflection."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_019_summary_reflection a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Summary Reflection" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_019_summary_reflection"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "MI technique that collects and restates key themes from the consultation to prepare for planning or transition to the next stage."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Summary Reflection"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Collect the key themes, statements, and concerns from the interaction; deliver a coherent summary in the patient's own language; check whether anything important is missing; use the summary to signal transition to planning."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_020_permission_before_advice a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Permission Before Advice" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_020_permission_before_advice"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "MI protocol requiring the clinician to ask the patient's explicit permission before offering any clinical advice or recommendation."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Permission Before Advice"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Ask: 'Would it be helpful if I shared some information about this?'; wait for permission before proceeding; if the patient declines, respect the decision; offer to share the information at another time."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_021_consent_checkpoint a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Consent Checkpoint" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_021_consent_checkpoint"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Structured pause before each new procedural or informational step to confirm the patient's readiness and willingness to continue."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Consent Checkpoint"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Before each new procedural or informational step, ask whether the patient is ready to continue; confirm willingness explicitly; do not proceed if consent is absent, ambiguous, or under duress."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_022_uncertainty_disclosure a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Uncertainty Disclosure" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_022_uncertainty_disclosure"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Explicit acknowledgement of clinical uncertainty, stating current best understanding while clearly distinguishing it from confirmed knowledge."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Uncertainty Disclosure"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Acknowledge what is not yet known about the diagnosis or prognosis; state your current best understanding clearly; distinguish it explicitly from confirmed knowledge; offer a plan for obtaining missing information."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_023_risk_communication_absolute_terms a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Risk Communication Absolute Terms" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_023_risk_communication_absolute_terms"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Presentation of clinical risk using natural frequency formats (N in 1000) to improve patient comprehension and reduce probability distortion."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Risk Communication Absolute Terms"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "State risk as a natural frequency: 'X out of 100 patients'; avoid percentage-only presentation for complex or small risks; compare to a relevant baseline rate; use a visual aid if available and appropriate."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_024_risk_communication_relative_terms a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Risk Communication Relative Terms" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_024_risk_communication_relative_terms"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Presentation of relative risk always anchored to an absolute baseline to prevent misinterpretation of proportional risk language."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Risk Communication Relative Terms"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "State relative risk and immediately anchor it to an absolute baseline; example: 'This doubles the risk — going from 1 in 1000 to 2 in 1000'; always provide both relative and absolute figures together; confirm the patient understood the absolute, not just the relative, figure."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_025_medical_jargon_check a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Medical Jargon Check" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_025_medical_jargon_check"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Active monitoring and real-time replacement of clinical terminology with plain-language equivalents throughout a consultation."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Medical Jargon Check"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Scan your last statement for any clinical terminology; replace each term with a plain-language equivalent before continuing; ask 'Does that make sense?' after each key term substitution; do not assume comprehension from a nod."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_026_medication_adherence_explore a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Medication Adherence Explore" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_026_medication_adherence_explore"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Open, non-judgmental inquiry into the patient's actual medication-taking behaviour and the barriers that affect it."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Medication Adherence Explore"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Open with a non-judgmental question: 'How are you finding it to take the medication?'; explore barriers: cost, side effects, schedule, beliefs; avoid blame; identify one specific, modifiable barrier and address it."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_027_side_effect_framing a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Side Effect Framing" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_027_side_effect_framing"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Accurate, proportionate disclosure of side effects alongside therapeutic benefit and a monitoring plan to support informed decision-making."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Side Effect Framing"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Name the side effect directly and specifically; state the actual likelihood using absolute frequencies; compare it to the therapeutic benefit; offer a monitoring plan and describe what to do if the side effect occurs."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_028_shared_decision_making a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Shared Decision-Making" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_028_shared_decision_making"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Collaborative process in which clinician and patient jointly choose among options based on evidence and the patient's stated values."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Shared Decision-Making"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Present all clinically appropriate options clearly; explain the evidence for each; ask the patient what matters most to them; align the recommendation to their stated values; confirm the patient's choice and document it."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_029_values_clarification a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Values Clarification" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_029_values_clarification"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Structured inquiry into what matters most to the patient about their health, used to align clinical recommendations with personal priorities."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Values Clarification"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Ask: 'What matters most to you about your health right now?'; reflect and summarize the values you hear; use those values to frame subsequent clinical choices; return to them when the patient is uncertain."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_030_family_involvement_preference a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Family Involvement Preference" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_030_family_involvement_preference"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Explicit confirmation of the patient's wishes regarding family presence and communication involvement in clinical interactions."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Family Involvement Preference"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Ask whether and how the patient wants family involved in their care discussions; confirm the type and level of involvement the patient is comfortable with; respect the stated limit even if family members are present; document the preference."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_031_privacy_confirmation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Privacy Confirmation" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_031_privacy_confirmation"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Verification of physical and informational privacy conditions before beginning sensitive clinical discussion."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Privacy Confirmation"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Confirm who else is in the room or on the call; ask whether this is a suitable time to discuss sensitive information; offer to reschedule if privacy is insufficient; do not begin sensitive discussion without confirmation."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_032_grief_pause a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Grief Pause" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:arousal "low"^^xsd:string ;
+    uckb:cardId "clinical_032_grief_pause"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Deliberate communication stop following difficult news to allow uninterrupted emotional response before any clinical content resumes."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Grief Pause"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "When a patient receives difficult news, stop speaking; hold silence and maintain a calm, present posture; allow the patient's full emotional response without redirection; wait for the patient to signal they are ready to continue."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_033_anger_at_diagnosis_validation a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Anger at Diagnosis Validation" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:arousal "high"^^xsd:string ;
+    uckb:cardId "clinical_033_anger_at_diagnosis_validation"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Non-defensive acknowledgement and validation of a patient's anger response to a diagnosis, without defending or minimising."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Anger at Diagnosis Validation"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Allow the anger to be fully expressed without interruption or defense; name the anger specifically: 'It sounds like you are furious about this'; validate it as an understandable response; do not defend the diagnosis or the clinical team; re-engage only when the acute affect has subsided."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_034_fear_of_prognosis_validation a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Fear of Prognosis Validation" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:arousal "high"^^xsd:string ;
+    uckb:cardId "clinical_034_fear_of_prognosis_validation"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Direct acknowledgement of a patient's expressed fear about prognosis, with realistic honoring of both uncertainty and possibility."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Fear of Prognosis Validation"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Name the fear directly: 'I can hear how frightening this uncertainty is'; normalize the fear without minimizing it; do not offer false reassurance; share what is genuinely knowable; acknowledge explicitly what is not yet known."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_035_hope_without_false_certainty a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Hope Without False Certainty" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_035_hope_without_false_certainty"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Communication that affirms realistic, evidence-grounded hope while explicitly avoiding unwarranted certainty about outcome."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Hope Without False Certainty"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Affirm realistic and specific grounds for hope; anchor hope in documented outcomes or treatment response rates; do not promise outcomes that cannot be guaranteed; distinguish explicitly between what is hoped for and what is certain."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_036_no_blame_lifestyle_discussion a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "No-Blame Lifestyle Discussion" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_036_no_blame_lifestyle_discussion"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Introduction of lifestyle modification topics framed as modifiable risk factors rather than personal failures or character flaws."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "No-Blame Lifestyle Discussion"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Introduce the lifestyle factor without language of personal failure; frame it as a modifiable risk factor, not a character flaw; offer concrete support and resources; explore barriers before recommending change."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_037_discharge_plan_confirmation a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Discharge Plan Confirmation" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_037_discharge_plan_confirmation"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Structured review and teach-back of all discharge plan elements before the patient leaves the care setting."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Discharge Plan Confirmation"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Review each element of the discharge plan one step at a time; apply teach-back to each key element; confirm the follow-up appointment specifically; provide a written summary when possible; confirm the patient knows who to contact with questions."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_038_red_flag_symptom_instruction a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Red Flag Symptom Instruction" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_038_red_flag_symptom_instruction"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Explicit, verified instruction on which specific symptoms require emergency action, with confirmed patient comprehension."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Red Flag Symptom Instruction"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Name each red-flag symptom specifically, without euphemism; explain exactly what action to take for each; ask the patient to restate the symptoms and the action; provide a written backup card if available."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_039_escalation_threshold a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Escalation Threshold" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_039_escalation_threshold"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Clear definition of the condition change that requires the patient to seek emergency care, confirmed and documented."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Escalation Threshold"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Define clearly and specifically what change in condition requires emergency action; use unambiguous language: 'If X happens, call 999 / go to Emergency immediately'; confirm the patient can restate the threshold; establish who to contact at each severity level."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_040_interpreter_need_check a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Interpreter Need Check" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_040_interpreter_need_check"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Proactive assessment of the patient's preferred language of communication before clinical discussion begins."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Interpreter Need Check"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Ask: 'Do you prefer to discuss your care in a language other than English?'; offer a trained interpreter before beginning any sensitive clinical topic; do not use family members as interpreters by default; document language preference."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_041_health_literacy_signal a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Health Literacy Signal" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_041_health_literacy_signal"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Detection of low health literacy through behavioural cues, triggering simplified language, visual aids, and proactive teach-back."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Health Literacy Signal"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Watch for low health literacy cues: excessive nodding, no questions asked, avoidance of written materials, inability to restate information; simplify language to a 6th-grade level; use pictograms or visual aids where available; apply teach-back proactively."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_042_nodding_without_understanding a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Nodding Without Understanding" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_042_nodding_without_understanding"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Detection of apparent comprehension without demonstrated understanding, triggering a re-explanation check and comprehension verification."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Nodding Without Understanding"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Detect continuous nodding without corresponding questions or elaboration; interrupt gently: 'Let me check that I have been clear'; ask the patient to restate what they understood in their own words; rephrase and repeat the key point if comprehension is not demonstrated."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_043_teach_back_failure a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Teach-Back Failure" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_043_teach_back_failure"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Detection of failed comprehension during teach-back, triggering a structured re-explanation in a simpler format without blame."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Teach-Back Failure"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "When the patient cannot restate the plan, acknowledge the explanation was unclear without blame; rephrase the key information in simpler terms; try a different format (verbal plus written or visual); repeat the teach-back and log the difficulty for follow-up."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_044_patient_silence_marker a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Patient Silence Marker" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:cardId "clinical_044_patient_silence_marker"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Detection of patient silence after difficult communication as a possible signal of emotional processing, shock, or distress."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Patient Silence Marker"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "When the patient goes silent after difficult news or a question, hold the silence — do not rush to fill it; after 8-10 seconds, ask gently: 'What is going through your mind right now?'; validate whatever they share before proceeding."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+
+uckb:clinical_045_clinical_panic_state a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Clinical Panic State" ;
+    uckb:CONTRAINDICATED_WHEN uckb:acute_instability ;
+    uckb:DOMAIN_VARIANT_OF uckb:Crisis_dispatch_health_instruction,
+        uckb:sales_shared-decision_analogue ;
+    uckb:ENHANCES uckb:Teach-Back ;
+    uckb:REQUIRES uckb:Consent_Checkpoint_where_sensitive ;
+    uckb:arousal "high"^^xsd:string ;
+    uckb:cardId "clinical_045_clinical_panic_state"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium; lower when distress or confusion appears"^^xsd:string ;
+    uckb:contraindications "Do not replace licensed clinical judgment, emergency protocol, or consent requirements."^^xsd:string ;
+    uckb:culturalNotes "Respect family roles, privacy, face-saving, and interpreter needs with patient consent."^^xsd:string ;
+    uckb:description "Detection of acute panic response in a patient, triggering suspension of information delivery and initiation of grounding protocols."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Question; Acknowledge; Confirm; Suggest"^^xsd:string ;
+    uckb:domain "Clinical / Medical"^^xsd:string ;
+    uckb:domainVariants "Crisis dispatch health instruction; sales shared-decision analogue"^^xsd:string ;
+    uckb:failureSignals "Patient shows confusion, shame, withdrawal, repeated repair requests, or unsafe plan interpretation."^^xsd:string ;
+    uckb:name "Clinical Panic State"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Consent Checkpoint where sensitive; ENHANCES Teach-Back; CONTRAINDICATED_WHEN acute instability"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S009; S010"^^xsd:string ;
+    uckb:steps "Detect acute panic via very short utterances, rapid breathing, incoherent or repetitive questions; stop all information delivery immediately; initiate grounding: slow breathing, one orienting question; maintain slow calm pacing; do not resume clinical content until panic has subsided."^^xsd:string ;
+    uckb:successSignals "Patient can explain the issue, options, risks, and next action in their own words."^^xsd:string ;
+    uckb:switchTo "Teach-Back; SPIKES Emotion; Follow-Up Safety Net"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; silence_after_prompt; grief_marker; medical_jargon_confusion; teach_back_failure"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when emergency intervention, specialist escalation, or local clinical protocol overrides conversational sequencing."^^xsd:string ;
+    uckb:whenToUse "Use when clinical information, behavior change, uncertainty, emotion, or comprehension risk must be managed."^^xsd:string .
+

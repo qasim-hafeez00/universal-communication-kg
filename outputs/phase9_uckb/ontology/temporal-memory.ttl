@@ -1,0 +1,401 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+# ─────────────────────────────────────────────────────────────────────────────
+# UCKB Phase 9 — Temporal Memory Ontology
+# Implements the Graphiti temporal knowledge graph model for AI agent memory.
+#
+# Six new classes:
+#   uckb:Session          — one conversation episode (may span multiple turns)
+#   uckb:Turn             — single dialogue exchange within a Session
+#   uckb:TemporalFact     — time-stamped atomic observation with validity window
+#   uckb:WorkingMemorySlot — live key-value context slot with TTL
+#   uckb:EpisodicMemory   — compressed summary of a Session's emotional arc
+#   uckb:MemoryTrace      — cross-session learned effectiveness record
+# ─────────────────────────────────────────────────────────────────────────────
+
+<https://uckb.io/ontology/temporal-memory>
+    rdf:type owl:Ontology ;
+    dcterms:title "UCKB Temporal Memory Ontology" ;
+    dcterms:description "Phase 9: Graphiti-style temporal memory architecture for UCKB AI communication agents" ;
+    dcterms:version "9.0.0" ;
+    owl:imports <https://uckb.io/ontology/communication-techniques> .
+
+
+# ── uckb:Session ─────────────────────────────────────────────────────────────
+
+uckb:Session
+    rdf:type owl:Class ;
+    rdfs:label "Session" ;
+    rdfs:comment "A single conversation episode between an AI communication agent and a human interlocutor. Maps to a Graphiti episode." ;
+    rdfs:subClassOf uckb:TemporalEntity .
+
+uckb:sessionId
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:Session ;
+    rdfs:range xsd:string ;
+    rdfs:label "sessionId" ;
+    rdfs:comment "Globally unique session identifier." .
+
+uckb:userId
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:Session ;
+    rdfs:range xsd:string ;
+    rdfs:label "userId" ;
+    rdfs:comment "Identifier of the agent user or operator who ran this session." .
+
+uckb:domainContext
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:Session ;
+    rdfs:range xsd:string ;
+    rdfs:label "domainContext" ;
+    rdfs:comment "Domain name matching SchemaFilterRegistry (e.g., Crisis Dispatch, Clinical)." .
+
+uckb:startedAt
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:Session ;
+    rdfs:range xsd:long ;
+    rdfs:label "startedAt" ;
+    rdfs:comment "Session start timestamp in epoch milliseconds." .
+
+uckb:endedAt
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:Session ;
+    rdfs:range xsd:long ;
+    rdfs:label "endedAt" ;
+    rdfs:comment "Session end timestamp in epoch milliseconds. Null if still active." .
+
+uckb:outcomeScore
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:Session ;
+    rdfs:range xsd:float ;
+    rdfs:label "outcomeScore" ;
+    rdfs:comment "Overall session outcome quality [0.0, 1.0]." .
+
+uckb:sessionStatus
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:Session ;
+    rdfs:range xsd:string ;
+    rdfs:label "status" ;
+    rdfs:comment "One of: active, completed, interrupted." .
+
+
+# ── uckb:Turn ────────────────────────────────────────────────────────────────
+
+uckb:Turn
+    rdf:type owl:Class ;
+    rdfs:label "Turn" ;
+    rdfs:comment "One dialogue exchange within a Session. Carries the detected emotional state and recommended technique for that exchange." ;
+    rdfs:subClassOf uckb:TemporalEntity .
+
+uckb:turnId
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:Turn ;
+    rdfs:range xsd:string ;
+    rdfs:label "turnId" .
+
+uckb:turnNumber
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:Turn ;
+    rdfs:range xsd:integer ;
+    rdfs:label "turnNumber" ;
+    rdfs:comment "1-indexed sequence position within the parent Session." .
+
+uckb:speakerRole
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:Turn ;
+    rdfs:range xsd:string ;
+    rdfs:label "speakerRole" ;
+    rdfs:comment "One of: agent, user, caller, dispatcher, patient, clinician." .
+
+uckb:detectedEmotionName
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:Turn ;
+    rdfs:range xsd:string ;
+    rdfs:label "detectedEmotionName" ;
+    rdfs:comment "Name of the EmotionalState node detected at this turn." .
+
+uckb:recommendedTechniqueId
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:Turn ;
+    rdfs:range xsd:string ;
+    rdfs:label "recommendedTechniqueId" ;
+    rdfs:comment "cardId of the Technique recommended at this turn." .
+
+uckb:protocolStepId
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:Turn ;
+    rdfs:range xsd:string ;
+    rdfs:label "protocolStepId" ;
+    rdfs:comment "id of the ProtocolStep active at this turn." .
+
+
+# ── uckb:TemporalFact ────────────────────────────────────────────────────────
+
+uckb:TemporalFact
+    rdf:type owl:Class ;
+    rdfs:label "TemporalFact" ;
+    rdfs:comment "A time-stamped atomic observation within a session, with a validity window and confidence decay rate. Implements Graphiti temporal edge semantics." ;
+    rdfs:subClassOf uckb:TemporalEntity .
+
+uckb:factId
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:TemporalFact ;
+    rdfs:range xsd:string ;
+    rdfs:label "factId" .
+
+uckb:factType
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:TemporalFact ;
+    rdfs:range xsd:string ;
+    rdfs:label "factType" ;
+    rdfs:comment "One of: emotion_detected, technique_applied, protocol_gate_passed, outcome_observed." .
+
+uckb:validFrom
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:TemporalFact ;
+    rdfs:range xsd:long ;
+    rdfs:label "validFrom" ;
+    rdfs:comment "Epoch ms from which this fact is considered valid." .
+
+uckb:validUntil
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:TemporalFact ;
+    rdfs:range xsd:long ;
+    rdfs:label "validUntil" ;
+    rdfs:comment "Epoch ms after which this fact is superseded. Null means still valid." .
+
+uckb:factDecayRate
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:TemporalFact ;
+    rdfs:range xsd:float ;
+    rdfs:label "decayRate" ;
+    rdfs:comment "Lambda (λ) per hour for confidence decay: confidence(t) = c0 * exp(-λ * Δhours)." .
+
+
+# ── uckb:WorkingMemorySlot ───────────────────────────────────────────────────
+
+uckb:WorkingMemorySlot
+    rdf:type owl:Class ;
+    rdfs:label "WorkingMemorySlot" ;
+    rdfs:comment "A key-value context slot for a live Session's working memory. Slots expire at ttl (epoch ms). Domain-scoped to respect SchemaFilterRegistry boundaries." ;
+    rdfs:subClassOf uckb:TemporalEntity .
+
+uckb:slotId
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:WorkingMemorySlot ;
+    rdfs:range xsd:string ;
+    rdfs:label "slotId" .
+
+uckb:slotKey
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:WorkingMemorySlot ;
+    rdfs:range xsd:string ;
+    rdfs:label "key" ;
+    rdfs:comment "Slot name (e.g., active_domain, current_step, caller_emotional_state)." .
+
+uckb:slotValue
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:WorkingMemorySlot ;
+    rdfs:range xsd:string ;
+    rdfs:label "value" .
+
+uckb:slotTtl
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:WorkingMemorySlot ;
+    rdfs:range xsd:long ;
+    rdfs:label "ttl" ;
+    rdfs:comment "Expiry timestamp in epoch ms. Slots with ttl < now() are stale." .
+
+
+# ── uckb:EpisodicMemory ──────────────────────────────────────────────────────
+
+uckb:EpisodicMemory
+    rdf:type owl:Class ;
+    rdfs:label "EpisodicMemory" ;
+    rdfs:comment "Compressed summary of a Session: emotional arc, last protocol step, outcome. Feeds the next session as context. Implements Graphiti semantic memory extraction." ;
+    rdfs:subClassOf uckb:TemporalEntity .
+
+uckb:episodeId
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:EpisodicMemory ;
+    rdfs:range xsd:string ;
+    rdfs:label "episodeId" .
+
+uckb:emotionalArc
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:EpisodicMemory ;
+    rdfs:range xsd:string ;
+    rdfs:label "emotionalArc" ;
+    rdfs:comment "Arrow-separated sequence of emotional state names across the session (e.g., panic_acute -> guarded -> neutral)." .
+
+uckb:lastCompletedStep
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:EpisodicMemory ;
+    rdfs:range xsd:integer ;
+    rdfs:label "lastCompletedStep" ;
+    rdfs:comment "ProtocolStep stepNumber reached before session ended." .
+
+uckb:protocolCompleted
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:EpisodicMemory ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "protocolCompleted" ;
+    rdfs:comment "True if the active protocol reached its terminal step." .
+
+uckb:episodeSummary
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:EpisodicMemory ;
+    rdfs:range xsd:string ;
+    rdfs:label "summary" ;
+    rdfs:comment "Human-readable summary of session outcome." .
+
+uckb:domainFilter
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:EpisodicMemory ;
+    rdfs:range xsd:string ;
+    rdfs:label "domainFilter" ;
+    rdfs:comment "Domain name matching SchemaFilterRegistry for scoped retrieval." .
+
+
+# ── uckb:MemoryTrace ─────────────────────────────────────────────────────────
+
+uckb:MemoryTrace
+    rdf:type owl:Class ;
+    rdfs:label "MemoryTrace" ;
+    rdfs:comment "Cross-session learned effectiveness record: tracks how well a Technique worked for a specific user in a specific domain. Weight decays over time using lambda decay." ;
+    rdfs:subClassOf uckb:TemporalEntity .
+
+uckb:traceId
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:MemoryTrace ;
+    rdfs:range xsd:string ;
+    rdfs:label "traceId" .
+
+uckb:traceUserId
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:MemoryTrace ;
+    rdfs:range xsd:string ;
+    rdfs:label "userId" .
+
+uckb:techniqueCardId
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:MemoryTrace ;
+    rdfs:range xsd:string ;
+    rdfs:label "techniqueCardId" ;
+    rdfs:comment "cardId of the Technique this trace measures." .
+
+uckb:successCount
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:MemoryTrace ;
+    rdfs:range xsd:integer ;
+    rdfs:label "successCount" .
+
+uckb:failCount
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:MemoryTrace ;
+    rdfs:range xsd:integer ;
+    rdfs:label "failCount" .
+
+uckb:initialWeight
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:MemoryTrace ;
+    rdfs:range xsd:float ;
+    rdfs:label "initialWeight" ;
+    rdfs:comment "Weight at the time of last successful use. In [0.0, 1.0]." .
+
+uckb:currentWeight
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:MemoryTrace ;
+    rdfs:range xsd:float ;
+    rdfs:label "weight" ;
+    rdfs:comment "Current weight after applying decay: initialWeight * exp(-decayRate * ageHours)." .
+
+uckb:traceDecayRate
+    rdf:type owl:DatatypeProperty ;
+    rdfs:domain uckb:MemoryTrace ;
+    rdfs:range xsd:float ;
+    rdfs:label "decayRate" ;
+    rdfs:comment "Lambda (λ) per hour for weight decay. Crisis: 0.08, Clinical: 0.04, Corporate: 0.02." .
+
+
+# ── Base class ───────────────────────────────────────────────────────────────
+
+uckb:TemporalEntity
+    rdf:type owl:Class ;
+    rdfs:label "TemporalEntity" ;
+    rdfs:comment "Abstract base for all temporal memory node types. All temporal entities carry a timestamp property." .
+
+
+# ── Object properties (Graphiti-style edges) ─────────────────────────────────
+
+uckb:hasTurn
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain uckb:Session ;
+    rdfs:range uckb:Turn ;
+    rdfs:label "HAS_TURN" .
+
+uckb:hasEpisode
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain uckb:Session ;
+    rdfs:range uckb:EpisodicMemory ;
+    rdfs:label "HAS_EPISODE" .
+
+uckb:hasSlot
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain uckb:Session ;
+    rdfs:range uckb:WorkingMemorySlot ;
+    rdfs:label "HAS_SLOT" .
+
+uckb:hasFact
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain uckb:Session ;
+    rdfs:range uckb:TemporalFact ;
+    rdfs:label "HAS_FACT" .
+
+uckb:detected
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain uckb:Turn ;
+    rdfs:range uckb:EmotionalState ;
+    rdfs:label "DETECTED" .
+
+uckb:precedes
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain uckb:Turn ;
+    rdfs:range uckb:Turn ;
+    rdfs:label "PRECEDES" .
+
+uckb:reinforces
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain uckb:MemoryTrace ;
+    rdfs:range uckb:CommunicationTechnique ;
+    rdfs:label "REINFORCES" .
+
+uckb:follows
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain uckb:Session ;
+    rdfs:range uckb:Session ;
+    rdfs:label "FOLLOWS" ;
+    rdfs:comment "Links a continuation session to its predecessor for same userId." .
+
+uckb:activeProtocol
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain uckb:Session ;
+    rdfs:range uckb:ProtocolDAG ;
+    rdfs:label "ACTIVE_PROTOCOL" .
+
+uckb:atStep
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain uckb:Session ;
+    rdfs:range uckb:ProtocolStep ;
+    rdfs:label "AT_STEP" .
+
+uckb:triggered
+    rdf:type owl:ObjectProperty ;
+    rdfs:domain uckb:EpisodicMemory ;
+    rdfs:range uckb:ProtocolDAG ;
+    rdfs:label "TRIGGERED" .

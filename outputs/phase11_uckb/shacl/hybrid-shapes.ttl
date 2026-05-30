@@ -1,0 +1,251 @@
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb:    <https://uckb.io/ontology#> .
+@prefix hybrid:  <https://uckb.io/ontology/hybrid#> .
+
+# ── 1. FullTextIndex shape ─────────────────────────────────────────────────
+
+hybrid:FullTextIndexShape
+    a sh:NodeShape ;
+    sh:targetClass hybrid:FullTextIndex ;
+    sh:property [
+        sh:path     uckb:indexId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message  "FullTextIndex must have a unique indexId string." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:analyzer ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message  "FullTextIndex must declare an analyzer." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:fields ;
+        sh:minCount 1 ;
+        sh:message  "FullTextIndex must list at least one indexed field." ;
+    ] .
+
+# ── 2. VectorIndex shape ───────────────────────────────────────────────────
+
+hybrid:VectorIndexShape
+    a sh:NodeShape ;
+    sh:targetClass hybrid:VectorIndex ;
+    sh:property [
+        sh:path     uckb:dims ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message  "VectorIndex must have a positive integer dims." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:similarity ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:in       ( "cosine" "euclidean" "dot_product" ) ;
+        sh:message  "VectorIndex similarity must be cosine, euclidean, or dot_product." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:model ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message  "VectorIndex must declare the embedding model name." ;
+    ] .
+
+# ── 3. FusionConfig shape ──────────────────────────────────────────────────
+
+hybrid:FusionConfigShape
+    a sh:NodeShape ;
+    sh:targetClass hybrid:FusionConfig ;
+    sh:property [
+        sh:path     uckb:domain ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message  "FusionConfig must have a domain key." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:k ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message  "FusionConfig must have a positive integer k (RRF constant)." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:bm25Weight ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:message  "bm25Weight must be in [0.0, 1.0]." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:vectorWeight ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:message  "vectorWeight must be in [0.0, 1.0]." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:cypherWeight ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:message  "cypherWeight must be in [0.0, 1.0]." ;
+    ] .
+
+# ── 3a. FusionConfig SPARQL constraint: weight sum = 1.0 ──────────────────
+
+hybrid:FusionConfigWeightSumConstraint
+    a sh:NodeShape ;
+    sh:targetClass hybrid:FusionConfig ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "bm25Weight + vectorWeight + cypherWeight must equal 1.0 (tolerance ±0.001)" ;
+        sh:prefixes uckb: ;
+        sh:select """
+            SELECT $this
+            WHERE {
+                $this uckb:bm25Weight   ?b .
+                $this uckb:vectorWeight ?v .
+                $this uckb:cypherWeight ?c .
+                BIND(ABS(?b + ?v + ?c - 1.0) AS ?delta)
+                FILTER(?delta > 0.001)
+            }
+        """ ;
+    ] .
+
+# ── 4. HybridQuery shape ───────────────────────────────────────────────────
+
+hybrid:HybridQueryShape
+    a sh:NodeShape ;
+    sh:targetClass hybrid:HybridQuery ;
+    sh:property [
+        sh:path     uckb:queryId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message  "HybridQuery must have a unique queryId." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:domain ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message  "HybridQuery must specify a domain." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:cypherTemplate ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message  "HybridQuery must have a cypherTemplate." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:bm25Fields ;
+        sh:minCount 1 ;
+        sh:message  "HybridQuery must list bm25Fields." ;
+    ] ;
+    sh:property [
+        sh:path     hybrid:usesFusion ;
+        sh:minCount 1 ;
+        sh:class    hybrid:FusionConfig ;
+        sh:message  "HybridQuery must link to a FusionConfig via USES_FUSION." ;
+    ] .
+
+# ── 5. RetrievalLeg shape ──────────────────────────────────────────────────
+
+hybrid:RetrievalLegShape
+    a sh:NodeShape ;
+    sh:targetClass hybrid:RetrievalLeg ;
+    sh:property [
+        sh:path     uckb:legId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message  "RetrievalLeg must have a unique legId." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:legType ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:in       ( "bm25" "vector" "cypher" ) ;
+        sh:message  "legType must be bm25, vector, or cypher." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:rank ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message  "rank must be a positive integer >= 1." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:rawScore ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:message  "rawScore must be a decimal value." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:techniqueId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message  "RetrievalLeg must identify the technique it returned." ;
+    ] .
+
+# ── 6. HybridResult shape ──────────────────────────────────────────────────
+
+hybrid:HybridResultShape
+    a sh:NodeShape ;
+    sh:targetClass hybrid:HybridResult ;
+    sh:property [
+        sh:path     uckb:resultId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message  "HybridResult must have a unique resultId." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:rrfScore ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minExclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:message  "rrfScore must be in (0.0, 1.0]." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:fusedRank ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message  "fusedRank must be a positive integer." ;
+    ] ;
+    sh:property [
+        sh:path     uckb:safetyValidated ;
+        sh:minCount 1 ;
+        sh:datatype xsd:boolean ;
+        sh:hasValue true ;
+        sh:message  "HybridResult.safetyValidated must be true." ;
+    ] ;
+    sh:property [
+        sh:path     hybrid:producedBy ;
+        sh:minCount 1 ;
+        sh:class    hybrid:RetrievalLeg ;
+        sh:message  "HybridResult must link to at least 1 RetrievalLeg via PRODUCED_BY." ;
+    ] .
+
+# ── 6a. HybridResult SPARQL constraint: activationBlocked must be false ────
+
+hybrid:HybridResultSafetyConstraint
+    a sh:NodeShape ;
+    sh:targetClass hybrid:HybridResult ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "HybridResult must not reference a technique with activationBlocked=true." ;
+        sh:prefixes uckb: ;
+        sh:select """
+            SELECT $this ?technique
+            WHERE {
+                $this uckb:techniqueId ?tid .
+                ?technique uckb:id ?tid .
+                ?technique uckb:activationBlocked true .
+            }
+        """ ;
+    ] .

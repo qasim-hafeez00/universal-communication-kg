@@ -1,0 +1,33 @@
+{
+  "id": "spin_dag",
+  "name": "SPIN Selling Protocol",
+  "domain": "Sales & Negotiation",
+  "description": "Rackham SPIN: Situation, Problem, Implication, Need-Payoff.",
+  "steps": [
+    {
+      "id": "spin_step_1",
+      "name": "Situation Question",
+      "stepNumber": 1,
+      "gate": null
+    },
+    {
+      "id": "spin_step_2",
+      "name": "Problem Question",
+      "stepNumber": 2,
+      "gate": null
+    },
+    {
+      "id": "spin_step_3",
+      "name": "Implication Question",
+      "stepNumber": 3,
+      "gate": null
+    },
+    {
+      "id": "spin_step_4",
+      "name": "Need-Payoff Question",
+      "stepNumber": 4,
+      "gate": null
+    }
+  ],
+  "gates": []
+}

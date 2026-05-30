@@ -1,0 +1,427 @@
+[
+  {
+    "@id": "https://uckb.io/ontology#isDysfunctional",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "True for Child and Parent states; False for Adult"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology#EgoState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "isDysfunctional"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#EgoState",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Transactional Analysis ego state (Berne 1961). One of: Adapted Child, Critical Parent, Nurturing Parent, Adult."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "EgoState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://uckb.io/ontology#PsychologicalConstruct"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#ego_adult",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EgoState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Adult"
+      }
+    ],
+    "https://uckb.io/ontology#agentAction": [
+      {
+        "@value": "Reinforce with collaborative dialogue acts and logical sequencing"
+      }
+    ],
+    "https://uckb.io/ontology#berneCategory": [
+      {
+        "@value": "Adult"
+      }
+    ],
+    "https://uckb.io/ontology#isDysfunctional": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#karpmanRole": [
+      {
+        "@value": "None"
+      }
+    ],
+    "https://uckb.io/ontology#linguisticMarker": [
+      {
+        "@value": "objective language"
+      },
+      {
+        "@value": "I statements"
+      },
+      {
+        "@value": "factual framing"
+      },
+      {
+        "@value": "measured tone"
+      }
+    ],
+    "https://uckb.io/ontology#winnerTriangleTarget": [
+      {
+        "@value": "Maintain"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/psychological-models-p6",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Extends UCKB Phase 3 ontology with TA ego states, Karpman/Winner mapping, and FACS emotion classification nodes."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "UCKB Phase 6 — Psychological Models Extension"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#ego_nurturing_parent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EgoState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Nurturing Parent"
+      }
+    ],
+    "https://uckb.io/ontology#agentAction": [
+      {
+        "@value": "Provide scaffolding; empower the other party to solve their own problem"
+      }
+    ],
+    "https://uckb.io/ontology#berneCategory": [
+      {
+        "@value": "Parent"
+      }
+    ],
+    "https://uckb.io/ontology#isDysfunctional": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology#karpmanRole": [
+      {
+        "@value": "Rescuer"
+      }
+    ],
+    "https://uckb.io/ontology#linguisticMarker": [
+      {
+        "@value": "over-helping"
+      },
+      {
+        "@value": "solving others problems unsolicited"
+      },
+      {
+        "@value": "condescending care"
+      }
+    ],
+    "https://uckb.io/ontology#winnerTriangleTarget": [
+      {
+        "@value": "Caring/Coach"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#agentAction",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Prescribed agent action when this ego state is detected"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology#EgoState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "agentAction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#winnerTriangleTarget",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Target state in Winner's Triangle"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology#EgoState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "winnerTriangleTarget"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#ego_adapted_child",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EgoState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Adapted Child"
+      }
+    ],
+    "https://uckb.io/ontology#agentAction": [
+      {
+        "@value": "Encourage explicit need-articulation; do NOT rescue"
+      }
+    ],
+    "https://uckb.io/ontology#berneCategory": [
+      {
+        "@value": "Child"
+      }
+    ],
+    "https://uckb.io/ontology#isDysfunctional": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology#karpmanRole": [
+      {
+        "@value": "Victim"
+      }
+    ],
+    "https://uckb.io/ontology#linguisticMarker": [
+      {
+        "@value": "nobody listens to me"
+      },
+      {
+        "@value": "helpless tone"
+      },
+      {
+        "@value": "pleading requests"
+      },
+      {
+        "@value": "self-deprecation"
+      }
+    ],
+    "https://uckb.io/ontology#winnerTriangleTarget": [
+      {
+        "@value": "Vulnerable/Survivor"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#berneCategory",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Berne category: Parent, Adult, or Child"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology#EgoState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "berneCategory"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#ego_critical_parent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#EgoState"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Critical Parent"
+      }
+    ],
+    "https://uckb.io/ontology#agentAction": [
+      {
+        "@value": "Mirror Adult state; set objective boundaries; never match aggression"
+      }
+    ],
+    "https://uckb.io/ontology#berneCategory": [
+      {
+        "@value": "Parent"
+      }
+    ],
+    "https://uckb.io/ontology#isDysfunctional": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology#karpmanRole": [
+      {
+        "@value": "Persecutor"
+      }
+    ],
+    "https://uckb.io/ontology#linguisticMarker": [
+      {
+        "@value": "it is your fault"
+      },
+      {
+        "@value": "absolutist language"
+      },
+      {
+        "@value": "blame statements"
+      },
+      {
+        "@value": "contemptuous FACS"
+      }
+    ],
+    "https://uckb.io/ontology#winnerTriangleTarget": [
+      {
+        "@value": "Assertive"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PsychologicalConstruct",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "PsychologicalConstruct"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#belongsToModel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Relates an EgoState to its parent psychological model (TA, Karpman, Winner's Triangle)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology#EgoState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "belongsToModel"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#karpmanRole",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Role in Karpman Drama Triangle"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology#EgoState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "karpmanRole"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  }
+]

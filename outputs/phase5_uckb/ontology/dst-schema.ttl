@@ -1,0 +1,243 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix iso: <https://uckb.io/ontology/iso24617#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+uckb:beliefTemplate a owl:DatatypeProperty ;
+    rdfs:label "BDI belief template"@en ;
+    rdfs:range xsd:string .
+
+uckb:desireTemplate a owl:DatatypeProperty ;
+    rdfs:label "BDI desire template"@en ;
+    rdfs:range xsd:string .
+
+uckb:filled a owl:DatatypeProperty ;
+    rdfs:label "whether slot is currently filled"@en ;
+    rdfs:range xsd:boolean .
+
+uckb:hasBDITemplate a owl:ObjectProperty ;
+    rdfs:label "has BDI template"@en ;
+    rdfs:domain uckb:DialogueState ;
+    rdfs:range uckb:BDIState .
+
+uckb:hasSlot a owl:ObjectProperty ;
+    rdfs:label "has slot"@en ;
+    rdfs:domain uckb:DialogueState ;
+    rdfs:range uckb:DomainSlot .
+
+uckb:intentionTemplate a owl:DatatypeProperty ;
+    rdfs:label "BDI intention template"@en ;
+    rdfs:range xsd:string .
+
+uckb:slotDomain a owl:DatatypeProperty ;
+    rdfs:label "domain this slot belongs to"@en ;
+    rdfs:range xsd:string .
+
+uckb:slotName a owl:DatatypeProperty ;
+    rdfs:label "slot name"@en ;
+    rdfs:range xsd:string .
+
+uckb:validValues a owl:DatatypeProperty ;
+    rdfs:label "pipe-separated valid values"@en ;
+    rdfs:range xsd:string .
+
+uckb:valueType a owl:DatatypeProperty ;
+    rdfs:label "value data type"@en ;
+    rdfs:range xsd:string .
+
+iso:bdi_clinical a owl:NamedIndividual,
+        uckb:BDIState ;
+    rdfs:label "BDI Template — Clinical"@en ;
+    uckb:beliefTemplate "patient_concern, informed_consent_status, emotional_state, current_SPIKES_step" ;
+    uckb:desireTemplate "patient_understands_news_and_consents_to_next_step" ;
+    uckb:id "bdi_clinical" ;
+    uckb:intentionTemplate "execute_next_SPIKES_step_with_empathy_prerequisite_satisfied" ;
+    uckb:slotDomain "Clinical" .
+
+iso:bdi_crisis a owl:NamedIndividual,
+        uckb:BDIState ;
+    rdfs:label "BDI Template — Crisis Dispatch"@en ;
+    uckb:beliefTemplate "caller_emotional_state, location_slot_status, compliance_level, current_protocol_step" ;
+    uckb:desireTemplate "caller_reaches_calm_cooperative_state_with_location_confirmed" ;
+    uckb:id "bdi_crisis" ;
+    uckb:intentionTemplate "execute_next_BCSM_step_given_current_belief_state" ;
+    uckb:slotDomain "Crisis Dispatch" .
+
+iso:bdi_sales a owl:NamedIndividual,
+        uckb:BDIState ;
+    rdfs:label "BDI Template — Sales"@en ;
+    uckb:beliefTemplate "buyer_stage, active_objection, emotional_state, compliance_level" ;
+    uckb:desireTemplate "buyer_reaches_conviction_with_objections_resolved" ;
+    uckb:id "bdi_sales" ;
+    uckb:intentionTemplate "execute_next_SPIN_step_matching_buyer_stage" ;
+    uckb:slotDomain "Sales" .
+
+iso:slot_clinical_compliance a owl:NamedIndividual,
+        uckb:DomainSlot ;
+    rdfs:label "Clinical / compliance_level"@en ;
+    uckb:filled false ;
+    uckb:id "slot_clinical_compliance" ;
+    uckb:slotDomain "Clinical" ;
+    uckb:slotName "compliance_level" ;
+    uckb:validValues "cooperative|resistant|ambivalent|dissociated" ;
+    uckb:valueType "string" .
+
+iso:slot_clinical_consent a owl:NamedIndividual,
+        uckb:DomainSlot ;
+    rdfs:label "Clinical / informed_consent"@en ;
+    uckb:filled false ;
+    uckb:id "slot_clinical_consent" ;
+    uckb:slotDomain "Clinical" ;
+    uckb:slotName "informed_consent" ;
+    uckb:validValues "true|false|pending" ;
+    uckb:valueType "boolean" .
+
+iso:slot_clinical_emotional_state a owl:NamedIndividual,
+        uckb:DomainSlot ;
+    rdfs:label "Clinical / caller_emotional_state"@en ;
+    uckb:filled false ;
+    uckb:id "slot_clinical_emotional_state" ;
+    uckb:slotDomain "Clinical" ;
+    uckb:slotName "caller_emotional_state" ;
+    uckb:validValues "calm|anxious|denial|grief|anger|acceptance" ;
+    uckb:valueType "string" .
+
+iso:slot_clinical_patient_concern a owl:NamedIndividual,
+        uckb:DomainSlot ;
+    rdfs:label "Clinical / patient_concern"@en ;
+    uckb:filled false ;
+    uckb:id "slot_clinical_patient_concern" ;
+    uckb:slotDomain "Clinical" ;
+    uckb:slotName "patient_concern" ;
+    uckb:validValues "diagnosis_news|treatment_decision|prognosis|pain_management|end_of_life|other" ;
+    uckb:valueType "string" .
+
+iso:slot_clinical_protocol_step a owl:NamedIndividual,
+        uckb:DomainSlot ;
+    rdfs:label "Clinical / current_protocol_step"@en ;
+    uckb:filled false ;
+    uckb:id "slot_clinical_protocol_step" ;
+    uckb:slotDomain "Clinical" ;
+    uckb:slotName "current_protocol_step" ;
+    uckb:validValues "SPIKES_S|SPIKES_P|SPIKES_I|SPIKES_K|SPIKES_E|SPIKES_S2" ;
+    uckb:valueType "string" .
+
+iso:slot_dispatch_compliance a owl:NamedIndividual,
+        uckb:DomainSlot ;
+    rdfs:label "Crisis Dispatch / compliance_level"@en ;
+    uckb:filled false ;
+    uckb:id "slot_dispatch_compliance" ;
+    uckb:slotDomain "Crisis Dispatch" ;
+    uckb:slotName "compliance_level" ;
+    uckb:validValues "cooperative|resistant|dissociated" ;
+    uckb:valueType "string" .
+
+iso:slot_dispatch_emergency_type a owl:NamedIndividual,
+        uckb:DomainSlot ;
+    rdfs:label "Crisis Dispatch / emergency_type"@en ;
+    uckb:filled false ;
+    uckb:id "slot_dispatch_emergency_type" ;
+    uckb:slotDomain "Crisis Dispatch" ;
+    uckb:slotName "emergency_type" ;
+    uckb:validValues "medical|fire|violent_crime|mental_health|traffic|other" ;
+    uckb:valueType "string" .
+
+iso:slot_dispatch_emotional_state a owl:NamedIndividual,
+        uckb:DomainSlot ;
+    rdfs:label "Crisis Dispatch / caller_emotional_state"@en ;
+    uckb:filled false ;
+    uckb:id "slot_dispatch_emotional_state" ;
+    uckb:slotDomain "Crisis Dispatch" ;
+    uckb:slotName "caller_emotional_state" ;
+    uckb:validValues "calm|anxious|panic|dissociated|hostile|grief" ;
+    uckb:valueType "string" .
+
+iso:slot_dispatch_location a owl:NamedIndividual,
+        uckb:DomainSlot ;
+    rdfs:label "Crisis Dispatch / location"@en ;
+    uckb:filled false ;
+    uckb:id "slot_dispatch_location" ;
+    uckb:slotDomain "Crisis Dispatch" ;
+    uckb:slotName "location" ;
+    uckb:validValues "street_address|gps_coords|landmark|unknown" ;
+    uckb:valueType "string" .
+
+iso:slot_dispatch_protocol_step a owl:NamedIndividual,
+        uckb:DomainSlot ;
+    rdfs:label "Crisis Dispatch / current_protocol_step"@en ;
+    uckb:filled false ;
+    uckb:id "slot_dispatch_protocol_step" ;
+    uckb:slotDomain "Crisis Dispatch" ;
+    uckb:slotName "current_protocol_step" ;
+    uckb:validValues "BCSM_1_Contact|BCSM_2_Empathy|BCSM_3_Rapport|BCSM_4_Influence|BCSM_5_Change" ;
+    uckb:valueType "string" .
+
+iso:slot_sales_buyer_stage a owl:NamedIndividual,
+        uckb:DomainSlot ;
+    rdfs:label "Sales / buyer_stage"@en ;
+    uckb:filled false ;
+    uckb:id "slot_sales_buyer_stage" ;
+    uckb:slotDomain "Sales" ;
+    uckb:slotName "buyer_stage" ;
+    uckb:validValues "awareness|interest|evaluation|decision|purchase" ;
+    uckb:valueType "string" .
+
+iso:slot_sales_compliance a owl:NamedIndividual,
+        uckb:DomainSlot ;
+    rdfs:label "Sales / compliance_level"@en ;
+    uckb:filled false ;
+    uckb:id "slot_sales_compliance" ;
+    uckb:slotDomain "Sales" ;
+    uckb:slotName "compliance_level" ;
+    uckb:validValues "cooperative|resistant|ambivalent" ;
+    uckb:valueType "string" .
+
+iso:slot_sales_emotional_state a owl:NamedIndividual,
+        uckb:DomainSlot ;
+    rdfs:label "Sales / caller_emotional_state"@en ;
+    uckb:filled false ;
+    uckb:id "slot_sales_emotional_state" ;
+    uckb:slotDomain "Sales" ;
+    uckb:slotName "caller_emotional_state" ;
+    uckb:validValues "curious|skeptical|interested|resistant|convinced" ;
+    uckb:valueType "string" .
+
+iso:slot_sales_objection a owl:NamedIndividual,
+        uckb:DomainSlot ;
+    rdfs:label "Sales / active_objection"@en ;
+    uckb:filled false ;
+    uckb:id "slot_sales_objection" ;
+    uckb:slotDomain "Sales" ;
+    uckb:slotName "active_objection" ;
+    uckb:validValues "price|timing|authority|need|trust|none" ;
+    uckb:valueType "string" .
+
+iso:slot_sales_protocol_step a owl:NamedIndividual,
+        uckb:DomainSlot ;
+    rdfs:label "Sales / current_protocol_step"@en ;
+    uckb:filled false ;
+    uckb:id "slot_sales_protocol_step" ;
+    uckb:slotDomain "Sales" ;
+    uckb:slotName "current_protocol_step" ;
+    uckb:validValues "SPIN_Situation|SPIN_Problem|SPIN_Implication|SPIN_NeedPayoff" ;
+    uckb:valueType "string" .
+
+uckb:DialogueState a owl:Class ;
+    rdfs:label "Dialogue State"@en ;
+    rdfs:isDefinedBy uckb:DSTSchemaOntology .
+
+uckb:DSTSchemaOntology a owl:Ontology ;
+    rdfs:label "UCKB Dialogue State Tracking Schema"@en ;
+    dc:description "OWL schema for Dialogue State Tracking (DST) slot definitions and Belief-Desire-Intention (BDI) agent reasoning templates."@en ;
+    dc:title "UCKB Phase 5: DST & BDI Schema"@en .
+
+uckb:BDIState a owl:Class ;
+    rdfs:label "BDI State Template"@en ;
+    rdfs:isDefinedBy uckb:DSTSchemaOntology .
+
+uckb:DomainSlot a owl:Class ;
+    rdfs:label "Domain Slot"@en ;
+    rdfs:isDefinedBy uckb:DSTSchemaOntology .
+

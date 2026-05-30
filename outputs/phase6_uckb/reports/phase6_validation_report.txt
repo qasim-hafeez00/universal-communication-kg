@@ -1,0 +1,93 @@
+UCKB Phase 6 — Validation Report
+Generated: 2026-05-30 06:35:06
+======================================================================
+
+ACCEPTANCE CRITERIA
+----------------------------------------------------------------------
+  AC-1  [PASS]  All 4 EgoState nodes present with all 6 required properties
+            total=4, complete=4 (100.0% — need 4 nodes at 100%)
+
+  AC-2  [PASS]  >=6 FacsMapping nodes with auCombination and routingAction
+            facs_complete=6 (need >=6)
+
+  AC-3  [PASS]  >=6 ProsodicFeature nodes with threshold value set
+            prosodic_with_threshold=6 (need >=6)
+
+  AC-4  [PASS]  All 4 EgoState nodes have >=1 TRIGGERS link to a Technique
+            ego_states_with_triggers=4/4 (100.0% — need 100%)
+
+  AC-5  [PASS]  MAPS_TO_EGO_STATE relationships (SignalMarker -> EgoState) >= 10
+            maps_to_ego_state=26 (need >=10)
+
+  AC-6  [PASS]  INDICATES_EMOTION relationships (FACS+Prosodic+Adaptor) >= 10
+            total=23 (FACS=7, Prosodic=12, Adaptor=4) — need >=10
+
+  AC-7  [PASS]  Zero Phase 1 doctrine violations in ego-state routing paths
+            violations=0 (need 0)
+
+  AC-8  [PASS]  M5 full nonverbal turn returns >=1 result for 3 scenarios
+            verbal-only=15, prosodic-incongruent=30, facs-anger=11 (need >=1 each)
+
+======================================================================
+  OVERALL: ALL PASS
+======================================================================
+
+DIAGNOSTICS
+----------------------------------------------------------------------
+
+Phase 6 node counts:
+  BehavioralAdaptor         4
+  EgoState                  4
+  FacsMapping               6
+  ModalityWeight            3
+  ProsodicFeature           6
+
+Phase 6 relationship counts:
+  MAPS_TO_EGO_STATE              26
+  RESOLVES_EGO_STATE             24
+  INDICATES_EMOTION              23
+  BELONGS_TO_MODEL               17
+  MODALITY_OVERRIDES             3
+
+EgoState TRIGGERS coverage:
+  Adapted Child             17 techniques
+  Adult                     8 techniques
+  Critical Parent           13 techniques
+  Nurturing Parent          8 techniques
+
+SignalMarker → EgoState (MAPS_TO_EGO_STATE):
+  Adapted Child             14 markers
+  Critical Parent           10 markers
+  Nurturing Parent          2 markers
+
+INDICATES_EMOTION coverage:
+  BehavioralAdaptor      adaptor_illustrator            -> Distress
+  BehavioralAdaptor      adaptor_object                 -> Ambivalent
+  BehavioralAdaptor      adaptor_self                   -> Overwhelmed
+  BehavioralAdaptor      adaptor_self                   -> Distress
+  FacsMapping            facs_anger                     -> Hostile
+  FacsMapping            facs_contempt                  -> Contemptuous
+  FacsMapping            facs_fear                      -> Fear
+  FacsMapping            facs_happiness                 -> Calm
+  FacsMapping            facs_microexpression           -> Fear
+  FacsMapping            facs_microexpression           -> Distress
+  FacsMapping            facs_sadness                   -> Grief
+  ProsodicFeature        prosodic_energy                -> Fear
+  ProsodicFeature        prosodic_energy                -> Hostile
+  ProsodicFeature        prosodic_filler_frequency      -> Confused
+  ProsodicFeature        prosodic_filler_frequency      -> Cognitive Overload
+  ProsodicFeature        prosodic_pause_duration        -> Dissociated
+  ProsodicFeature        prosodic_pause_duration        -> Distress
+  ProsodicFeature        prosodic_pitch                 -> Fear
+  ProsodicFeature        prosodic_speech_rate           -> Cognitive Overload
+  ProsodicFeature        prosodic_speech_rate           -> Fear
+  ProsodicFeature        prosodic_speech_rate           -> Dissociated
+  ProsodicFeature        prosodic_voice_quality         -> Overwhelmed
+  ProsodicFeature        prosodic_voice_quality         -> Distress
+
+MODALITY_OVERRIDES chain (Mehrabian 7-38-55):
+  kinesic (0.55) -> semantic (0.07)
+  kinesic (0.55) -> paralinguistic (0.38)
+  paralinguistic (0.38) -> semantic (0.07)
+
+======================================================================

@@ -1,0 +1,186 @@
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix uckb:    <https://uckb.io/ontology#> .
+@prefix hybrid:  <https://uckb.io/ontology/hybrid#> .
+
+# ── Ontology header ────────────────────────────────────────────────────────
+
+<https://uckb.io/ontology/hybrid-retrieval>
+    a owl:Ontology ;
+    dcterms:title       "UCKB Hybrid Retrieval Ontology" ;
+    dcterms:description "OWL ontology for Phase 11 Real-Time Hybrid Retrieval Engine. Models FullTextIndex (BM25), VectorIndex (dense), FusionConfig (RRF), HybridQuery, RetrievalLeg, and HybridResult nodes, their relationships, and the weighted-RRF fusion algorithm." ;
+    dcterms:created     "2026-05-31"^^xsd:date ;
+    owl:versionInfo     "1.0" ;
+    owl:imports         <https://uckb.io/ontology/dsmart> .
+
+# ── Classes ────────────────────────────────────────────────────────────────
+
+hybrid:FullTextIndex
+    a owl:Class ;
+    rdfs:label   "Full Text Index" ;
+    rdfs:comment "Metadata node describing the BM25 Lucene full-text index over Technique, SignalMarker, and ProtocolStep text fields. Stores the index name, label scope, field list, analyzer, and creation phase." ;
+    rdfs:subClassOf uckb:KnowledgeNode ;
+    skos:example "indexId=uckb_fulltext_v1; labels=[Technique,SignalMarker,ProtocolStep]; analyzer=standard-no-stopwords" .
+
+hybrid:VectorIndex
+    a owl:Class ;
+    rdfs:label   "Vector Index" ;
+    rdfs:comment "Metadata node describing the 384-dim cosine vector index over Technique.embedding. Stores embedding model name, dimensions, similarity function, and creation phase." ;
+    rdfs:subClassOf uckb:KnowledgeNode ;
+    skos:example "indexId=uckb_vector_v1; dims=384; similarity=cosine; model=all-MiniLM-L6-v2" .
+
+hybrid:FusionConfig
+    a owl:Class ;
+    rdfs:label   "Fusion Configuration" ;
+    rdfs:comment "Per-domain RRF configuration node. Stores k=60, domain-tuned leg weights (bm25Weight + vectorWeight + cypherWeight = 1.0), top-K per leg, and safetyFirstOrder flag. Used by HybridQuery to parameterise the weighted-RRF formula." ;
+    rdfs:subClassOf uckb:KnowledgeNode ;
+    skos:example "domain=dispatch; k=60; bm25Weight=0.15; vectorWeight=0.25; cypherWeight=0.60" .
+
+hybrid:HybridQuery
+    a owl:Class ;
+    rdfs:label   "Hybrid Query" ;
+    rdfs:comment "Registered 3-leg retrieval query template. Stores the BM25 field list, vector property name, and Cypher template. Links to FusionConfig (USES_FUSION), both index metadata nodes (QUERIES_INDEX), and domain SchemaFilterRegistry (FILTERS_BY)." ;
+    rdfs:subClassOf uckb:KnowledgeNode ;
+    skos:example "queryId=hq_dispatch_v1; domain=dispatch; bm25Fields=[name,steps,whenToUse,failureSignals]" .
+
+hybrid:RetrievalLeg
+    a owl:Class ;
+    rdfs:label   "Retrieval Leg" ;
+    rdfs:comment "Single-leg result before RRF fusion. Records legType (bm25/vector/cypher), the rank within that leg, raw score, and the techniqueId returned. Three RetrievalLeg nodes are created per HybridQuery execution." ;
+    rdfs:subClassOf uckb:KnowledgeNode ;
+    skos:example "legId=leg_dispatch_bm25_01; legType=bm25; rank=1; rawScore=4.812; techniqueId=t_bcsm_minimal_enc" .
+
+hybrid:HybridResult
+    a owl:Class ;
+    rdfs:label   "Hybrid Result" ;
+    rdfs:comment "Fused top-ranked result after weighted-RRF fusion and safety filtering. Stores rrfScore, fusedRank, individual leg ranks, safetyValidated=true, and activationBlocked=false. Links back to contributing RetrievalLeg nodes via PRODUCED_BY." ;
+    rdfs:subClassOf uckb:KnowledgeNode ;
+    skos:example "resultId=hresult_dispatch_01; rrfScore=0.016327; fusedRank=1; safetyValidated=true" .
+
+# ── Object Properties ──────────────────────────────────────────────────────
+
+hybrid:usesFusion
+    a owl:ObjectProperty ;
+    rdfs:label   "uses fusion" ;
+    rdfs:comment "Links HybridQuery to the domain FusionConfig that parameterises the weighted-RRF formula." ;
+    rdfs:domain  hybrid:HybridQuery ;
+    rdfs:range   hybrid:FusionConfig .
+
+hybrid:queriesIndex
+    a owl:ObjectProperty ;
+    rdfs:label   "queries index" ;
+    rdfs:comment "Links HybridQuery to a FullTextIndex or VectorIndex metadata node it uses." ;
+    rdfs:domain  hybrid:HybridQuery ;
+    rdfs:range   owl:Thing .
+
+hybrid:filtersBy
+    a owl:ObjectProperty ;
+    rdfs:label   "filters by" ;
+    rdfs:comment "Links HybridQuery to its domain SchemaFilterRegistry for cross-domain safety enforcement." ;
+    rdfs:domain  hybrid:HybridQuery ;
+    rdfs:range   uckb:SchemaFilterRegistry .
+
+hybrid:hasLeg
+    a owl:ObjectProperty ;
+    rdfs:label   "has leg" ;
+    rdfs:comment "Links HybridQuery to each RetrievalLeg it spawned." ;
+    rdfs:domain  hybrid:HybridQuery ;
+    rdfs:range   hybrid:RetrievalLeg .
+
+hybrid:producedBy
+    a owl:ObjectProperty ;
+    rdfs:label   "produced by" ;
+    rdfs:comment "Links HybridResult to the RetrievalLeg nodes that contributed to its fused score." ;
+    rdfs:domain  hybrid:HybridResult ;
+    rdfs:range   hybrid:RetrievalLeg .
+
+hybrid:fusedInto
+    a owl:ObjectProperty ;
+    rdfs:label   "fused into" ;
+    rdfs:comment "Inverse of producedBy: links RetrievalLeg to the HybridResult it was fused into." ;
+    rdfs:domain  hybrid:RetrievalLeg ;
+    rdfs:range   hybrid:HybridResult ;
+    owl:inverseOf hybrid:producedBy .
+
+hybrid:safeFor
+    a owl:ObjectProperty ;
+    rdfs:label   "safe for" ;
+    rdfs:comment "Links a HybridResult to the SchemaFilterRegistry domain it has been validated against." ;
+    rdfs:domain  hybrid:HybridResult ;
+    rdfs:range   uckb:SchemaFilterRegistry .
+
+hybrid:coIndexWith
+    a owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:label   "co-index with" ;
+    rdfs:comment "Symmetric relationship between FullTextIndex and VectorIndex indicating they index the same corpus." ;
+    rdfs:domain  hybrid:FullTextIndex ;
+    rdfs:range   hybrid:VectorIndex .
+
+# ── Datatype Properties ────────────────────────────────────────────────────
+
+hybrid:bm25Weight
+    a owl:DatatypeProperty ;
+    rdfs:label   "BM25 weight" ;
+    rdfs:comment "Weight applied to BM25 leg in weighted-RRF formula. Must sum to 1.0 with vectorWeight and cypherWeight." ;
+    rdfs:domain  hybrid:FusionConfig ;
+    rdfs:range   xsd:decimal .
+
+hybrid:vectorWeight
+    a owl:DatatypeProperty ;
+    rdfs:label   "vector weight" ;
+    rdfs:comment "Weight applied to vector leg in weighted-RRF formula." ;
+    rdfs:domain  hybrid:FusionConfig ;
+    rdfs:range   xsd:decimal .
+
+hybrid:cypherWeight
+    a owl:DatatypeProperty ;
+    rdfs:label   "Cypher weight" ;
+    rdfs:comment "Weight applied to Cypher graph traversal leg in weighted-RRF formula." ;
+    rdfs:domain  hybrid:FusionConfig ;
+    rdfs:range   xsd:decimal .
+
+hybrid:rrfK
+    a owl:DatatypeProperty ;
+    rdfs:label   "RRF k constant" ;
+    rdfs:comment "The k constant in the RRF formula: score = Σ w_i / (k + rank_i). Standard value is 60." ;
+    rdfs:domain  hybrid:FusionConfig ;
+    rdfs:range   xsd:integer .
+
+hybrid:rrfScore
+    a owl:DatatypeProperty ;
+    rdfs:label   "RRF score" ;
+    rdfs:comment "Weighted RRF fusion score: Σ w_i / (k + rank_i). Used to rank HybridResults." ;
+    rdfs:domain  hybrid:HybridResult ;
+    rdfs:range   xsd:decimal .
+
+hybrid:legType
+    a owl:DatatypeProperty ;
+    rdfs:label   "leg type" ;
+    rdfs:comment "Retrieval leg type: bm25 | vector | cypher." ;
+    rdfs:domain  hybrid:RetrievalLeg ;
+    rdfs:range   xsd:string .
+
+hybrid:rawScore
+    a owl:DatatypeProperty ;
+    rdfs:label   "raw score" ;
+    rdfs:comment "Score returned by the individual retrieval leg before RRF fusion: BM25 Lucene score, cosine similarity, or evidence-level score." ;
+    rdfs:domain  hybrid:RetrievalLeg ;
+    rdfs:range   xsd:decimal .
+
+hybrid:safetyValidated
+    a owl:DatatypeProperty ;
+    rdfs:label   "safety validated" ;
+    rdfs:comment "True when the HybridResult has passed cross-domain safety filtering and activationBlocked check." ;
+    rdfs:domain  hybrid:HybridResult ;
+    rdfs:range   xsd:boolean .
+
+hybrid:dims
+    a owl:DatatypeProperty ;
+    rdfs:label   "embedding dimensions" ;
+    rdfs:comment "Number of dimensions in the vector index embedding (384 for all-MiniLM-L6-v2)." ;
+    rdfs:domain  hybrid:VectorIndex ;
+    rdfs:range   xsd:integer .

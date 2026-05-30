@@ -1,0 +1,180 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+uckb:ActivePsychoticEpisode a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Active Psychotic Episode" ;
+    rdfs:comment "Contraindication for persuasion and validation techniques requiring insight." ;
+    uckb:arousal "high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Ambivalent a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Ambivalent" ;
+    rdfs:comment "Co-existing motivations for and against change; target state for MI techniques." ;
+    uckb:arousal "medium"^^xsd:string ;
+    uckb:valence "neutral"^^xsd:string .
+
+uckb:Anger a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Anger" ;
+    rdfs:comment "High-arousal negative affect; may present as volume spike or absolutist language." ;
+    uckb:arousal "high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Calm a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Calm" ;
+    rdfs:comment "Regulated baseline state; full cognitive bandwidth available." ;
+    uckb:arousal "low"^^xsd:string ;
+    uckb:valence "positive"^^xsd:string .
+
+uckb:CognitiveOverload a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Cognitive Overload" ;
+    rdfs:comment "Exceeds working memory capacity; requires reduction in linguistic density." ;
+    uckb:arousal "high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Compliant a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Compliant" ;
+    rdfs:comment "Cooperative engagement with agent requests." ;
+    uckb:arousal "low"^^xsd:string ;
+    uckb:valence "positive"^^xsd:string .
+
+uckb:Confused a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Confused" ;
+    rdfs:comment "Disorientation and cognitive overload; triggers simplification routing." ;
+    uckb:arousal "medium"^^xsd:string ;
+    uckb:valence "neutral"^^xsd:string .
+
+uckb:Contemptuous a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Contemptuous" ;
+    rdfs:comment "Expressed contempt — a strong predictor of relationship or compliance breakdown." ;
+    uckb:arousal "medium"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Defensive a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Defensive" ;
+    rdfs:comment "Protective stance against perceived criticism or threat." ;
+    uckb:arousal "medium"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Denial a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Denial" ;
+    rdfs:comment "Refusal to acknowledge facts or emotional reality." ;
+    uckb:arousal "medium"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Dissociated a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Dissociated" ;
+    rdfs:comment "Disconnection from emotional or physical experience; flat affect, minimal response." ;
+    uckb:arousal "low"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Distress a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Distress" ;
+    rdfs:comment "General high-arousal negative affect not yet classified to specific emotion." ;
+    uckb:arousal "high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Fear a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Fear" ;
+    rdfs:comment "Threat-activated state; reduces cognitive bandwidth." ;
+    uckb:arousal "high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Grief a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Grief" ;
+    rdfs:comment "Profound sadness following loss; requires validation before information exchange." ;
+    uckb:arousal "low"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Guilt a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Guilt" ;
+    rdfs:comment "Other-directed sense of wrongdoing; different routing from Shame." ;
+    uckb:arousal "medium"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Helpless a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Helpless" ;
+    rdfs:comment "Perceived loss of agency; Victim-role marker in Karpman Drama Triangle." ;
+    uckb:arousal "low"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Hopeless a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Hopeless" ;
+    rdfs:comment "Belief that change is impossible; may require Motivational Interviewing." ;
+    uckb:arousal "low"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Hostile a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Hostile" ;
+    rdfs:comment "Sustained antagonistic orientation toward the agent." ;
+    uckb:arousal "high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Overwhelmed a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Overwhelmed" ;
+    rdfs:comment "Cognitive and emotional resources exhausted; grounding required." ;
+    uckb:arousal "high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Panic a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Panic" ;
+    rdfs:comment "Acute fear response with cognitive fragmentation and fight-or-flight activation." ;
+    uckb:arousal "high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Receptive a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Receptive" ;
+    rdfs:comment "Open and ready to receive information or guidance." ;
+    uckb:arousal "medium"^^xsd:string ;
+    uckb:valence "positive"^^xsd:string .
+
+uckb:Resistant a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Resistant" ;
+    rdfs:comment "Active opposition to agent suggestions or protocol steps." ;
+    uckb:arousal "medium"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Shame a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Shame" ;
+    rdfs:comment "Inward-directed self-attack; may silence or immobilise the interlocutor." ;
+    uckb:arousal "low"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Suicidal_Ideation a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Suicidal Ideation" ;
+    rdfs:comment "Active suicidal ideation; requires immediate safety protocol activation." ;
+    uckb:arousal "high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string .
+
+uckb:Vulnerable a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Vulnerable" ;
+    rdfs:comment "Open and emotionally exposed; requires protective framing." ;
+    uckb:arousal "low"^^xsd:string ;
+    uckb:valence "neutral"^^xsd:string .
+

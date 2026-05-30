@@ -1,0 +1,378 @@
+@prefix nv: <https://uckb.io/ontology/nonverbal#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+nv:adaptorType a owl:DatatypeProperty ;
+    rdfs:label "adaptorType"@en ;
+    rdfs:comment "self, object, emblem, or illustrator"@en ;
+    rdfs:domain nv:BehavioralAdaptor ;
+    rdfs:range xsd:string .
+
+nv:adaptor_emblem a owl:NamedIndividual,
+        nv:BehavioralAdaptor ;
+    rdfs:label "Emblem Gesture"@en ;
+    rdfs:comment "Deliberate culturally-specific gestures with precise semantic translations (thumbs up, head shake)"@en ;
+    nv:adaptorType "emblem" ;
+    nv:arousalSignal "Direct communicative intent — requires cultural calibration before interpretation" ;
+    nv:modality "kinesic" ;
+    nv:requiresCulturalCalibration true ;
+    nv:routingAction "Route to cultural calibration check before interpreting; flag for Phase 7 cross-cultural layer" .
+
+nv:adaptor_illustrator a owl:NamedIndividual,
+        nv:BehavioralAdaptor ;
+    rdfs:label "Illustrator Gesture"@en ;
+    rdfs:comment "Involuntary hand movements tracking verbal rhythm; rate correlates with cognitive fluency"@en ;
+    nv:adaptorType "illustrator" ;
+    nv:arousalSignal "High rate = fluency and engagement; low rate = stress or rehearsed deception" ;
+    nv:modality "kinesic" ;
+    nv:requiresCulturalCalibration false ;
+    nv:routingAction "Low rate: flag for deception probe or distress check; high rate: advance interaction" .
+
+nv:adaptor_object a owl:NamedIndividual,
+        nv:BehavioralAdaptor ;
+    rdfs:label "Object-Adaptor"@en ;
+    rdfs:comment "Pen clicking, phone manipulation, object fidgeting"@en ;
+    nv:adaptorType "object" ;
+    nv:arousalSignal "Boredom or anxiety" ;
+    nv:modality "kinesic" ;
+    nv:requiresCulturalCalibration false ;
+    nv:routingAction "Check engagement level; increase interactivity or topic relevance" .
+
+nv:adaptor_self a owl:NamedIndividual,
+        nv:BehavioralAdaptor ;
+    rdfs:label "Self-Adaptor"@en ;
+    rdfs:comment "Face touching, neck rubbing, hair manipulation — subconscious ANS arousal responses"@en ;
+    nv:adaptorType "self" ;
+    nv:arousalSignal "ANS arousal and elevated stress" ;
+    nv:modality "kinesic" ;
+    nv:requiresCulturalCalibration false ;
+    nv:routingAction "Activate grounding or de-escalation technique; slow interaction pace" .
+
+nv:applyDomain a owl:DatatypeProperty ;
+    rdfs:label "applyDomain"@en ;
+    rdfs:comment "Context restriction: affective (not factual) content only"@en ;
+    rdfs:domain nv:ModalityWeight ;
+    rdfs:range xsd:string .
+
+nv:arousalSignal a owl:DatatypeProperty ;
+    rdfs:label "arousalSignal"@en ;
+    rdfs:comment "What ANS state this adaptor signals"@en ;
+    rdfs:domain nv:BehavioralAdaptor ;
+    rdfs:range xsd:string .
+
+nv:auCombination a owl:DatatypeProperty ;
+    rdfs:label "auCombination"@en ;
+    rdfs:comment "AU code string, e.g. AU6+AU12"@en ;
+    rdfs:domain nv:FacsMapping ;
+    rdfs:range xsd:string .
+
+nv:conflictsVerbal a owl:DatatypeProperty ;
+    rdfs:label "conflictsVerbal"@en ;
+    rdfs:comment "True when FACS signal typically contradicts verbal content"@en ;
+    rdfs:domain nv:FacsMapping ;
+    rdfs:range xsd:boolean .
+
+nv:durationMs a owl:DatatypeProperty ;
+    rdfs:label "durationMs"@en ;
+    rdfs:comment "Duration in ms; null for non-micro"@en ;
+    rdfs:domain nv:FacsMapping ;
+    rdfs:range xsd:integer .
+
+nv:emotionLabel a owl:DatatypeProperty ;
+    rdfs:label "emotionLabel"@en ;
+    rdfs:comment "Human-readable emotion name"@en ;
+    rdfs:domain nv:FacsMapping ;
+    rdfs:range xsd:string .
+
+nv:extractionDomain a owl:DatatypeProperty ;
+    rdfs:label "extractionDomain"@en ;
+    rdfs:comment "voice-only or multimodal"@en ;
+    rdfs:domain nv:ProsodicFeature ;
+    rdfs:range xsd:string .
+
+nv:facs_anger a owl:NamedIndividual,
+        nv:FacsMapping ;
+    rdfs:label "FACS — Anger"@en ;
+    nv:auCode 4,
+        5,
+        7,
+        23 ;
+    nv:auCombination "AU4+AU5+AU7+AU23" ;
+    nv:conflictsVerbal true ;
+    nv:emotionLabel "Anger" ;
+    nv:isMicroexpression false ;
+    nv:isUnilateral false ;
+    nv:routingAction "Defensive negotiation mode; redirect to Objective Criteria; maintain Adult ego state" .
+
+nv:facs_contempt a owl:NamedIndividual,
+        nv:FacsMapping ;
+    rdfs:label "FACS — Contempt"@en ;
+    nv:auCode 12,
+        14 ;
+    nv:auCombination "AU12+AU14" ;
+    nv:conflictsVerbal true ;
+    nv:emotionLabel "Contempt" ;
+    nv:isMicroexpression false ;
+    nv:isUnilateral true ;
+    nv:routingAction "CRITICAL — flag communication breakdown risk; shift to mutual respect restoration protocol" .
+
+nv:facs_fear a owl:NamedIndividual,
+        nv:FacsMapping ;
+    rdfs:label "FACS — Fear"@en ;
+    nv:auCode 1,
+        2,
+        4,
+        5,
+        7,
+        20,
+        26 ;
+    nv:auCombination "AU1+AU2+AU4+AU5+AU7+AU20+AU26" ;
+    nv:conflictsVerbal false ;
+    nv:emotionLabel "Fear" ;
+    nv:isMicroexpression false ;
+    nv:isUnilateral false ;
+    nv:routingAction "Activate de-escalation; prevent confrontational assertions; use BCSM Steps 1-2" .
+
+nv:facs_happiness a owl:NamedIndividual,
+        nv:FacsMapping ;
+    rdfs:label "FACS — Happiness"@en ;
+    nv:auCode 6,
+        12 ;
+    nv:auCombination "AU6+AU12" ;
+    nv:conflictsVerbal false ;
+    nv:emotionLabel "Happiness" ;
+    nv:isMicroexpression false ;
+    nv:isUnilateral false ;
+    nv:routingAction "Positive reinforcement; increase complexity; advance to next protocol step" .
+
+nv:facs_microexpression a owl:NamedIndividual,
+        nv:FacsMapping ;
+    rdfs:label "FACS — Microexpression"@en ;
+    nv:auCombination "any AU <1/15s contradicting baseline" ;
+    nv:conflictsVerbal true ;
+    nv:durationMs 67 ;
+    nv:emotionLabel "Microexpression" ;
+    nv:isMicroexpression true ;
+    nv:isUnilateral false ;
+    nv:routingAction "Flag domain for deeper probing; do NOT confront directly; increase clarification questions" .
+
+nv:facs_sadness a owl:NamedIndividual,
+        nv:FacsMapping ;
+    rdfs:label "FACS — Sadness"@en ;
+    nv:auCode 1,
+        4,
+        15 ;
+    nv:auCombination "AU1+AU4+AU15" ;
+    nv:conflictsVerbal false ;
+    nv:emotionLabel "Sadness" ;
+    nv:isMicroexpression false ;
+    nv:isUnilateral false ;
+    nv:routingAction "Empathic pacing; reflective listening; switch to SPIKES Emotion step" .
+
+nv:featureType a owl:DatatypeProperty ;
+    rdfs:label "featureType"@en ;
+    rdfs:comment "Type: frequency, rate, energy, quality, duration, count"@en ;
+    rdfs:domain nv:ProsodicFeature ;
+    rdfs:range xsd:string .
+
+nv:highValueMeaning a owl:DatatypeProperty ;
+    rdfs:label "highValueMeaning"@en ;
+    rdfs:comment "Interpretation when feature value is above threshold"@en ;
+    rdfs:domain nv:ProsodicFeature ;
+    rdfs:range xsd:string .
+
+nv:indicatesEmotion a owl:ObjectProperty ;
+    rdfs:label "indicatesEmotion"@en .
+
+nv:isMicroexpression a owl:DatatypeProperty ;
+    rdfs:label "isMicroexpression"@en ;
+    rdfs:comment "True when duration < 1/15 second"@en ;
+    rdfs:domain nv:FacsMapping ;
+    rdfs:range xsd:boolean .
+
+nv:isUnilateral a owl:DatatypeProperty ;
+    rdfs:label "isUnilateral"@en ;
+    rdfs:comment "True for contempt (shown on one side of face only)"@en ;
+    rdfs:domain nv:FacsMapping ;
+    rdfs:range xsd:boolean .
+
+nv:lowValueMeaning a owl:DatatypeProperty ;
+    rdfs:label "lowValueMeaning"@en ;
+    rdfs:comment "Interpretation when feature value is below threshold"@en ;
+    rdfs:domain nv:ProsodicFeature ;
+    rdfs:range xsd:string .
+
+nv:modalityOverrides a owl:ObjectProperty ;
+    rdfs:label "modalityOverrides"@en ;
+    rdfs:comment "When modalities are incongruent in affective contexts, the higher-priority modality overrides the lower."@en ;
+    rdfs:domain nv:ModalityWeight ;
+    rdfs:range nv:ModalityWeight .
+
+nv:modalityType a owl:DatatypeProperty ;
+    rdfs:label "modalityType"@en ;
+    rdfs:comment "semantic, paralinguistic, or kinesic"@en ;
+    rdfs:domain nv:ModalityWeight ;
+    rdfs:range xsd:string .
+
+nv:modality_kinesic a owl:NamedIndividual,
+        nv:ModalityWeight ;
+    rdfs:label "Kinesics / Facial Expressions"@en ;
+    rdfs:comment "Facial expressions and body language — highest priority in affective conflicts"@en ;
+    nv:applyDomain "affective" ;
+    nv:modalityOverrides nv:modality_paralinguistic,
+        nv:modality_semantic ;
+    nv:modalityType "kinesic" ;
+    nv:priority 1 ;
+    nv:weight 0.55 .
+
+nv:priority a owl:DatatypeProperty ;
+    rdfs:label "priority"@en ;
+    rdfs:comment "Override priority; 1 = highest (kinesic)"@en ;
+    rdfs:domain nv:ModalityWeight ;
+    rdfs:range xsd:integer .
+
+nv:prosodic_energy a owl:NamedIndividual,
+        nv:ProsodicFeature ;
+    rdfs:label "Speech Energy (Amplitude)"@en ;
+    nv:extractionDomain "multimodal" ;
+    nv:featureType "energy" ;
+    nv:highValueMeaning "emotional activation and arousal" ;
+    nv:lowValueMeaning "suppression or withdrawal" ;
+    nv:modality "paralinguistic" ;
+    nv:signalsState "Hostile" ;
+    nv:threshold "spike >10dB above baseline" .
+
+nv:prosodic_filler_frequency a owl:NamedIndividual,
+        nv:ProsodicFeature ;
+    rdfs:label "Filler Word Frequency"@en ;
+    nv:extractionDomain "voice-only" ;
+    nv:featureType "count" ;
+    nv:highValueMeaning "working memory load or potential falsehood or confusion" ;
+    nv:lowValueMeaning "cognitive fluency" ;
+    nv:modality "paralinguistic" ;
+    nv:signalsState "Cognitive Overload" ;
+    nv:threshold ">2x baseline filler rate (um, uh, like)" .
+
+nv:prosodic_pause_duration a owl:NamedIndividual,
+        nv:ProsodicFeature ;
+    rdfs:label "Pause Duration"@en ;
+    nv:extractionDomain "voice-only" ;
+    nv:featureType "duration" ;
+    nv:highValueMeaning "deception processing or trauma recall" ;
+    nv:lowValueMeaning "fluency and cognitive engagement" ;
+    nv:modality "paralinguistic" ;
+    nv:signalsState "Distress" ;
+    nv:threshold ">400ms before answering a direct question" .
+
+nv:prosodic_pitch a owl:NamedIndividual,
+        nv:ProsodicFeature ;
+    rdfs:label "Fundamental Frequency (Pitch)"@en ;
+    nv:extractionDomain "voice-only" ;
+    nv:featureType "frequency" ;
+    nv:highValueMeaning "anxiety or excitement" ;
+    nv:lowValueMeaning "depression or potential deception" ;
+    nv:modality "paralinguistic" ;
+    nv:signalsState "Fear" ;
+    nv:threshold "variance >2 standard deviations from baseline" .
+
+nv:prosodic_speech_rate a owl:NamedIndividual,
+        nv:ProsodicFeature ;
+    rdfs:label "Speech Rate"@en ;
+    nv:extractionDomain "voice-only" ;
+    nv:featureType "rate" ;
+    nv:highValueMeaning "anxiety escalation" ;
+    nv:lowValueMeaning "cognitive overload or dissociation" ;
+    nv:modality "paralinguistic" ;
+    nv:signalsState "Dissociated" ;
+    nv:threshold "drop >30% from baseline or rise >50% from baseline" .
+
+nv:prosodic_voice_quality a owl:NamedIndividual,
+        nv:ProsodicFeature ;
+    rdfs:label "Voice Quality"@en ;
+    nv:extractionDomain "voice-only" ;
+    nv:featureType "quality" ;
+    nv:highValueMeaning "elevated arousal state (breathiness, tremor)" ;
+    nv:lowValueMeaning "calm or neutral baseline" ;
+    nv:modality "paralinguistic" ;
+    nv:signalsState "Distress" ;
+    nv:threshold "tremor or creak detected above baseline variability" .
+
+nv:requiresCulturalCalibration a owl:DatatypeProperty ;
+    rdfs:label "requiresCulturalCalibration"@en ;
+    rdfs:comment "True for emblems that vary by culture"@en ;
+    rdfs:domain nv:BehavioralAdaptor ;
+    rdfs:range xsd:boolean .
+
+nv:routingAction a owl:DatatypeProperty ;
+    rdfs:label "routingAction"@en ;
+    rdfs:comment "Agent routing instruction when this FACS pattern is detected"@en,
+        "Agent routing instruction when this adaptor is detected"@en ;
+    rdfs:domain nv:BehavioralAdaptor,
+        nv:FacsMapping ;
+    rdfs:range xsd:string .
+
+nv:signalsState a owl:DatatypeProperty ;
+    rdfs:label "signalsState"@en ;
+    rdfs:comment "EmotionalState name signalled at threshold"@en ;
+    rdfs:domain nv:ProsodicFeature ;
+    rdfs:range xsd:string .
+
+nv:threshold a owl:DatatypeProperty ;
+    rdfs:label "threshold"@en ;
+    rdfs:comment "Decision boundary expression"@en ;
+    rdfs:domain nv:ProsodicFeature ;
+    rdfs:range xsd:string .
+
+nv:weight a owl:DatatypeProperty ;
+    rdfs:label "weight"@en ;
+    rdfs:comment "Mehrabian weight (0.07, 0.38, or 0.55)"@en ;
+    rdfs:domain nv:ModalityWeight ;
+    rdfs:range xsd:decimal .
+
+<https://uckb.io/ontology/nonverbal-layer> a owl:Ontology ;
+    rdfs:label "UCKB Phase 6 — Non-Verbal & Multimodal Layer"@en ;
+    rdfs:comment "FACS facial action unit mappings, prosodic voice features, behavioral adaptors, and Mehrabian modality weights."@en .
+
+nv:modality_paralinguistic a owl:NamedIndividual,
+        nv:ModalityWeight ;
+    rdfs:label "Paralinguistics"@en ;
+    rdfs:comment "Tone, pitch, speed, volume — overrides semantic content when incongruent"@en ;
+    nv:applyDomain "affective" ;
+    nv:modalityOverrides nv:modality_semantic ;
+    nv:modalityType "paralinguistic" ;
+    nv:priority 2 ;
+    nv:weight 0.38 .
+
+nv:modality_semantic a owl:NamedIndividual,
+        nv:ModalityWeight ;
+    rdfs:label "Semantic Content"@en ;
+    rdfs:comment "The words themselves — lowest priority in affective conflicts"@en ;
+    nv:applyDomain "affective" ;
+    nv:modalityType "semantic" ;
+    nv:priority 3 ;
+    nv:weight 0.07 .
+
+uckb:PsychologicalConstruct a owl:Class .
+
+nv:BehavioralAdaptor a owl:Class ;
+    rdfs:label "BehavioralAdaptor"@en ;
+    rdfs:comment "Subconscious kinesic behavior triggered by ANS arousal, used in video-enabled interactions."@en ;
+    rdfs:subClassOf uckb:PsychologicalConstruct .
+
+nv:ModalityWeight a owl:Class ;
+    rdfs:label "ModalityWeight"@en ;
+    rdfs:comment "Mehrabian 7-38-55 weighting for conflict resolution when modalities produce incongruent signals in affective contexts."@en ;
+    rdfs:subClassOf uckb:PsychologicalConstruct .
+
+nv:ProsodicFeature a owl:Class ;
+    rdfs:label "ProsodicFeature"@en ;
+    rdfs:comment "Voice channel signal feature used for emotional state detection in voice-only agents."@en ;
+    rdfs:subClassOf uckb:PsychologicalConstruct .
+
+nv:FacsMapping a owl:Class ;
+    rdfs:label "FacsMapping"@en ;
+    rdfs:comment "FACS Action Unit combination mapped to an emotion and graph routing action."@en ;
+    rdfs:subClassOf uckb:PsychologicalConstruct .
+

@@ -1,0 +1,747 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix iso: <https://uckb.io/ontology/iso24617#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+uckb:belongsToDimension a owl:ObjectProperty ;
+    rdfs:label "belongs to dimension"@en ;
+    rdfs:domain uckb:DialogueAct ;
+    rdfs:range uckb:DialogueDimension .
+
+uckb:certainty a owl:DatatypeProperty ;
+    rdfs:label "certainty qualifier"@en ;
+    rdfs:range xsd:string .
+
+uckb:communicativeFunction a owl:DatatypeProperty ;
+    rdfs:label "communicative function"@en ;
+    rdfs:range xsd:string .
+
+uckb:conditionality a owl:DatatypeProperty ;
+    rdfs:label "conditionality qualifier"@en ;
+    rdfs:range xsd:string .
+
+uckb:dependencyType a owl:DatatypeProperty ;
+    rdfs:label "functional dependency type (responds-to|initiates)"@en ;
+    rdfs:range xsd:string .
+
+uckb:dimension a owl:DatatypeProperty ;
+    rdfs:label "ISO 24617-2 dimension name"@en ;
+    rdfs:range xsd:string .
+
+uckb:functionalDependency a owl:ObjectProperty ;
+    rdfs:label "functional dependency"@en ;
+    rdfs:domain uckb:DialogueAct ;
+    rdfs:range uckb:DialogueAct .
+
+uckb:requiresGrounding a owl:DatatypeProperty ;
+    rdfs:label "requires grounding act first"@en ;
+    rdfs:range xsd:boolean .
+
+uckb:requiresInfluencePrereq a owl:DatatypeProperty ;
+    rdfs:label "requires empathy/rapport prerequisite"@en ;
+    rdfs:range xsd:boolean .
+
+uckb:sentiment a owl:DatatypeProperty ;
+    rdfs:label "sentiment qualifier"@en ;
+    rdfs:range xsd:string .
+
+uckb:typicalSender a owl:DatatypeProperty ;
+    rdfs:label "typical sender role"@en ;
+    rdfs:range xsd:string .
+
+iso:da_accept_proposal a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "AcceptProposal"@en ;
+    rdfs:comment "Speaker accepts a previously proposed course of action."@en ;
+    uckb:belongsToDimension iso:dim_task ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "AcceptProposal" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "task" ;
+    uckb:functionalDependency iso:dep_da_accept_proposal_da_proposal ;
+    uckb:id "da_accept_proposal" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "positive" ;
+    uckb:typicalSender "Either" .
+
+iso:da_agreement a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Agreement"@en ;
+    rdfs:comment "Speaker commits to or aligns with a proposition or proposal."@en ;
+    uckb:belongsToDimension iso:dim_task ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Agreement" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "task" ;
+    uckb:functionalDependency iso:dep_da_agreement_da_proposal ;
+    uckb:id "da_agreement" ;
+    uckb:requiresGrounding true ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "positive" ;
+    uckb:typicalSender "Either" .
+
+iso:da_allo_negative a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "AlloNegative"@en ;
+    rdfs:comment "Speaker evaluates the preceding act as inadequate or incorrect."@en ;
+    uckb:belongsToDimension iso:dim_feedback ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "AlloNegative" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "feedback" ;
+    uckb:functionalDependency iso:dep_da_allo_negative_da_request ;
+    uckb:id "da_allo_negative" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "negative" ;
+    uckb:typicalSender "Either" .
+
+iso:da_allo_positive a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "AlloPositive"@en ;
+    rdfs:comment "Speaker evaluates the preceding act as adequate or correct."@en ;
+    uckb:belongsToDimension iso:dim_feedback ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "AlloPositive" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "feedback" ;
+    uckb:functionalDependency iso:dep_da_allo_positive_da_request ;
+    uckb:id "da_allo_positive" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "positive" ;
+    uckb:typicalSender "Either" .
+
+iso:da_answer a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Answer"@en ;
+    rdfs:comment "Speaker provides information in direct response to a prior Request."@en ;
+    uckb:belongsToDimension iso:dim_task ;
+    uckb:certainty "uncertain" ;
+    uckb:communicativeFunction "Answer" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "task" ;
+    uckb:functionalDependency iso:dep_da_answer_da_request ;
+    uckb:id "da_answer" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Either" .
+
+iso:da_apology a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Apology"@en ;
+    rdfs:comment "Speaker expresses regret for a prior act that affected the addressee negatively."@en ;
+    uckb:belongsToDimension iso:dim_social ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Apology" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "social" ;
+    uckb:id "da_apology" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "negative" ;
+    uckb:typicalSender "Either" .
+
+iso:da_approval a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Approval"@en ;
+    rdfs:comment "Speaker expresses positive evaluation of the addressee's action or statement."@en ;
+    uckb:belongsToDimension iso:dim_social ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Approval" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "social" ;
+    uckb:id "da_approval" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "positive" ;
+    uckb:typicalSender "Agent" .
+
+iso:da_auto_negative a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "AutoNegative"@en ;
+    rdfs:comment "Speaker signals they have not understood or need clarification."@en ;
+    uckb:belongsToDimension iso:dim_feedback ;
+    uckb:certainty "uncertain" ;
+    uckb:communicativeFunction "AutoNegative" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "feedback" ;
+    uckb:functionalDependency iso:dep_da_auto_negative_da_inform ;
+    uckb:id "da_auto_negative" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "negative" ;
+    uckb:typicalSender "Either" .
+
+iso:da_auto_positive a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "AutoPositive"@en ;
+    rdfs:comment "Speaker signals they have understood the preceding utterance (e.g., 'uh-huh', 'okay')."@en ;
+    uckb:belongsToDimension iso:dim_feedback ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "AutoPositive" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "feedback" ;
+    uckb:functionalDependency iso:dep_da_auto_positive_da_inform ;
+    uckb:id "da_auto_positive" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "positive" ;
+    uckb:typicalSender "Either" .
+
+iso:da_clarification_request a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "ClarificationRequest"@en ;
+    rdfs:comment "Speaker asks the addressee to elaborate or clarify a specific aspect of their utterance."@en ;
+    uckb:belongsToDimension iso:dim_partner_comm ;
+    uckb:certainty "uncertain" ;
+    uckb:communicativeFunction "ClarificationRequest" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "partnercomm" ;
+    uckb:functionalDependency iso:dep_da_clarification_request_da_inform ;
+    uckb:id "da_clarification_request" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Either" .
+
+iso:da_confirm a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Confirm"@en ;
+    rdfs:comment "Speaker verifies or reaffirms a proposition previously asserted."@en ;
+    uckb:belongsToDimension iso:dim_task ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Confirm" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "task" ;
+    uckb:functionalDependency iso:dep_da_confirm_da_inform ;
+    uckb:id "da_confirm" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "positive" ;
+    uckb:typicalSender "Either" .
+
+iso:da_contact_check a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "ContactCheck"@en ;
+    rdfs:comment "Speaker verifies that the communication channel is open (e.g., 'Are you still there?')."@en ;
+    uckb:belongsToDimension iso:dim_feedback ;
+    uckb:certainty "uncertain" ;
+    uckb:communicativeFunction "ContactCheck" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "feedback" ;
+    uckb:id "da_contact_check" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Agent" .
+
+iso:da_correction a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Correction"@en ;
+    rdfs:comment "Speaker replaces an erroneous proposition with a correct one."@en ;
+    uckb:belongsToDimension iso:dim_task ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Correction" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "task" ;
+    uckb:functionalDependency iso:dep_da_correction_da_inform ;
+    uckb:id "da_correction" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Either" .
+
+iso:da_decline_proposal a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "DeclineProposal"@en ;
+    rdfs:comment "Speaker declines a previously proposed course of action."@en ;
+    uckb:belongsToDimension iso:dim_task ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "DeclineProposal" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "task" ;
+    uckb:functionalDependency iso:dep_da_decline_proposal_da_proposal ;
+    uckb:id "da_decline_proposal" ;
+    uckb:requiresGrounding true ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "negative" ;
+    uckb:typicalSender "Either" .
+
+iso:da_disagreement a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Disagreement"@en ;
+    rdfs:comment "Speaker opposes or rejects a proposition or proposal."@en ;
+    uckb:belongsToDimension iso:dim_task ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Disagreement" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "task" ;
+    uckb:functionalDependency iso:dep_da_disagreement_da_proposal ;
+    uckb:id "da_disagreement" ;
+    uckb:requiresGrounding true ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "negative" ;
+    uckb:typicalSender "Either" .
+
+iso:da_disconfirm a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Disconfirm"@en ;
+    rdfs:comment "Speaker denies or corrects a proposition previously asserted."@en ;
+    uckb:belongsToDimension iso:dim_task ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Disconfirm" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "task" ;
+    uckb:functionalDependency iso:dep_da_disconfirm_da_inform ;
+    uckb:id "da_disconfirm" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "negative" ;
+    uckb:typicalSender "Either" .
+
+iso:da_farewell a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Farewell"@en ;
+    rdfs:comment "Speaker signals the end of an interaction with a culturally appropriate closing ritual."@en ;
+    uckb:belongsToDimension iso:dim_social ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Farewell" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "social" ;
+    uckb:functionalDependency iso:dep_da_farewell_da_goodbye ;
+    uckb:id "da_farewell" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "positive" ;
+    uckb:typicalSender "Either" .
+
+iso:da_give_turn a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "GiveTurn"@en ;
+    rdfs:comment "Speaker relinquishes the floor to the addressee."@en ;
+    uckb:belongsToDimension iso:dim_turn_taking ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "GiveTurn" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "turntaking" ;
+    uckb:id "da_give_turn" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Either" .
+
+iso:da_hold_turn a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "HoldTurn"@en ;
+    rdfs:comment "Speaker signals intent to continue their turn (backchannels, fillers)."@en ;
+    uckb:belongsToDimension iso:dim_turn_taking ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "HoldTurn" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "turntaking" ;
+    uckb:id "da_hold_turn" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Either" .
+
+iso:da_indicate_understanding a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "IndicateUnderstanding"@en ;
+    rdfs:comment "Speaker signals that they have understood the addressee's utterance."@en ;
+    uckb:belongsToDimension iso:dim_partner_comm ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "IndicateUnderstanding" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "partnercomm" ;
+    uckb:functionalDependency iso:dep_da_indicate_understanding_da_inform ;
+    uckb:id "da_indicate_understanding" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "positive" ;
+    uckb:typicalSender "Agent" .
+
+iso:da_interrupt a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Interrupt"@en ;
+    rdfs:comment "Speaker takes the floor while the addressee is still speaking."@en ;
+    uckb:belongsToDimension iso:dim_turn_taking ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Interrupt" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "turntaking" ;
+    uckb:id "da_interrupt" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "negative" ;
+    uckb:typicalSender "Either" .
+
+iso:da_reformulation a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Reformulation"@en ;
+    rdfs:comment "Speaker restates their own prior utterance with different wording for clarity."@en ;
+    uckb:belongsToDimension iso:dim_own_comm ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Reformulation" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "owncomm" ;
+    uckb:id "da_reformulation" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Either" .
+
+iso:da_request_repair a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "RequestRepair"@en ;
+    rdfs:comment "Speaker asks the addressee to repair or clarify a problematic utterance."@en ;
+    uckb:belongsToDimension iso:dim_partner_comm ;
+    uckb:certainty "uncertain" ;
+    uckb:communicativeFunction "RequestRepair" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "partnercomm" ;
+    uckb:functionalDependency iso:dep_da_request_repair_da_inform ;
+    uckb:id "da_request_repair" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Either" .
+
+iso:da_retraction a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Retraction"@en ;
+    rdfs:comment "Speaker withdraws a previously made commitment or assertion."@en ;
+    uckb:belongsToDimension iso:dim_own_comm ;
+    uckb:certainty "uncertain" ;
+    uckb:communicativeFunction "Retraction" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "owncomm" ;
+    uckb:id "da_retraction" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Either" .
+
+iso:da_self_correction a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "SelfCorrection"@en ;
+    rdfs:comment "Speaker repairs their own preceding utterance."@en ;
+    uckb:belongsToDimension iso:dim_own_comm ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "SelfCorrection" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "owncomm" ;
+    uckb:id "da_self_correction" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Either" .
+
+iso:da_stalling a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Stalling"@en ;
+    rdfs:comment "Speaker uses fillers or delays to hold the floor while processing (e.g., 'um', 'well...')."@en ;
+    uckb:belongsToDimension iso:dim_own_comm ;
+    uckb:certainty "uncertain" ;
+    uckb:communicativeFunction "Stalling" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "owncomm" ;
+    uckb:functionalDependency iso:dep_da_stalling_da_request ;
+    uckb:id "da_stalling" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Either" .
+
+iso:da_take_turn a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "TakeTurn"@en ;
+    rdfs:comment "Speaker claims the speaking turn."@en ;
+    uckb:belongsToDimension iso:dim_turn_taking ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "TakeTurn" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "turntaking" ;
+    uckb:functionalDependency iso:dep_da_take_turn_da_offer_turn ;
+    uckb:id "da_take_turn" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Either" .
+
+iso:da_welcome a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Welcome"@en ;
+    rdfs:comment "Speaker accepts the addressee's thanks, indicating the prior act was not burdensome."@en ;
+    uckb:belongsToDimension iso:dim_social ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Welcome" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "social" ;
+    uckb:functionalDependency iso:dep_da_welcome_da_thanking ;
+    uckb:id "da_welcome" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "positive" ;
+    uckb:typicalSender "Agent" .
+
+iso:da_goodbye a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Goodbye"@en ;
+    rdfs:comment "Conventional closing act terminating social contact."@en ;
+    uckb:belongsToDimension iso:dim_social ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Goodbye" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "social" ;
+    uckb:functionalDependency iso:dep_da_goodbye_da_greeting ;
+    uckb:id "da_goodbye" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "positive" ;
+    uckb:typicalSender "Either" .
+
+iso:da_greeting a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Greeting"@en ;
+    rdfs:comment "Conventional opening act establishing social contact."@en ;
+    uckb:belongsToDimension iso:dim_social ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Greeting" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "social" ;
+    uckb:id "da_greeting" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "positive" ;
+    uckb:typicalSender "Either" .
+
+iso:da_offer_turn a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "OfferTurn"@en ;
+    rdfs:comment "Speaker explicitly offers the speaking turn to the addressee."@en ;
+    uckb:belongsToDimension iso:dim_turn_taking ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "OfferTurn" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "turntaking" ;
+    uckb:id "da_offer_turn" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Agent" .
+
+iso:da_thanking a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Thanking"@en ;
+    rdfs:comment "Speaker expresses gratitude for a prior act by the addressee."@en ;
+    uckb:belongsToDimension iso:dim_social ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Thanking" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "social" ;
+    uckb:id "da_thanking" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "positive" ;
+    uckb:typicalSender "Either" .
+
+iso:dep_da_accept_proposal_da_proposal a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_proposal .
+
+iso:dep_da_agreement_da_proposal a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_proposal .
+
+iso:dep_da_allo_negative_da_request a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_request .
+
+iso:dep_da_allo_positive_da_request a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_request .
+
+iso:dep_da_answer_da_request a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_request .
+
+iso:dep_da_auto_negative_da_inform a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_inform .
+
+iso:dep_da_auto_positive_da_inform a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_inform .
+
+iso:dep_da_clarification_request_da_inform a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_inform .
+
+iso:dep_da_confirm_da_inform a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_inform .
+
+iso:dep_da_correction_da_inform a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_inform .
+
+iso:dep_da_decline_proposal_da_proposal a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_proposal .
+
+iso:dep_da_disagreement_da_proposal a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_proposal .
+
+iso:dep_da_disconfirm_da_inform a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_inform .
+
+iso:dep_da_farewell_da_goodbye a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_goodbye .
+
+iso:dep_da_goodbye_da_greeting a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "initiates" ;
+    uckb:functionalDependency iso:da_greeting .
+
+iso:dep_da_indicate_understanding_da_inform a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_inform .
+
+iso:dep_da_request_repair_da_inform a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_inform .
+
+iso:dep_da_stalling_da_request a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_request .
+
+iso:dep_da_take_turn_da_offer_turn a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_offer_turn .
+
+iso:dep_da_welcome_da_thanking a owl:NamedIndividual,
+        uckb:FunctionalDependency ;
+    uckb:dependencyType "responds-to" ;
+    uckb:functionalDependency iso:da_thanking .
+
+uckb:DialogueActsOntology a owl:Ontology ;
+    rdfs:label "UCKB Dialogue Acts — ISO 24617-2"@en ;
+    dc:description "OWL ontology defining the ISO 24617-2 dialogue act taxonomy for the Universal Communication Knowledge Base. Extends Phase 3 communication-acts.ttl."@en ;
+    dc:title "UCKB Phase 5: Dialogue Acts & ISO 24617-2"@en .
+
+iso:dim_partner_comm a owl:NamedIndividual,
+        uckb:DialogueDimension ;
+    rdfs:label "PartnerComm"@en ;
+    rdfs:comment "Acts addressing the partner's contribution or communication difficulties."@en ;
+    uckb:id "dim_partner_comm" .
+
+iso:da_proposal a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Proposal"@en ;
+    rdfs:comment "Speaker proposes a course of action for addressee to accept or reject. Requires rapport/empathy prerequisite in high-stakes domains."@en ;
+    uckb:belongsToDimension iso:dim_task ;
+    uckb:certainty "uncertain" ;
+    uckb:communicativeFunction "Proposal" ;
+    uckb:conditionality "if-then" ;
+    uckb:dimension "task" ;
+    uckb:id "da_proposal" ;
+    uckb:requiresGrounding true ;
+    uckb:requiresInfluencePrereq true ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Agent" .
+
+iso:da_request a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Request"@en ;
+    rdfs:comment "Speaker asks addressee to perform an action or provide information."@en ;
+    uckb:belongsToDimension iso:dim_task ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Request" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "task" ;
+    uckb:id "da_request" ;
+    uckb:requiresGrounding true ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Either" .
+
+iso:dim_own_comm a owl:NamedIndividual,
+        uckb:DialogueDimension ;
+    rdfs:label "OwnComm"@en ;
+    rdfs:comment "Acts by which a speaker manages their own ongoing contribution (self-repair, stalling)."@en ;
+    uckb:id "dim_own_comm" .
+
+iso:dim_feedback a owl:NamedIndividual,
+        uckb:DialogueDimension ;
+    rdfs:label "Feedback"@en ;
+    rdfs:comment "Acts signalling whether a preceding act has been understood and accepted."@en ;
+    uckb:id "dim_feedback" .
+
+iso:dim_turn_taking a owl:NamedIndividual,
+        uckb:DialogueDimension ;
+    rdfs:label "TurnTaking"@en ;
+    rdfs:comment "Acts that manage the allocation and transfer of speaking turns."@en ;
+    uckb:id "dim_turn_taking" .
+
+uckb:DialogueDimension a owl:Class ;
+    rdfs:label "Dialogue Dimension"@en ;
+    rdfs:isDefinedBy uckb:DialogueActsOntology .
+
+iso:dim_social a owl:NamedIndividual,
+        uckb:DialogueDimension ;
+    rdfs:label "SocialObligations"@en ;
+    rdfs:comment "Conventional social acts governed by social norms and politeness obligations."@en ;
+    uckb:id "dim_social" .
+
+iso:da_inform a owl:NamedIndividual,
+        uckb:DialogueAct ;
+    rdfs:label "Inform"@en ;
+    rdfs:comment "Speaker asserts a proposition as true for the addressee's benefit."@en ;
+    uckb:belongsToDimension iso:dim_task ;
+    uckb:certainty "certain" ;
+    uckb:communicativeFunction "Inform" ;
+    uckb:conditionality "unconditional" ;
+    uckb:dimension "task" ;
+    uckb:id "da_inform" ;
+    uckb:requiresGrounding false ;
+    uckb:requiresInfluencePrereq false ;
+    uckb:sentiment "neutral" ;
+    uckb:typicalSender "Either" .
+
+iso:dim_task a owl:NamedIndividual,
+        uckb:DialogueDimension ;
+    rdfs:label "Task"@en ;
+    rdfs:comment "Acts that directly advance the task or information exchange. The primary functional dimension."@en ;
+    uckb:id "dim_task" .
+
+uckb:DialogueAct a owl:Class ;
+    rdfs:label "Dialogue Act"@en ;
+    rdfs:isDefinedBy uckb:DialogueActsOntology .
+

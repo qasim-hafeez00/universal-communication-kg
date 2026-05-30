@@ -1,0 +1,38 @@
+{
+  "id": "sbi_dag",
+  "name": "SBI Feedback Protocol",
+  "domain": "Corporate & Engineering",
+  "description": "CCL SBI: Situation, Behavior, Impact.",
+  "steps": [
+    {
+      "id": "sbi_step_1",
+      "name": "Situation",
+      "stepNumber": 1,
+      "gate": null
+    },
+    {
+      "id": "sbi_step_2",
+      "name": "Behavior",
+      "stepNumber": 2,
+      "gate": null
+    },
+    {
+      "id": "sbi_step_3",
+      "name": "Impact",
+      "stepNumber": 3,
+      "gate": "sbi_gate_behavior"
+    }
+  ],
+  "gates": [
+    {
+      "id": "sbi_gate_behavior",
+      "condition": "behavior_is_observable_not_interpreted",
+      "note": "If you cannot film the behavior, it is an interpretation."
+    }
+  ],
+  "techniques": {
+    "1": "corp_001_sbi_situation",
+    "2": "corp_002_sbi_behavior",
+    "3": "corp_003_sbi_impact"
+  }
+}

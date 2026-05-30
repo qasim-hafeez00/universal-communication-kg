@@ -1,0 +1,76 @@
+{
+  "id": "spikes_dag",
+  "name": "SPIKES Protocol",
+  "domain": "Clinical / Medical",
+  "description": "Clinical bad-news delivery: Setting, Perception, Invitation, Knowledge, Emotion, Strategy.",
+  "steps": [
+    {
+      "id": "spikes_s",
+      "name": "Setting",
+      "stepNumber": 1,
+      "gate": null
+    },
+    {
+      "id": "spikes_p",
+      "name": "Perception",
+      "stepNumber": 2,
+      "gate": "spikes_gate_1"
+    },
+    {
+      "id": "spikes_i",
+      "name": "Invitation",
+      "stepNumber": 3,
+      "gate": "spikes_gate_2",
+      "criticalNote": "ONLY STEP IN UCKB WHERE PATIENT CAN HALT INFORMATION FLOW"
+    },
+    {
+      "id": "spikes_k",
+      "name": "Knowledge",
+      "stepNumber": 4,
+      "gate": "spikes_gate_3"
+    },
+    {
+      "id": "spikes_e",
+      "name": "Emotion",
+      "stepNumber": 5,
+      "gate": "spikes_gate_4",
+      "criticalNote": "CANNOT PROCEED TO STRATEGY UNTIL EMOTION IS PROCESSED"
+    },
+    {
+      "id": "spikes_str",
+      "name": "Strategy",
+      "stepNumber": 6,
+      "gate": "spikes_gate_5"
+    }
+  ],
+  "gates": [
+    {
+      "id": "spikes_gate_1",
+      "condition": "privacy_confirmed AND patient_ready"
+    },
+    {
+      "id": "spikes_gate_2",
+      "condition": "baseline_understanding_established"
+    },
+    {
+      "id": "spikes_gate_3",
+      "condition": "explicit_verbal_consent_received",
+      "refusalPath": "spikes_refusal_honored"
+    },
+    {
+      "id": "spikes_gate_4",
+      "condition": "patient_acknowledged_each_chunk"
+    },
+    {
+      "id": "spikes_gate_5",
+      "condition": "emotional_processing_complete"
+    }
+  ],
+  "specialNodes": [
+    {
+      "id": "spikes_refusal_honored",
+      "name": "Patient Right Not to Know",
+      "note": "Invoked when patient declines invitation at Step 3."
+    }
+  ]
+}

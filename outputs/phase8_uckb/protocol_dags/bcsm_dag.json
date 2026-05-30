@@ -1,0 +1,78 @@
+{
+  "id": "bcsm_dag",
+  "name": "BCSM Protocol",
+  "domain": "Crisis Dispatch / Emergency",
+  "description": "FBI Behavioral Change Stairway Model — 5-step crisis de-escalation protocol.",
+  "steps": [
+    {
+      "id": "bcsm_step_1",
+      "name": "Active Listening",
+      "stepNumber": 1,
+      "gate": null,
+      "bypassable": true
+    },
+    {
+      "id": "bcsm_step_2",
+      "name": "Empathy",
+      "stepNumber": 2,
+      "gate": "bcsm_gate_1",
+      "bypassable": true
+    },
+    {
+      "id": "bcsm_step_3",
+      "name": "Rapport",
+      "stepNumber": 3,
+      "gate": "bcsm_gate_2",
+      "bypassable": true
+    },
+    {
+      "id": "bcsm_step_4",
+      "name": "Influence",
+      "stepNumber": 4,
+      "gate": "bcsm_gate_3",
+      "bypassable": true
+    },
+    {
+      "id": "bcsm_step_5",
+      "name": "Behavioral Change",
+      "stepNumber": 5,
+      "gate": "bcsm_gate_4",
+      "bypassable": false
+    }
+  ],
+  "gates": [
+    {
+      "id": "bcsm_gate_1",
+      "condition": "caller_acknowledged_signal OR speech_rate_normalizes",
+      "failurePath": "re_engage_active_listening",
+      "bypassCondition": "imminent_danger_threshold"
+    },
+    {
+      "id": "bcsm_gate_2",
+      "condition": "affect_intensity_drops AND caller_accepts_next_question",
+      "failurePath": "repeat_empathy_step",
+      "bypassCondition": "imminent_danger_threshold"
+    },
+    {
+      "id": "bcsm_gate_3",
+      "condition": "rapport_confirmed AND caller_elaborates",
+      "failurePath": "repair_sequence",
+      "bypassCondition": "imminent_danger_threshold"
+    },
+    {
+      "id": "bcsm_gate_4",
+      "condition": "caller_considering_alternative",
+      "failurePath": "reinforce_rapport",
+      "bypassCondition": "imminent_danger_threshold"
+    }
+  ],
+  "bypassNode": {
+    "id": "bcsm_bypass_imminent_danger",
+    "condition": "imminent_danger_threshold",
+    "note": "Skips all steps; routes to One-Step Instruction immediately."
+  },
+  "techniques": {
+    "1": "crisis_dispatch_001_active_listening",
+    "2": "crisis_dispatch_002_empathic_validation"
+  }
+}

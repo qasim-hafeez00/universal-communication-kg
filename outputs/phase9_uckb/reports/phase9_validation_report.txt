@@ -1,0 +1,88 @@
+UCKB Phase 9 — Temporal Memory Architecture — Validation Report
+Generated: 2026-05-31 00:13:44
+======================================================================
+
+ACCEPTANCE CRITERIA
+----------------------------------------------------------------------
+  AC-P9-1  [PASS]  All 6 temporal node types present (Session, Turn, TemporalFact, WorkingMemorySlot, EpisodicMemory, MemoryTrace)
+            Session=3, Turn=11, TemporalFact=4, WorkingMemorySlot=12, EpisodicMemory=3, MemoryTrace=11
+
+  AC-P9-2  [PASS]  4 core temporal indices online (turn_timestamp, trace_weight, fact_expiry, wm_slot_ttl)
+            found=4/4, online=4/4
+
+  AC-P9-3  [PASS]  STALE_MEMORY: >= 2 WorkingMemorySlots with expired TTL identifiable
+            stale slots=7 (need >=2): ['wm_stale_001', 'wm_stale_002', 'wm_s001_domain', 'wm_s001_protocol', 'wm_s001_step', 'wm_s001_emotion', 'wm_s001_outcome']
+
+  AC-P9-4  [PASS]  EpisodicMemory: >= 2 nodes, all have emotionalArc + domainFilter
+            total=3, withArc=3, withFilter=3, withCompleted=3 (need >=2 each)
+
+  AC-P9-5  [PASS]  MemoryTrace: >= 7 nodes, all weight in [0.0,1.0], decayRate in [0.01,1.0]
+            total=11 (need >=7), weightOK=11, decayRateOK=11
+
+  AC-P9-6  [PASS]  Cross-session FOLLOWS edge: >= 1 link between Session nodes
+            FOLLOWS edges=1 (need >=1): [{'to': 'demo_session_001', 'from': 'demo_session_002'}]
+
+  AC-P9-7  [PASS]  REINFORCES edges: >= 3 MemoryTrace → Technique/ProtocolStep
+            REINFORCES edges=9 (need >=3), traces with edges=9
+
+  AC-P9-8  [PASS]  Temporal retrieval library: exactly 6 Text2CypherTemplate with category='temporal'
+            temporal templates=6 (need 6): ['RECENT_EMOTIONAL_ARC', 'SESSION_SUMMARY', 'STALE_MEMORY', 'TECHNIQUE_SUCCESS_RATE', 'USER_HISTORY', 'WORKING_MEMORY_SNAPSHOT']
+
+  AC-P9-9  [PASS]  EpisodicMemory domainFilter matches a SchemaFilterRegistry domain
+            total EpisodicMemory=3, matching registry=3 (need equal)
+
+  AC-P9-10  [PASS]  Protocol DAG continuity: >= 2 ACTIVE_PROTOCOL edges + >= 2 AT_STEP edges
+            ACTIVE_PROTOCOL=3 (need >=2), AT_STEP=3 (need >=2)
+
+======================================================================
+  OVERALL: ALL PASS 10/10
+======================================================================
+
+DIAGNOSTICS
+----------------------------------------------------------------------
+
+Phase 9 node counts:
+  EpisodicMemory               3
+  MemoryTrace                  11
+  Session                      3
+  TemporalFact                 4
+  Turn                         11
+  WorkingMemorySlot            12
+
+Phase 9 relationship counts:
+  PRECEDES                     203
+  FOLLOWS                      32
+  HAS_SLOT                     20
+  HAS_TURN                     11
+  REINFORCES                   9
+  HAS_FACT                     4
+  ACTIVE_PROTOCOL              3
+  AT_STEP                      3
+  HAS_EPISODE                  3
+  TRIGGERED                    2
+
+Session protocol state:
+  demo_session_001          protocol=BCSM step=3 status=interrupted
+  demo_session_002          protocol=BCSM step=5 status=completed
+  demo_session_003          protocol=SPIN step=4 status=completed
+
+Emotional arcs:
+  [episode_s001]  arc: panic_acute -> panic_acute -> distress_verbal -> guarded -> neutral  completed=False
+  [episode_s002]  arc: cooperative -> compliant  completed=True
+  [episode_s003]  arc: defensive -> curious -> interested -> committed  completed=True
+
+Top MemoryTraces by weight (post-decay):
+  trace_u002_sales_004                w=0.9101  λ=0.04  age=1.33h
+  trace_u002_sales_003                w=0.8853  λ=0.04  age=1.5h
+  trace_u002_sales_002                w=0.8607  λ=0.04  age=1.67h
+  trace_u002_sales_001                w=0.8364  λ=0.04  age=1.83h
+  trace_u001_crisis_007               w=0.1340  λ=0.08  age=24.5h
+  trace_u001_crisis_001               w=0.1330  λ=0.08  age=24.5h
+  trace_u001_crisis_006               w=0.1300  λ=0.08  age=24.5h
+  trace_u001_crisis_002               w=0.1290  λ=0.08  age=24.5h
+  trace_u001_crisis_004               w=0.1260  λ=0.08  age=24.5h
+  trace_u001_crisis_003               w=0.1230  λ=0.08  age=24.5h
+
+Total graph: 1091 nodes, 4815 relationships
+
+======================================================================

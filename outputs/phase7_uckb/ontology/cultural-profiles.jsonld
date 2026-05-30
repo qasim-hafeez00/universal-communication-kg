@@ -1,0 +1,1226 @@
+[
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#primaryStyle",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "CommunicationStyle name this profile represents"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#indirectCommunication",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Whether indirect communication is the norm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#CultureUSA",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#CulturalProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "USA Mainstream"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#faceSaving": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#geographicRegions": [
+      {
+        "@value": "North America, United States"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hallContextLevel": [
+      {
+        "@value": "low"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIDV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 91
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIVR": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 68
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeLTO": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 26
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeMAS": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 62
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedePDI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 40
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeUAI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 46
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#indirectCommunication": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#lewisModel": [
+      {
+        "@value": "linear-active"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#timeOrientation": [
+      {
+        "@value": "monochronic"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#recalibrateIn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Nonverbal signal meaning must be reinterpreted in this CulturalContext"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#CultureGermany",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#CulturalProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Germany"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#faceSaving": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#geographicRegions": [
+      {
+        "@value": "Western Europe, Germany, Austria, Switzerland"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hallContextLevel": [
+      {
+        "@value": "low"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIDV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 67
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIVR": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 40
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeLTO": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 83
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeMAS": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 66
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedePDI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 35
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeUAI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 65
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#indirectCommunication": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#lewisModel": [
+      {
+        "@value": "linear-active"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#timeOrientation": [
+      {
+        "@value": "monochronic"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#agentBehavior",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Prescribed agent behavior when rule activates"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#lewisModel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Lewis model type: linear-active|multi-active|reactive"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#CulturalAdaptationRule",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A specific behavioral change the agent applies when interacting within a given cultural context."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Cultural Adaptation Rule"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://uckb.io/ontology#PsychologicalConstruct"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hofstedeIDV",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Hofstede Individualism score (0-100)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#CultureUK",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#CulturalProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "UK Mainstream"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#faceSaving": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#geographicRegions": [
+      {
+        "@value": "Western Europe, United Kingdom, Ireland"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hallContextLevel": [
+      {
+        "@value": "low"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIDV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 89
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIVR": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 69
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeLTO": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 51
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeMAS": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 66
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedePDI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 35
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeUAI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 35
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#indirectCommunication": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#lewisModel": [
+      {
+        "@value": "linear-active"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#timeOrientation": [
+      {
+        "@value": "monochronic"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hofstedeIVR",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Hofstede Indulgence score (0-100)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#CulturalProfile",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A named regional or national cultural cluster aggregating Hofstede dimensional scores and communication style descriptors."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Cultural Profile"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://uckb.io/ontology#PsychologicalConstruct"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#prefersStyle",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "CulturalContext dimensional node predicts this CommunicationStyle"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hofstedeLTO",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Hofstede Long-Term Orientation (0-100)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#preferredEvidence",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "emotional | factual | mixed"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#styleSuggests",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Links BehavioralStyleProfile to a recommended Technique"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hasDimension",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Links CulturalProfile to a CulturalContext dimensional descriptor"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#agentAdaptation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Agent response strategy when this style is detected"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#timeOrientation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "monochronic or polychronic"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hallContextLevel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Hall's context level: 'high' or 'low'"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#CultureIndia",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#CulturalProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "India"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#faceSaving": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#geographicRegions": [
+      {
+        "@value": "South Asia, India, Pakistan, Bangladesh, Sri Lanka"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hallContextLevel": [
+      {
+        "@value": "high"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIDV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 48
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIVR": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 26
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeLTO": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 51
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeMAS": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 56
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedePDI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 77
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeUAI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 40
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#indirectCommunication": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#lewisModel": [
+      {
+        "@value": "multi-active"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#timeOrientation": [
+      {
+        "@value": "polychronic"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#CultureArabWorld",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#CulturalProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Arab World"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#faceSaving": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#geographicRegions": [
+      {
+        "@value": "Middle East, North Africa, Gulf States"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hallContextLevel": [
+      {
+        "@value": "high"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIDV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 38
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIVR": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 34
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeLTO": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 23
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeMAS": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 53
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedePDI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 80
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeUAI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 68
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#indirectCommunication": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#lewisModel": [
+      {
+        "@value": "multi-active"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#timeOrientation": [
+      {
+        "@value": "polychronic"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#CultureNordic",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#CulturalProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Nordic Countries"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#faceSaving": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#geographicRegions": [
+      {
+        "@value": "Scandinavia, Sweden, Norway, Denmark, Finland"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hallContextLevel": [
+      {
+        "@value": "low"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIDV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 74
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIVR": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 55
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeLTO": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 35
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeMAS": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 16
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedePDI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 31
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeUAI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 29
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#indirectCommunication": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#lewisModel": [
+      {
+        "@value": "linear-active"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#timeOrientation": [
+      {
+        "@value": "monochronic"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hofstedeUAI",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Hofstede Uncertainty Avoidance Index (0-100)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#CultureJapan",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#CulturalProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Japan"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#faceSaving": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#geographicRegions": [
+      {
+        "@value": "East Asia, Japan"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hallContextLevel": [
+      {
+        "@value": "high"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIDV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 46
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIVR": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 42
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeLTO": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 88
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeMAS": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 95
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedePDI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 54
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeUAI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 92
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#indirectCommunication": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#lewisModel": [
+      {
+        "@value": "reactive"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#timeOrientation": [
+      {
+        "@value": "polychronic"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hofstedePDI",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Hofstede Power Distance Index (0-100)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hofstedeMAS",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Hofstede Masculinity score (0-100)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#CultureEastAfrica",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#CulturalProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "East Africa"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#faceSaving": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#geographicRegions": [
+      {
+        "@value": "Sub-Saharan Africa, Kenya, Tanzania, Uganda, Ethiopia"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hallContextLevel": [
+      {
+        "@value": "high"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIDV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 27
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIVR": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 40
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeLTO": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 32
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeMAS": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 41
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedePDI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 64
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeUAI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 52
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#indirectCommunication": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#lewisModel": [
+      {
+        "@value": "multi-active"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#timeOrientation": [
+      {
+        "@value": "polychronic"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#appliesRule",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Links CulturalProfile/CulturalContext to a CulturalAdaptationRule"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#trigger",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Cultural dimension(s) or event that activates this rule"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#faceSaving",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Whether face-saving is a primary cultural driver"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#CultureLatinAmerica",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#CulturalProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Latin America"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#faceSaving": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#geographicRegions": [
+      {
+        "@value": "South America, Central America, Mexico, Caribbean"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hallContextLevel": [
+      {
+        "@value": "high"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIDV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 21
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIVR": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 76
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeLTO": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 30
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeMAS": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 49
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedePDI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 70
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeUAI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 76
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#indirectCommunication": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#lewisModel": [
+      {
+        "@value": "multi-active"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#timeOrientation": [
+      {
+        "@value": "polychronic"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#adaptsFor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Links a Technique to the CulturalContext it is preferred in"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#CultureChina",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#CulturalProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "China"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#faceSaving": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#geographicRegions": [
+      {
+        "@value": "East Asia, China, Taiwan, Singapore"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hallContextLevel": [
+      {
+        "@value": "high"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIDV": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 20
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeIVR": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 24
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeLTO": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 87
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeMAS": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 66
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedePDI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 80
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#hofstedeUAI": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 30
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#indirectCommunication": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#lewisModel": [
+      {
+        "@value": "reactive"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#timeOrientation": [
+      {
+        "@value": "polychronic"
+      }
+    ]
+  }
+]

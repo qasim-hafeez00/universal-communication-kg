@@ -1,0 +1,848 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ============================================================
+# UCKB Phase 8 — Corporate / Engineering Domain
+# 50 nodes: 20 CommunicationTechnique, 8 SignalMarker,
+#           4 CommunicationStyle (Radical Candor quadrants),
+#           4 EmotionalState, 3 DomainProtocol,
+#           11 remaining (FeedbackVector, emotional boundary nodes)
+# Architecture: SBI 3-step DAG + NVC 4-step DAG + RC quadrant
+# ============================================================
+
+# ── CommunicationStyle nodes — Radical Candor Quadrants ─────
+
+uckb:corp_style_radical_candor a owl:NamedIndividual,
+        uckb:CommunicationStyle ;
+    rdfs:label "Radical Candor" ;
+    uckb:cardId "corp_style_radical_candor"^^xsd:string ;
+    uckb:classLabel "CommunicationStyle"^^xsd:string ;
+    uckb:dimension1 "care_personally:HIGH"^^xsd:string ;
+    uckb:dimension2 "challenge_directly:HIGH"^^xsd:string ;
+    uckb:targetState "true"^^xsd:boolean ;
+    uckb:description "Feedback delivery style combining genuine personal care with direct, specific challenge. The target state for corporate feedback interactions."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_style_obnoxious_aggression a owl:NamedIndividual,
+        uckb:CommunicationStyle ;
+    rdfs:label "Obnoxious Aggression" ;
+    uckb:cardId "corp_style_obnoxious_aggression"^^xsd:string ;
+    uckb:classLabel "CommunicationStyle"^^xsd:string ;
+    uckb:dimension1 "care_personally:LOW"^^xsd:string ;
+    uckb:dimension2 "challenge_directly:HIGH"^^xsd:string ;
+    uckb:targetState "false"^^xsd:boolean ;
+    uckb:description "Challenges directly but without genuine care. Feedback is blunt, blaming, or contemptuous. Detected via contempt marker, blaming language."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:detectionSignals "contempt_marker; blaming_language; aggressive_facs"^^xsd:string ;
+    uckb:resolutionPath "corp_016_winners_triangle_assertive"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_style_ruinous_empathy a owl:NamedIndividual,
+        uckb:CommunicationStyle ;
+    rdfs:label "Ruinous Empathy" ;
+    uckb:cardId "corp_style_ruinous_empathy"^^xsd:string ;
+    uckb:classLabel "CommunicationStyle"^^xsd:string ;
+    uckb:dimension1 "care_personally:HIGH"^^xsd:string ;
+    uckb:dimension2 "challenge_directly:LOW"^^xsd:string ;
+    uckb:targetState "false"^^xsd:boolean ;
+    uckb:description "Cares personally but avoids direct challenge. Positive surface but prevents growth. Detected via avoidance of substantive critique, excessive hedging."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:detectionSignals "avoidance_substantive_critique; excessive_hedging; no_actionable_feedback"^^xsd:string ;
+    uckb:resolutionPath "corp_004_radical_candor_delivery"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_style_manipulative_insincerity a owl:NamedIndividual,
+        uckb:CommunicationStyle ;
+    rdfs:label "Manipulative Insincerity" ;
+    uckb:cardId "corp_style_manipulative_insincerity"^^xsd:string ;
+    uckb:classLabel "CommunicationStyle"^^xsd:string ;
+    uckb:dimension1 "care_personally:LOW"^^xsd:string ;
+    uckb:dimension2 "challenge_directly:LOW"^^xsd:string ;
+    uckb:targetState "false"^^xsd:boolean ;
+    uckb:description "Neither cares personally nor challenges directly. Passive-aggressive patterns, backstabbing, political maneuvering. Most damaging quadrant."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:detectionSignals "passive_aggressive_markers; indirect_critique; sycophantic_approval"^^xsd:string ;
+    uckb:resolutionPath "corp_024_criticism_vs_complaint"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+# ── CommunicationTechnique nodes ─────────────────────────────
+
+uckb:corp_001_sbi_situation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "SBI Situation" ;
+    uckb:PRECEDES uckb:corp_002_sbi_behavior ;
+    uckb:cardId "corp_001_sbi_situation"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Do not conflate the situation with an interpretation of behaviour."^^xsd:string ;
+    uckb:culturalNotes "Workplace feedback norms vary widely; establish shared understanding of feedback culture before use."^^xsd:string ;
+    uckb:description "First step of SBI: state the specific observable situation — when and where the behaviour occurred — as neutral context-setting without evaluation."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Context-Setting"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "NVC Observation"^^xsd:string ;
+    uckb:failureSignals "Recipient asks what you mean; situation described is vague or recurring."^^xsd:string ;
+    uckb:name "SBI Situation"^^xsd:string ;
+    uckb:requiredEdges "PRECEDES SBI Behavior; PART_OF SBI Protocol"^^xsd:string ;
+    uckb:reviewNotes "Specificity is key: 'In Tuesday's sprint review' not 'sometimes in meetings'."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "CCL_SBI; ScottRadicalCandor"^^xsd:string ;
+    uckb:steps "State: 'In [specific situation]...'"^^xsd:string ;
+    uckb:successSignals "Recipient nods or verbally confirms they recall the specific event."^^xsd:string ;
+    uckb:switchTo "SBI Behavior"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "feedback_delivery_needed; private_setting_confirmed"^^xsd:string ;
+    uckb:whenNotToUse "Public setting; high emotional arousal."^^xsd:string ;
+    uckb:whenToUse "Opening step of structured feedback delivery." .
+
+uckb:corp_002_sbi_behavior a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "SBI Behavior" ;
+    uckb:FOLLOWS uckb:corp_001_sbi_situation ;
+    uckb:PRECEDES uckb:corp_003_sbi_impact ;
+    uckb:CONTRAINDICATED_WHEN uckb:corp_emo_personality_attack_risk ;
+    uckb:cardId "corp_002_sbi_behavior"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Must describe observable behavior only — never personality traits, assumptions, or interpretations."^^xsd:string ;
+    uckb:culturalNotes "Direct behavioural description is more accepted in low-context cultures; high-context cultures may require more framing."^^xsd:string ;
+    uckb:description "Second step of SBI: describe the specific observable behaviour — what was said or done — without interpretation, attribution, or personality labelling."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Describe"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "NVC Observation"^^xsd:string ;
+    uckb:failureSignals "Feedback slides into 'you always'; 'you're the kind of person who'; characterisation creeps in."^^xsd:string ;
+    uckb:name "SBI Behavior"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Situation; PRECEDES Impact; CONTRAINDICATED_WHEN personality_attack"^^xsd:string ;
+    uckb:reviewNotes "Gate: behavior must be observable and describable without inference. If you can't film it, it's interpretation."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "CCL_SBI; ScottRadicalCandor"^^xsd:string ;
+    uckb:steps "State: '...you [specific observable action]...'"^^xsd:string ;
+    uckb:successSignals "Recipient can verify the behavior occurred; no defensive reaction to description itself."^^xsd:string ;
+    uckb:switchTo "SBI Impact"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "situation_established; private_setting_confirmed"^^xsd:string ;
+    uckb:whenNotToUse "When behavior cannot be stated without interpretation."^^xsd:string ;
+    uckb:whenToUse "Second step of structured feedback delivery." .
+
+uckb:corp_003_sbi_impact a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "SBI Impact" ;
+    uckb:FOLLOWS uckb:corp_002_sbi_behavior ;
+    uckb:ENHANCES uckb:corp_emo_accountability ;
+    uckb:cardId "corp_003_sbi_impact"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Describe the impact on you, the team, or the work — not the recipient's intent or character."^^xsd:string ;
+    uckb:culturalNotes "Use first-person impact statements ('I found myself...', 'the team then had to...')."^^xsd:string ;
+    uckb:description "Third step of SBI: describe the specific impact of the behaviour on self, team, or work product — not on the recipient's character or intentions."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Express"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "NVC Feeling; NVC Need"^^xsd:string ;
+    uckb:failureSignals "Impact described as character judgment; recipient becomes defensive."^^xsd:string ;
+    uckb:name "SBI Impact"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS SBI Behavior; ENHANCES accountability"^^xsd:string ;
+    uckb:reviewNotes "Impact statement is the bridge to behavior change; without it, feedback has no motivational lever."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "CCL_SBI; ScottRadicalCandor"^^xsd:string ;
+    uckb:steps "State: '...and the impact was [effect on team/work/self].'"^^xsd:string ;
+    uckb:successSignals "Recipient understands why the behavior mattered; opens dialogue about change."^^xsd:string ;
+    uckb:switchTo "Direct Report Dialogue; NVC Request"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "behavior_described; private_setting_confirmed"^^xsd:string ;
+    uckb:whenNotToUse "Impact is unclear or speculative."^^xsd:string ;
+    uckb:whenToUse "Final step of SBI feedback sequence." .
+
+uckb:corp_004_radical_candor_delivery a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Radical Candor Delivery" ;
+    uckb:REQUIRES uckb:corp_019_psychological_safety_check ;
+    uckb:REQUIRES uckb:corp_001_sbi_situation ;
+    uckb:cardId "corp_004_radical_candor_delivery"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium-load"^^xsd:string ;
+    uckb:contraindications "Cannot be performed when care_personally baseline is absent. Praise in public; critique in private."^^xsd:string ;
+    uckb:culturalNotes "Direct care and direct challenge combination may need cultural calibration; the principle holds universally but expression varies."^^xsd:string ;
+    uckb:description "Full Radical Candor feedback delivery: genuine personal investment plus specific direct challenge, delivered via SBI structure in a private channel."^^xsd:string ;
+    uckb:dialogueActLinks "Feedback; Challenge; Care"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "NVC Full Sequence"^^xsd:string ;
+    uckb:failureSignals "Recipient perceives feedback as attack; or as meaningless praise."^^xsd:string ;
+    uckb:name "Radical Candor Delivery"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Psychological Safety Check; REQUIRES SBI Sequence"^^xsd:string ;
+    uckb:reviewNotes "Kim Scott 2017; full quadrant alignment required before delivery."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "ScottRadicalCandor2017"^^xsd:string ;
+    uckb:steps "1) Establish private channel; 2) Check psychological safety; 3) Deliver full SBI sequence; 4) Listen for response; 5) Agree on next step."^^xsd:string ;
+    uckb:successSignals "Recipient engages constructively; relationship remains intact or improves."^^xsd:string ;
+    uckb:switchTo "Direct Report Feedback; Upward Feedback"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "feedback_delivery_needed; care_personally_confirmed; private_setting_confirmed"^^xsd:string ;
+    uckb:whenNotToUse "Public setting; care_personally baseline not established."^^xsd:string ;
+    uckb:whenToUse "Any performance feedback delivery in corporate context." .
+
+uckb:corp_005_private_channel_enforcement a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Private Channel Enforcement" ;
+    uckb:CONTRAINDICATED_WHEN uckb:corp_emo_public_setting ;
+    uckb:cardId "corp_005_private_channel_enforcement"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest-load"^^xsd:string ;
+    uckb:contraindications "CONTRAINDICATED in public setting — critique in public destroys psychological safety and is categorically prohibited in RC framework."^^xsd:string ;
+    uckb:culturalNotes "Private channel is universal; what counts as 'private' varies (1:1 in-person, private Slack DM, private call)."^^xsd:string ;
+    uckb:description "Ensures critique is delivered in a private channel before any public interaction. Praise may be public; critique must always be private."^^xsd:string ;
+    uckb:dialogueActLinks "Gate; Pre-Condition"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Feedback is delivered in team meeting, group chat, or public forum."^^xsd:string ;
+    uckb:name "Private Channel Enforcement"^^xsd:string ;
+    uckb:requiredEdges "CONTRAINDICATED_WHEN public_setting"^^xsd:string ;
+    uckb:reviewNotes "The only corporate technique with an ENVIRONMENTAL constraint rather than an emotional-state constraint."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "ScottRadicalCandor2017"^^xsd:string ;
+    uckb:steps "Before delivering critique: confirm communication channel is private. If not private, defer feedback to next private opportunity."^^xsd:string ;
+    uckb:successSignals "Feedback delivered in 1:1 or private channel."^^xsd:string ;
+    uckb:switchTo "SBI Situation (proceed)"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "feedback_delivery_intended; channel_check_needed"^^xsd:string ;
+    uckb:whenNotToUse "Never skip; this is a precondition not an option."^^xsd:string ;
+    uckb:whenToUse "Any time critique is about to be delivered." .
+
+uckb:corp_006_immediate_feedback a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Immediate Feedback" ;
+    uckb:CONTRAINDICATED_WHEN uckb:corp_emo_high_arousal ;
+    uckb:cardId "corp_006_immediate_feedback"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "CONTRAINDICATED when either party is in high emotional arousal. Immediacy principle applies to timing, not emotional state — wait for calm but act within 48 hours."^^xsd:string ;
+    uckb:culturalNotes "In some hierarchical cultures, immediate feedback from junior to senior is inappropriate; route through safe channel."^^xsd:string ;
+    uckb:description "Feedback delivered as close as possible to the observed behavior, within the 48-hour window while specific detail remains fresh and attribution is clear."^^xsd:string ;
+    uckb:dialogueActLinks "Feedback; Timing"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Feedback delayed past 48 hours; specific detail degrades; link to behavior becomes unclear."^^xsd:string ;
+    uckb:name "Immediate Feedback"^^xsd:string ;
+    uckb:requiredEdges "CONTRAINDICATED_WHEN high_emotional_arousal; REQUIRES immediacy_window<48h"^^xsd:string ;
+    uckb:reviewNotes "Immediacy is the most powerful predictor of feedback uptake; beyond 72h attribution degrades significantly."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "ScottRadicalCandor2017; CCL_SBI"^^xsd:string ;
+    uckb:steps "After observing behavior: wait for emotional calm; find private channel; deliver within 48h."^^xsd:string ;
+    uckb:successSignals "Recipient recalls the specific instance clearly; feedback is contextually anchored."^^xsd:string ;
+    uckb:switchTo "SBI Situation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "behavior_observed; feedback_delivery_needed"^^xsd:string ;
+    uckb:whenNotToUse "High emotional arousal present; public setting."^^xsd:string ;
+    uckb:whenToUse "Feedback to be delivered as soon as private setting and calm are available after the observed behavior." .
+
+uckb:corp_007_direct_report_feedback a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Direct Report Feedback" ;
+    uckb:ENHANCES uckb:corp_emo_psychological_safety ;
+    uckb:cardId "corp_007_direct_report_feedback"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium-load"^^xsd:string ;
+    uckb:contraindications "Do not deliver without prior relationship context; cold feedback from stranger manager is counterproductive."^^xsd:string ;
+    uckb:culturalNotes "Power distance affects receptivity; higher PD contexts may require more framing of the feedback as developmental rather than evaluative."^^xsd:string ;
+    uckb:description "Structured feedback from manager to direct report, using full SBI with explicit care-personally framing before challenge."^^xsd:string ;
+    uckb:dialogueActLinks "Feedback; Mentor"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "Radical Candor Delivery"^^xsd:string ;
+    uckb:failureSignals "Direct report becomes defensive; relationship damage persists after session."^^xsd:string ;
+    uckb:name "Direct Report Feedback"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES prior_relationship_context; ENHANCES psychological_safety"^^xsd:string ;
+    uckb:reviewNotes "Most common use-case in corporate domain; prerequisite relationship context means feedback must come after trust is established."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "ScottRadicalCandor2017"^^xsd:string ;
+    uckb:steps "1) Establish care-personally signal; 2) SBI sequence; 3) Invite response; 4) Co-create action step."^^xsd:string ;
+    uckb:successSignals "Direct report engages, asks clarifying questions, proposes change."^^xsd:string ;
+    uckb:switchTo "NVC Observation; Psychological Safety Check"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "performance_issue_observed; 1on1_context"^^xsd:string ;
+    uckb:whenNotToUse "No established relationship; public setting."^^xsd:string ;
+    uckb:whenToUse "Regular 1:1 feedback sessions; post-incident review." .
+
+uckb:corp_008_upward_feedback a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Upward Feedback" ;
+    uckb:REQUIRES uckb:corp_emo_psychological_safety ;
+    uckb:DOMAIN_VARIANT_OF uckb:corp_004_radical_candor_delivery ;
+    uckb:cardId "corp_008_upward_feedback"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "high-load"^^xsd:string ;
+    uckb:contraindications "REQUIRES confirmed psychological safety. Without it, upward feedback carries significant career risk and should not be attempted."^^xsd:string ;
+    uckb:culturalNotes "High power distance cultures require explicit safety structures (anonymous channels, skip-level routes) before upward feedback is viable."^^xsd:string ;
+    uckb:description "Feedback delivered from a report to their manager or senior, requiring confirmed psychological safety and SBI structure to be effective and safe."^^xsd:string ;
+    uckb:dialogueActLinks "Feedback; Challenge"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "Radical Candor Delivery"^^xsd:string ;
+    uckb:failureSignals "Manager becomes defensive; feedback is punished through reduced opportunities or social exclusion."^^xsd:string ;
+    uckb:name "Upward Feedback"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES psychological_safety_confirmed; DOMAIN_VARIANT_OF Radical Candor Delivery"^^xsd:string ;
+    uckb:reviewNotes "Only viable when psychological safety is confirmed; if uncertain, use anonymous channel first."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Edmondson1999PsychSafety; ScottRadicalCandor2017"^^xsd:string ;
+    uckb:steps "Same as Radical Candor Delivery; additionally confirm: is there a no-punishment norm? If not, route anonymously."^^xsd:string ;
+    uckb:successSignals "Manager receives feedback without defensiveness; behavioral change follows."^^xsd:string ;
+    uckb:switchTo "360-Degree Feedback Framing"^^xsd:string ;
+    uckb:tier "Tier 2"^^xsd:string ;
+    uckb:triggerSignals "manager_behavior_impact_visible; psychological_safety_confirmed"^^xsd:string ;
+    uckb:whenNotToUse "Psychological safety not confirmed; punitive culture."^^xsd:string ;
+    uckb:whenToUse "When manager behavior has observable team impact and safety conditions are met." .
+
+uckb:corp_009_nvc_observation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "NVC Observation" ;
+    uckb:PRECEDES uckb:corp_010_nvc_feeling ;
+    uckb:CONTRADICTS uckb:corp_emo_interpretation_as_fact ;
+    uckb:cardId "corp_009_nvc_observation"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium-load"^^xsd:string ;
+    uckb:contraindications "Observation must be factual — not evaluative. 'You missed the deadline' (fact) not 'You don't care' (interpretation)."^^xsd:string ;
+    uckb:culturalNotes "Factual observation separates behavior from identity; valued across cultures when framed carefully."^^xsd:string ;
+    uckb:description "First step of NVC: state a specific observable fact about what was said or done, strictly free from evaluation, interpretation, or moral judgment."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Describe"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "SBI Behavior"^^xsd:string ;
+    uckb:failureSignals "Observation contains evaluation or interpretation; listener becomes defensive."^^xsd:string ;
+    uckb:name "NVC Observation"^^xsd:string ;
+    uckb:requiredEdges "PRECEDES NVC Feeling; CONTRADICTS interpretation_as_fact"^^xsd:string ;
+    uckb:reviewNotes "Rosenberg 2003; hardest step for most people — evaluation sneaks in through word choice."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Rosenberg2003NVC"^^xsd:string ;
+    uckb:steps "State: 'When [I see/hear] [specific observable fact]...'"^^xsd:string ;
+    uckb:successSignals "Other person can verify the observation without dispute."^^xsd:string ;
+    uckb:switchTo "NVC Feeling"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "conflict_or_feedback_context; nvc_sequence_initiated"^^xsd:string ;
+    uckb:whenNotToUse "When no observable fact can be stated without interpretation."^^xsd:string ;
+    uckb:whenToUse "Opening step of NVC communication sequence." .
+
+uckb:corp_010_nvc_feeling a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "NVC Feeling" ;
+    uckb:FOLLOWS uckb:corp_009_nvc_observation ;
+    uckb:PRECEDES uckb:corp_011_nvc_need ;
+    uckb:cardId "corp_010_nvc_feeling"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium-load"^^xsd:string ;
+    uckb:contraindications "Do not confuse feelings with thoughts or interpretations ('I feel that you...' is not a feeling)."^^xsd:string ;
+    uckb:culturalNotes "Emotional vocabulary varies across cultures; build shared vocabulary first in cross-cultural settings."^^xsd:string ;
+    uckb:description "Second step of NVC: name the feeling experienced in response to the observation, using emotion vocabulary that reflects inner states, not interpretations."^^xsd:string ;
+    uckb:dialogueActLinks "Express; Self-Disclose"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "SBI Impact; Clinical Empathic Validation"^^xsd:string ;
+    uckb:failureSignals "Speaker says 'I feel that...' instead of naming emotion; listener disputes the feeling."^^xsd:string ;
+    uckb:name "NVC Feeling"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Observation; PRECEDES Need"^^xsd:string ;
+    uckb:reviewNotes "Rosenberg 2003; distinguishes pseudo-feelings ('betrayed', 'manipulated') from true feelings ('sad', 'anxious')."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Rosenberg2003NVC"^^xsd:string ;
+    uckb:steps "State: '...I feel [emotion word]...'"^^xsd:string ;
+    uckb:successSignals "Listener can acknowledge the feeling without dispute."^^xsd:string ;
+    uckb:switchTo "NVC Need"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "nvc_observation_complete; feeling_articulation_needed"^^xsd:string ;
+    uckb:whenNotToUse "Corporate context where emotional self-disclosure carries high political risk."^^xsd:string ;
+    uckb:whenToUse "NVC sequence; after observation is stated." .
+
+uckb:corp_011_nvc_need a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "NVC Need" ;
+    uckb:FOLLOWS uckb:corp_010_nvc_feeling ;
+    uckb:PRECEDES uckb:corp_012_nvc_request ;
+    uckb:cardId "corp_011_nvc_need"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium-load"^^xsd:string ;
+    uckb:contraindications "Need must be universal and not strategy — 'I need reliability' not 'I need you to do X'."^^xsd:string ;
+    uckb:culturalNotes "Universal needs framework transcends cultural norms; the needs themselves (safety, belonging, autonomy) are cross-cultural."^^xsd:string ;
+    uckb:description "Third step of NVC: articulate the unmet underlying need behind the feeling, using universal needs vocabulary rather than a specific strategy or demand."^^xsd:string ;
+    uckb:dialogueActLinks "Express; Self-Disclose"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Speaker states a strategy instead of a need ('I need you to email me first' vs 'I need reliability')."^^xsd:string ;
+    uckb:name "NVC Need"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Feeling; PRECEDES Request"^^xsd:string ;
+    uckb:reviewNotes "Rosenberg 2003; distinguishes universal needs from strategies; needs are never about other person's behavior."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Rosenberg2003NVC"^^xsd:string ;
+    uckb:steps "State: '...because I need [universal need]...'"^^xsd:string ;
+    uckb:successSignals "Listener can identify with the need even if they dispute the request."^^xsd:string ;
+    uckb:switchTo "NVC Request"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "nvc_feeling_stated; need_articulation_needed"^^xsd:string ;
+    uckb:whenNotToUse "When the need would sound manipulative in the specific context."^^xsd:string ;
+    uckb:whenToUse "NVC sequence; after feeling is stated." .
+
+uckb:corp_012_nvc_request a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "NVC Request" ;
+    uckb:FOLLOWS uckb:corp_011_nvc_need ;
+    uckb:CONTRADICTS uckb:corp_emo_demand ;
+    uckb:cardId "corp_012_nvc_request"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Must be specific, positive (what to do, not what to stop), and genuinely requestable (refusal is acceptable)."^^xsd:string ;
+    uckb:culturalNotes "In high-context cultures, requests from senior to junior may be interpreted as demands regardless of framing; acknowledge this."^^xsd:string ;
+    uckb:description "Fourth step of NVC: make a specific, actionable, positive request that would meet the stated need — framed so that refusal is genuinely acceptable."^^xsd:string ;
+    uckb:dialogueActLinks "Request; Propose"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "SBI Impact Follow-Through"^^xsd:string ;
+    uckb:failureSignals "Request is a demand in disguise; refusal triggers punishment or escalation."^^xsd:string ;
+    uckb:name "NVC Request"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Need; CONTRADICTS Demand"^^xsd:string ;
+    uckb:reviewNotes "Rosenberg 2003; test: can the person genuinely say no without negative consequence? If not, it's a demand."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Rosenberg2003NVC"^^xsd:string ;
+    uckb:steps "State: '...would you be willing to [specific positive action]?'"^^xsd:string ;
+    uckb:successSignals "Other person can consider the request freely; dialogue follows."^^xsd:string ;
+    uckb:switchTo "Psychological Safety Check; Direct Report Feedback"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "need_articulated; nvc_sequence_active"^^xsd:string ;
+    uckb:whenNotToUse "When power differential makes refusal unsafe; use different framing."^^xsd:string ;
+    uckb:whenToUse "Final step of NVC sequence; any collaborative agreement-building context." .
+
+uckb:corp_016_winners_triangle_vulnerable a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Winner's Triangle: Vulnerable" ;
+    uckb:RESOLVES uckb:corp_sig_karpman_victim ;
+    uckb:ENHANCES uckb:corp_emo_psychological_safety ;
+    uckb:cardId "corp_016_winners_triangle_vulnerable"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium-load"^^xsd:string ;
+    uckb:contraindications "Do not use when person is in genuine victim of abuse — this is for drama triangle patterns, not real victimisation."^^xsd:string ;
+    uckb:culturalNotes "Vulnerability in the Winner's Triangle is adaptive strength, not weakness; frame it that way in cultures that pathologise vulnerability."^^xsd:string ;
+    uckb:description "Moves Karpman Victim role to adaptive Vulnerable position: acknowledges real feelings and needs without helplessness, takes ownership of problem-solving."^^xsd:string ;
+    uckb:dialogueActLinks "Reframe; Support"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "NVC Need"^^xsd:string ;
+    uckb:failureSignals "Person remains in victimhood; reframe is rejected."^^xsd:string ;
+    uckb:name "Winner's Triangle: Vulnerable"^^xsd:string ;
+    uckb:requiredEdges "RESOLVES Karpman Victim; ENHANCES psychological_safety"^^xsd:string ;
+    uckb:reviewNotes "Choy 1990 Winner's Triangle; resolves victim role into adaptive problem-solving state."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Choy1990WinnersTriangle; Karpman1968"^^xsd:string ;
+    uckb:steps "Acknowledge the real difficulty; separate feelings from helplessness; ask: 'What is one thing within your control here?'"^^xsd:string ;
+    uckb:successSignals "Person identifies an actionable step; mood shifts from helpless to engaged."^^xsd:string ;
+    uckb:switchTo "NVC Request; Direct Report Feedback"^^xsd:string ;
+    uckb:tier "Tier 2"^^xsd:string ;
+    uckb:triggerSignals "karpman_victim_detection; learned_helplessness_marker"^^xsd:string ;
+    uckb:whenNotToUse "Actual abuse or harm situation; structural organisational problem that individual cannot solve."^^xsd:string ;
+    uckb:whenToUse "Drama triangle victim pattern detected in team or individual." .
+
+uckb:corp_017_winners_triangle_assertive a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Winner's Triangle: Assertive" ;
+    uckb:RESOLVES uckb:corp_sig_karpman_persecutor ;
+    uckb:REQUIRES uckb:corp_emo_calm_baseline ;
+    uckb:cardId "corp_017_winners_triangle_assertive"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "high-load"^^xsd:string ;
+    uckb:contraindications "REQUIRES calm emotional baseline; do not attempt when speaker is in high arousal."^^xsd:string ;
+    uckb:culturalNotes "Assertiveness norms are culturally variable; what reads as assertive in low-context is aggressive in high-context."^^xsd:string ;
+    uckb:description "Moves Karpman Persecutor role to adaptive Assertive position: direct and clear without blame, aggression, or contempt."^^xsd:string ;
+    uckb:dialogueActLinks "Assert; Challenge"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "SBI Behavior (observable only)"^^xsd:string ;
+    uckb:failureSignals "Speaker slides back into blaming or contemptuous tone."^^xsd:string ;
+    uckb:name "Winner's Triangle: Assertive"^^xsd:string ;
+    uckb:requiredEdges "RESOLVES Karpman Persecutor; REQUIRES calm_state"^^xsd:string ;
+    uckb:reviewNotes "Choy 1990; assertive not aggressive — behavioral specificity is the key differentiator."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Choy1990WinnersTriangle; Karpman1968"^^xsd:string ;
+    uckb:steps "Name the behavior; state the impact; make a specific request — without blame or contempt."^^xsd:string ;
+    uckb:successSignals "Interaction resolves into problem-solving; contempt dissipates."^^xsd:string ;
+    uckb:switchTo "SBI Behavior; Radical Candor Delivery"^^xsd:string ;
+    uckb:tier "Tier 2"^^xsd:string ;
+    uckb:triggerSignals "karpman_persecutor_detection; contempt_marker"^^xsd:string ;
+    uckb:whenNotToUse "Speaker is in high emotional arousal; cooling period required."^^xsd:string ;
+    uckb:whenToUse "Drama triangle persecutor pattern detected in team interaction." .
+
+uckb:corp_018_winners_triangle_caring a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Winner's Triangle: Caring" ;
+    uckb:RESOLVES uckb:corp_sig_karpman_rescuer ;
+    uckb:CONTRADICTS uckb:corp_emo_rescuer_enabling ;
+    uckb:cardId "corp_018_winners_triangle_caring"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium-load"^^xsd:string ;
+    uckb:contraindications "Do not rescue; caring means empowering the person to solve their own problem, not solving it for them."^^xsd:string ;
+    uckb:culturalNotes "Collective cultures may value problem-solving-for-others as care; reframe caring as empowering autonomy."^^xsd:string ;
+    uckb:description "Moves Karpman Rescuer role to adaptive Caring position: genuine support that empowers the other person's agency rather than creating dependency."^^xsd:string ;
+    uckb:dialogueActLinks "Support; Empower"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "Clinical Autonomy Support"^^xsd:string ;
+    uckb:failureSignals "Speaker takes over the other person's problem; dependency pattern solidifies."^^xsd:string ;
+    uckb:name "Winner's Triangle: Caring"^^xsd:string ;
+    uckb:requiredEdges "RESOLVES Karpman Rescuer; CONTRADICTS rescuer_enabling"^^xsd:string ;
+    uckb:reviewNotes "Choy 1990; caring asks 'what do you need?' not 'let me fix this for you'."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Choy1990WinnersTriangle; Karpman1968"^^xsd:string ;
+    uckb:steps "Ask: 'What would be most helpful right now?' instead of providing solution. Coach rather than rescue."^^xsd:string ;
+    uckb:successSignals "Person develops their own solution with support; does not repeat rescue request."^^xsd:string ;
+    uckb:switchTo "NVC Request; Winner's Triangle Vulnerable"^^xsd:string ;
+    uckb:tier "Tier 2"^^xsd:string ;
+    uckb:triggerSignals "karpman_rescuer_detection; over_helping_pattern"^^xsd:string ;
+    uckb:whenNotToUse "Person genuinely cannot solve problem without expert help."^^xsd:string ;
+    uckb:whenToUse "Drama triangle rescuer pattern; over-helping dynamic in team." .
+
+uckb:corp_019_psychological_safety_check a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Psychological Safety Check" ;
+    uckb:cardId "corp_019_psychological_safety_check"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Do not assume safety; ask or assess. No shortcut."^^xsd:string ;
+    uckb:culturalNotes "Psychological safety expression varies culturally; behavioral indicators (speaking up, disagreeing openly) are more reliable than self-report in some cultures."^^xsd:string ;
+    uckb:description "Pre-feedback gate that assesses whether the relationship and context have sufficient psychological safety to receive direct challenge without defensive shutdown."^^xsd:string ;
+    uckb:dialogueActLinks "Gate; Assess"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Person shows defensive posture; prior feedback has been punished; team speaks very rarely."^^xsd:string ;
+    uckb:name "Psychological Safety Check"^^xsd:string ;
+    uckb:requiredEdges "REQUIRED before Radical Candor Delivery; REQUIRED before Upward Feedback"^^xsd:string ;
+    uckb:reviewNotes "Edmondson 1999; Radical Candor without safety = Obnoxious Aggression by default."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Edmondson1999PsychSafety; ScottRadicalCandor2017"^^xsd:string ;
+    uckb:steps "Assess: Can people disagree openly? Do errors get punished? Has this person received feedback well before? If unsure — build safety before feedback."^^xsd:string ;
+    uckb:successSignals "Team demonstrates open disagreement; errors are discussed not hidden."^^xsd:string ;
+    uckb:switchTo "Radical Candor Delivery (if safe); Direct Report Feedback (if safe)"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "feedback_delivery_intended; upward_feedback_intended"^^xsd:string ;
+    uckb:whenNotToUse "Never skip."^^xsd:string ;
+    uckb:whenToUse "Before any substantive feedback delivery; before any upward feedback." .
+
+uckb:corp_020_context_setting_feedback a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Context Setting for Feedback" ;
+    uckb:PRECEDES uckb:corp_001_sbi_situation ;
+    uckb:cardId "corp_020_context_setting_feedback"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Do not delay indefinitely; context-setting is 1-2 sentences, not a prolonged preamble."^^xsd:string ;
+    uckb:culturalNotes "High-context cultures benefit from more context-setting before direct feedback; low-context cultures tolerate less preamble."^^xsd:string ;
+    uckb:description "Brief framing statement before SBI delivery that establishes developmental intent, confirms private channel, and signals care-personally."^^xsd:string ;
+    uckb:dialogueActLinks "Frame; Establish"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Recipient misreads feedback intent as attack; feedback sandwiching obscures message."^^xsd:string ;
+    uckb:name "Context Setting for Feedback"^^xsd:string ;
+    uckb:requiredEdges "PRECEDES SBI Situation; prerequisite for all feedback techniques"^^xsd:string ;
+    uckb:reviewNotes "Avoids feedback ambush; establishes developmental frame before critical content."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "ScottRadicalCandor2017"^^xsd:string ;
+    uckb:steps "Say: 'I want to share something with you because I think it will help. Is now a good time?'"^^xsd:string ;
+    uckb:successSignals "Recipient confirms readiness; tone is collaborative not defensive."^^xsd:string ;
+    uckb:switchTo "SBI Situation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "feedback_delivery_intended; private_setting_confirmed"^^xsd:string ;
+    uckb:whenNotToUse "When feedback is already understood as upcoming (e.g., scheduled review)."^^xsd:string ;
+    uckb:whenToUse "Any spontaneous feedback delivery; any time intent might be misread." .
+
+uckb:corp_024_criticism_vs_complaint a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Criticism vs Complaint Distinction" ;
+    uckb:CONTRADICTS uckb:corp_emo_personality_attack_risk ;
+    uckb:cardId "corp_024_criticism_vs_complaint"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium-load"^^xsd:string ;
+    uckb:contraindications "Never deliver criticism (character attack) — always convert to specific behavioral complaint before delivery."^^xsd:string ;
+    uckb:culturalNotes "Distinction between person and behavior is foundational; some cultures conflate them — explicit instruction may be needed."^^xsd:string ;
+    uckb:description "Meta-technique that checks feedback framing before delivery: is this a complaint (specific behavior) or criticism (character attack)? Only complaints should be delivered."^^xsd:string ;
+    uckb:dialogueActLinks "Gate; Reframe"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "SBI Behavior Gate"^^xsd:string ;
+    uckb:failureSignals "Feedback contains 'you always', 'you never', 'you're the kind of person who'."^^xsd:string ;
+    uckb:name "Criticism vs Complaint Distinction"^^xsd:string ;
+    uckb:requiredEdges "REQUIRED before feedback framing; CONTRADICTS personality_attack"^^xsd:string ;
+    uckb:reviewNotes "Gottman 1994; criticism (character) triggers defensiveness; complaint (behavior) invites change."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Gottman1994WhyMarriages; ScottRadicalCandor2017"^^xsd:string ;
+    uckb:steps "Test: Remove the behavior — does the feedback still make a claim about who the person IS? If yes, it is criticism. Rewrite as specific observable behavior."^^xsd:string ;
+    uckb:successSignals "Feedback passes the test; no character language remains."^^xsd:string ;
+    uckb:switchTo "SBI Behavior; NVC Observation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "feedback_framing_check; feedback_delivery_intended"^^xsd:string ;
+    uckb:whenNotToUse "When feedback is already in complaint form."^^xsd:string ;
+    uckb:whenToUse "Before any feedback delivery; part of internal pre-flight check." .
+
+uckb:corp_025_360_feedback_framing a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "360-Degree Feedback Framing" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Objective_Criteria ;
+    uckb:cardId "corp_025_360_feedback_framing"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium-load"^^xsd:string ;
+    uckb:contraindications "Do not use 360 feedback as a proxy for direct feedback that was never delivered."^^xsd:string ;
+    uckb:culturalNotes "360 feedback normalizes multi-directional feedback; calibrate political safety before implementing in hierarchical cultures."^^xsd:string ;
+    uckb:description "Frames feedback as collected from multiple perspectives (peers, reports, managers), removing the single-source attribution and creating objective-data framing for the feedback discussion."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Frame"^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:domainVariants "Negotiation Objective Criteria"^^xsd:string ;
+    uckb:failureSignals "Person guesses sources and becomes defensive about specific relationships rather than the behavior."^^xsd:string ;
+    uckb:name "360-Degree Feedback Framing"^^xsd:string ;
+    uckb:requiredEdges "DOMAIN_VARIANT_OF Objective Criteria"^^xsd:string ;
+    uckb:reviewNotes "Anonymized multi-source framing reduces interpersonal defensiveness; works best with established feedback culture."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Bracken1997_360"^^xsd:string ;
+    uckb:steps "Say: 'I've gathered input from several people to get a fuller picture. The pattern I'm seeing is...'"^^xsd:string ;
+    uckb:successSignals "Recipient engages with the pattern rather than the source."^^xsd:string ;
+    uckb:switchTo "Radical Candor Delivery; Direct Report Feedback"^^xsd:string ;
+    uckb:tier "Tier 2"^^xsd:string ;
+    uckb:triggerSignals "performance_review_context; multi_source_data_available"^^xsd:string ;
+    uckb:whenNotToUse "When direct feedback has never been given; 360 should supplement not replace direct feedback."^^xsd:string ;
+    uckb:whenToUse "Formal review cycles; when behavioral pattern needs multi-source support." .
+
+# ── SignalMarker nodes ────────────────────────────────────────
+
+uckb:corp_sig_karpman_victim a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Karpman Victim Detection" ;
+    uckb:TRIGGERS uckb:corp_016_winners_triangle_vulnerable ;
+    uckb:cardId "corp_sig_karpman_victim"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Person exhibits helplessness, learned powerlessness, or persistent blame attribution to external forces without problem-solving engagement."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:detectionMethod "behavioral;linguistic"^^xsd:string ;
+    uckb:modality "text;voice;video"^^xsd:string ;
+    uckb:confidenceThreshold "0.65"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_sig_karpman_persecutor a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Karpman Persecutor Detection" ;
+    uckb:TRIGGERS uckb:corp_017_winners_triangle_assertive ;
+    uckb:cardId "corp_sig_karpman_persecutor"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Person exhibits blaming, criticising, or contemptuous patterns directed at others, often with power asymmetry."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:detectionMethod "behavioral;linguistic"^^xsd:string ;
+    uckb:modality "text;voice;video"^^xsd:string ;
+    uckb:confidenceThreshold "0.65"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_sig_karpman_rescuer a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Karpman Rescuer Detection" ;
+    uckb:TRIGGERS uckb:corp_018_winners_triangle_caring ;
+    uckb:cardId "corp_sig_karpman_rescuer"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Person consistently takes over others' problems, offers unsolicited help, and enables dependency rather than building autonomy."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:detectionMethod "behavioral"^^xsd:string ;
+    uckb:modality "text;voice;video"^^xsd:string ;
+    uckb:confidenceThreshold "0.60"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_sig_contempt_marker a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Contempt Detection" ;
+    uckb:ESCALATES_TO uckb:corp_emo_intervention_required ;
+    uckb:cardId "corp_sig_contempt_marker"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Contempt indicators: eye-roll, dismissive tone, mocking, moral superiority framing. Gottman's strongest predictor of relationship dissolution. Highest-severity marker."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:detectionMethod "behavioral;prosodic"^^xsd:string ;
+    uckb:modality "voice;video"^^xsd:string ;
+    uckb:confidenceThreshold "0.80"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_sig_defensiveness a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Defensiveness Detection" ;
+    uckb:TRIGGERS uckb:corp_009_nvc_observation ;
+    uckb:cardId "corp_sig_defensiveness"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Defensiveness indicators: counter-attack, excuse-making, victim stance in response to feedback. Triggers validation-before-challenge routing."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:detectionMethod "behavioral;linguistic"^^xsd:string ;
+    uckb:modality "text;voice;video"^^xsd:string ;
+    uckb:confidenceThreshold "0.70"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_sig_stonewalling a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Stonewalling Detection" ;
+    uckb:TRIGGERS uckb:corp_emo_repair_required ;
+    uckb:CONTRAINDICATED_WHEN uckb:corp_emo_further_challenge_active ;
+    uckb:cardId "corp_sig_stonewalling"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Stonewalling indicators: monosyllabic responses, withdrawal, refusal to engage. Triggers repair sequence and contraindicates further challenge."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:detectionMethod "behavioral;linguistic"^^xsd:string ;
+    uckb:modality "text;voice;video"^^xsd:string ;
+    uckb:confidenceThreshold "0.75"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_sig_excessive_hedging a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Excessive Hedging" ;
+    uckb:cardId "corp_sig_excessive_hedging"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Feedback delivered with so many qualifications, softenings, or compliment sandwiches that the substantive message is obscured — indicator of Ruinous Empathy style."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:detectionMethod "linguistic"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.60"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_sig_passive_aggressive a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Passive-Aggressive Marker" ;
+    uckb:cardId "corp_sig_passive_aggressive"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Passive-aggressive indicators: sarcasm, indirect resistance, agreed-but-not-followed-through, plausible deniability framing — indicator of Manipulative Insincerity style."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:detectionMethod "behavioral;linguistic"^^xsd:string ;
+    uckb:modality "text;voice;video"^^xsd:string ;
+    uckb:confidenceThreshold "0.55"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+# ── EmotionalState nodes ─────────────────────────────────────
+
+uckb:corp_emo_psychological_safety a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Psychological Safety Confirmed" ;
+    uckb:cardId "corp_emo_psychological_safety"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Team or individual context where interpersonal risk-taking (disagreement, feedback, error disclosure) is demonstrably safe. Required precondition for RC delivery and upward feedback."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_emo_high_arousal a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "High Emotional Arousal" ;
+    uckb:cardId "corp_emo_high_arousal"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Either party is in high emotional arousal state — anger, grief, fear. Contraindicates immediate feedback delivery; wait for calm."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:arousalLevel "high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_emo_public_setting a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Public Setting (Critique Block)" ;
+    uckb:cardId "corp_emo_public_setting"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Environmental state where critique would be delivered in view of others. CONTRAINDICATED target for Private Channel Enforcement — all critique must be blocked in this state."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_emo_personality_attack_risk a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Personality Attack Risk" ;
+    uckb:cardId "corp_emo_personality_attack_risk"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Feedback framing has drifted from behavior to character — 'you are lazy' vs 'you missed the deadline'. Contraindicates SBI Behavior delivery until reframed."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_emo_accountability a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Accountability State" ;
+    uckb:cardId "corp_emo_accountability"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Recipient is in engaged accountability state — understands the impact of their behavior and is open to change. Target state for SBI Impact step."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_emo_calm_baseline a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Calm Baseline" ;
+    uckb:cardId "corp_emo_calm_baseline"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Both parties in regulated emotional state. Prerequisite for assertive Winner's Triangle and feedback delivery."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:arousalLevel "low"^^xsd:string ;
+    uckb:valence "neutral"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_emo_intervention_required a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Intervention Required" ;
+    uckb:cardId "corp_emo_intervention_required"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Contempt level has reached severity requiring HR or management intervention beyond normal feedback channels."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:arousalLevel "high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_emo_repair_required a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Repair Required" ;
+    uckb:cardId "corp_emo_repair_required"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Interaction has broken down; stonewalling or withdrawal has occurred. Repair sequence required before any substantive communication resumes."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_emo_further_challenge_active a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Further Challenge Active (Stonewalling Block)" ;
+    uckb:cardId "corp_emo_further_challenge_active"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Stonewalling is active; any further challenge is CONTRAINDICATED. Context requires repair, not escalation."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_emo_demand a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Demand (NVC Block)" ;
+    uckb:cardId "corp_emo_demand"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Communication pattern where the request is non-negotiable; refusal is not genuinely acceptable. CONTRADICTS NVC Request."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_emo_interpretation_as_fact a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Interpretation as Fact" ;
+    uckb:cardId "corp_emo_interpretation_as_fact"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Speaker is stating an interpretation of intent or character as though it is a factual observation. CONTRADICTS NVC Observation."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_emo_rescuer_enabling a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Rescuer Enabling" ;
+    uckb:cardId "corp_emo_rescuer_enabling"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Pattern where solving other's problem for them is reinforcing dependency rather than building capability. CONTRADICTS Winner's Triangle Caring."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+# ── DomainProtocol nodes ─────────────────────────────────────
+
+uckb:corp_proto_sbi a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "SBI Feedback Protocol" ;
+    uckb:cardId "corp_proto_sbi"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "Center for Creative Leadership Situation-Behavior-Impact framework: 3-step structured feedback delivery protocol ensuring behavioral specificity and clear impact articulation."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:sourceIds "CCL_SBI; ScottRadicalCandor2017"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_proto_nvc a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Nonviolent Communication Protocol" ;
+    uckb:cardId "corp_proto_nvc"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "Marshall Rosenberg's 4-component empathic communication protocol: Observation, Feeling, Need, Request. Prevents evaluation, blame, and demands."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:sourceIds "Rosenberg2003NVC"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:corp_proto_radical_candor a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Radical Candor Protocol" ;
+    uckb:cardId "corp_proto_radical_candor"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "Kim Scott's Radical Candor framework: 4-quadrant model of feedback styles anchored by Care Personally x Challenge Directly dimensions. Target state: top-right quadrant."^^xsd:string ;
+    uckb:domain "Corporate & Engineering"^^xsd:string ;
+    uckb:sourceIds "ScottRadicalCandor2017"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .

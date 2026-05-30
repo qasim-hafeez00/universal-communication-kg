@@ -1,0 +1,1031 @@
+[
+  {
+    "@id": "https://uckb.io/ontology#valueType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "value data type"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#slot_sales_emotional_state",
+    "@type": [
+      "https://uckb.io/ontology#DomainSlot",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Sales / caller_emotional_state"
+      }
+    ],
+    "https://uckb.io/ontology#filled": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "slot_sales_emotional_state"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Sales"
+      }
+    ],
+    "https://uckb.io/ontology#slotName": [
+      {
+        "@value": "caller_emotional_state"
+      }
+    ],
+    "https://uckb.io/ontology#validValues": [
+      {
+        "@value": "curious|skeptical|interested|resistant|convinced"
+      }
+    ],
+    "https://uckb.io/ontology#valueType": [
+      {
+        "@value": "string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#bdi_crisis",
+    "@type": [
+      "https://uckb.io/ontology#BDIState",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "BDI Template — Crisis Dispatch"
+      }
+    ],
+    "https://uckb.io/ontology#beliefTemplate": [
+      {
+        "@value": "caller_emotional_state, location_slot_status, compliance_level, current_protocol_step"
+      }
+    ],
+    "https://uckb.io/ontology#desireTemplate": [
+      {
+        "@value": "caller_reaches_calm_cooperative_state_with_location_confirmed"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "bdi_crisis"
+      }
+    ],
+    "https://uckb.io/ontology#intentionTemplate": [
+      {
+        "@value": "execute_next_BCSM_step_given_current_belief_state"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Crisis Dispatch"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#slot_clinical_consent",
+    "@type": [
+      "https://uckb.io/ontology#DomainSlot",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Clinical / informed_consent"
+      }
+    ],
+    "https://uckb.io/ontology#filled": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "slot_clinical_consent"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Clinical"
+      }
+    ],
+    "https://uckb.io/ontology#slotName": [
+      {
+        "@value": "informed_consent"
+      }
+    ],
+    "https://uckb.io/ontology#validValues": [
+      {
+        "@value": "true|false|pending"
+      }
+    ],
+    "https://uckb.io/ontology#valueType": [
+      {
+        "@value": "boolean"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#slot_dispatch_emotional_state",
+    "@type": [
+      "https://uckb.io/ontology#DomainSlot",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Crisis Dispatch / caller_emotional_state"
+      }
+    ],
+    "https://uckb.io/ontology#filled": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "slot_dispatch_emotional_state"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Crisis Dispatch"
+      }
+    ],
+    "https://uckb.io/ontology#slotName": [
+      {
+        "@value": "caller_emotional_state"
+      }
+    ],
+    "https://uckb.io/ontology#validValues": [
+      {
+        "@value": "calm|anxious|panic|dissociated|hostile|grief"
+      }
+    ],
+    "https://uckb.io/ontology#valueType": [
+      {
+        "@value": "string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#slotDomain",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "domain this slot belongs to"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#slot_sales_objection",
+    "@type": [
+      "https://uckb.io/ontology#DomainSlot",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Sales / active_objection"
+      }
+    ],
+    "https://uckb.io/ontology#filled": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "slot_sales_objection"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Sales"
+      }
+    ],
+    "https://uckb.io/ontology#slotName": [
+      {
+        "@value": "active_objection"
+      }
+    ],
+    "https://uckb.io/ontology#validValues": [
+      {
+        "@value": "price|timing|authority|need|trust|none"
+      }
+    ],
+    "https://uckb.io/ontology#valueType": [
+      {
+        "@value": "string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#slot_clinical_emotional_state",
+    "@type": [
+      "https://uckb.io/ontology#DomainSlot",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Clinical / caller_emotional_state"
+      }
+    ],
+    "https://uckb.io/ontology#filled": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "slot_clinical_emotional_state"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Clinical"
+      }
+    ],
+    "https://uckb.io/ontology#slotName": [
+      {
+        "@value": "caller_emotional_state"
+      }
+    ],
+    "https://uckb.io/ontology#validValues": [
+      {
+        "@value": "calm|anxious|denial|grief|anger|acceptance"
+      }
+    ],
+    "https://uckb.io/ontology#valueType": [
+      {
+        "@value": "string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#intentionTemplate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "BDI intention template"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#slotName",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "slot name"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#slot_clinical_compliance",
+    "@type": [
+      "https://uckb.io/ontology#DomainSlot",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Clinical / compliance_level"
+      }
+    ],
+    "https://uckb.io/ontology#filled": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "slot_clinical_compliance"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Clinical"
+      }
+    ],
+    "https://uckb.io/ontology#slotName": [
+      {
+        "@value": "compliance_level"
+      }
+    ],
+    "https://uckb.io/ontology#validValues": [
+      {
+        "@value": "cooperative|resistant|ambivalent|dissociated"
+      }
+    ],
+    "https://uckb.io/ontology#valueType": [
+      {
+        "@value": "string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#bdi_sales",
+    "@type": [
+      "https://uckb.io/ontology#BDIState",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "BDI Template — Sales"
+      }
+    ],
+    "https://uckb.io/ontology#beliefTemplate": [
+      {
+        "@value": "buyer_stage, active_objection, emotional_state, compliance_level"
+      }
+    ],
+    "https://uckb.io/ontology#desireTemplate": [
+      {
+        "@value": "buyer_reaches_conviction_with_objections_resolved"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "bdi_sales"
+      }
+    ],
+    "https://uckb.io/ontology#intentionTemplate": [
+      {
+        "@value": "execute_next_SPIN_step_matching_buyer_stage"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Sales"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#slot_dispatch_protocol_step",
+    "@type": [
+      "https://uckb.io/ontology#DomainSlot",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Crisis Dispatch / current_protocol_step"
+      }
+    ],
+    "https://uckb.io/ontology#filled": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "slot_dispatch_protocol_step"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Crisis Dispatch"
+      }
+    ],
+    "https://uckb.io/ontology#slotName": [
+      {
+        "@value": "current_protocol_step"
+      }
+    ],
+    "https://uckb.io/ontology#validValues": [
+      {
+        "@value": "BCSM_1_Contact|BCSM_2_Empathy|BCSM_3_Rapport|BCSM_4_Influence|BCSM_5_Change"
+      }
+    ],
+    "https://uckb.io/ontology#valueType": [
+      {
+        "@value": "string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#filled",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "whether slot is currently filled"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#DialogueState",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://uckb.io/ontology#DSTSchemaOntology"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Dialogue State"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#slot_sales_compliance",
+    "@type": [
+      "https://uckb.io/ontology#DomainSlot",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Sales / compliance_level"
+      }
+    ],
+    "https://uckb.io/ontology#filled": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "slot_sales_compliance"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Sales"
+      }
+    ],
+    "https://uckb.io/ontology#slotName": [
+      {
+        "@value": "compliance_level"
+      }
+    ],
+    "https://uckb.io/ontology#validValues": [
+      {
+        "@value": "cooperative|resistant|ambivalent"
+      }
+    ],
+    "https://uckb.io/ontology#valueType": [
+      {
+        "@value": "string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#slot_sales_protocol_step",
+    "@type": [
+      "https://uckb.io/ontology#DomainSlot",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Sales / current_protocol_step"
+      }
+    ],
+    "https://uckb.io/ontology#filled": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "slot_sales_protocol_step"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Sales"
+      }
+    ],
+    "https://uckb.io/ontology#slotName": [
+      {
+        "@value": "current_protocol_step"
+      }
+    ],
+    "https://uckb.io/ontology#validValues": [
+      {
+        "@value": "SPIN_Situation|SPIN_Problem|SPIN_Implication|SPIN_NeedPayoff"
+      }
+    ],
+    "https://uckb.io/ontology#valueType": [
+      {
+        "@value": "string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#DSTSchemaOntology",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "OWL schema for Dialogue State Tracking (DST) slot definitions and Belief-Desire-Intention (BDI) agent reasoning templates."
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      {
+        "@language": "en",
+        "@value": "UCKB Phase 5: DST & BDI Schema"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "UCKB Dialogue State Tracking Schema"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#beliefTemplate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "BDI belief template"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#slot_dispatch_emergency_type",
+    "@type": [
+      "https://uckb.io/ontology#DomainSlot",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Crisis Dispatch / emergency_type"
+      }
+    ],
+    "https://uckb.io/ontology#filled": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "slot_dispatch_emergency_type"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Crisis Dispatch"
+      }
+    ],
+    "https://uckb.io/ontology#slotName": [
+      {
+        "@value": "emergency_type"
+      }
+    ],
+    "https://uckb.io/ontology#validValues": [
+      {
+        "@value": "medical|fire|violent_crime|mental_health|traffic|other"
+      }
+    ],
+    "https://uckb.io/ontology#valueType": [
+      {
+        "@value": "string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#validValues",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "pipe-separated valid values"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#bdi_clinical",
+    "@type": [
+      "https://uckb.io/ontology#BDIState",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "BDI Template — Clinical"
+      }
+    ],
+    "https://uckb.io/ontology#beliefTemplate": [
+      {
+        "@value": "patient_concern, informed_consent_status, emotional_state, current_SPIKES_step"
+      }
+    ],
+    "https://uckb.io/ontology#desireTemplate": [
+      {
+        "@value": "patient_understands_news_and_consents_to_next_step"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "bdi_clinical"
+      }
+    ],
+    "https://uckb.io/ontology#intentionTemplate": [
+      {
+        "@value": "execute_next_SPIKES_step_with_empathy_prerequisite_satisfied"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Clinical"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#hasSlot",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology#DialogueState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has slot"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://uckb.io/ontology#DomainSlot"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#BDIState",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://uckb.io/ontology#DSTSchemaOntology"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "BDI State Template"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#slot_dispatch_location",
+    "@type": [
+      "https://uckb.io/ontology#DomainSlot",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Crisis Dispatch / location"
+      }
+    ],
+    "https://uckb.io/ontology#filled": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "slot_dispatch_location"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Crisis Dispatch"
+      }
+    ],
+    "https://uckb.io/ontology#slotName": [
+      {
+        "@value": "location"
+      }
+    ],
+    "https://uckb.io/ontology#validValues": [
+      {
+        "@value": "street_address|gps_coords|landmark|unknown"
+      }
+    ],
+    "https://uckb.io/ontology#valueType": [
+      {
+        "@value": "string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#hasBDITemplate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology#DialogueState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has BDI template"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://uckb.io/ontology#BDIState"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#slot_clinical_protocol_step",
+    "@type": [
+      "https://uckb.io/ontology#DomainSlot",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Clinical / current_protocol_step"
+      }
+    ],
+    "https://uckb.io/ontology#filled": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "slot_clinical_protocol_step"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Clinical"
+      }
+    ],
+    "https://uckb.io/ontology#slotName": [
+      {
+        "@value": "current_protocol_step"
+      }
+    ],
+    "https://uckb.io/ontology#validValues": [
+      {
+        "@value": "SPIKES_S|SPIKES_P|SPIKES_I|SPIKES_K|SPIKES_E|SPIKES_S2"
+      }
+    ],
+    "https://uckb.io/ontology#valueType": [
+      {
+        "@value": "string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#DomainSlot",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://uckb.io/ontology#DSTSchemaOntology"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Domain Slot"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#slot_sales_buyer_stage",
+    "@type": [
+      "https://uckb.io/ontology#DomainSlot",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Sales / buyer_stage"
+      }
+    ],
+    "https://uckb.io/ontology#filled": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "slot_sales_buyer_stage"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Sales"
+      }
+    ],
+    "https://uckb.io/ontology#slotName": [
+      {
+        "@value": "buyer_stage"
+      }
+    ],
+    "https://uckb.io/ontology#validValues": [
+      {
+        "@value": "awareness|interest|evaluation|decision|purchase"
+      }
+    ],
+    "https://uckb.io/ontology#valueType": [
+      {
+        "@value": "string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#desireTemplate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "BDI desire template"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#slot_clinical_patient_concern",
+    "@type": [
+      "https://uckb.io/ontology#DomainSlot",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Clinical / patient_concern"
+      }
+    ],
+    "https://uckb.io/ontology#filled": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "slot_clinical_patient_concern"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Clinical"
+      }
+    ],
+    "https://uckb.io/ontology#slotName": [
+      {
+        "@value": "patient_concern"
+      }
+    ],
+    "https://uckb.io/ontology#validValues": [
+      {
+        "@value": "diagnosis_news|treatment_decision|prognosis|pain_management|end_of_life|other"
+      }
+    ],
+    "https://uckb.io/ontology#valueType": [
+      {
+        "@value": "string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#slot_dispatch_compliance",
+    "@type": [
+      "https://uckb.io/ontology#DomainSlot",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Crisis Dispatch / compliance_level"
+      }
+    ],
+    "https://uckb.io/ontology#filled": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "slot_dispatch_compliance"
+      }
+    ],
+    "https://uckb.io/ontology#slotDomain": [
+      {
+        "@value": "Crisis Dispatch"
+      }
+    ],
+    "https://uckb.io/ontology#slotName": [
+      {
+        "@value": "compliance_level"
+      }
+    ],
+    "https://uckb.io/ontology#validValues": [
+      {
+        "@value": "cooperative|resistant|dissociated"
+      }
+    ],
+    "https://uckb.io/ontology#valueType": [
+      {
+        "@value": "string"
+      }
+    ]
+  }
+]

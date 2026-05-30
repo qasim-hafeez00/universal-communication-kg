@@ -1,0 +1,163 @@
+@prefix cc: <https://uckb.io/ontology/crosscultural#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cc:BspAggressive a owl:NamedIndividual,
+        cc:BehavioralStyleProfile ;
+    rdfs:label "Aggressive Profile" ;
+    cc:agentAdaptation "Deploy firm Adult boundaries; refuse to match aggression; redirect to objective data; mirror Critical Parent with calm Adult state" ;
+    cc:contraindicated "emotional_appeals, capitulation, counter_aggression" ;
+    cc:createdInPhase 7 ;
+    cc:detectionSignals "accusatory you-statements, interruption pattern, volume spike, Critical Parent Marker" ;
+    cc:preferredEvidence "factual" ;
+    cc:primaryStyle "Aggressive" .
+
+cc:BspAnalytical a owl:NamedIndividual,
+        cc:BehavioralStyleProfile ;
+    rdfs:label "Analytical Profile" ;
+    cc:agentAdaptation "Disable emotional framing; lead with data, metrics, verifiable evidence; step-by-step logical sequencing" ;
+    cc:contraindicated "emotional_appeals, ambiguous_framing, anecdotal_evidence" ;
+    cc:createdInPhase 7 ;
+    cc:detectionSignals "data requests, precision language, challenge to evidence, absolutist_language" ;
+    cc:preferredEvidence "factual" ;
+    cc:primaryStyle "Analytical" .
+
+cc:BspAssertive a owl:NamedIndividual,
+        cc:BehavioralStyleProfile ;
+    rdfs:label "Assertive Profile" ;
+    cc:agentAdaptation "Match directness with mutual respect; collaborative problem-solving; affirm interests before positions" ;
+    cc:contraindicated "emotional_manipulation, avoidance" ;
+    cc:createdInPhase 7 ;
+    cc:detectionSignals "direct statements, I-statements, clear boundary language" ;
+    cc:preferredEvidence "mixed" ;
+    cc:primaryStyle "Assertive" .
+
+cc:BspCharismatic a owl:NamedIndividual,
+        cc:BehavioralStyleProfile ;
+    rdfs:label "Charismatic Profile" ;
+    cc:agentAdaptation "Align with high-level vision; aspirational framing; acknowledge authority with substantive content; leverage social proof" ;
+    cc:contraindicated "dry_technical_detail, legalistic_framing" ;
+    cc:createdInPhase 7 ;
+    cc:detectionSignals "vision language, authority claims, social proof references, high energy prosodic" ;
+    cc:preferredEvidence "mixed" ;
+    cc:primaryStyle "Charismatic" .
+
+cc:BspDiplomatic a owl:NamedIndividual,
+        cc:BehavioralStyleProfile ;
+    rdfs:label "Diplomatic Profile" ;
+    cc:agentAdaptation "Synthesize multiple stakeholder positions; integrative summaries; consensus framing; never take sides publicly" ;
+    cc:contraindicated "blunt_confrontation, winner_loser_framing" ;
+    cc:createdInPhase 7 ;
+    cc:detectionSignals "measured tone, both-sides language, consensus seeking" ;
+    cc:preferredEvidence "mixed" ;
+    cc:primaryStyle "Diplomatic" .
+
+cc:BspPassive a owl:NamedIndividual,
+        cc:BehavioralStyleProfile ;
+    rdfs:label "Passive Profile" ;
+    cc:agentAdaptation "Proactively elicit opinions; create psychological safety; use open questions not closed; do not press for immediate decisions" ;
+    cc:contraindicated "pressure_tactics, confrontation, direct_challenge" ;
+    cc:createdInPhase 7 ;
+    cc:detectionSignals "self-minimising language, hedging, apology markers, Adapted Child Marker" ;
+    cc:preferredEvidence "emotional" ;
+    cc:primaryStyle "Passive" .
+
+cc:BspPassiveAggressive a owl:NamedIndividual,
+        cc:BehavioralStyleProfile ;
+    rdfs:label "Passive-Aggressive Profile" ;
+    cc:agentAdaptation "Ignore sarcasm surface; address literal meaning; force explicit clarity; do not mirror covert hostility" ;
+    cc:contraindicated "emotional_framing, indirect_implication" ;
+    cc:createdInPhase 7 ;
+    cc:detectionSignals "sarcasm markers, backhanded compliments, blame_language, ambivalence" ;
+    cc:preferredEvidence "factual" ;
+    cc:primaryStyle "PassiveAggressive" .
+
+cc:adaptsFor a owl:ObjectProperty ;
+    rdfs:comment "Links a Technique to the CulturalContext it is preferred in" .
+
+cc:agentAdaptation a owl:DatatypeProperty ;
+    rdfs:comment "Agent response strategy when this style is detected" ;
+    rdfs:range xsd:string .
+
+cc:agentBehavior a owl:DatatypeProperty ;
+    rdfs:comment "Prescribed agent behavior when rule activates" ;
+    rdfs:range xsd:string .
+
+cc:appliesRule a owl:ObjectProperty ;
+    rdfs:comment "Links CulturalProfile/CulturalContext to a CulturalAdaptationRule" .
+
+cc:faceSaving a owl:DatatypeProperty ;
+    rdfs:comment "Whether face-saving is a primary cultural driver" ;
+    rdfs:range xsd:boolean .
+
+cc:hallContextLevel a owl:DatatypeProperty ;
+    rdfs:comment "Hall's context level: 'high' or 'low'" ;
+    rdfs:range xsd:string .
+
+cc:hasDimension a owl:ObjectProperty ;
+    rdfs:comment "Links CulturalProfile to a CulturalContext dimensional descriptor" .
+
+cc:hofstedeIDV a owl:DatatypeProperty ;
+    rdfs:comment "Hofstede Individualism score (0-100)" ;
+    rdfs:range xsd:integer .
+
+cc:hofstedeIVR a owl:DatatypeProperty ;
+    rdfs:comment "Hofstede Indulgence score (0-100)" ;
+    rdfs:range xsd:integer .
+
+cc:hofstedeLTO a owl:DatatypeProperty ;
+    rdfs:comment "Hofstede Long-Term Orientation (0-100)" ;
+    rdfs:range xsd:integer .
+
+cc:hofstedeMAS a owl:DatatypeProperty ;
+    rdfs:comment "Hofstede Masculinity score (0-100)" ;
+    rdfs:range xsd:integer .
+
+cc:hofstedePDI a owl:DatatypeProperty ;
+    rdfs:comment "Hofstede Power Distance Index (0-100)" ;
+    rdfs:range xsd:integer .
+
+cc:hofstedeUAI a owl:DatatypeProperty ;
+    rdfs:comment "Hofstede Uncertainty Avoidance Index (0-100)" ;
+    rdfs:range xsd:integer .
+
+cc:indirectCommunication a owl:DatatypeProperty ;
+    rdfs:comment "Whether indirect communication is the norm" ;
+    rdfs:range xsd:boolean .
+
+cc:lewisModel a owl:DatatypeProperty ;
+    rdfs:comment "Lewis model type: linear-active|multi-active|reactive" ;
+    rdfs:range xsd:string .
+
+cc:preferredEvidence a owl:DatatypeProperty ;
+    rdfs:comment "emotional | factual | mixed" ;
+    rdfs:range xsd:string .
+
+cc:prefersStyle a owl:ObjectProperty ;
+    rdfs:comment "CulturalContext dimensional node predicts this CommunicationStyle" .
+
+cc:primaryStyle a owl:DatatypeProperty ;
+    rdfs:comment "CommunicationStyle name this profile represents" ;
+    rdfs:range xsd:string .
+
+cc:recalibrateIn a owl:ObjectProperty ;
+    rdfs:comment "Nonverbal signal meaning must be reinterpreted in this CulturalContext" .
+
+cc:styleSuggests a owl:ObjectProperty ;
+    rdfs:comment "Links BehavioralStyleProfile to a recommended Technique" .
+
+cc:timeOrientation a owl:DatatypeProperty ;
+    rdfs:comment "monochronic or polychronic" ;
+    rdfs:range xsd:string .
+
+cc:trigger a owl:DatatypeProperty ;
+    rdfs:comment "Cultural dimension(s) or event that activates this rule" ;
+    rdfs:range xsd:string .
+
+cc:BehavioralStyleProfile a owl:Class ;
+    rdfs:label "Behavioral Style Profile" ;
+    rdfs:comment "An agent response archetype that maps a detected communication style to prescribed interaction strategies and technique sets." ;
+    rdfs:subClassOf uckb:PsychologicalConstruct .
+

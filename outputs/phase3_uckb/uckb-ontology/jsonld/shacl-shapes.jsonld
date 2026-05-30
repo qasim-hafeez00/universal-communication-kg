@@ -1,0 +1,448 @@
+[
+  {
+    "@id": "https://uckb.io/ontology#PS_whenToUse_1",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "whenToUse is mandatory on every CommunicationTechnique."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://uckb.io/ontology#whenToUse"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PS_ES_arousal",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "EmotionalState must have arousal (high/medium/low)."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://uckb.io/ontology#arousal"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PS_ES_label",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "EmotionalState must have rdfs:label."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#EmotionalStateShape",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "https://uckb.io/ontology#PS_ES_arousal"
+      },
+      {
+        "@id": "https://uckb.io/ontology#PS_ES_label"
+      },
+      {
+        "@id": "https://uckb.io/ontology#PS_ES_valence"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://uckb.io/ontology#EmotionalState"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PS_sourceIds_1",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "sourceIds is mandatory — every technique must have provenance."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://uckb.io/ontology#sourceIds"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#TechniqueShape",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "UCKB CommunicationTechnique mandatory property shape"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "https://uckb.io/ontology#PS_cardId_1"
+      },
+      {
+        "@id": "https://uckb.io/ontology#PS_cognitiveLoadProfile_1"
+      },
+      {
+        "@id": "https://uckb.io/ontology#PS_domain_1"
+      },
+      {
+        "@id": "https://uckb.io/ontology#PS_label_1"
+      },
+      {
+        "@id": "https://uckb.io/ontology#PS_sourceIds_1"
+      },
+      {
+        "@id": "https://uckb.io/ontology#PS_steps_1"
+      },
+      {
+        "@id": "https://uckb.io/ontology#PS_triggerSignals_1"
+      },
+      {
+        "@id": "https://uckb.io/ontology#PS_whenNotToUse_1"
+      },
+      {
+        "@id": "https://uckb.io/ontology#PS_whenToUse_1"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://uckb.io/ontology#CommunicationTechnique"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#DomainProtocolShape",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "https://uckb.io/ontology#PS_DomainProtocol_label"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://uckb.io/ontology#DomainProtocol"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PS_cognitiveLoadProfile_1",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "cognitiveLoadProfile is mandatory on every CommunicationTechnique."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://uckb.io/ontology#cognitiveLoadProfile"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PS_domain_1",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "domain must be specified for every CommunicationTechnique."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://uckb.io/ontology#domain"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PS_label_1",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "Every CommunicationTechnique must have exactly one rdfs:label."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PS_triggerSignals_1",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "CommunicationTechnique should have at least one triggerSignals entry."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://uckb.io/ontology#triggerSignals"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Warning"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PS_ES_valence",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "EmotionalState must have valence (positive/negative/neutral)."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://uckb.io/ontology#valence"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PS_steps_1",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "steps is mandatory on every CommunicationTechnique."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://uckb.io/ontology#steps"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PS_DomainProtocol_label",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "Every DomainProtocol must have rdfs:label."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PS_cardId_1",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "Every CommunicationTechnique must have exactly one cardId."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://uckb.io/ontology#cardId"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PS_whenNotToUse_1",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#message": [
+      {
+        "@value": "whenNotToUse is mandatory on every CommunicationTechnique."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://uckb.io/ontology#whenNotToUse"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#severity": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Violation"
+      }
+    ]
+  }
+]

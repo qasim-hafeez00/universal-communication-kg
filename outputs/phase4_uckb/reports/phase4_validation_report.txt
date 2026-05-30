@@ -1,0 +1,98 @@
+UCKB Phase 4 — Validation Report
+Generated: 2026-05-30 04:54:13
+======================================================================
+
+ACCEPTANCE CRITERIA
+----------------------------------------------------------------------
+  AC-1  [PASS]  150 content nodes across domain labels
+            total=504 (Technique=330, SignalMarker=79, DomainProtocol=48, EmotionalState=34, CommunicationStyle=13)
+
+  AC-2  [PASS]  Domain distribution: Crisis=60, Sales=45, Clinical=45
+            crisis=72, sales=60, clinical=66
+
+  AC-3  [PASS]  All 11 locked relationship types present
+            total_relationships=3337, missing_edge_types=none
+
+  AC-4  [PASS]  Zero orphan Technique nodes
+            orphan_count=0
+
+  AC-5  [PASS]  All uniqueness constraints ONLINE
+            constraints_present=10 (need ≥7)
+
+  AC-6  [PASS]  All performance indices ONLINE
+            indexes_online=21 (need ≥8)
+
+  AC-7  [PASS]  Zero Phase 1 doctrine violations
+            doctrine_violations=0
+
+  AC-8  [PASS]  Track A Resources linked to Track B nodes
+            resource_nodes=150, linked_to_track_b=150
+
+  AC-9  [PASS]  Q12 Dispatch/Panic query returns ≥3 results
+            dispatch_panic_results=210 (need ≥3)
+
+  AC-10  [PASS]  Cognitive complexity tags applied
+            tagged=198/330 (60.0%)
+
+======================================================================
+  OVERALL: ALL PASS
+======================================================================
+
+DIAGNOSTICS
+----------------------------------------------------------------------
+
+Node counts by label:
+  Resource                         393
+  Technique                        330
+  NamedIndividual                  244
+  CommunicationTechnique           107
+  SignalMarker                      79
+  DomainProtocol                    48
+  EmotionalState                    34
+  DatatypeProperty                  22
+  CulturalContext                   19
+  Class                             13
+  CommunicationStyle                13
+  ObjectProperty                    11
+  PsychologicalModel                11
+  _GraphConfig                       1
+  _NsPrefDef                         1
+  Ontology                           1
+
+Relationship counts by type:
+  TRIGGERS                         664
+  DOMAIN_VARIANT_OF                565
+  type                             516
+  ESCALATES_TO                     420
+  REQUIRES                         347
+  CONTRAINDICATED_WHEN             253
+  ENHANCES                         178
+  SAME_AS                          150
+  PRECEDES                         112
+  TRIGGERED_BY                      34
+  range                             33
+  FOLLOWS                           30
+  domain                            11
+  CULTURAL_VARIANT_OF                9
+  CONTRADICTS                        8
+  RESOLVES                           7
+
+Evidence level distribution:
+  high          66
+  medium        33
+
+Domain distribution:
+  None                                       132
+  Crisis Dispatch / Emergency                 72
+  Clinical / Medical                          66
+  Sales & Negotiation                         60
+
+Safety annotation summary:
+  Total techniques:            330
+  Influence-tagged:            46
+  Empathy prerequisite-tagged: 16
+  Safety-critical domain:      138
+  Cognitive load tagged:       198
+  CAT direction tagged:        22
+
+======================================================================

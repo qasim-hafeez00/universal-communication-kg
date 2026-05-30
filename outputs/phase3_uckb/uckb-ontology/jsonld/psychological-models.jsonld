@@ -1,0 +1,189 @@
+[
+  {
+    "@id": "https://uckb.io/ontology#KarpmanDramaTriangle",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#PsychologicalModel"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Three dysfunctional roles — Victim, Persecutor, Rescuer — that agents must recognise and redirect."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Karpman Drama Triangle"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#SocialPenetrationTheory",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#PsychologicalModel"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Altman & Taylor: self-disclosure depth and breadth as trust-building signals."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Social Penetration Theory"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#MotivationalInterviewing_Theory",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#PsychologicalModel"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Rollnick & Miller: resolving ambivalence by eliciting change talk and rolling with resistance."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Motivational Interviewing Theory"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#AttachmentTheory",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#PsychologicalModel"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Bowlby/Ainsworth: secure, anxious, avoidant, and disorganised attachment styles affecting rapport strategies."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Attachment Theory"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#RelevanceTheory",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#PsychologicalModel"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Sperber & Wilson: listeners minimise processing effort while maximising cognitive effects. Implemented as real-time weight modifier on graph traversal paths."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Relevance Theory"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#BDI_Model",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#PsychologicalModel"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Agent reasoning framework: Belief (current knowledge), Desire (target state), Intention (committed next action)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Belief-Desire-Intention Model"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#TransactionalAnalysis",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#PsychologicalModel"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Eric Berne's ego-state model (Parent/Adult/Child) governing agent routing via ego-state detection."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Transactional Analysis"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#WinnersTriangle",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#PsychologicalModel"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Choy's replacement framework: Vulnerable (from Victim), Assertive (from Persecutor), Caring (from Rescuer)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Winner's Triangle"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#CognitiveLoadTheory",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#PsychologicalModel"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Sweller: intrinsic, extraneous, germane load — governs Relevance Theory routing in UCKB."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Cognitive Load Theory"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#CommunicationAccommodationTheory",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#PsychologicalModel"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Giles CAT: convergence (rapport-building) and divergence (authority/identity assertion) dynamics."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Communication Accommodation Theory"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PolyVagalTheory",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#PsychologicalModel"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Porges: autonomic nervous system states (ventral vagal, sympathetic, dorsal vagal) mapped to de-escalation protocols."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Polyvagal Theory"
+      }
+    ]
+  }
+]

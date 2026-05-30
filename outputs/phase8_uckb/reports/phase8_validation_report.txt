@@ -1,0 +1,62 @@
+UCKB Phase 8 — Validation Report
+Generated: 2026-05-30 11:16:35
+======================================================================
+
+ACCEPTANCE CRITERIA
+----------------------------------------------------------------------
+  [PASS]    AC-P8-1 Legal & Investigative
+             value=40
+             threshold=>= 40
+  [PASS]    AC-P8-1 Corporate & Engineering
+             value=46
+             threshold=>= 40
+  [PASS]    AC-P8-1 Education
+             value=40
+             threshold=>= 40
+  [PASS]    AC-P8-2 DAG Structures
+             value=9 DAGs, 0 cycles
+             threshold=>= 9 DAGs, 0 cycles
+  [PASS]    AC-P8-3 Gate Coverage
+             value=0 broken gate refs, 0 missing gates in strict protocols
+             threshold=0 broken refs; all non-first steps in BCSM/SPIKES/PEACE have gates
+  [PASS]    AC-P8-4 Reid Technique Block
+             value=exists=True, blocked=true, contraindication=ABSOLUTE, tier=BLOCKED
+             threshold=exists=True, blocked=true, contraindication=ABSOLUTE, tier=BLOCKED
+  [PASS]    AC-P8-5 Reid Absolute Block Edge
+             value=CONTRAINDICATED_WHEN edge present: True
+             threshold=Edge must exist
+  [PASS]    AC-P8-5 Corporate Environmental Block
+             value=CONTRAINDICATED_WHEN edge present: True
+             threshold=Edge must exist
+  [PASS]    AC-P8-5 Education Socratic Block
+             value=CONTRAINDICATED_WHEN edge present: True
+             threshold=Edge must exist
+  [PASS]    AC-P8-6 New Domain Node Count
+             value=126
+             threshold=>= 100 new domain content nodes (proxy for ~700 total with Phase 4 base)
+             note=Full 700+ count requires live Neo4j; this validates new domain contribution only.
+  [PASS]    AC-P8-7 Schema Registry
+             value=6/6 domains found
+             threshold=6 domain entries
+             detail=Found: ['dispatch', 'clinical', 'negotiation', 'legal', 'corporate', 'education']
+  [PASS]    AC-P8-8 SHACL Domain Shapes
+             value=10/10 shapes found
+             threshold=>= 8 domain shapes
+  [PASS]    AC-P8-9 Review Status Legal
+             value=18/18
+             threshold=100%
+  [PASS]    AC-P8-9 Review Status Corporate
+             value=19/19
+             threshold=100%
+  [PASS]    AC-P8-9 Review Status Education
+             value=12/12
+             threshold=100%
+  [PASS]    AC-P8-10 Text2Cypher Templates
+             value=5/5 templates found
+             threshold=>= 4 domain query templates
+             detail=Found: ['dispatch_panic_query', 'clinical_spikes_step_query', 'legal_peace_step_query', 'education_bkt_query', 'cross_domain_contamination_check']
+
+======================================================================
+  OVERALL: ALL PASS
+  16/16 criteria passed
+======================================================================

@@ -1,0 +1,99 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+
+uckb:CollectivismHigh a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "High Collectivism" ;
+    rdfs:comment "In-group harmony, face-saving, and indirect communication preferred." .
+
+uckb:FemininityHigh a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "High Femininity" ;
+    rdfs:comment "Cooperation, modesty, caring, and quality of life shape communication register." .
+
+uckb:HighContext a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "High Context" ;
+    rdfs:comment "Meaning conveyed through implicit cues, relationship history, and nonverbal signals." .
+
+uckb:HighProxemics a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "High Proxemics" ;
+    rdfs:comment "Close physical and conversational space is normal; distance signals rejection." .
+
+uckb:IndividualismHigh a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "High Individualism" ;
+    rdfs:comment "Personal goals, autonomy, and direct I-statements dominate communication." .
+
+uckb:LinearActive a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "Linear-Active" ;
+    rdfs:comment "Task-oriented, logical, direct; expects factual, structured communication." .
+
+uckb:LongTermOrientation a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "Long-Term Orientation" ;
+    rdfs:comment "Perseverance and relationship investment valued over immediate results." .
+
+uckb:LowContext a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "Low Context" ;
+    rdfs:comment "Meaning conveyed explicitly through words; directness expected." .
+
+uckb:LowProxemics a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "Low Proxemics" ;
+    rdfs:comment "Larger personal space norms; proximity may feel intrusive." .
+
+uckb:MasculinityHigh a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "High Masculinity" ;
+    rdfs:comment "Achievement, assertiveness, and material success dominate communication goals." .
+
+uckb:MonochronicTime a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "Monochronic Time" ;
+    rdfs:comment "Linear, schedule-driven; interruption is disrespectful." .
+
+uckb:MultiActive a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "Multi-Active" ;
+    rdfs:comment "Relationship-oriented, emotional, spontaneous; rapport before task." .
+
+uckb:PolychronicTime a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "Polychronic Time" ;
+    rdfs:comment "Parallel activities and relationship flow over rigid schedules." .
+
+uckb:PowerDistanceHigh a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "High Power Distance" ;
+    rdfs:comment "Hierarchical authority structures accepted; formal communication preferred." .
+
+uckb:PowerDistanceLow a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "Low Power Distance" ;
+    rdfs:comment "Flat authority structures; informal, egalitarian communication expected." .
+
+uckb:Reactive a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "Reactive" ;
+    rdfs:comment "Listens carefully before responding; values harmony, indirect communication, face-saving." .
+
+uckb:ShortTermOrientation a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "Short-Term Orientation" ;
+    rdfs:comment "Immediate results and face maintenance prioritised." .
+
+uckb:UncertaintyAvoidanceHigh a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "High Uncertainty Avoidance" ;
+    rdfs:comment "Preference for rules, formality, and explicit reassurance." .
+
+uckb:UncertaintyAvoidanceLow a owl:NamedIndividual,
+        uckb:CulturalContext ;
+    rdfs:label "Low Uncertainty Avoidance" ;
+    rdfs:comment "Tolerance for ambiguity; flexible, improvisational style accepted." .
+

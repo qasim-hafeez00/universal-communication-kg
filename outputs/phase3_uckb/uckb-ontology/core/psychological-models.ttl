@@ -1,0 +1,59 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+
+uckb:AttachmentTheory a owl:NamedIndividual,
+        uckb:PsychologicalModel ;
+    rdfs:label "Attachment Theory" ;
+    rdfs:comment "Bowlby/Ainsworth: secure, anxious, avoidant, and disorganised attachment styles affecting rapport strategies." .
+
+uckb:BDI_Model a owl:NamedIndividual,
+        uckb:PsychologicalModel ;
+    rdfs:label "Belief-Desire-Intention Model" ;
+    rdfs:comment "Agent reasoning framework: Belief (current knowledge), Desire (target state), Intention (committed next action)." .
+
+uckb:CognitiveLoadTheory a owl:NamedIndividual,
+        uckb:PsychologicalModel ;
+    rdfs:label "Cognitive Load Theory" ;
+    rdfs:comment "Sweller: intrinsic, extraneous, germane load — governs Relevance Theory routing in UCKB." .
+
+uckb:CommunicationAccommodationTheory a owl:NamedIndividual,
+        uckb:PsychologicalModel ;
+    rdfs:label "Communication Accommodation Theory" ;
+    rdfs:comment "Giles CAT: convergence (rapport-building) and divergence (authority/identity assertion) dynamics." .
+
+uckb:KarpmanDramaTriangle a owl:NamedIndividual,
+        uckb:PsychologicalModel ;
+    rdfs:label "Karpman Drama Triangle" ;
+    rdfs:comment "Three dysfunctional roles — Victim, Persecutor, Rescuer — that agents must recognise and redirect." .
+
+uckb:MotivationalInterviewing_Theory a owl:NamedIndividual,
+        uckb:PsychologicalModel ;
+    rdfs:label "Motivational Interviewing Theory" ;
+    rdfs:comment "Rollnick & Miller: resolving ambivalence by eliciting change talk and rolling with resistance." .
+
+uckb:PolyVagalTheory a owl:NamedIndividual,
+        uckb:PsychologicalModel ;
+    rdfs:label "Polyvagal Theory" ;
+    rdfs:comment "Porges: autonomic nervous system states (ventral vagal, sympathetic, dorsal vagal) mapped to de-escalation protocols." .
+
+uckb:RelevanceTheory a owl:NamedIndividual,
+        uckb:PsychologicalModel ;
+    rdfs:label "Relevance Theory" ;
+    rdfs:comment "Sperber & Wilson: listeners minimise processing effort while maximising cognitive effects. Implemented as real-time weight modifier on graph traversal paths." .
+
+uckb:SocialPenetrationTheory a owl:NamedIndividual,
+        uckb:PsychologicalModel ;
+    rdfs:label "Social Penetration Theory" ;
+    rdfs:comment "Altman & Taylor: self-disclosure depth and breadth as trust-building signals." .
+
+uckb:TransactionalAnalysis a owl:NamedIndividual,
+        uckb:PsychologicalModel ;
+    rdfs:label "Transactional Analysis" ;
+    rdfs:comment "Eric Berne's ego-state model (Parent/Adult/Child) governing agent routing via ego-state detection." .
+
+uckb:WinnersTriangle a owl:NamedIndividual,
+        uckb:PsychologicalModel ;
+    rdfs:label "Winner's Triangle" ;
+    rdfs:comment "Choy's replacement framework: Vulnerable (from Victim), Assertive (from Persecutor), Caring (from Rescuer)." .
+

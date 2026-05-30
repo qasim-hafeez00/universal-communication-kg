@@ -1,0 +1,108 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+uckb:DomainProtocolShape a sh:NodeShape ;
+    sh:property uckb:PS_DomainProtocol_label ;
+    sh:targetClass uckb:DomainProtocol .
+
+uckb:EmotionalStateShape a sh:NodeShape ;
+    sh:property uckb:PS_ES_arousal,
+        uckb:PS_ES_label,
+        uckb:PS_ES_valence ;
+    sh:targetClass uckb:EmotionalState .
+
+uckb:TechniqueShape a sh:NodeShape ;
+    rdfs:label "UCKB CommunicationTechnique mandatory property shape" ;
+    sh:property uckb:PS_cardId_1,
+        uckb:PS_cognitiveLoadProfile_1,
+        uckb:PS_domain_1,
+        uckb:PS_label_1,
+        uckb:PS_sourceIds_1,
+        uckb:PS_steps_1,
+        uckb:PS_triggerSignals_1,
+        uckb:PS_whenNotToUse_1,
+        uckb:PS_whenToUse_1 ;
+    sh:targetClass uckb:CommunicationTechnique .
+
+uckb:PS_DomainProtocol_label a sh:PropertyShape ;
+    sh:message "Every DomainProtocol must have rdfs:label." ;
+    sh:minCount 1 ;
+    sh:path rdfs:label ;
+    sh:severity sh:Violation .
+
+uckb:PS_ES_arousal a sh:PropertyShape ;
+    sh:message "EmotionalState must have arousal (high/medium/low)." ;
+    sh:minCount 1 ;
+    sh:path uckb:arousal ;
+    sh:severity sh:Violation .
+
+uckb:PS_ES_label a sh:PropertyShape ;
+    sh:message "EmotionalState must have rdfs:label." ;
+    sh:minCount 1 ;
+    sh:path rdfs:label ;
+    sh:severity sh:Violation .
+
+uckb:PS_ES_valence a sh:PropertyShape ;
+    sh:message "EmotionalState must have valence (positive/negative/neutral)." ;
+    sh:minCount 1 ;
+    sh:path uckb:valence ;
+    sh:severity sh:Violation .
+
+uckb:PS_cardId_1 a sh:PropertyShape ;
+    sh:maxCount 1 ;
+    sh:message "Every CommunicationTechnique must have exactly one cardId." ;
+    sh:minCount 1 ;
+    sh:path uckb:cardId ;
+    sh:severity sh:Violation .
+
+uckb:PS_cognitiveLoadProfile_1 a sh:PropertyShape ;
+    sh:message "cognitiveLoadProfile is mandatory on every CommunicationTechnique." ;
+    sh:minCount 1 ;
+    sh:path uckb:cognitiveLoadProfile ;
+    sh:severity sh:Violation .
+
+uckb:PS_domain_1 a sh:PropertyShape ;
+    sh:message "domain must be specified for every CommunicationTechnique." ;
+    sh:minCount 1 ;
+    sh:path uckb:domain ;
+    sh:severity sh:Violation .
+
+uckb:PS_label_1 a sh:PropertyShape ;
+    sh:maxCount 1 ;
+    sh:message "Every CommunicationTechnique must have exactly one rdfs:label." ;
+    sh:minCount 1 ;
+    sh:path rdfs:label ;
+    sh:severity sh:Violation .
+
+uckb:PS_sourceIds_1 a sh:PropertyShape ;
+    sh:message "sourceIds is mandatory — every technique must have provenance." ;
+    sh:minCount 1 ;
+    sh:path uckb:sourceIds ;
+    sh:severity sh:Violation .
+
+uckb:PS_steps_1 a sh:PropertyShape ;
+    sh:message "steps is mandatory on every CommunicationTechnique." ;
+    sh:minCount 1 ;
+    sh:path uckb:steps ;
+    sh:severity sh:Violation .
+
+uckb:PS_triggerSignals_1 a sh:PropertyShape ;
+    sh:message "CommunicationTechnique should have at least one triggerSignals entry." ;
+    sh:minCount 1 ;
+    sh:path uckb:triggerSignals ;
+    sh:severity sh:Warning .
+
+uckb:PS_whenNotToUse_1 a sh:PropertyShape ;
+    sh:message "whenNotToUse is mandatory on every CommunicationTechnique." ;
+    sh:minCount 1 ;
+    sh:path uckb:whenNotToUse ;
+    sh:severity sh:Violation .
+
+uckb:PS_whenToUse_1 a sh:PropertyShape ;
+    sh:message "whenToUse is mandatory on every CommunicationTechnique." ;
+    sh:minCount 1 ;
+    sh:path uckb:whenToUse ;
+    sh:severity sh:Violation .
+

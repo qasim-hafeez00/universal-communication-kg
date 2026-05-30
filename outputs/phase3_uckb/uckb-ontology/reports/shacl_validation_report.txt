@@ -1,0 +1,19 @@
+UCKB Phase 3 — SHACL Validation Report
+============================================================
+
+File : dispatch.ttl
+Status   : PASS
+Violations: 0  |  Warnings: 0
+
+File : negotiation.ttl
+Status   : PASS
+Violations: 0  |  Warnings: 0
+
+File : clinical.ttl
+Status   : PASS
+Violations: 0  |  Warnings: 0
+
+============================================================
+TOTAL VIOLATIONS : 0
+TOTAL WARNINGS   : 0
+OVERALL          : ALL PASS

@@ -1,0 +1,43 @@
+{
+  "id": "coachidl_socratic_dag",
+  "name": "CoachIDL Socratic Sequence",
+  "domain": "Education",
+  "description": "Education Socratic sequence: Opening, Probe, Challenge/Confirm.",
+  "steps": [
+    {
+      "id": "socratic_step_1",
+      "name": "Socratic Opening",
+      "stepNumber": 1,
+      "gate": null,
+      "bktGate": "p_know >= 0.3"
+    },
+    {
+      "id": "socratic_step_2",
+      "name": "Socratic Probe",
+      "stepNumber": 2,
+      "gate": "coachidl_gate_1"
+    },
+    {
+      "id": "socratic_step_3",
+      "name": "Socratic Challenge/Confirm",
+      "stepNumber": 3,
+      "gate": "coachidl_gate_2"
+    }
+  ],
+  "gates": [
+    {
+      "id": "coachidl_gate_1",
+      "condition": "partial_answer_produced OR engagement_signal"
+    },
+    {
+      "id": "coachidl_gate_2",
+      "condition": "reasoning_chain_visible",
+      "failurePath": "route_to_scaffold_tier_1"
+    }
+  ],
+  "techniques": {
+    "1": "edu_001_socratic_opening",
+    "2": "edu_002_socratic_probe",
+    "3": "edu_003_socratic_challenge"
+  }
+}

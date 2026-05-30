@@ -1,0 +1,27 @@
+{
+  "id": "challenger_dag",
+  "name": "Challenger Sale Protocol",
+  "domain": "Sales & Negotiation",
+  "description": "Dixon/Adamson: Teach, Tailor, Take Control.",
+  "steps": [
+    {
+      "id": "ch_step_1",
+      "name": "Teach",
+      "stepNumber": 1,
+      "gate": null
+    },
+    {
+      "id": "ch_step_2",
+      "name": "Tailor",
+      "stepNumber": 2,
+      "gate": null
+    },
+    {
+      "id": "ch_step_3",
+      "name": "Take Control",
+      "stepNumber": 3,
+      "gate": null
+    }
+  ],
+  "gates": []
+}

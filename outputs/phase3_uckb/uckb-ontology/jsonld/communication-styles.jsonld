@@ -1,0 +1,172 @@
+[
+  {
+    "@id": "https://uckb.io/ontology#PassiveAggressive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationStyle"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Indirect hostility; superficial compliance with covert resistance."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Passive-Aggressive"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Amiable",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationStyle"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Cooperative, empathic, consensus-seeking; avoids confrontation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Amiable"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Formal",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationStyle"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Protocol-bound, structured, distance-maintaining."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Formal"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Passive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationStyle"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Avoids conflict; own needs minimised; may build resentment over time."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Passive"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Analytical",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationStyle"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Data-driven, systematic, detail-oriented; requires evidence before commitment."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Analytical"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Expressive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationStyle"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Emotional, spontaneous, relationship-focused; high interpersonal energy."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Expressive"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Aggressive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationStyle"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Dominates, interrupts, and disregards others' boundaries."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Aggressive"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Informal",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationStyle"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Casual, rapport-centred, flexible register."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Informal"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Driver",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationStyle"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Results-oriented, decisive, direct; low tolerance for ambiguity or delay."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Driver"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Assertive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationStyle"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Direct, confident, and respectful; expresses needs and boundaries clearly."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Assertive"
+      }
+    ]
+  }
+]

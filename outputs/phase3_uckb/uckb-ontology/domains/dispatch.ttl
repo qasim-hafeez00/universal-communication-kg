@@ -1,0 +1,1811 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+uckb:crisis_dispatch_001_active_listening a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Active Listening" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Reflective_Listening,
+        uckb:SOLER,
+        uckb:Tactical_Empathy ;
+    uckb:ENHANCES uckb:Rapport ;
+    uckb:PRECEDES uckb:Empathic_Validation ;
+    uckb:cardId "crisis_dispatch_001_active_listening"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load preferred"^^xsd:string ;
+    uckb:contraindications "Do not use as delay when immediate evacuation or safety instruction is required."^^xsd:string ;
+    uckb:culturalNotes "Allow silence in high-context interactions; do not rush to fill respectful pauses."^^xsd:string ;
+    uckb:description "Full attentional processing of verbal and nonverbal signals with reflective feedback."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Feedback-Positive"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Tactical Empathy; SOLER; Reflective Listening"^^xsd:string ;
+    uckb:failureSignals "Caller repeats grievance; silence lengthens after direct question; contempt appears."^^xsd:string ;
+    uckb:name "Active Listening"^^xsd:string ;
+    uckb:requiredEdges "ENHANCES Rapport; PRECEDES Empathic Validation"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Attend; paraphrase; label emotion; ask one clarifying question."^^xsd:string ;
+    uckb:successSignals "Caller elaborates; speech rate normalizes; repair requests decrease."^^xsd:string ;
+    uckb:switchTo "Empathic Validation; Grounding; One-Step Instruction"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "filler_increase; repair_request; silence_after_prompt"^^xsd:string ;
+    uckb:whenNotToUse "Time-critical command must be delivered immediately to prevent harm."^^xsd:string ;
+    uckb:whenToUse "User shows confusion, distress, hostility, or fragmented narration."^^xsd:string .
+
+uckb:crisis_dispatch_002_empathic_validation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Empathic Validation" ;
+    uckb:CONTRADICTS uckb:Dismissive_Reassurance ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_Empathic_Validation,
+        uckb:Negotiation_Tactical_Empathy ;
+    uckb:PRECEDES uckb:Rapport ;
+    uckb:REQUIRES uckb:Active_Listening ;
+    uckb:cardId "crisis_dispatch_002_empathic_validation"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Never validate delusional content as fact; validate feelings only."^^xsd:string ;
+    uckb:culturalNotes "Use face-saving phrasing where direct naming could shame the caller."^^xsd:string ;
+    uckb:description "Acknowledges emotional reality without endorsing unsupported facts."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Inform; Repair"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical Empathic Validation; Negotiation Tactical Empathy"^^xsd:string ;
+    uckb:failureSignals "Caller says agent is not listening; escalation continues."^^xsd:string ;
+    uckb:name "Empathic Validation"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Active Listening; PRECEDES Rapport; CONTRADICTS Dismissive Reassurance"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Name emotion; connect to situation; avoid blame; move to next safe fact."^^xsd:string ;
+    uckb:successSignals "Caller accepts next question; affect intensity drops."^^xsd:string ;
+    uckb:switchTo "Grounding; Safety Fact Elicitation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "self_blame; volume_spike; absolutist_language"^^xsd:string ;
+    uckb:whenNotToUse "Caller requests factual confirmation that is unknown or unsafe."^^xsd:string ;
+    uckb:whenToUse "Caller expresses fear, anger, grief, shame, or helplessness."^^xsd:string .
+
+uckb:crisis_dispatch_003_grounding a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Grounding" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_grounding,
+        uckb:trauma-informed_grounding ;
+    uckb:PRECEDES uckb:Instruction ;
+    uckb:RESOLVES uckb:Cognitive_Overload ;
+    uckb:TRIGGERED_BY uckb:Panic ;
+    uckb:cardId "crisis_dispatch_003_grounding"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest-load"^^xsd:string ;
+    uckb:contraindications "Do not use as substitute for emergency escalation."^^xsd:string ;
+    uckb:culturalNotes "Avoid culturally alien metaphors; use plain observable cues."^^xsd:string ;
+    uckb:description "Short present-focused prompts that restore orientation and reduce arousal."^^xsd:string ;
+    uckb:dialogueActLinks "Directive; Clarify; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical grounding; trauma-informed grounding"^^xsd:string ;
+    uckb:failureSignals "Caller becomes more disoriented or cannot comply."^^xsd:string ;
+    uckb:name "Grounding"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY Panic; RESOLVES Cognitive Overload; PRECEDES Instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Orient to present; ask sensory or location cue; give one concrete next action."^^xsd:string ;
+    uckb:successSignals "Caller answers simple fact; breathing or speech pace stabilizes."^^xsd:string ;
+    uckb:switchTo "One-Step Instruction; Active Listening"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_spike; self_blame; long_silence"^^xsd:string ;
+    uckb:whenNotToUse "Caller is in immediate physical danger requiring movement first."^^xsd:string ;
+    uckb:whenToUse "Panic, dissociation risk, overwhelming fear, or fragmented narration."^^xsd:string .
+
+uckb:crisis_dispatch_004_one_step_instruction a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "One-Step Instruction" ;
+    uckb:CONTRAINDICATED_WHEN uckb:severe_dissociation_without_specialist_routing ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_safety_instruction ;
+    uckb:FOLLOWS uckb:Grounding ;
+    uckb:cardId "crisis_dispatch_004_one_step_instruction"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest-load"^^xsd:string ;
+    uckb:contraindications "Do not stack multi-step commands in one turn."^^xsd:string ;
+    uckb:culturalNotes "Prefer direct language for safety while preserving respect."^^xsd:string ;
+    uckb:description "A single concrete instruction delivered without competing information."^^xsd:string ;
+    uckb:dialogueActLinks "Directive; Check-Question"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical safety instruction"^^xsd:string ;
+    uckb:failureSignals "Caller asks repeated repair questions or performs wrong action."^^xsd:string ;
+    uckb:name "One-Step Instruction"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Grounding; CONTRAINDICATED_WHEN severe dissociation without specialist routing"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Say one action; wait; confirm completion; proceed to next action."^^xsd:string ;
+    uckb:successSignals "Caller completes action; confirms location or safety status."^^xsd:string ;
+    uckb:switchTo "Repeat/Rephrase; Dispatch Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "panic_state; repair_request; cognitive_overload"^^xsd:string ;
+    uckb:whenNotToUse "User is stable enough for collaborative planning or needs informed consent first."^^xsd:string ;
+    uckb:whenToUse "High cognitive load, emergency action, or panic."^^xsd:string .
+
+uckb:crisis_dispatch_005_safety_fact_elicitation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Safety Fact Elicitation" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_triage_questioning ;
+    uckb:ENHANCES uckb:Triage ;
+    uckb:REQUIRES uckb:Grounding_where_overload_detected ;
+    uckb:cardId "crisis_dispatch_005_safety_fact_elicitation"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Do not interrogate trauma narrative beyond operational need."^^xsd:string ;
+    uckb:culturalNotes "Explain purpose in high power-distance contexts to reduce fear."^^xsd:string ;
+    uckb:description "Structured retrieval of minimum facts needed for emergency response."^^xsd:string ;
+    uckb:dialogueActLinks "Question; Confirm; Inform"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical triage questioning"^^xsd:string ;
+    uckb:failureSignals "Caller feels interrogated or withdraws."^^xsd:string ;
+    uckb:name "Safety Fact Elicitation"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Grounding where overload detected; ENHANCES Triage"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Ask one fact; explain why; confirm; mark unknown if unavailable."^^xsd:string ;
+    uckb:successSignals "Essential facts collected without escalation."^^xsd:string ;
+    uckb:switchTo "Grounding; Active Listening"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; hostility; silence_after_prompt"^^xsd:string ;
+    uckb:whenNotToUse "Caller cannot answer due to panic before grounding."^^xsd:string ;
+    uckb:whenToUse "Dispatcher needs location, immediate danger, injuries, weapons, or callback information."^^xsd:string .
+
+uckb:crisis_dispatch_006_adult_state_boundary_setting a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Adult-State Boundary Setting" ;
+    uckb:CONTRADICTS uckb:Mirrored_Aggression ;
+    uckb:DOMAIN_VARIANT_OF uckb:Negotiation_boundary_setting ;
+    uckb:TRIGGERED_BY uckb:Hostility ;
+    uckb:cardId "crisis_dispatch_006_adult_state_boundary_setting"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium"^^xsd:string ;
+    uckb:contraindications "Do not shame, punish, or threaten the caller."^^xsd:string ;
+    uckb:culturalNotes "Use respectful authority framing in high power-distance contexts."^^xsd:string ;
+    uckb:description "Neutral, firm boundary that prevents aggression from controlling the exchange."^^xsd:string ;
+    uckb:dialogueActLinks "Directive; Inform; Repair"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Negotiation boundary setting"^^xsd:string ;
+    uckb:failureSignals "Caller escalates or disengages."^^xsd:string ;
+    uckb:name "Adult-State Boundary Setting"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY Hostility; CONTRADICTS Mirrored Aggression"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Validate concern; state boundary; redirect to safety fact; offer next step."^^xsd:string ;
+    uckb:successSignals "Caller reduces interruption and answers task question."^^xsd:string ;
+    uckb:switchTo "Empathic Validation; Safety Fact Elicitation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "volume_spike; absolutist_language; contempt_marker"^^xsd:string ;
+    uckb:whenNotToUse "Caller is panicking and boundary would feel punitive."^^xsd:string ;
+    uckb:whenToUse "Caller uses blame, threats, interruption, or abusive language."^^xsd:string .
+
+uckb:crisis_dispatch_007_rapport_checkpoint a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Rapport Checkpoint" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_invitation_checkpoint ;
+    uckb:FOLLOWS uckb:Empathic_Validation ;
+    uckb:PRECEDES uckb:Influence_or_Proposal ;
+    uckb:cardId "crisis_dispatch_007_rapport_checkpoint"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Do not treat silence as consent."^^xsd:string ;
+    uckb:culturalNotes "Silence may mean respect or processing, not agreement."^^xsd:string ;
+    uckb:description "A brief confirmation that the caller is oriented enough for cooperation."^^xsd:string ;
+    uckb:dialogueActLinks "Confirm; Accept; Feedback-Positive"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical invitation checkpoint"^^xsd:string ;
+    uckb:failureSignals "Caller resists or asks why."^^xsd:string ;
+    uckb:name "Rapport Checkpoint"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Empathic Validation; PRECEDES Influence or Proposal"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Summarize; ask if caller can do the next step; wait for confirmation."^^xsd:string ;
+    uckb:successSignals "Caller says yes, repeats plan, or complies."^^xsd:string ;
+    uckb:switchTo "Active Listening; Transparency Statement"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "repair_request; low_trust"^^xsd:string ;
+    uckb:whenNotToUse "Immediate danger requires instruction without conversational checkpoint."^^xsd:string ;
+    uckb:whenToUse "Before moving from empathy to directive or proposal."^^xsd:string .
+
+uckb:crisis_dispatch_008_transparency_statement a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Transparency Statement" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_informed_rationale ;
+    uckb:ENHANCES uckb:Safety_Fact_Elicitation ;
+    uckb:PRECEDES uckb:Sensitive_Question ;
+    uckb:cardId "crisis_dispatch_008_transparency_statement"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-to-medium"^^xsd:string ;
+    uckb:contraindications "Do not over-explain under high load."^^xsd:string ;
+    uckb:culturalNotes "Use authority carefully; avoid bureaucratic tone."^^xsd:string ;
+    uckb:description "Brief explanation of why a question or instruction is needed."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Request"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical informed rationale"^^xsd:string ;
+    uckb:failureSignals "Caller challenges motives or withholds information."^^xsd:string ;
+    uckb:name "Transparency Statement"^^xsd:string ;
+    uckb:requiredEdges "ENHANCES Safety Fact Elicitation; PRECEDES Sensitive Question"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Name purpose; ask or instruct; connect to caller benefit."^^xsd:string ;
+    uckb:successSignals "Caller answers sensitive fact or follows instruction."^^xsd:string ;
+    uckb:switchTo "One-Step Instruction; Empathic Validation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "low_trust; hostile_state"^^xsd:string ;
+    uckb:whenNotToUse "Time-critical instruction where explanation would endanger safety."^^xsd:string ;
+    uckb:whenToUse "Low trust, fear of consequences, or perceived interrogation."^^xsd:string .
+
+uckb:crisis_dispatch_009_trauma_informed_validation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Trauma-Informed Validation" ;
+    uckb:CONTRAINDICATED_WHEN uckb:confrontational_probing ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_trauma-informed_language ;
+    uckb:RESOLVES uckb:Shame_Escalation ;
+    uckb:cardId "crisis_dispatch_009_trauma_informed_validation"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest-load"^^xsd:string ;
+    uckb:contraindications "Do not imply responsibility for harm."^^xsd:string ;
+    uckb:culturalNotes "Preserve face and privacy in collectivist contexts."^^xsd:string ;
+    uckb:description "Supportive response that avoids blame and protects agency after trauma cues."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Offer; Clarify"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical trauma-informed language"^^xsd:string ;
+    uckb:failureSignals "Caller freezes, dissociates, or self-blame intensifies."^^xsd:string ;
+    uckb:name "Trauma-Informed Validation"^^xsd:string ;
+    uckb:requiredEdges "CONTRAINDICATED_WHEN confrontational probing; RESOLVES Shame Escalation"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Affirm safety; avoid why questions; offer choice where possible."^^xsd:string ;
+    uckb:successSignals "Caller continues narrative or accepts help."^^xsd:string ;
+    uckb:switchTo "Grounding; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "self_blame; fragmented_narration"^^xsd:string ;
+    uckb:whenNotToUse "Caller needs immediate medical or police instruction first."^^xsd:string ;
+    uckb:whenToUse "Self-blame, fragmented memory, shame, fear of not being believed."^^xsd:string .
+
+uckb:crisis_dispatch_010_specialist_escalation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Specialist Escalation" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_escalation ;
+    uckb:FOLLOWS uckb:Safety_Fact_Elicitation_where_possible ;
+    uckb:TRIGGERED_BY uckb:High-Risk_Signal ;
+    uckb:cardId "crisis_dispatch_010_specialist_escalation"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest-load"^^xsd:string ;
+    uckb:contraindications "Do not delay escalation to complete rapport sequence."^^xsd:string ;
+    uckb:culturalNotes "Explain transfer respectfully to avoid abandonment perception."^^xsd:string ;
+    uckb:description "Routing to human specialist, supervisor, clinician, or emergency resource when threshold met."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Directive; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical escalation"^^xsd:string ;
+    uckb:failureSignals "Caller drops, refuses transfer, or risk rises."^^xsd:string ;
+    uckb:name "Specialist Escalation"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY High-Risk Signal; FOLLOWS Safety Fact Elicitation where possible"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Identify threshold; keep caller engaged; transfer or dispatch; preserve context."^^xsd:string ;
+    uckb:successSignals "Specialist connection established; caller remains oriented."^^xsd:string ;
+    uckb:switchTo "Grounding; Stay-on-line Protocol"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "dissociation_risk; imminent_harm; psychosis_marker"^^xsd:string ;
+    uckb:whenNotToUse "Issue can be resolved safely within normal dispatcher protocol."^^xsd:string ;
+    uckb:whenToUse "Suicidality, psychosis, severe dissociation, imminent violence, medical emergency."^^xsd:string .
+
+uckb:crisis_dispatch_011_calm_vocal_pacing a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Calm Vocal Pacing" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_011_calm_vocal_pacing"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Conscious modulation of speech rate, pitch, and rhythm to de-escalate arousal and model calm for the caller."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Calm Vocal Pacing"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Slow own speech rate 20% below caller baseline; lower pitch one register; introduce deliberate pauses between phrases; maintain steady rhythm; mirror caller's pace downward toward calm."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_012_location_confirmation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Location Confirmation" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_012_location_confirmation"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Structured elicitation of the caller's exact physical location to enable accurate and timely dispatch."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Location Confirmation"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Ask for exact street address first; request apartment, floor, or unit number; ask for nearest cross-street or visible landmark; read back full address for caller confirmation."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_013_callback_number_confirmation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Callback Number Confirmation" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_013_callback_number_confirmation"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Verified capture of an alternative contact number to maintain communication if the primary call drops."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Callback Number Confirmation"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Ask for a callback phone number; read each digit back individually; confirm best contact method if call drops; note in dispatch record."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_014_imminent_danger_triage a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Imminent Danger Triage" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_014_imminent_danger_triage"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Rapid safety-priority assessment to determine whether immediate protective action is required before standard protocol begins."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Imminent Danger Triage"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Ask 'Are you safe right now?'; assess weapon or threat proximity; ask how many people are affected; determine whether immediate dispatch or on-call specialist is required before proceeding."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_015_weapon_presence_query a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Weapon Presence Query" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_015_weapon_presence_query"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Indirect or direct elicitation of weapon or hazard information to inform dispatch safety planning without confrontation."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Weapon Presence Query"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Ask indirectly: 'Is there anything nearby that could cause harm?'; if yes, ask type and location without confrontation; relay information to dispatch; do not order disposal."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_016_injury_severity_query a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Injury Severity Query" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_016_injury_severity_query"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Structured assessment of injury presence, type, and severity to prioritise appropriate medical response."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Injury Severity Query"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Ask 'Is anyone hurt?'; assess consciousness and breathing first; ask about bleeding and its location; follow CPR or first-aid prompts if trained; relay severity to dispatch."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_017_breathing_regulation_prompt a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Breathing Regulation Prompt" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_017_breathing_regulation_prompt"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Guided paced-breathing instruction that reduces the caller's physiological panic response and lowers arousal."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Breathing Regulation Prompt"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Say 'Breathe with me'; model a slow 4-count inhale; model a 4-count exhale; repeat for 2-3 full cycles; check whether the caller can continue and resume dialogue."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_018_silence_tolerance a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Silence Tolerance" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_018_silence_tolerance"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Deliberate non-interruption of caller silence to allow cognitive processing, cultural respect, or emotional regulation."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Silence Tolerance"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Hold silence without prompting after a question or reflection; count internally to at least 8 before re-engaging; when re-engaging, use a soft opener such as 'I'm still here with you.'"^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_019_non_confrontational_rephrase a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Non-Confrontational Rephrase" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_019_non_confrontational_rephrase"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Restatement of a loaded or hostile utterance in neutral objective terms to prevent escalation and invite cooperative re-engagement."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Non-Confrontational Rephrase"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Identify loaded or accusatory phrasing in caller's last utterance; restate the same content in neutral, objective language; remove all blame from the restatement; invite caller confirmation of the restated version."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_020_repair_sequence a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Repair Sequence" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_020_repair_sequence"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Structured acknowledgement and recovery from a communication breakdown that re-establishes cooperative dialogue."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Repair Sequence"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Acknowledge the communication breakdown explicitly; take brief responsibility for any agent contribution; re-state the shared goal; re-ask the last question in simpler terms."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_021_caller_agency_restoration a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Caller Agency Restoration" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_021_caller_agency_restoration"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Identification of one specific achievable action the caller can take, counteracting helplessness and restoring a sense of control."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Caller Agency Restoration"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Identify one specific, achievable action the caller can take right now; name it clearly and directly; affirm the caller's capacity to do it; wait for verbal confirmation before proceeding."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_022_fear_labeling a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Fear Labeling" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_022_fear_labeling"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Explicit naming of the caller's detected fear to validate it and reduce its autonomic dominance on communication."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Fear Labeling"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Name the specific fear observed: 'It sounds like you're afraid that…'; avoid minimizing language; connect the named fear to the nearest concrete safety step available."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_023_anger_labeling a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Anger Labeling" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_023_anger_labeling"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Explicit naming of detected anger without mirroring it, used to validate and begin to de-escalate hostile affect."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Anger Labeling"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Name the anger without mirroring it: 'I can hear how frustrated you are'; validate the source of the anger; do not argue or defend; redirect to one concrete next safety step."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_024_grief_pacing a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Grief Pacing" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_024_grief_pacing"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Deliberate slowing of the entire communication cadence to match and support a caller in acute grief."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Grief Pacing"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Slow all communication to half the standard cadence; allow extended pauses after each utterance; do not move to operational questions until grief affect subsides; validate the loss before any information gathering."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_025_hostility_de_escalation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Hostility De-escalation" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_025_hostility_de_escalation"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Sequential management of hostile verbal behaviour through non-retaliatory validation and calm redirection to the safety goal."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Hostility De-escalation"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Absorb the first burst of hostility without retaliating; validate the feeling underlying the hostile language; state your role and intent calmly; re-focus on the shared safety goal; do not raise your own vocal intensity."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_026_panic_state a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Panic State" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:arousal "high"^^xsd:string ;
+    uckb:cardId "crisis_dispatch_026_panic_state"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Classification of a caller as currently in acute panic, used to trigger low-complexity routing and grounding response immediately."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Panic State"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect panic via speech-rate spike, short repetitive utterances, and high pitch; classify as high cognitive load; route immediately to grounding technique; defer all multi-step queries until grounding is confirmed."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_027_hostile_state a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Hostile State" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:arousal "high"^^xsd:string ;
+    uckb:cardId "crisis_dispatch_027_hostile_state"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Classification of a caller in active hostility, used to activate boundary-setting and Adult ego-state framing."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Hostile State"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect hostility via volume spike, blame language, and interruptions; classify as confrontational; maintain Adult ego-state register; apply boundary-setting without escalation; redirect to safety."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_028_defensive_state a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Defensive State" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:arousal "medium"^^xsd:string ;
+    uckb:cardId "crisis_dispatch_028_defensive_state"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Classification of a caller showing defensive posture, used to activate blame-free questioning and cautious pacing."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Defensive State"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect defensiveness via qualifications, deflection, or sudden silence; validate the underlying concern; state explicitly that blame is not assigned; ask one neutral, non-threatening question to re-engage."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_029_cognitive_overload_state a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Cognitive Overload State" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:arousal "high"^^xsd:string ;
+    uckb:cardId "crisis_dispatch_029_cognitive_overload_state"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Classification of a caller experiencing cognitive overload, triggering single-question routing and simplified language."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Cognitive Overload State"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect overload via filler increase, incomplete sentences, and repetition; simplify all questions to single-choice or yes/no format; reduce information density to one fact per turn; increase verbal affirmations."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_030_speech_rate_drop a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Speech Rate Drop" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:ENHANCES uckb:emotional-state_classification ;
+    uckb:TRIGGERED_BY uckb:runtime_Parole ;
+    uckb:cardId "crisis_dispatch_030_speech_rate_drop"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Signal marker indicating cognitive overload or fear, detected by observing the caller's speech rate falling below their established baseline."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Speech Rate Drop"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY runtime Parole; ENHANCES emotional-state classification"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect speech rate falling below caller's established baseline; flag as cognitive overload or fear signal; reduce question complexity immediately; increase affirmations; slow own speech to match."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_031_speech_rate_spike a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Speech Rate Spike" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:ENHANCES uckb:emotional-state_classification ;
+    uckb:TRIGGERED_BY uckb:runtime_Parole ;
+    uckb:cardId "crisis_dispatch_031_speech_rate_spike"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Signal marker indicating panic or urgency, detected by a sudden increase in the caller's speech rate above their baseline."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Speech Rate Spike"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY runtime Parole; ENHANCES emotional-state classification"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect sudden acceleration above baseline; flag as panic or urgency; initiate grounding or breathing regulation; slow own speech rate; give one concrete anchor point before asking anything."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_032_filler_increase a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Filler Increase" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:ENHANCES uckb:emotional-state_classification ;
+    uckb:TRIGGERED_BY uckb:runtime_Parole ;
+    uckb:cardId "crisis_dispatch_032_filler_increase"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Signal marker indicating uncertainty or overload, detected by a rise in filler words and false starts above the caller's baseline."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Filler Increase"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY runtime Parole; ENHANCES emotional-state classification"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect increased um/uh/false-starts above baseline; flag as uncertainty or overload; simplify the next question; confirm what was understood so far; reduce the number of choices offered."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_033_absolutist_language a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Absolutist Language" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_033_absolutist_language"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Signal marker indicating hostility or helplessness, detected by words such as always, never, nobody, or impossible."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Absolutist Language"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect always/never/nobody/impossible in caller utterance; flag as hostility or helplessness signal; validate the emotion behind the language; move conversation to one specific concrete fact; avoid directly contradicting the absolutist claim."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_034_volume_spike a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Volume Spike" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:ENHANCES uckb:emotional-state_classification ;
+    uckb:TRIGGERED_BY uckb:runtime_Parole ;
+    uckb:cardId "crisis_dispatch_034_volume_spike"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Signal marker indicating anger or fear, detected by a sudden increase in the caller's vocal loudness."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Volume Spike"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY runtime Parole; ENHANCES emotional-state classification"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect sudden increase in caller loudness; do not raise own volume in response; pause briefly before replying; acknowledge the urgency calmly; deliver one grounding question at steady volume."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_035_self_blame_marker a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Self-Blame Marker" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:ENHANCES uckb:emotional-state_classification ;
+    uckb:TRIGGERED_BY uckb:runtime_Parole ;
+    uckb:cardId "crisis_dispatch_035_self_blame_marker"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Signal marker indicating shame or trauma response, detected when the caller assigns personal fault for the crisis."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Self-Blame Marker"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY runtime Parole; ENHANCES emotional-state classification"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect caller assigning personal fault for the crisis; validate the feeling without confirming the blame attribution; redirect to what can help right now; avoid debating fault or responsibility."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_036_fragmented_narration_marker a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Fragmented Narration Marker" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:ENHANCES uckb:emotional-state_classification ;
+    uckb:TRIGGERED_BY uckb:runtime_Parole ;
+    uckb:cardId "crisis_dispatch_036_fragmented_narration_marker"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Signal marker indicating disorientation or trauma, detected by short, disjointed, and incomplete utterances."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Fragmented Narration Marker"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY runtime Parole; ENHANCES emotional-state classification"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect short, disjointed, incomplete utterances; slow own pace in response; ask one orienting question ('Where are you right now?'); tolerate incomplete answers; piece together the situation from fragments without rushing."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_037_indirect_request_marker a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Indirect Request Marker" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:ENHANCES uckb:emotional-state_classification ;
+    uckb:TRIGGERED_BY uckb:runtime_Parole ;
+    uckb:cardId "crisis_dispatch_037_indirect_request_marker"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Signal marker indicating a high-context communication style or face-saving need, detected by hint-based rather than direct requests."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Indirect Request Marker"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY runtime Parole; ENHANCES emotional-state classification"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect hint-based or story-wrapped requests without explicit ask; treat as a meaningful and real request; ask permission to clarify: 'It sounds like you might need help with X — is that right?'; confirm the interpretation before acting on it."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_038_contempt_marker a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Contempt Marker" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:ENHANCES uckb:emotional-state_classification ;
+    uckb:TRIGGERED_BY uckb:runtime_Parole ;
+    uckb:cardId "crisis_dispatch_038_contempt_marker"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Signal marker indicating communication breakdown risk, detected by sarcasm, dismissive phrasing, or unilateral contempt."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Contempt Marker"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY runtime Parole; ENHANCES emotional-state classification"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect sarcasm, dismissive phrasing, or unilateral contempt; do not mirror contempt or defend; name the concern behind the contempt; hold a calm, neutral frame; re-offer a collaborative stance."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_039_dissociation_risk_marker a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Dissociation Risk Marker" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:ENHANCES uckb:emotional-state_classification ;
+    uckb:TRIGGERED_BY uckb:runtime_Parole ;
+    uckb:cardId "crisis_dispatch_039_dissociation_risk_marker"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Signal marker indicating possible trauma dissociation, detected by flat affect and vague repetitive responses."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Dissociation Risk Marker"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY runtime Parole; ENHANCES emotional-state classification"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect flat affect, vague repetitive responses, and unresponsiveness to questions; avoid complex multi-step queries; use gentle orienting prompts: 'Can you tell me what you see right now?'; consider specialist escalation if dissociation is suspected."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_040_emergency_rapport a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Emergency Rapport" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_040_emergency_rapport"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Rapid establishment of minimal trust and a cooperative stance within the first 30 seconds of a crisis call."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Emergency Rapport"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Use caller's name immediately; soft-mirror one phrase from the first utterance; validate the first statement made; confirm your role and that you are there to help; ask one small permission question to establish cooperative framing."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_041_dispatch_triage_protocol a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Dispatch Triage Protocol" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_041_dispatch_triage_protocol"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Sequential collection of essential information — location, callback number, and nature of emergency — before situation-specific protocol begins."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Dispatch Triage Protocol"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Collect location first; then callback number; then nature of the emergency; validate each item before moving to the next; relay confirmed information to dispatch; maintain caller connection throughout the triage."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_042_behavioral_change_stairway a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Behavioral Change Stairway" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_042_behavioral_change_stairway"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "FBI-developed five-stage protocol: empathic listening, then rapport, then influence, then behavioural change, then maintenance."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Behavioral Change Stairway"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Begin with empathic listening before any influence attempt; move to rapport only after emotional acknowledgement is confirmed; establish influence only after rapport is secured; request behavioral change only after influence is established; do not skip or accelerate any stairway step."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_043_cit_de_escalation a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "CIT De-escalation" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_043_cit_de_escalation"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Crisis Intervention Team verbal de-escalation framework emphasising non-confrontation, time, space, and simple language."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "CIT De-escalation"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Approach without confrontation; give the subject physical and verbal space; use simple non-technical language; validate the emotional state before asking operational questions; offer one realistic choice; avoid ultimatums or time pressure."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_044_winner_s_triangle_resolution a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Winner's Triangle Resolution" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_044_winner_s_triangle_resolution"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Transactional Analysis technique that moves parties from Drama Triangle roles to functional equivalents: Vulnerable, Assertive, and Caring."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Winner's Triangle Resolution"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Identify which Drama Triangle role the caller is occupying; for Victim, move toward Vulnerable; for Persecutor, move toward Assertive; for Rescuer, move toward Caring; name the shift gently without labeling the role."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_045_victim_to_vulnerable_reframe a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Victim-to-Vulnerable Reframe" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_045_victim_to_vulnerable_reframe"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Targeted move within the Winner's Triangle that shifts a caller from a helpless Victim position to acknowledging vulnerability with agency."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Victim-to-Vulnerable Reframe"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Acknowledge the caller's sense of powerlessness; validate the difficulty of the situation; identify one specific thing the caller CAN do; reframe toward that action as an expression of their strength."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_046_persecutor_to_assertive_reframe a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Persecutor-to-Assertive Reframe" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_046_persecutor_to_assertive_reframe"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Targeted move within the Winner's Triangle that shifts a caller from a blame-based Persecutor position to asserting legitimate needs."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Persecutor-to-Assertive Reframe"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Acknowledge the frustration or injustice driving the blame; name what the caller actually needs from the situation; validate the need without validating the attack; redirect from blame to a specific request or boundary."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_047_rescuer_to_caring_reframe a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Rescuer-to-Caring Reframe" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_047_rescuer_to_caring_reframe"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Targeted move within the Winner's Triangle that shifts an over-responsible Rescuer to appropriate caring without unhealthy enablement."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Rescuer-to-Caring Reframe"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Validate the caller's concern for the other person; gently separate the caller's own wellbeing from the other person's situation; identify what level of involvement is realistic and helpful; reframe caring as supporting, not controlling."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_048_adult_ego_state a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Adult Ego State" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:arousal "medium"^^xsd:string ;
+    uckb:cardId "crisis_dispatch_048_adult_ego_state"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Transactional Analysis designation for calm, rational, reality-testing communication; used as the target agent register during crisis calls."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Adult Ego State"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect that caller is in a calm, rational, fact-processing mode; mirror the Adult register: objective, calm, information-focused; stay in factual framing; avoid parental tone or child-state accommodation."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:valence "neutral"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_049_critical_parent_marker a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Critical Parent Marker" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:ENHANCES uckb:emotional-state_classification ;
+    uckb:TRIGGERED_BY uckb:runtime_Parole ;
+    uckb:cardId "crisis_dispatch_049_critical_parent_marker"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Transactional Analysis signal that the caller is using judgmental, rule-imposing language, requiring Adult-state response to prevent regression."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Critical Parent Marker"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY runtime Parole; ENHANCES emotional-state classification"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect critical-parent tone: rules, blame, directive commands from caller; do not trigger a child-state regression in your own response; mirror Adult register; redirect toward shared safety goal without challenging the authority posture."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_050_adapted_child_marker a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Adapted Child Marker" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:ENHANCES uckb:emotional-state_classification ;
+    uckb:TRIGGERED_BY uckb:runtime_Parole ;
+    uckb:cardId "crisis_dispatch_050_adapted_child_marker"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Transactional Analysis signal that the caller is in a compliant or helpless mode, triggering agency restoration and avoidance of authoritarian response."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Adapted Child Marker"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY runtime Parole; ENHANCES emotional-state classification"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect compliant or helpless child state: please-just-tell-me tone, excessive deference, or resignation; restore agency through one small choice; validate the caller's capability; avoid reinforcing the helpless stance."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_051_nurturing_parent_marker a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Nurturing Parent Marker" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:ENHANCES uckb:emotional-state_classification ;
+    uckb:TRIGGERED_BY uckb:runtime_Parole ;
+    uckb:cardId "crisis_dispatch_051_nurturing_parent_marker"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Transactional Analysis signal that the caller is over-managing another person's situation, prompting gentle redirection to practical action."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Nurturing Parent Marker"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY runtime Parole; ENHANCES emotional-state classification"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect over-nurturing toward another party: excessive worry, over-control; validate the care; separate the caller's own safety from the other person's; guide toward practical action rather than total control."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_052_low_context_safety_instruction a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Low-Context Safety Instruction" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_052_low_context_safety_instruction"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Direct, explicit safety instruction for low-context callers who expect and respond to unambiguous imperatives."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Low-Context Safety Instruction"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "State the action in direct imperative form; use explicit unambiguous language; deliver one step only; wait for verbal confirmation; proceed to the next step only after confirmation."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_053_high_context_face_saving_refusal a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "High-Context Face-Saving Refusal" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_053_high_context_face_saving_refusal"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Indirect phrasing of a refusal or correction that preserves dignity and avoids direct contradiction for high-context callers."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "High-Context Face-Saving Refusal"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Offer an indirect framing that allows the caller to comply without losing face; avoid forcing a direct contradiction or admission; provide a face-saving exit: 'Many people in this situation find it helpful to…'; wait for response without pressing."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_054_privacy_reassurance a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Privacy Reassurance" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_054_privacy_reassurance"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Proactive clarification of confidentiality scope and information-sharing practice to reduce caller hesitation and build trust."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Privacy Reassurance"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "State proactively who will receive the call information; confirm that the call is recorded only for safety purposes; ask whether the caller has any concerns about disclosure; address concerns before proceeding with sensitive questions."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_055_no_blame_redirection a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "No-Blame Redirection" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_055_no_blame_redirection"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Communication move that separates causal responsibility from the immediate path to help, eliminating blame as a blocker to action."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "No-Blame Redirection"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "When blame is escalating, explicitly separate cause from the path to help; say: 'Regardless of how this happened, here is what we can do right now'; move immediately to one concrete action; do not argue about responsibility."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_056_permission_to_ask a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Permission to Ask" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_056_permission_to_ask"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Explicit consent request before beginning structured questioning, used to reduce caller resistance and establish cooperative framing."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Permission to Ask"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Say: 'I need to ask you a few questions to get help to you as quickly as possible — is that okay?'; wait for a yes or equivalent; acknowledge any hesitation; begin with the least sensitive question first."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_057_minimal_choice_offer a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Minimal Choice Offer" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_057_minimal_choice_offer"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Provision of exactly two clearly bounded options to restore agency while reducing decision load in high-stress states."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Minimal Choice Offer"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Offer exactly two options only; ensure both options are safe and feasible; state them clearly: 'You can do A or B — which feels right?'; wait for the choice without suggesting preference; confirm and proceed with what they chose."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_058_stay_on_line_protocol a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Stay-on-Line Protocol" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_058_stay_on_line_protocol"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Structured procedure to maintain caller connection through updates, periodic check-ins, and explicit non-abandonment commitment."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Stay-on-Line Protocol"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Explicitly ask the caller to stay on the line; explain what is being done on your end; give a brief update every 20-30 seconds; confirm the caller is still connected after each update; do not terminate without consent."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_059_suicide_risk_routing a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Suicide Risk Routing" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_059_suicide_risk_routing"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Detection and escalation protocol activated by ideation signals, directing to specialist services without direct challenge to the caller."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Suicide Risk Routing"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect ideation signals: statements of hopelessness, farewell language, giving-things-away references; do not challenge or argue against the ideation; express the value of the caller's life specifically; ask directly: 'Are you thinking about ending your life?'; escalate to specialist or emergency services immediately."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+
+uckb:crisis_dispatch_060_domestic_violence_caution_routing a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Domestic Violence Caution Routing" ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_crisis_variant,
+        uckb:negotiation_de-escalation_variant ;
+    uckb:PRECEDES uckb:higher-density_instruction ;
+    uckb:REQUIRES uckb:safety_assessment ;
+    uckb:cardId "crisis_dispatch_060_domestic_violence_caution_routing"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest safe load"^^xsd:string ;
+    uckb:contraindications "Do not use as a diagnostic label or as a reason to delay emergency response."^^xsd:string ;
+    uckb:culturalNotes "Preserve dignity, privacy, and face; interpret silence cautiously."^^xsd:string ;
+    uckb:description "Detection and routing protocol for suspected domestic violence scenarios, using coded communication to protect caller safety."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Clarify; Request; Inform; Confirm"^^xsd:string ;
+    uckb:domain "Crisis Dispatch / Emergency"^^xsd:string ;
+    uckb:domainVariants "Clinical crisis variant; negotiation de-escalation variant"^^xsd:string ;
+    uckb:failureSignals "Caller repeats distress, disengages, challenges the agent, or cannot follow the next step."^^xsd:string ;
+    uckb:name "Domestic Violence Caution Routing"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES safety assessment; PRECEDES higher-density instruction"^^xsd:string ;
+    uckb:reviewNotes "Seed card; requires domain expert review before Phase 3 ingestion."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "S001; S002; S003; S005; S006; S010"^^xsd:string ;
+    uckb:steps "Detect DV signals: fear-based language, monitoring concern, code words, inability to speak freely; use signal protocol to ask safety question without exposing the caller; limit identifying information if caller is at risk of being overheard; route to DV specialist or safe-exit protocol immediately."^^xsd:string ;
+    uckb:successSignals "Caller remains engaged; essential facts become clearer; escalation does not increase."^^xsd:string ;
+    uckb:switchTo "Grounding; One-Step Instruction; Specialist Escalation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "speech_rate_drop; speech_rate_spike; filler_increase; absolutist_language; volume_spike"^^xsd:string ;
+    uckb:whenNotToUse "Do not use when a more urgent safety instruction, specialist escalation, or jurisdictional protocol takes precedence."^^xsd:string ;
+    uckb:whenToUse "Use when the caller shows escalation, overload, uncertainty, risk, or a need for structured emergency support."^^xsd:string .
+

@@ -1,0 +1,646 @@
+[
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#primaryStyle",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "CommunicationStyle name this profile represents"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#indirectCommunication",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Whether indirect communication is the norm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#recalibrateIn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Nonverbal signal meaning must be reinterpreted in this CulturalContext"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#lewisModel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Lewis model type: linear-active|multi-active|reactive"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hofstedeIDV",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Hofstede Individualism score (0-100)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#BspPassive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#BehavioralStyleProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Passive Profile"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#agentAdaptation": [
+      {
+        "@value": "Proactively elicit opinions; create psychological safety; use open questions not closed; do not press for immediate decisions"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#contraindicated": [
+      {
+        "@value": "pressure_tactics, confrontation, direct_challenge"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#detectionSignals": [
+      {
+        "@value": "self-minimising language, hedging, apology markers, Adapted Child Marker"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#preferredEvidence": [
+      {
+        "@value": "emotional"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#primaryStyle": [
+      {
+        "@value": "Passive"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hofstedeIVR",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Hofstede Indulgence score (0-100)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#prefersStyle",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "CulturalContext dimensional node predicts this CommunicationStyle"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#BspAggressive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#BehavioralStyleProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Aggressive Profile"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#agentAdaptation": [
+      {
+        "@value": "Deploy firm Adult boundaries; refuse to match aggression; redirect to objective data; mirror Critical Parent with calm Adult state"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#contraindicated": [
+      {
+        "@value": "emotional_appeals, capitulation, counter_aggression"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#detectionSignals": [
+      {
+        "@value": "accusatory you-statements, interruption pattern, volume spike, Critical Parent Marker"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#preferredEvidence": [
+      {
+        "@value": "factual"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#primaryStyle": [
+      {
+        "@value": "Aggressive"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hofstedeLTO",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Hofstede Long-Term Orientation (0-100)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#preferredEvidence",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "emotional | factual | mixed"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#styleSuggests",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Links BehavioralStyleProfile to a recommended Technique"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#BspDiplomatic",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#BehavioralStyleProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Diplomatic Profile"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#agentAdaptation": [
+      {
+        "@value": "Synthesize multiple stakeholder positions; integrative summaries; consensus framing; never take sides publicly"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#contraindicated": [
+      {
+        "@value": "blunt_confrontation, winner_loser_framing"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#detectionSignals": [
+      {
+        "@value": "measured tone, both-sides language, consensus seeking"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#preferredEvidence": [
+      {
+        "@value": "mixed"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#primaryStyle": [
+      {
+        "@value": "Diplomatic"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hasDimension",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Links CulturalProfile to a CulturalContext dimensional descriptor"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#BspAnalytical",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#BehavioralStyleProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Analytical Profile"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#agentAdaptation": [
+      {
+        "@value": "Disable emotional framing; lead with data, metrics, verifiable evidence; step-by-step logical sequencing"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#contraindicated": [
+      {
+        "@value": "emotional_appeals, ambiguous_framing, anecdotal_evidence"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#detectionSignals": [
+      {
+        "@value": "data requests, precision language, challenge to evidence, absolutist_language"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#preferredEvidence": [
+      {
+        "@value": "factual"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#primaryStyle": [
+      {
+        "@value": "Analytical"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#timeOrientation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "monochronic or polychronic"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hallContextLevel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Hall's context level: 'high' or 'low'"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#agentAdaptation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Agent response strategy when this style is detected"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#BehavioralStyleProfile",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "An agent response archetype that maps a detected communication style to prescribed interaction strategies and technique sets."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Behavioral Style Profile"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://uckb.io/ontology#PsychologicalConstruct"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#BspPassiveAggressive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#BehavioralStyleProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Passive-Aggressive Profile"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#agentAdaptation": [
+      {
+        "@value": "Ignore sarcasm surface; address literal meaning; force explicit clarity; do not mirror covert hostility"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#contraindicated": [
+      {
+        "@value": "emotional_framing, indirect_implication"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#detectionSignals": [
+      {
+        "@value": "sarcasm markers, backhanded compliments, blame_language, ambivalence"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#preferredEvidence": [
+      {
+        "@value": "factual"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#primaryStyle": [
+      {
+        "@value": "PassiveAggressive"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hofstedeUAI",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Hofstede Uncertainty Avoidance Index (0-100)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hofstedePDI",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Hofstede Power Distance Index (0-100)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#hofstedeMAS",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Hofstede Masculinity score (0-100)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#BspCharismatic",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#BehavioralStyleProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Charismatic Profile"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#agentAdaptation": [
+      {
+        "@value": "Align with high-level vision; aspirational framing; acknowledge authority with substantive content; leverage social proof"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#contraindicated": [
+      {
+        "@value": "dry_technical_detail, legalistic_framing"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#detectionSignals": [
+      {
+        "@value": "vision language, authority claims, social proof references, high energy prosodic"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#preferredEvidence": [
+      {
+        "@value": "mixed"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#primaryStyle": [
+      {
+        "@value": "Charismatic"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#BspAssertive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/crosscultural#BehavioralStyleProfile"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Assertive Profile"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#agentAdaptation": [
+      {
+        "@value": "Match directness with mutual respect; collaborative problem-solving; affirm interests before positions"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#contraindicated": [
+      {
+        "@value": "emotional_manipulation, avoidance"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#createdInPhase": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#detectionSignals": [
+      {
+        "@value": "direct statements, I-statements, clear boundary language"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#preferredEvidence": [
+      {
+        "@value": "mixed"
+      }
+    ],
+    "https://uckb.io/ontology/crosscultural#primaryStyle": [
+      {
+        "@value": "Assertive"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#faceSaving",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Whether face-saving is a primary cultural driver"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#appliesRule",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Links CulturalProfile/CulturalContext to a CulturalAdaptationRule"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#trigger",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Cultural dimension(s) or event that activates this rule"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#agentBehavior",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Prescribed agent behavior when rule activates"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/crosscultural#adaptsFor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Links a Technique to the CulturalContext it is preferred in"
+      }
+    ]
+  }
+]

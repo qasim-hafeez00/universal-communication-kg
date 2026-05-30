@@ -1,0 +1,271 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix uckb:  <https://uckb.io/ontology#> .
+
+# ─────────────────────────────────────────────────────────────────────────────
+# UCKB Phase 9 — SHACL Temporal Memory Shapes
+# 8 shapes validating the 6 temporal node types + 2 cross-class constraints.
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+# ── Shape 1: Session ─────────────────────────────────────────────────────────
+
+uckb:SessionShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass uckb:Session ;
+    rdfs:label "SessionShape" ;
+    rdfs:comment "Every Session must have sessionId, userId, domainContext, startedAt, and status." ;
+
+    sh:property [
+        sh:path uckb:sessionId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Session must have a sessionId string."
+    ] ;
+    sh:property [
+        sh:path uckb:userId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Session must have a userId."
+    ] ;
+    sh:property [
+        sh:path uckb:domainContext ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Session must have a domainContext."
+    ] ;
+    sh:property [
+        sh:path uckb:startedAt ;
+        sh:minCount 1 ;
+        sh:datatype xsd:long ;
+        sh:message "Session must have startedAt epoch ms."
+    ] ;
+    sh:property [
+        sh:path uckb:sessionStatus ;
+        sh:minCount 1 ;
+        sh:in ( "active" "completed" "interrupted" ) ;
+        sh:message "Session status must be one of: active, completed, interrupted."
+    ] .
+
+
+# ── Shape 2: Turn ─────────────────────────────────────────────────────────────
+
+uckb:TurnShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass uckb:Turn ;
+    rdfs:label "TurnShape" ;
+    rdfs:comment "Every Turn must have turnId, sessionId, turnNumber, timestamp, and speakerRole." ;
+
+    sh:property [
+        sh:path uckb:turnId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Turn must have a turnId."
+    ] ;
+    sh:property [
+        sh:path uckb:sessionId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Turn must carry its parent sessionId."
+    ] ;
+    sh:property [
+        sh:path uckb:turnNumber ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message "Turn must have a turnNumber >= 1."
+    ] ;
+    sh:property [
+        sh:path uckb:speakerRole ;
+        sh:minCount 1 ;
+        sh:in ( "agent" "user" "caller" "dispatcher" "patient" "clinician" ) ;
+        sh:message "Turn speakerRole must be one of: agent, user, caller, dispatcher, patient, clinician."
+    ] .
+
+
+# ── Shape 3: TemporalFact ─────────────────────────────────────────────────────
+
+uckb:TemporalFactShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass uckb:TemporalFact ;
+    rdfs:label "TemporalFactShape" ;
+
+    sh:property [
+        sh:path uckb:factId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "TemporalFact must have a factId."
+    ] ;
+    sh:property [
+        sh:path uckb:factType ;
+        sh:minCount 1 ;
+        sh:in ( "emotion_detected" "technique_applied" "protocol_gate_passed" "outcome_observed" ) ;
+        sh:message "TemporalFact factType must be one of the 4 defined types."
+    ] ;
+    sh:property [
+        sh:path uckb:validFrom ;
+        sh:minCount 1 ;
+        sh:datatype xsd:long ;
+        sh:message "TemporalFact must have validFrom epoch ms."
+    ] ;
+    sh:property [
+        sh:path uckb:factDecayRate ;
+        sh:minCount 1 ;
+        sh:minInclusive "0.01"^^xsd:float ;
+        sh:maxInclusive "1.0"^^xsd:float ;
+        sh:message "TemporalFact decayRate must be in [0.01, 1.0]."
+    ] .
+
+
+# ── Shape 4: WorkingMemorySlot ────────────────────────────────────────────────
+
+uckb:WorkingMemorySlotShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass uckb:WorkingMemorySlot ;
+    rdfs:label "WorkingMemorySlotShape" ;
+
+    sh:property [
+        sh:path uckb:slotId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "WorkingMemorySlot must have a slotId."
+    ] ;
+    sh:property [
+        sh:path uckb:slotKey ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "WorkingMemorySlot must have a key."
+    ] ;
+    sh:property [
+        sh:path uckb:slotTtl ;
+        sh:minCount 1 ;
+        sh:datatype xsd:long ;
+        sh:message "WorkingMemorySlot must have a ttl (expiry epoch ms)."
+    ] ;
+    sh:property [
+        sh:path uckb:sessionId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "WorkingMemorySlot must carry its parent sessionId."
+    ] .
+
+
+# ── Shape 5: EpisodicMemory ───────────────────────────────────────────────────
+
+uckb:EpisodicMemoryShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass uckb:EpisodicMemory ;
+    rdfs:label "EpisodicMemoryShape" ;
+
+    sh:property [
+        sh:path uckb:episodeId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "EpisodicMemory must have an episodeId."
+    ] ;
+    sh:property [
+        sh:path uckb:emotionalArc ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "EpisodicMemory must have an emotionalArc describing the emotional trajectory."
+    ] ;
+    sh:property [
+        sh:path uckb:domainFilter ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "EpisodicMemory must have a domainFilter for scoped retrieval."
+    ] ;
+    sh:property [
+        sh:path uckb:protocolCompleted ;
+        sh:minCount 1 ;
+        sh:datatype xsd:boolean ;
+        sh:message "EpisodicMemory must record whether the protocol completed."
+    ] .
+
+
+# ── Shape 6: MemoryTrace ──────────────────────────────────────────────────────
+
+uckb:MemoryTraceShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass uckb:MemoryTrace ;
+    rdfs:label "MemoryTraceShape" ;
+
+    sh:property [
+        sh:path uckb:traceId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "MemoryTrace must have a traceId."
+    ] ;
+    sh:property [
+        sh:path uckb:traceUserId ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "MemoryTrace must have a userId."
+    ] ;
+    sh:property [
+        sh:path uckb:currentWeight ;
+        sh:minCount 1 ;
+        sh:minInclusive "0.0"^^xsd:float ;
+        sh:maxInclusive "1.0"^^xsd:float ;
+        sh:message "MemoryTrace weight must be in [0.0, 1.0]."
+    ] ;
+    sh:property [
+        sh:path uckb:traceDecayRate ;
+        sh:minCount 1 ;
+        sh:minInclusive "0.01"^^xsd:float ;
+        sh:maxInclusive "1.0"^^xsd:float ;
+        sh:message "MemoryTrace decayRate must be in [0.01, 1.0]."
+    ] ;
+    sh:property [
+        sh:path uckb:reinforces ;
+        sh:minCount 1 ;
+        sh:class uckb:CommunicationTechnique ;
+        sh:message "MemoryTrace must REINFORCES at least one CommunicationTechnique."
+    ] .
+
+
+# ── Shape 7: Turn DETECTED → EmotionalState (SPARQL-based) ───────────────────
+
+uckb:TurnDetectionShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass uckb:Turn ;
+    rdfs:label "TurnDetectionShape" ;
+    rdfs:comment "Every agent Turn must have at least one DETECTED edge to an EmotionalState (dispatchers can omit; callers/patients must have one)." ;
+
+    sh:sparql [
+        sh:message "Agent-side Turn (caller/patient) must have a DETECTED edge to an EmotionalState." ;
+        sh:prefixes <https://uckb.io/ontology#> ;
+        sh:select """
+            SELECT $this WHERE {
+                $this uckb:speakerRole ?role .
+                FILTER(?role IN ("caller", "patient", "user"))
+                FILTER NOT EXISTS {
+                    $this uckb:detected ?e .
+                    ?e rdf:type uckb:EmotionalState .
+                }
+            }
+        """
+    ] .
+
+
+# ── Shape 8: MemoryTrace decay invariant ─────────────────────────────────────
+
+uckb:MemoryTraceDecayShape
+    rdf:type sh:NodeShape ;
+    sh:targetClass uckb:MemoryTrace ;
+    rdfs:label "MemoryTraceDecayShape" ;
+    rdfs:comment "The stored weight must be <= initialWeight (decay only decreases weight)." ;
+
+    sh:sparql [
+        sh:message "MemoryTrace weight must not exceed initialWeight (decay can only decrease weight)." ;
+        sh:prefixes <https://uckb.io/ontology#> ;
+        sh:select """
+            SELECT $this WHERE {
+                $this uckb:currentWeight ?w .
+                $this uckb:initialWeight ?iw .
+                FILTER(?w > ?iw + 0.001)
+            }
+        """
+    ] .

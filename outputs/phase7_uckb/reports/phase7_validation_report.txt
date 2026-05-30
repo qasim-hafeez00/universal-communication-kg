@@ -1,0 +1,111 @@
+UCKB Phase 7 — Validation Report
+Generated: 2026-05-30 09:40:47
+======================================================================
+
+ACCEPTANCE CRITERIA
+----------------------------------------------------------------------
+  AC-1  [PASS]  All 10 CulturalProfile nodes present with >=4 Hofstede dimension scores
+            total=10, complete=10 (100.0% — need 10 at 100%)
+
+  AC-2  [PASS]  Each CulturalProfile has >=3 HAS_DIMENSION links to CulturalContext nodes
+            profiles_with_3plus_dims=10/10 (100.0% — need 100%), min=5
+
+  AC-3  [PASS]  Each CulturalProfile has >=1 APPLIES_RULE link to a CulturalAdaptationRule
+            profiles_with_rules=10/10 (100.0% — need 100%)
+
+  AC-4  [PASS]  All 7 BehavioralStyleProfile nodes have >=1 STYLE_SUGGESTS link to Technique
+            bsp_with_techniques=7/7 (100.0% — need 7 at 100%)
+
+  AC-5  [PASS]  adaptor_emblem RECALIBRATE_IN >=3; facs_microexpression RECALIBRATE_IN >=2
+            adaptor_emblem=5 (need >=3), facs_microexpression=3 (need >=2)
+
+  AC-6  [PASS]  ADAPTS_FOR relationships (Technique -> CulturalContext) total >= 10
+            total=58 (distinct_techniques=50, distinct_contexts=7) — need >=10
+
+  AC-7  [PASS]  Zero Phase 1 doctrine violations in behavioral style routing paths
+            violations=0 (need 0)
+
+  AC-8  [PASS]  C5 full cultural turn returns >=1 result for 3 scenarios
+            japan_distress=35, germany_hostile=4, arab_world_emblem=4 (need >=1 each)
+
+======================================================================
+  OVERALL: ALL PASS
+======================================================================
+
+DIAGNOSTICS
+----------------------------------------------------------------------
+
+Phase 7 node counts:
+  BehavioralStyleProfile         7
+  CulturalAdaptationRule         10
+  CulturalProfile                10
+
+Phase 7 relationship counts:
+  STYLE_SUGGESTS                 80
+  HAS_DIMENSION                  65
+  APPLIES_RULE                   59
+  ADAPTS_FOR                     58
+  PREFERS_STYLE                  26
+  RECALIBRATE_IN                 10
+
+CulturalProfile HAS_DIMENSION coverage:
+  Arab World                     6 dimensions
+  China                          6 dimensions
+  East Africa                    5 dimensions
+  Germany                        8 dimensions
+  India                          6 dimensions
+  Japan                          8 dimensions
+  Latin America                  6 dimensions
+  Nordic Countries               8 dimensions
+  UK Mainstream                  6 dimensions
+  USA Mainstream                 6 dimensions
+
+CulturalProfile APPLIES_RULE coverage:
+  Arab World                     5 rules -> ['Emblem Gesture Disambiguation', 'Formal Register Enforcement', 'Relationship-First Sequencing']
+  China                          6 rules -> ['Silence-as-Respect Protocol', 'Emblem Gesture Disambiguation', 'Gaze Aversion Recalibration']
+  East Africa                    7 rules -> ['Silence-as-Respect Protocol', 'Emblem Gesture Disambiguation', 'Gaze Aversion Recalibration']
+  Germany                        4 rules -> ['Emblem Gesture Disambiguation', 'Evidence-First Framing', 'Formal Register Enforcement']
+  India                          6 rules -> ['Emblem Gesture Disambiguation', 'Gaze Aversion Recalibration', 'Relationship-First Sequencing']
+  Japan                          7 rules -> ['Silence-as-Respect Protocol', 'Emblem Gesture Disambiguation', 'Gaze Aversion Recalibration']
+  Latin America                  4 rules -> ['Emblem Gesture Disambiguation', 'Relationship-First Sequencing', 'Deference to Authority Register']
+  Nordic Countries               3 rules -> ['Emblem Gesture Disambiguation', 'Evidence-First Framing', 'Direct Explicit Communication']
+  UK Mainstream                  3 rules -> ['Emblem Gesture Disambiguation', 'Evidence-First Framing', 'Direct Explicit Communication']
+  USA Mainstream                 3 rules -> ['Emblem Gesture Disambiguation', 'Evidence-First Framing', 'Direct Explicit Communication']
+
+BehavioralStyleProfile STYLE_SUGGESTS coverage:
+  Aggressive Profile             19 techniques
+  Analytical Profile             13 techniques
+  Assertive Profile              5 techniques
+  Charismatic Profile            10 techniques
+  Diplomatic Profile             5 techniques
+  Passive Profile                17 techniques
+  Passive-Aggressive Profile     11 techniques
+
+RECALIBRATE_IN coverage:
+  BehavioralAdaptor      adaptor_emblem            -> Multi-Active (gesture)
+  BehavioralAdaptor      adaptor_emblem            -> High Context (gesture)
+  BehavioralAdaptor      adaptor_emblem            -> Reactive (gesture)
+  BehavioralAdaptor      adaptor_emblem            -> High Collectivism (gesture)
+  BehavioralAdaptor      adaptor_emblem            -> High Power Distance (gesture)
+  FacsMapping            facs_microexpression      -> High Context (gaze_aversion)
+  FacsMapping            facs_microexpression      -> Reactive (gaze_aversion)
+  FacsMapping            facs_microexpression      -> High Collectivism (gaze_aversion)
+  FacsMapping            facs_sadness              -> Polychronic Time (extended_sadness_expression)
+  FacsMapping            facs_sadness              -> Multi-Active (extended_sadness_expression)
+
+PREFERS_STYLE (CulturalContext -> CommunicationStyle):
+  High Collectivism              -> ['Amiable', 'Formal']
+  High Context                   -> ['Amiable', 'Diplomatic']
+  High Femininity                -> ['Amiable', 'Diplomatic']
+  High Individualism             -> ['Assertive', 'Driver']
+  High Masculinity               -> ['Assertive', 'Driver']
+  High Power Distance            -> ['Formal', 'Diplomatic']
+  High Uncertainty Avoidance     -> ['Analytical', 'Formal']
+  Linear-Active                  -> ['Analytical', 'Driver']
+  Low Context                    -> ['Analytical', 'Assertive']
+  Low Power Distance             -> ['Assertive', 'Informal']
+  Low Uncertainty Avoidance      -> ['Expressive', 'Informal']
+  Multi-Active                   -> ['Amiable', 'Expressive']
+  Reactive                       -> ['Amiable', 'Formal']
+
+======================================================================

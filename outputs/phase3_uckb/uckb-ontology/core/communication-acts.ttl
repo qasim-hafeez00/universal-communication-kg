@@ -1,0 +1,240 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sac: <https://www.w3.org/community/s-agent-comm/ontology#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+uckb:CONTRADICTS a owl:ObjectProperty ;
+    rdfs:label "CONTRADICTS" ;
+    rdfs:comment "The two techniques conflict when applied simultaneously." ;
+    rdfs:domain uckb:CommunicationTechnique ;
+    rdfs:range uckb:CommunicationTechnique .
+
+uckb:CONTRAINDICATED_WHEN a owl:ObjectProperty ;
+    rdfs:label "CONTRAINDICATED_WHEN" ;
+    rdfs:comment "Technique must not be used when this emotional or contextual state is present." ;
+    rdfs:domain uckb:CommunicationTechnique ;
+    rdfs:range uckb:EmotionalState .
+
+uckb:CULTURAL_VARIANT_OF a owl:ObjectProperty ;
+    rdfs:label "CULTURAL_VARIANT_OF" ;
+    rdfs:comment "This is a culturally adapted form of the target technique." ;
+    rdfs:domain uckb:CommunicationTechnique ;
+    rdfs:range uckb:CommunicationTechnique .
+
+uckb:CommunicationAct a owl:Class ;
+    rdfs:label "CommunicationAct" ;
+    rdfs:comment "The atomic unit — a specific thing said, signaled, or expressed with a defined function." .
+
+uckb:CommunicationStyle a owl:Class ;
+    rdfs:label "CommunicationStyle" ;
+    rdfs:comment "A persistent behavioural pattern in how a person communicates." .
+
+uckb:CulturalContext a owl:Class ;
+    rdfs:label "CulturalContext" ;
+    rdfs:comment "A defined cultural configuration affecting interpretation and norms." .
+
+uckb:DOMAIN_VARIANT_OF a owl:ObjectProperty ;
+    rdfs:label "DOMAIN_VARIANT_OF" ;
+    rdfs:comment "This is a domain-specific adaptation of the target core technique." ;
+    rdfs:domain uckb:CommunicationTechnique ;
+    rdfs:range uckb:CommunicationTechnique .
+
+uckb:DomainProtocol a owl:Class ;
+    rdfs:label "DomainProtocol" ;
+    rdfs:comment "A field-specific procedural framework governing communication in a domain." .
+
+uckb:ENHANCES a owl:ObjectProperty ;
+    rdfs:label "ENHANCES" ;
+    rdfs:comment "Applying this technique improves effectiveness of the target." ;
+    rdfs:domain uckb:CommunicationTechnique ;
+    rdfs:range uckb:CommunicationTechnique .
+
+uckb:ESCALATES_TO a owl:ObjectProperty ;
+    rdfs:label "ESCALATES_TO" ;
+    rdfs:comment "Failure of this technique warrants escalation to the target technique." ;
+    rdfs:domain uckb:CommunicationTechnique ;
+    rdfs:range uckb:CommunicationTechnique .
+
+uckb:FOLLOWS a owl:ObjectProperty ;
+    rdfs:label "FOLLOWS" ;
+    rdfs:comment "This technique follows the target in a protocol sequence." ;
+    rdfs:domain uckb:CommunicationTechnique ;
+    rdfs:range uckb:CommunicationTechnique .
+
+uckb:PRECEDES a owl:ObjectProperty ;
+    rdfs:label "PRECEDES" ;
+    rdfs:comment "This technique must occur before the target in a protocol sequence." ;
+    rdfs:domain uckb:CommunicationTechnique ;
+    rdfs:range uckb:CommunicationTechnique .
+
+uckb:PsychologicalModel a owl:Class ;
+    rdfs:label "PsychologicalModel" ;
+    rdfs:comment "A theoretical framework explaining human behaviour and emotional state." .
+
+uckb:REQUIRES a owl:ObjectProperty ;
+    rdfs:label "REQUIRES" ;
+    rdfs:comment "Technique requires another technique or state as a prerequisite." ;
+    rdfs:domain uckb:CommunicationTechnique ;
+    rdfs:range uckb:CommunicationTechnique .
+
+uckb:RESOLVES a owl:ObjectProperty ;
+    rdfs:label "RESOLVES" ;
+    rdfs:comment "This technique resolves or deactivates the target state or dysfunction." ;
+    rdfs:domain uckb:CommunicationTechnique ;
+    rdfs:range uckb:EmotionalState .
+
+uckb:TRIGGERED_BY a owl:ObjectProperty ;
+    rdfs:label "TRIGGERED_BY" ;
+    rdfs:comment "This technique is activated when the target signal marker is detected." ;
+    rdfs:domain uckb:CommunicationTechnique ;
+    rdfs:range uckb:SignalMarker .
+
+uckb:UCKBOntology a owl:Ontology ;
+    rdfs:label "Universal Communication Knowledge Base Ontology" ;
+    dc:creator "UCKB Project" ;
+    dc:description "Formal OWL ontology encoding all communication techniques, acts, psychological models, cultural contexts, emotional states, and domain protocols for the UCKB." .
+
+uckb:cardId a owl:DatatypeProperty ;
+    rdfs:label "cardId" ;
+    rdfs:comment "Unique identifier string for this technique card." ;
+    rdfs:range xsd:string .
+
+uckb:classLabel a owl:DatatypeProperty ;
+    rdfs:label "classLabel" ;
+    rdfs:comment "Ontology class this technique belongs to." ;
+    rdfs:range xsd:string .
+
+uckb:cognitiveLoadProfile a owl:DatatypeProperty ;
+    rdfs:label "cognitiveLoadProfile" ;
+    rdfs:comment "Cognitive load classification (e.g. low-load, high-directive)." ;
+    rdfs:range xsd:string .
+
+uckb:contraindications a owl:DatatypeProperty ;
+    rdfs:label "contraindications" ;
+    rdfs:comment "Safety constraints and absolute restrictions." ;
+    rdfs:range xsd:string .
+
+uckb:culturalNotes a owl:DatatypeProperty ;
+    rdfs:label "culturalNotes" ;
+    rdfs:comment "Cultural adaptation notes from Hofstede, Hall, Lewis dimensions." ;
+    rdfs:range xsd:string .
+
+uckb:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    rdfs:comment "Concise definition of what this technique is and what it does." ;
+    rdfs:range xsd:string .
+
+uckb:dialogueActLinks a owl:DatatypeProperty ;
+    rdfs:label "dialogueActLinks" ;
+    rdfs:comment "ISO 24617-2 dialogue act categories this technique maps to." ;
+    rdfs:range xsd:string .
+
+uckb:domain a owl:DatatypeProperty ;
+    rdfs:label "domain" ;
+    rdfs:comment "Primary domain of application." ;
+    rdfs:range xsd:string .
+
+uckb:domainVariants a owl:DatatypeProperty ;
+    rdfs:label "domainVariants" ;
+    rdfs:comment "Named domain-specific adaptations of this technique." ;
+    rdfs:range xsd:string .
+
+uckb:failureSignals a owl:DatatypeProperty ;
+    rdfs:label "failureSignals" ;
+    rdfs:comment "Observable indicators that the technique is failing." ;
+    rdfs:range xsd:string .
+
+uckb:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:comment "Human-readable name of the technique." ;
+    rdfs:range xsd:string .
+
+uckb:requiredEdges a owl:DatatypeProperty ;
+    rdfs:label "requiredEdges" ;
+    rdfs:comment "Raw edge declarations parsed into object property triples." ;
+    rdfs:range xsd:string .
+
+uckb:reviewNotes a owl:DatatypeProperty ;
+    rdfs:label "reviewNotes" ;
+    rdfs:comment "Free-text review and curation notes." ;
+    rdfs:range xsd:string .
+
+uckb:reviewStatus a owl:DatatypeProperty ;
+    rdfs:label "reviewStatus" ;
+    rdfs:comment "Current review state of this technique card." ;
+    rdfs:range xsd:string .
+
+uckb:sourceIds a owl:DatatypeProperty ;
+    rdfs:label "sourceIds" ;
+    rdfs:comment "Provenance references from the Source Register." ;
+    rdfs:range xsd:string .
+
+uckb:steps a owl:DatatypeProperty ;
+    rdfs:label "steps" ;
+    rdfs:comment "Step-by-step execution protocol." ;
+    rdfs:range xsd:string .
+
+uckb:successSignals a owl:DatatypeProperty ;
+    rdfs:label "successSignals" ;
+    rdfs:comment "Observable indicators that the technique is working." ;
+    rdfs:range xsd:string .
+
+uckb:switchTo a owl:DatatypeProperty ;
+    rdfs:label "switchTo" ;
+    rdfs:comment "Fallback techniques if this one fails." ;
+    rdfs:range xsd:string .
+
+uckb:tier a owl:DatatypeProperty ;
+    rdfs:label "tier" ;
+    rdfs:comment "Implementation priority tier (1 = highest)." ;
+    rdfs:range xsd:string .
+
+uckb:triggerSignals a owl:DatatypeProperty ;
+    rdfs:label "triggerSignals" ;
+    rdfs:comment "Signal markers whose detection activates this technique." ;
+    rdfs:range xsd:string .
+
+uckb:whenNotToUse a owl:DatatypeProperty ;
+    rdfs:label "whenNotToUse" ;
+    rdfs:comment "Conditions under which this technique must not be used." ;
+    rdfs:range xsd:string .
+
+uckb:whenToUse a owl:DatatypeProperty ;
+    rdfs:label "whenToUse" ;
+    rdfs:comment "Conditions under which this technique should be activated." ;
+    rdfs:range xsd:string .
+
+sac:Agent a owl:Class ;
+    rdfs:label "Agent" ;
+    rdfs:comment "Any communicative entity (human, AI, organisation) with a defined role and capability set." .
+
+sac:Capability a owl:Class ;
+    rdfs:label "Capability" ;
+    rdfs:comment "The specific communication techniques and knowledge domains an agent has access to." .
+
+sac:Delegation a owl:Class ;
+    rdfs:label "Delegation" ;
+    rdfs:comment "The transfer of a task or authority from one agent to another within a conversation." .
+
+sac:ExecutionRecord a owl:Class ;
+    rdfs:label "ExecutionRecord" ;
+    rdfs:comment "A persistent log of what communication act was performed, when, and with what result." .
+
+sac:Intent a owl:Class ;
+    rdfs:label "Intent" ;
+    rdfs:comment "The underlying goal or communicative function an agent is attempting to achieve." .
+
+uckb:SignalMarker a owl:Class ;
+    rdfs:label "SignalMarker" ;
+    rdfs:comment "An observable verbal, paralinguistic, or behavioural indicator that triggers routing." .
+
+uckb:EmotionalState a owl:Class ;
+    rdfs:label "EmotionalState" ;
+    rdfs:comment "A classified affective condition of the interlocutor at a given moment." .
+
+uckb:CommunicationTechnique a owl:Class ;
+    rdfs:label "CommunicationTechnique" ;
+    rdfs:comment "A defined, repeatable method for achieving a communication goal." .
+

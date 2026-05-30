@@ -1,0 +1,182 @@
+{
+  "@context": {
+    "owl":     "http://www.w3.org/2002/07/owl#",
+    "rdf":     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs":    "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd":     "http://www.w3.org/2001/XMLSchema#",
+    "skos":    "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "uckb":    "https://uckb.io/ontology#",
+    "dsmart":  "https://uckb.io/ontology/dsmart#"
+  },
+  "@graph": [
+    {
+      "@id": "https://uckb.io/ontology/dsmart",
+      "@type": "owl:Ontology",
+      "dcterms:title": "UCKB D-SMART Memory Ontology",
+      "dcterms:description": "OWL ontology for Phase 10 Multi-Turn Logical Consistency layer.",
+      "owl:versionInfo": "1.0"
+    },
+    {
+      "@id": "dsmart:ConversationFact",
+      "@type": "owl:Class",
+      "rdfs:label": "Conversation Fact",
+      "rdfs:comment": "Atomic speaker-attributed fact extracted from a Turn by the DSM.",
+      "rdfs:subClassOf": { "@id": "uckb:KnowledgeNode" }
+    },
+    {
+      "@id": "dsmart:GoalState",
+      "@type": "owl:Class",
+      "rdfs:label": "Goal State",
+      "rdfs:comment": "Inferred underlying user goal tracked across turns to detect goal drift.",
+      "rdfs:subClassOf": { "@id": "uckb:KnowledgeNode" }
+    },
+    {
+      "@id": "dsmart:ProtocolTracker",
+      "@type": "owl:Class",
+      "rdfs:label": "Protocol Tracker",
+      "rdfs:comment": "Live protocol position and deviation counter bridging ProtocolDAG to session.",
+      "rdfs:subClassOf": { "@id": "uckb:KnowledgeNode" }
+    },
+    {
+      "@id": "dsmart:ConsistencyConflict",
+      "@type": "owl:Class",
+      "rdfs:label": "Consistency Conflict",
+      "rdfs:comment": "A detected contradiction (factual, goal, or protocol) logged into the DSM.",
+      "rdfs:subClassOf": { "@id": "uckb:KnowledgeNode" }
+    },
+    {
+      "@id": "dsmart:ReasoningCandidate",
+      "@type": "owl:Class",
+      "rdfs:label": "Reasoning Candidate",
+      "rdfs:comment": "One RT candidate response path with NLI score before final selection.",
+      "rdfs:subClassOf": { "@id": "uckb:KnowledgeNode" }
+    },
+    {
+      "@id": "dsmart:ConsistencyReport",
+      "@type": "owl:Class",
+      "rdfs:label": "Consistency Report",
+      "rdfs:comment": "Per-session DER snapshot at a milestone turn.",
+      "rdfs:subClassOf": { "@id": "uckb:KnowledgeNode" }
+    },
+    {
+      "@id": "dsmart:extractedFrom",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "extracted from",
+      "rdfs:domain": { "@id": "dsmart:ConversationFact" },
+      "rdfs:range":  { "@id": "uckb:Turn" }
+    },
+    {
+      "@id": "dsmart:contradicts",
+      "@type": ["owl:ObjectProperty", "owl:SymmetricProperty"],
+      "rdfs:label": "contradicts",
+      "rdfs:domain": { "@id": "dsmart:ConversationFact" },
+      "rdfs:range":  { "@id": "dsmart:ConversationFact" }
+    },
+    {
+      "@id": "dsmart:supersedes",
+      "@type": ["owl:ObjectProperty", "owl:IrreflexiveProperty"],
+      "rdfs:label": "supersedes",
+      "rdfs:domain": { "@id": "dsmart:ConversationFact" },
+      "rdfs:range":  { "@id": "dsmart:ConversationFact" }
+    },
+    {
+      "@id": "dsmart:hasGoal",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "has goal",
+      "rdfs:domain": { "@id": "uckb:Session" },
+      "rdfs:range":  { "@id": "dsmart:GoalState" }
+    },
+    {
+      "@id": "dsmart:hasTracker",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "has tracker",
+      "rdfs:domain": { "@id": "uckb:Session" },
+      "rdfs:range":  { "@id": "dsmart:ProtocolTracker" }
+    },
+    {
+      "@id": "dsmart:tracks",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "tracks",
+      "rdfs:domain": { "@id": "dsmart:ProtocolTracker" },
+      "rdfs:range":  { "@id": "uckb:ProtocolDAG" }
+    },
+    {
+      "@id": "dsmart:candidateFor",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "candidate for",
+      "rdfs:domain": { "@id": "dsmart:ReasoningCandidate" },
+      "rdfs:range":  { "@id": "uckb:Turn" }
+    },
+    {
+      "@id": "dsmart:hasReport",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "has report",
+      "rdfs:domain": { "@id": "uckb:Session" },
+      "rdfs:range":  { "@id": "dsmart:ConsistencyReport" }
+    },
+    {
+      "@id": "dsmart:flaggedDeviation",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "flagged deviation",
+      "rdfs:domain": { "@id": "dsmart:ProtocolTracker" },
+      "rdfs:range":  { "@id": "dsmart:ConsistencyConflict" }
+    },
+    {
+      "@id": "dsmart:factType",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "fact type",
+      "rdfs:domain": { "@id": "dsmart:ConversationFact" },
+      "rdfs:range":  { "@id": "xsd:string" }
+    },
+    {
+      "@id": "dsmart:superseded",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "superseded",
+      "rdfs:domain": { "@id": "dsmart:ConversationFact" },
+      "rdfs:range":  { "@id": "xsd:boolean" }
+    },
+    {
+      "@id": "dsmart:goalStatus",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "goal status",
+      "rdfs:domain": { "@id": "dsmart:GoalState" },
+      "rdfs:range":  { "@id": "xsd:string" }
+    },
+    {
+      "@id": "dsmart:confidenceScore",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "confidence score",
+      "rdfs:domain": { "@id": "dsmart:GoalState" },
+      "rdfs:range":  { "@id": "xsd:decimal" }
+    },
+    {
+      "@id": "dsmart:deviationCount",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "deviation count",
+      "rdfs:domain": { "@id": "dsmart:ProtocolTracker" },
+      "rdfs:range":  { "@id": "xsd:integer" }
+    },
+    {
+      "@id": "dsmart:nliScore",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "NLI score",
+      "rdfs:domain": { "@id": "dsmart:ReasoningCandidate" },
+      "rdfs:range":  { "@id": "xsd:decimal" }
+    },
+    {
+      "@id": "dsmart:compositeScore",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "composite score",
+      "rdfs:domain": { "@id": "dsmart:ReasoningCandidate" },
+      "rdfs:range":  { "@id": "xsd:decimal" }
+    },
+    {
+      "@id": "dsmart:derScore",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "DER score",
+      "rdfs:domain": { "@id": "dsmart:ConsistencyReport" },
+      "rdfs:range":  { "@id": "xsd:decimal" }
+    }
+  ]
+}

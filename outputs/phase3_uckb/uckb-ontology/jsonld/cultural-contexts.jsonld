@@ -1,0 +1,325 @@
+[
+  {
+    "@id": "https://uckb.io/ontology#PolychronicTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Parallel activities and relationship flow over rigid schedules."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Polychronic Time"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#HighProxemics",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Close physical and conversational space is normal; distance signals rejection."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "High Proxemics"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#IndividualismHigh",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Personal goals, autonomy, and direct I-statements dominate communication."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "High Individualism"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#MasculinityHigh",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Achievement, assertiveness, and material success dominate communication goals."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "High Masculinity"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#UncertaintyAvoidanceLow",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Tolerance for ambiguity; flexible, improvisational style accepted."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Low Uncertainty Avoidance"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PowerDistanceHigh",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Hierarchical authority structures accepted; formal communication preferred."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "High Power Distance"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#LowProxemics",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Larger personal space norms; proximity may feel intrusive."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Low Proxemics"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#ShortTermOrientation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Immediate results and face maintenance prioritised."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Short-Term Orientation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#LongTermOrientation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Perseverance and relationship investment valued over immediate results."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Long-Term Orientation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#MultiActive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Relationship-oriented, emotional, spontaneous; rapport before task."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Multi-Active"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#UncertaintyAvoidanceHigh",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Preference for rules, formality, and explicit reassurance."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "High Uncertainty Avoidance"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#CollectivismHigh",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "In-group harmony, face-saving, and indirect communication preferred."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "High Collectivism"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#HighContext",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Meaning conveyed through implicit cues, relationship history, and nonverbal signals."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "High Context"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#FemininityHigh",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Cooperation, modesty, caring, and quality of life shape communication register."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "High Femininity"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#LinearActive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Task-oriented, logical, direct; expects factual, structured communication."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Linear-Active"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Reactive",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Listens carefully before responding; values harmony, indirect communication, face-saving."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Reactive"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#MonochronicTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Linear, schedule-driven; interruption is disrespectful."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Monochronic Time"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PowerDistanceLow",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Flat authority structures; informal, egalitarian communication expected."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Low Power Distance"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#LowContext",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CulturalContext"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Meaning conveyed explicitly through words; directness expected."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Low Context"
+      }
+    ]
+  }
+]

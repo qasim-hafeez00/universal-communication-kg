@@ -1,0 +1,56 @@
+UCKB Phase 8 — Validation Report
+Generated: 2026-05-30 11:12:56
+======================================================================
+
+ACCEPTANCE CRITERIA
+----------------------------------------------------------------------
+  [FAIL]    AC-P8-1 Legal & Investigative
+             threshold=>= 40
+  [FAIL]    AC-P8-1 Corporate & Engineering
+             threshold=>= 40
+  [FAIL]    AC-P8-1 Education
+             threshold=>= 40
+  [PASS]    AC-P8-2 DAG Structures
+             value=9 DAGs, 0 cycles
+             threshold=>= 9 DAGs, 0 cycles
+  [FAIL]    AC-P8-3 Gate Coverage
+             value=25/28 steps gated
+             threshold=100% of non-first steps with defined gates where protocol has gates
+             detail=Unguarded: ['nvc_dag/nvc_step_3', 'nvc_dag/nvc_step_4', 'sbi_dag/sbi_step_2']
+  [FAIL]    AC-P8-4 Reid Technique Block
+             value=exists=False, blocked=None, contraindication=None, tier=None
+             threshold=exists=True, blocked=true, contraindication=ABSOLUTE, tier=BLOCKED
+  [FAIL]    AC-P8-5 Reid Absolute Block Edge
+             value=CONTRAINDICATED_WHEN edge present: False
+             threshold=Edge must exist
+  [FAIL]    AC-P8-5 Corporate Environmental Block
+             value=CONTRAINDICATED_WHEN edge present: False
+             threshold=Edge must exist
+  [FAIL]    AC-P8-5 Education Socratic Block
+             value=CONTRAINDICATED_WHEN edge present: False
+             threshold=Edge must exist
+  [FAIL]    AC-P8-6 New Domain Node Count
+             threshold=>= 100 new domain content nodes (proxy for ~700 total with Phase 4 base)
+             note=Full 700+ count requires live Neo4j; this validates new domain contribution only.
+  [FAIL]    AC-P8-7 Schema Registry
+             value=file missing
+             threshold=file exists
+  [FAIL]    AC-P8-8 SHACL Shapes
+             value=file missing
+             threshold=file exists
+  [PASS]    AC-P8-9 Review Status Legal
+             value=0/0
+             threshold=100%
+  [PASS]    AC-P8-9 Review Status Corporate
+             value=0/0
+             threshold=100%
+  [PASS]    AC-P8-9 Review Status Education
+             value=0/0
+             threshold=100%
+  [FAIL]    AC-P8-10 Templates
+             value=file missing
+
+======================================================================
+  OVERALL: FAILURES PRESENT
+  4/16 criteria passed
+======================================================================

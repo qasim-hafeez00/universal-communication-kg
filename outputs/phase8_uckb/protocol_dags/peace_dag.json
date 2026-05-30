@@ -1,0 +1,63 @@
+{
+  "id": "peace_dag",
+  "name": "PEACE Protocol",
+  "domain": "Legal & Investigative",
+  "description": "UK Police: Preparation, Engage/Explain, Account, Closure, Evaluation.",
+  "steps": [
+    {
+      "id": "peace_p",
+      "name": "Preparation",
+      "stepNumber": 1,
+      "gate": null
+    },
+    {
+      "id": "peace_e1",
+      "name": "Engage and Explain",
+      "stepNumber": 2,
+      "gate": "peace_gate_1",
+      "constraint": "deception_by_interviewer_contraindicated_absolute"
+    },
+    {
+      "id": "peace_a",
+      "name": "Account",
+      "stepNumber": 3,
+      "gate": "peace_gate_2",
+      "note": "Free narrative FIRST; contradictions addressed ONLY after full account."
+    },
+    {
+      "id": "peace_c",
+      "name": "Closure",
+      "stepNumber": 4,
+      "gate": "peace_gate_3"
+    },
+    {
+      "id": "peace_e2",
+      "name": "Evaluation",
+      "stepNumber": 5,
+      "gate": "peace_gate_4"
+    }
+  ],
+  "gates": [
+    {
+      "id": "peace_gate_1",
+      "condition": "interview_objectives_defined AND evidence_reviewed"
+    },
+    {
+      "id": "peace_gate_2",
+      "condition": "caution_delivered AND rapport_established AND rights_explained"
+    },
+    {
+      "id": "peace_gate_3",
+      "condition": "full_narrative_obtained AND no_interruptions_made"
+    },
+    {
+      "id": "peace_gate_4",
+      "condition": "summary_confirmed_by_interviewee"
+    }
+  ],
+  "techniques": {
+    "2": "legal_013_rapport_through_transparency",
+    "3": "legal_001_free_narrative_invitation",
+    "4": "legal_011_summary_and_confirm"
+  }
+}

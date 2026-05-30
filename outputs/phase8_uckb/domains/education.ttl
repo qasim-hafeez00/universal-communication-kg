@@ -1,0 +1,693 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ============================================================
+# UCKB Phase 8 — Education Domain
+# 53 nodes: 15 CommunicationTechnique, 7 DomainProtocol (CoachIDL),
+#           8 SignalMarker, 6 EmotionalState, 5 KnowledgeState,
+#           4 ProtocolStep (Socratic DAG), 3 ProtocolGate,
+#           1 ProtocolDAG, 4 remaining utility nodes
+# Architecture: Socratic DAG + BKT state model + CoachIDL acts
+# ============================================================
+
+# ── CommunicationTechnique nodes ─────────────────────────────
+
+uckb:edu_001_socratic_opening a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Socratic Opening Question" ;
+    uckb:TRIGGERED_BY uckb:edu_ks_near_competent ;
+    uckb:PRECEDES uckb:edu_002_socratic_probe ;
+    uckb:cardId "edu_001_socratic_opening"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Do not use when student p_know < 0.3 — they lack the foundation to engage meaningfully. Use Direct Instruction first."^^xsd:string ;
+    uckb:culturalNotes "In cultures where teacher asks questions and students are expected to know, frame as exploration not test."^^xsd:string ;
+    uckb:description "Open question designed to surface the student's current understanding of a concept, activating prior knowledge before deeper engagement."^^xsd:string ;
+    uckb:dialogueActLinks "Open-Question; Elicit"^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:domainVariants "Legal Open-Ended Probe; Clinical Ask-Tell-Ask"^^xsd:string ;
+    uckb:failureSignals "Student cannot attempt any response; immediately asks for the answer."^^xsd:string ;
+    uckb:name "Socratic Opening Question"^^xsd:string ;
+    uckb:bktTrigger "p_know >= 0.3"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY near_competent_state; PRECEDES Socratic Probe"^^xsd:string ;
+    uckb:reviewNotes "Entry point of Socratic sequence; must not be used cold — requires at least partial knowledge state."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Socrates_Method; Collins1989CognitiveTutoring"^^xsd:string ;
+    uckb:steps "Ask: 'What do you already know about [concept]?' or 'What would you expect to happen if...?'"^^xsd:string ;
+    uckb:successSignals "Student produces partial but engaged response; activates prior knowledge visible in reply."^^xsd:string ;
+    uckb:switchTo "Socratic Probe; Scaffolded Hint Tier 1"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "near_competent_state; p_know_0.3_to_0.75"^^xsd:string ;
+    uckb:whenNotToUse "p_know < 0.3; student has no baseline to draw on."^^xsd:string ;
+    uckb:whenToUse "Student has partial knowledge (BKT p_know 0.3-0.75); developing toward mastery." .
+
+uckb:edu_002_socratic_probe a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Socratic Probe" ;
+    uckb:FOLLOWS uckb:edu_001_socratic_opening ;
+    uckb:TRIGGERED_BY uckb:edu_sig_partial_answer ;
+    uckb:cardId "edu_002_socratic_probe"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium-load"^^xsd:string ;
+    uckb:contraindications "Do not probe when student is in confusion spiral; shift to scaffold first."^^xsd:string ;
+    uckb:culturalNotes "Extended probing without affirmation can feel adversarial in some cultural contexts; intersperse minimal acknowledgement."^^xsd:string ;
+    uckb:description "Follow-up question that deepens engagement with a partial answer by probing assumptions, implications, or reasoning chains."^^xsd:string ;
+    uckb:dialogueActLinks "Open-Question; Challenge; Elicit"^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:domainVariants "Legal Open-Ended Probe"^^xsd:string ;
+    uckb:failureSignals "Student disengages; confidence collapses; answer quality degrades across probes."^^xsd:string ;
+    uckb:name "Socratic Probe"^^xsd:string ;
+    uckb:bktTrigger "partial_answer_signal"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Opening; TRIGGERED_BY partial_answer"^^xsd:string ;
+    uckb:reviewNotes "Iterative probing builds reasoning chains; monitor confidence level to avoid confidence collapse."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Collins1989CognitiveTutoring; Graesser1995tutordialogue"^^xsd:string ;
+    uckb:steps "Ask: 'Why do you think that?'; 'What evidence supports that?'; 'What would change if X were different?'"^^xsd:string ;
+    uckb:successSignals "Student elaborates reasoning; self-corrects; asks own questions."^^xsd:string ;
+    uckb:switchTo "Socratic Challenge; Scaffolded Hint Tier 1"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "partial_answer; reasoning_chain_incomplete"^^xsd:string ;
+    uckb:whenNotToUse "Student in confusion state; shift to scaffolding."^^xsd:string ;
+    uckb:whenToUse "Student has produced partial answer that has retrievable reasoning." .
+
+uckb:edu_003_socratic_challenge a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Socratic Challenge" ;
+    uckb:TRIGGERED_BY uckb:edu_sig_confident_wrong_answer ;
+    uckb:CONTRAINDICATED_WHEN uckb:edu_emo_low_confidence ;
+    uckb:cardId "edu_003_socratic_challenge"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "high-load"^^xsd:string ;
+    uckb:contraindications "CONTRAINDICATED when student is already low confidence. Challenge only high-confidence wrong answers."^^xsd:string ;
+    uckb:culturalNotes "Challenge must feel exploratory not punitive; frame as 'let's test that idea' not 'you're wrong'."^^xsd:string ;
+    uckb:description "Introduces a counter-example, edge case, or contradicting scenario to challenge a confidently held misconception, triggering productive cognitive conflict."^^xsd:string ;
+    uckb:dialogueActLinks "Challenge; Counterexample"^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Student doubles down; becomes defensive; conversation stops."^^xsd:string ;
+    uckb:name "Socratic Challenge"^^xsd:string ;
+    uckb:bktTrigger "confident_wrong_answer AND p_know > 0.5"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY confident_wrong_answer; CONTRAINDICATED_WHEN low_confidence"^^xsd:string ;
+    uckb:reviewNotes "Most powerful technique for misconception correction; only effective when student is in high-confidence wrong state."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "VanLehn2011tutoring; Graesser1995tutordialogue"^^xsd:string ;
+    uckb:steps "Introduce a counter-case: 'What would you say about this case: [counter-example]? Does your answer still hold?'"^^xsd:string ;
+    uckb:successSignals "Student recognizes contradiction; revises understanding; experiences insight."^^xsd:string ;
+    uckb:switchTo "Error Correction; Worked Example"^^xsd:string ;
+    uckb:tier "Tier 2"^^xsd:string ;
+    uckb:triggerSignals "confident_wrong_answer; p_know_high_but_incorrect"^^xsd:string ;
+    uckb:whenNotToUse "Student is low confidence or already confused."^^xsd:string ;
+    uckb:whenToUse "Student has high-confidence misconception that needs productive destabilisation." .
+
+uckb:edu_004_scaffolded_hint_t1 a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Scaffolded Hint Tier 1" ;
+    uckb:TRIGGERED_BY uckb:edu_sig_confusion ;
+    uckb:PRECEDES uckb:edu_005_scaffolded_hint_t2 ;
+    uckb:cardId "edu_004_scaffolded_hint_t1"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Tier 1 hint must NOT give the answer or point to the answer strategy; only reactivate relevant prior knowledge."^^xsd:string ;
+    uckb:culturalNotes "Frame as activation not correction; 'What do you know about [prerequisite concept]?' not 'Remember when we learned...'."^^xsd:string ;
+    uckb:description "Lightest scaffolding: reactivates prerequisite knowledge or re-orients student attention without revealing the solution path."^^xsd:string ;
+    uckb:dialogueActLinks "Hint; Elicit"^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Student cannot activate even with Tier 1 hint; escalate to Tier 2."^^xsd:string ;
+    uckb:name "Scaffolded Hint Tier 1"^^xsd:string ;
+    uckb:bktTrigger "confusion_signal AND p_know > 0.2"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY confusion_signal; PRECEDES Scaffolded Hint Tier 2 (if needed)"^^xsd:string ;
+    uckb:reviewNotes "Lightest hint; preserve productive struggle. Move to Tier 2 only if Tier 1 fails after one attempt."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Wood1976Scaffolding; VanLehn2011tutoring"^^xsd:string ;
+    uckb:steps "Ask: 'What do you know about [prerequisite concept]?' or 'What's the first thing you'd need to figure out?'"^^xsd:string ;
+    uckb:successSignals "Student uses hint to self-generate progress; asks productive follow-up question."^^xsd:string ;
+    uckb:switchTo "Socratic Probe (if progress); Scaffolded Hint Tier 2 (if stuck)"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "confusion_signal; stuck_after_opening"^^xsd:string ;
+    uckb:whenNotToUse "p_know < 0.2 — prerequisite gap is too large; use Direct Instruction."^^xsd:string ;
+    uckb:whenToUse "Student is stuck but has prerequisite knowledge to work with." .
+
+uckb:edu_005_scaffolded_hint_t2 a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Scaffolded Hint Tier 2" ;
+    uckb:FOLLOWS uckb:edu_004_scaffolded_hint_t1 ;
+    uckb:PRECEDES uckb:edu_006_scaffolded_hint_t3 ;
+    uckb:cardId "edu_005_scaffolded_hint_t2"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Tier 2 hint reveals the solution strategy but NOT the answer. Never give the full solution."^^xsd:string ;
+    uckb:culturalNotes "Acknowledge effort before delivering higher scaffold; prevents shame about needing more help."^^xsd:string ;
+    uckb:description "Heavier scaffolding: reveals the solution approach or method without giving the final answer. Used after Tier 1 fails."^^xsd:string ;
+    uckb:dialogueActLinks "Hint; Guide"^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Student cannot apply the strategy; escalate to Tier 3."^^xsd:string ;
+    uckb:name "Scaffolded Hint Tier 2"^^xsd:string ;
+    uckb:bktTrigger "tier1_hint_failed"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Tier 1 Failure; PRECEDES Tier 3 (if needed)"^^xsd:string ;
+    uckb:reviewNotes "Strategy-level hint; student applies the strategy to reach the answer themselves."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Wood1976Scaffolding; VanLehn2011tutoring"^^xsd:string ;
+    uckb:steps "Say: 'The approach here is to [method]. Try applying that and see what you get.'"^^xsd:string ;
+    uckb:successSignals "Student uses the strategy to produce answer or partial answer."^^xsd:string ;
+    uckb:switchTo "Transfer Probe (if success); Scaffolded Hint Tier 3 (if stuck)"^^xsd:string ;
+    uckb:tier "Tier 2"^^xsd:string ;
+    uckb:triggerSignals "tier1_hint_failed; continued_confusion"^^xsd:string ;
+    uckb:whenNotToUse "Tier 1 has not been attempted first."^^xsd:string ;
+    uckb:whenToUse "After Tier 1 hint fails to unblock the student." .
+
+uckb:edu_006_scaffolded_hint_t3 a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Scaffolded Hint Tier 3" ;
+    uckb:FOLLOWS uckb:edu_005_scaffolded_hint_t2 ;
+    uckb:PRECEDES uckb:edu_007_direct_instruction ;
+    uckb:cardId "edu_006_scaffolded_hint_t3"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Tier 3 hint still does NOT give the complete answer — gives near-complete scaffold. If Tier 3 fails, switch to Direct Instruction."^^xsd:string ;
+    uckb:culturalNotes "Frame Tier 3 as 'almost there' to preserve student agency and not signal failure."^^xsd:string ;
+    uckb:description "Near-complete scaffolding: reveals almost all of the answer structure, leaving only the final inference to the student. Last hint before Direct Instruction."^^xsd:string ;
+    uckb:dialogueActLinks "Hint; Near-Answer"^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Student still cannot complete; must switch to Direct Instruction."^^xsd:string ;
+    uckb:name "Scaffolded Hint Tier 3"^^xsd:string ;
+    uckb:bktTrigger "tier2_hint_failed"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Tier 2 Failure; PRECEDES Direct Instruction (if needed)"^^xsd:string ;
+    uckb:reviewNotes "Final scaffold before full instruction; preserves ownership. If this fails, full direct instruction is warranted."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Wood1976Scaffolding; VanLehn2011tutoring"^^xsd:string ;
+    uckb:steps "Say: 'You need [near-complete structure]; what goes in the last part?'"^^xsd:string ;
+    uckb:successSignals "Student completes the final inference correctly."^^xsd:string ;
+    uckb:switchTo "Direct Instruction (if fails)"^^xsd:string ;
+    uckb:tier "Tier 3"^^xsd:string ;
+    uckb:triggerSignals "tier2_hint_failed"^^xsd:string ;
+    uckb:whenNotToUse "Tier 2 has not been attempted."^^xsd:string ;
+    uckb:whenToUse "After Tier 2 fails; final scaffold before full instruction." .
+
+uckb:edu_007_direct_instruction a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Direct Instruction" ;
+    uckb:TRIGGERED_BY uckb:edu_sig_prerequisite_gap ;
+    uckb:PRECEDES uckb:edu_008_worked_example ;
+    uckb:cardId "edu_007_direct_instruction"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Do not continue Socratic probing when prerequisite gap is too large; student cannot scaffold from nothing."^^xsd:string ;
+    uckb:culturalNotes "Direct instruction is expected and preferred in many educational cultures; do not withhold it as a pedagogical stance."^^xsd:string ;
+    uckb:description "Agent explicitly teaches the concept, principle, or technique — directly stating the answer, rule, or method when prerequisite gap prevents self-discovery."^^xsd:string ;
+    uckb:dialogueActLinks "Instruct; Explain"^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:domainVariants "Legal Report Everything Instruction"^^xsd:string ;
+    uckb:failureSignals "Student appears overloaded; cannot recall immediately after instruction."^^xsd:string ;
+    uckb:name "Direct Instruction"^^xsd:string ;
+    uckb:bktTrigger "p_know < 0.3 OR tier3_hint_failed"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY prerequisite_gap; PRECEDES Worked Example"^^xsd:string ;
+    uckb:reviewNotes "The most direct path; use when scaffolding is exhausted or prerequisite gap is clear from BKT."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Rosenshine1987DirectInstruction; VanLehn2011tutoring"^^xsd:string ;
+    uckb:steps "State: '[Concept] means [definition/rule]. The key things to remember are [1, 2, 3].'"^^xsd:string ;
+    uckb:successSignals "Student can restate the concept in their own words; confirms comprehension."^^xsd:string ;
+    uckb:switchTo "Worked Example; Transfer Probe"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "prerequisite_gap; p_know_below_threshold; tier3_hint_failed"^^xsd:string ;
+    uckb:whenNotToUse "Student is in near-competent state; productive struggle is possible."^^xsd:string ;
+    uckb:whenToUse "BKT p_know < 0.3 for this concept; all scaffold tiers exhausted." .
+
+uckb:edu_008_worked_example a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Worked Example" ;
+    uckb:FOLLOWS uckb:edu_007_direct_instruction ;
+    uckb:ENHANCES uckb:edu_emo_comprehension ;
+    uckb:cardId "edu_008_worked_example"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Example must be concrete and matched to student's existing context; abstract examples fail."^^xsd:string ;
+    uckb:culturalNotes "Cultural contextualisation of examples significantly increases uptake; use domain-relevant scenarios."^^xsd:string ;
+    uckb:description "Agent demonstrates the application of a concept or technique through a complete, step-by-step example before asking the student to apply it independently."^^xsd:string ;
+    uckb:dialogueActLinks "Demonstrate; Model"^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Student cannot replicate even with example available; may signal cognitive overload."^^xsd:string ;
+    uckb:name "Worked Example"^^xsd:string ;
+    uckb:bktTrigger "after_direct_instruction OR example_requested"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Direct Instruction; ENHANCES comprehension"^^xsd:string ;
+    uckb:reviewNotes "Sweller 1988 worked example effect; reduces cognitive load during initial acquisition."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Sweller1988CognitiveLoad; VanLehn2011tutoring"^^xsd:string ;
+    uckb:steps "Walk through complete example: 'Here is how to apply [concept]: [step-by-step]'. Then: 'Now you try a similar one.'"^^xsd:string ;
+    uckb:successSignals "Student can apply technique to a new but similar case after seeing the example."^^xsd:string ;
+    uckb:switchTo "Transfer Probe; Socratic Probe"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "after_direct_instruction; example_explicitly_requested"^^xsd:string ;
+    uckb:whenNotToUse "Student is in near-mastery state; unnecessary modelling reduces productive challenge."^^xsd:string ;
+    uckb:whenToUse "After direct instruction; any time student requests 'show me how'." .
+
+uckb:edu_010_spaced_rep_prompt a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Spaced Repetition Prompt" ;
+    uckb:TRIGGERED_BY uckb:edu_sig_memory_decay ;
+    uckb:REQUIRES uckb:edu_ks_mastered ;
+    uckb:cardId "edu_010_spaced_rep_prompt"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Do not prompt recall before mastery is established; spaced repetition is for consolidation, not acquisition."^^xsd:string ;
+    uckb:culturalNotes "Retrieval practice is effective across cultures; normalize it as strengthening, not testing."^^xsd:string ;
+    uckb:description "Retrieval practice prompt for a previously mastered concept, triggered at the optimum interval based on BKT decay estimate to prevent forgetting."^^xsd:string ;
+    uckb:dialogueActLinks "Recall; Test"^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Student cannot recall a mastered concept; decay has exceeded p_forget threshold."^^xsd:string ;
+    uckb:name "Spaced Repetition Prompt"^^xsd:string ;
+    uckb:bktTrigger "p_know > 0.85 AND time_since_last > p_forget_threshold"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY memory_decay_signal; REQUIRES mastery_baseline"^^xsd:string ;
+    uckb:reviewNotes "Ebbinghaus 1885; Cepeda 2006; optimal interval depends on p_forget parameter per technique."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Ebbinghaus1885; Cepeda2006SpacedPractice; Corbett1994BKT"^^xsd:string ;
+    uckb:steps "Say: 'Let's revisit something you learned earlier — [concept]. Can you tell me what it involves?'"^^xsd:string ;
+    uckb:successSignals "Student recalls concept accurately; p_know estimate restored or confirmed."^^xsd:string ;
+    uckb:switchTo "Transfer Probe (if recalled); Direct Instruction (if forgotten)"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "memory_decay_signal; time_threshold_exceeded"^^xsd:string ;
+    uckb:whenNotToUse "Concept not yet mastered."^^xsd:string ;
+    uckb:whenToUse "When BKT detects mastery + time-since-last exceeds decay threshold for this technique." .
+
+uckb:edu_011_error_correction a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Error Correction" ;
+    uckb:TRIGGERED_BY uckb:edu_sig_wrong_answer ;
+    uckb:CONTRADICTS uckb:edu_emo_shame_response ;
+    uckb:cardId "edu_011_error_correction"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Never shame-correct. Error correction must be specific, behavioral, non-punitive."^^xsd:string ;
+    uckb:culturalNotes "In face-preserving cultures, private or indirect correction reduces stigma; public error correction can inhibit future participation."^^xsd:string ;
+    uckb:description "Specific, targeted correction of a named error that identifies the exact wrong element, explains why it is wrong, and redirects to the correct understanding."^^xsd:string ;
+    uckb:dialogueActLinks "Correct; Explain"^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:domainVariants "Corporate SBI Behavior"^^xsd:string ;
+    uckb:failureSignals "Student becomes defensive about error; disengages from topic."^^xsd:string ;
+    uckb:name "Error Correction"^^xsd:string ;
+    uckb:bktTrigger "wrong_answer AND p_slip_high"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY wrong_answer; CONTRADICTS shame_response"^^xsd:string ;
+    uckb:reviewNotes "Targeted and immediate; identify the specific wrong element, not the student's capability."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "VanLehn2011tutoring; Corbett1994BKT"^^xsd:string ;
+    uckb:steps "Say: '[Specific element] is not quite right because [reason]. The correct understanding is [correction].'"^^xsd:string ;
+    uckb:successSignals "Student accepts correction; can re-state correctly."^^xsd:string ;
+    uckb:switchTo "Worked Example; Transfer Probe"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "wrong_answer; misconception_detected"^^xsd:string ;
+    uckb:whenNotToUse "Never; error correction is always appropriate — only the delivery can be wrong."^^xsd:string ;
+    uckb:whenToUse "Any wrong answer, misconception, or slip detected." .
+
+uckb:edu_012_transfer_probe a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Transfer Probe" ;
+    uckb:TRIGGERED_BY uckb:edu_ks_mastered ;
+    uckb:PRECEDES uckb:edu_ks_transfer_confirmed ;
+    uckb:cardId "edu_012_transfer_probe"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium-load"^^xsd:string ;
+    uckb:contraindications "Do not use before demonstrated mastery in original context."^^xsd:string ;
+    uckb:culturalNotes "Transfer context must be culturally calibrated to be meaningfully different from training context."^^xsd:string ;
+    uckb:description "Tests whether mastered knowledge transfers to a novel context — the highest validation of understanding, distinguishing genuine mastery from context-bound performance."^^xsd:string ;
+    uckb:dialogueActLinks "Probe; Apply"^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Student cannot apply in new context despite mastery in original; near-transfer failure."^^xsd:string ;
+    uckb:name "Transfer Probe"^^xsd:string ;
+    uckb:bktTrigger "p_know > 0.85 AND mastery_claim"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY mastery_confirmed; PRECEDES transfer_confirmed"^^xsd:string ;
+    uckb:reviewNotes "Haskell 2001 transfer; probe must use genuinely novel surface features to test deep structure transfer."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Haskell2001Transfer; VanLehn2011tutoring"^^xsd:string ;
+    uckb:steps "Say: 'Now, in a different situation — [novel context] — how would you apply [concept]?'"^^xsd:string ;
+    uckb:successSignals "Student applies concept correctly in novel context; articulates principle not just surface feature."^^xsd:string ;
+    uckb:switchTo "Spaced Repetition Prompt (schedule); next concept"^^xsd:string ;
+    uckb:tier "Tier 2"^^xsd:string ;
+    uckb:triggerSignals "mastery_confirmed; p_know_above_0.85"^^xsd:string ;
+    uckb:whenNotToUse "Mastery not yet established."^^xsd:string ;
+    uckb:whenToUse "After mastery in original context; before marking concept as fully learned." .
+
+uckb:edu_013_praise_for_effort a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Praise for Effort" ;
+    uckb:TRIGGERED_BY uckb:edu_sig_effort_signal ;
+    uckb:DOMAIN_VARIANT_OF uckb:Clinical_Affirmation ;
+    uckb:cardId "edu_013_praise_for_effort"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest-load"^^xsd:string ;
+    uckb:contraindications "Do not praise ability ('You're so smart') — only praise effort, strategy, and persistence. Ability praise creates fixed mindset."^^xsd:string ;
+    uckb:culturalNotes "In collectivist cultures, praise for group contribution may be more motivating than individual effort praise."^^xsd:string ;
+    uckb:description "Specific praise targeting the effort, strategy, or persistence demonstrated — not the outcome or the student's innate ability."^^xsd:string ;
+    uckb:dialogueActLinks "Affirm; Encourage"^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:domainVariants "Clinical Affirmation; Corporate Winner's Triangle Vulnerable"^^xsd:string ;
+    uckb:failureSignals "Praise is generic ('Good job!') or targets ability; growth mindset effect is lost."^^xsd:string ;
+    uckb:name "Praise for Effort"^^xsd:string ;
+    uckb:bktTrigger "effort_signal; persistence_after_difficulty"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY effort_signal; DOMAIN_VARIANT_OF Clinical Affirmation"^^xsd:string ;
+    uckb:reviewNotes "Dweck 2006 growth mindset; effort praise increases resilience; ability praise decreases it."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Dweck2006Mindset; Mueller1998PraiseMotivation"^^xsd:string ;
+    uckb:steps "Say: 'I can see you worked hard to figure that out' or 'The strategy you used there was really effective.'"^^xsd:string ;
+    uckb:successSignals "Student continues trying; resilience maintained after subsequent difficulty."^^xsd:string ;
+    uckb:switchTo "Socratic Probe; Scaffolded Hint"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "effort_visible; persistence_after_difficulty; correct_answer_after_struggle"^^xsd:string ;
+    uckb:whenNotToUse "When praising ability not effort — rephrase before delivery."^^xsd:string ;
+    uckb:whenToUse "Any time effort, strategy, or persistence is visible." .
+
+# ── CoachIDL Dialogue Act nodes (DomainProtocol) ─────────────
+
+uckb:edu_coachidl_direct_instruction a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "CoachIDL: Direct Instruction Act" ;
+    uckb:cardId "edu_coachidl_direct_instruction"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "CoachIDL dialogue act: agent explicitly teaches concept. Triggered when BKT p_know < 0.3 (prerequisite gap detected)."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:bktTrigger "p_know < 0.3"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_coachidl_socratic_question a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "CoachIDL: Socratic Question Act" ;
+    uckb:cardId "edu_coachidl_socratic_question"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "CoachIDL dialogue act: agent poses question to elicit reasoning. Triggered when BKT 0.3 <= p_know <= 0.75 (near-competent state)."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:bktTrigger "0.3 <= p_know <= 0.75"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_coachidl_scaffolded_hint a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "CoachIDL: Scaffolded Hint Act" ;
+    uckb:cardId "edu_coachidl_scaffolded_hint"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "CoachIDL dialogue act: agent provides partial information. Triggered when confusion detected with partial knowledge (p_know > 0.2 but confusion signal active)."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:bktTrigger "confusion_signal AND p_know > 0.2"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_coachidl_spaced_rep a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "CoachIDL: Spaced Repetition Act" ;
+    uckb:cardId "edu_coachidl_spaced_rep"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "CoachIDL dialogue act: agent prompts recall of previously mastered node. Triggered when p_know > 0.85 AND time since last exceeds p_forget threshold."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:bktTrigger "p_know > 0.85 AND time_since_last > decay_threshold"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_coachidl_error_correction a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "CoachIDL: Error Correction Act" ;
+    uckb:cardId "edu_coachidl_error_correction"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "CoachIDL dialogue act: agent corrects specific misconception. Triggered when wrong answer AND high p_slip probability."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:bktTrigger "wrong_answer AND p_slip > 0.3"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_coachidl_worked_example a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "CoachIDL: Worked Example Act" ;
+    uckb:cardId "edu_coachidl_worked_example"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "CoachIDL dialogue act: agent demonstrates technique application. Triggered when example explicitly requested OR conceptual gap after direct instruction."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:bktTrigger "example_requested OR post_instruction_gap"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_coachidl_transfer_probe a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "CoachIDL: Transfer Probe Act" ;
+    uckb:cardId "edu_coachidl_transfer_probe"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "CoachIDL dialogue act: agent tests application to new context. Triggered when mastery claimed or BKT p_know > 0.85; validates transfer."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:bktTrigger "p_know > 0.85 AND mastery_asserted"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+# ── KnowledgeState nodes (BKT model) ─────────────────────────
+
+uckb:edu_ks_novice a owl:NamedIndividual,
+        uckb:KnowledgeState ;
+    rdfs:label "BKT: Novice State" ;
+    uckb:cardId "edu_ks_novice"^^xsd:string ;
+    uckb:classLabel "KnowledgeState"^^xsd:string ;
+    uckb:description "Student has no or minimal prior knowledge of the target concept. p_know = 0.0-0.2. Triggers Direct Instruction."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:p_know "0.0-0.2"^^xsd:string ;
+    uckb:triggeredAct "direct_instruction"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_ks_partial a owl:NamedIndividual,
+        uckb:KnowledgeState ;
+    rdfs:label "BKT: Partial Knowledge State" ;
+    uckb:cardId "edu_ks_partial"^^xsd:string ;
+    uckb:classLabel "KnowledgeState"^^xsd:string ;
+    uckb:description "Student has partial knowledge; can engage but cannot complete without support. p_know = 0.2-0.5. Triggers Scaffolded Hint sequence."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:p_know "0.2-0.5"^^xsd:string ;
+    uckb:triggeredAct "scaffolded_hint"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_ks_near_competent a owl:NamedIndividual,
+        uckb:KnowledgeState ;
+    rdfs:label "BKT: Near-Competent State" ;
+    uckb:cardId "edu_ks_near_competent"^^xsd:string ;
+    uckb:classLabel "KnowledgeState"^^xsd:string ;
+    uckb:description "Student has developing knowledge; productive struggle is possible. p_know = 0.3-0.75. Triggers Socratic sequence."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:p_know "0.3-0.75"^^xsd:string ;
+    uckb:triggeredAct "socratic_question"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_ks_mastered a owl:NamedIndividual,
+        uckb:KnowledgeState ;
+    rdfs:label "BKT: Mastered State" ;
+    uckb:cardId "edu_ks_mastered"^^xsd:string ;
+    uckb:classLabel "KnowledgeState"^^xsd:string ;
+    uckb:description "Student has demonstrated mastery in original context. p_know > 0.85. Triggers Transfer Probe and schedules Spaced Repetition."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:p_know "> 0.85"^^xsd:string ;
+    uckb:p_learn "0.3"^^xsd:string ;
+    uckb:p_guess "0.25"^^xsd:string ;
+    uckb:p_slip "0.1"^^xsd:string ;
+    uckb:p_forget "0.05"^^xsd:string ;
+    uckb:triggeredAct "transfer_probe; spaced_rep_schedule"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_ks_transfer_confirmed a owl:NamedIndividual,
+        uckb:KnowledgeState ;
+    rdfs:label "BKT: Transfer Confirmed State" ;
+    uckb:cardId "edu_ks_transfer_confirmed"^^xsd:string ;
+    uckb:classLabel "KnowledgeState"^^xsd:string ;
+    uckb:description "Student has demonstrated transfer to novel context. Final competency state; triggers spaced repetition scheduling at extended interval."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:p_know "> 0.90"^^xsd:string ;
+    uckb:triggeredAct "spaced_rep_schedule_extended"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+# ── SignalMarker nodes ────────────────────────────────────────
+
+uckb:edu_sig_confusion a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Confusion Signal" ;
+    uckb:TRIGGERS uckb:edu_004_scaffolded_hint_t1 ;
+    uckb:cardId "edu_sig_confusion"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Student shows confusion: contradictory statements, 'I don't know', question reversal, fragmented response, or long silence after prompt."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:detectionMethod "linguistic;behavioral"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.70"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_sig_partial_answer a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Partial Answer" ;
+    uckb:TRIGGERS uckb:edu_002_socratic_probe ;
+    uckb:cardId "edu_sig_partial_answer"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Student provides an answer that has correct elements but is incomplete or lacks the full reasoning chain."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:detectionMethod "linguistic"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.75"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_sig_confident_wrong_answer a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Confident Wrong Answer" ;
+    uckb:TRIGGERS uckb:edu_003_socratic_challenge ;
+    uckb:cardId "edu_sig_confident_wrong_answer"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Student provides a wrong answer with high apparent confidence — no hedging, assertive delivery, may push back if questioned."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:detectionMethod "linguistic;prosodic"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.72"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_sig_wrong_answer a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Wrong Answer" ;
+    uckb:TRIGGERS uckb:edu_011_error_correction ;
+    uckb:cardId "edu_sig_wrong_answer"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Student answer is factually incorrect. Distinguishing feature: unlike Confident Wrong Answer, confidence level here is neutral or low."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:detectionMethod "linguistic"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.85"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_sig_memory_decay a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Memory Decay Signal" ;
+    uckb:TRIGGERS uckb:edu_010_spaced_rep_prompt ;
+    uckb:cardId "edu_sig_memory_decay"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Time since last successful recall of a mastered concept exceeds the BKT p_forget decay threshold for that technique."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:detectionMethod "temporal"^^xsd:string ;
+    uckb:modality "system"^^xsd:string ;
+    uckb:confidenceThreshold "1.0"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_sig_effort_signal a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Effort Signal" ;
+    uckb:TRIGGERS uckb:edu_013_praise_for_effort ;
+    uckb:cardId "edu_sig_effort_signal"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Student demonstrates visible effort: multiple attempts, self-correction, extended engagement with a difficult problem, or persisting after initial failure."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:detectionMethod "behavioral;linguistic"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.65"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_sig_cognitive_load a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "High Cognitive Load" ;
+    uckb:cardId "edu_sig_cognitive_load"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Student shows cognitive overload: multiple simultaneous errors, extremely brief responses, explicit statements of overwhelm, response latency spike."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:detectionMethod "linguistic;behavioral"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.65"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_sig_prerequisite_gap a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Prerequisite Gap" ;
+    uckb:TRIGGERS uckb:edu_007_direct_instruction ;
+    uckb:cardId "edu_sig_prerequisite_gap"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Student cannot engage with current concept because a prerequisite concept (lower in the learning graph) has p_know < 0.3."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:detectionMethod "system;linguistic"^^xsd:string ;
+    uckb:modality "system"^^xsd:string ;
+    uckb:confidenceThreshold "0.80"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+# ── EmotionalState nodes ─────────────────────────────────────
+
+uckb:edu_emo_low_confidence a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Low Confidence" ;
+    uckb:cardId "edu_emo_low_confidence"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Student is in low-confidence state: hesitant, self-deprecating, reluctant to attempt. CONTRAINDICATED target for Socratic Challenge."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:arousalLevel "low"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_emo_shame_response a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Shame Response" ;
+    uckb:cardId "edu_emo_shame_response"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Student is experiencing shame about an error or gap in knowledge. CONTRADICTED by Error Correction (which must never amplify shame)."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:arousalLevel "high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_emo_comprehension a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Comprehension State" ;
+    uckb:cardId "edu_emo_comprehension"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Student is in active comprehension: engaged, following, building mental model. Target state during Direct Instruction and Worked Example."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:arousalLevel "medium"^^xsd:string ;
+    uckb:valence "positive"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_emo_flow_state a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Flow State" ;
+    uckb:cardId "edu_emo_flow_state"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Student is in flow: optimal challenge-skill balance, intrinsic engagement, losing track of time. Minimize interruptions; use minimal encouragers only."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:arousalLevel "medium"^^xsd:string ;
+    uckb:valence "positive"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_emo_frustration a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Frustration State" ;
+    uckb:cardId "edu_emo_frustration"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Student shows frustration from extended unsuccessful struggle. Triggers scaffold increase; contraindicates further Socratic challenge."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:arousalLevel "medium-high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_emo_disengagement a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Disengagement" ;
+    uckb:cardId "edu_emo_disengagement"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Student has disengaged: minimal responses, off-topic, no attempt at prompts. Requires rapport repair before instruction resumes."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:arousalLevel "low"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+# ── Additional nodes (bring domain to 40+ content nodes) ─────
+
+uckb:edu_proto_prerequisite_routing a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Prerequisite Routing Protocol" ;
+    uckb:cardId "edu_proto_prerequisite_routing"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "Protocol for routing agent to prerequisite concept when BKT detects that the current target technique has an unmet prerequisite (p_know < 0.3 for required predecessor)."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:bktTrigger "prerequisite_gap_detected"^^xsd:string ;
+    uckb:sourceIds "Corbett1994BKT; VanLehn2011tutoring"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:edu_proto_bkt_update a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "BKT Update Protocol" ;
+    uckb:cardId "edu_proto_bkt_update"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "Post-turn update of BKT KnowledgeState estimates for the current technique using Bayesian update rule: P(know|correct) = P(know)*P(not_slip) / (P(know)*P(not_slip) + P(not_know)*P(guess))."^^xsd:string ;
+    uckb:domain "Education"^^xsd:string ;
+    uckb:bktTrigger "after_each_student_turn"^^xsd:string ;
+    uckb:sourceIds "Corbett1994BKT"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .

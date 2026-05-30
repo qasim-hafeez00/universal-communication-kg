@@ -1,0 +1,88 @@
+UCKB Phase 10 — Multi-Turn Logical Consistency (D-SMART) — Validation Report
+Generated: 2026-05-31 00:47:04
+======================================================================
+
+ACCEPTANCE CRITERIA
+----------------------------------------------------------------------
+  AC-P10-1  [PASS]  All 6 D-SMART node types present (ConversationFact, GoalState, ProtocolTracker, ConsistencyConflict, ReasoningCandidate, ConsistencyReport)
+            ConversationFact=18, GoalState=3, ProtocolTracker=3, ConsistencyConflict=4, ReasoningCandidate=15, ConsistencyReport=3
+
+  AC-P10-2  [PASS]  >= 15 ConversationFacts; all have factType, speakerRole, validFrom; all linked via EXTRACTED_FROM
+            total=18 (need >=15), withType=18, withSpeaker=18, withValidFrom=18, withEdge=18
+
+  AC-P10-3  [PASS]  ConsistencyConflict: >= 2 factual conflicts with CONTRADICTS edges (bidirectional)
+            ConsistencyConflicts=4, factualType=2 (need >=2), contradictsEdges=4 (need >=4 bidirectional)
+
+  AC-P10-4  [PASS]  SUPERSEDES edges: >= 2 temporal invalidations; target facts have superseded=true
+            supersedesEdges=2 (need >=2), superseded=true flags in facts=2 (need >=2)
+
+  AC-P10-5  [PASS]  GoalState: >= 3 nodes; all valid fields; >= 1 with driftDetectedAt set
+            total=3 (need >=3), withGoalType=3, withStatus=3, withConf=3, withDrift=1 (need >=1)
+
+  AC-P10-6  [PASS]  ProtocolTracker: >= 3 nodes; all linked via TRACKS to existing ProtocolDAG
+            total=3 (need >=3), tracksEdges=4 (must equal total), hasTrackerEdges=4, protocolIds=['bcsm_dag', 'bcsm_dag', 'spin_dag']
+
+  AC-P10-7  [PASS]  ReasoningCandidate: >= 15 nodes; all compositeScores in [0,1]; exactly 1 selected per turn group
+            total=15 (need >=15), compositeScores=15 all valid=True, selected_true=5 (need 5), selected_false=10 (need 10)
+
+  AC-P10-8  [PASS]  ConsistencyReport: >= 3 nodes; all derScore in [0,1]; all linked via HAS_REPORT
+            total=3 (need >=3), derScores=[0.67, 0.91, 0.88], allValid=True, hasReportEdges=3
+
+  AC-P10-9  [PASS]  Protocol deviation: >= 1 ProtocolTracker with deviationCount>0; >= 1 FLAGGED_DEVIATION edge
+            trackersWithDeviation=1 (values=[1.0], need >=1), flaggedDevEdges=1 (need >=1), protocolConflicts=1 (need >=1)
+
+  AC-P10-10  [PASS]  Consistency templates: exactly 6 Text2CypherTemplate with category='consistency'
+            templates=6 (need 6), categoryConsistency=6 (need 6), found=['ACTIVE_FACTS_SNAPSHOT', 'GOAL_DRIFT_CHECK', 'PROTOCOL_POSITION_QUERY', 'CONFLICT_HISTORY', 'CANDIDATE_SELECTION_LOG', 'CONSISTENCY_REPORT_TREND']
+
+======================================================================
+  OVERALL: ALL PASS 10/10
+======================================================================
+
+DIAGNOSTICS
+----------------------------------------------------------------------
+
+Cypher file inventory:
+  21_dsmart_schema.cypher                          4084 bytes
+  22_conversation_facts.cypher                    14027 bytes
+  23_goal_tracking.cypher                          3104 bytes
+  24_protocol_trackers.cypher                      3419 bytes
+  25_conflict_detection.cypher                     7241 bytes
+  26_reasoning_candidates.cypher                  15654 bytes
+  27_consistency_templates.cypher                  7805 bytes
+  28_phase10_validation.cypher                     6341 bytes
+
+ConversationFact distribution by session:
+  s001: 12 facts
+  s002: 12 facts
+  s003: 12 facts
+
+CompositeScore values (all ReasoningCandidates):
+  Candidate  1: 0.799
+  Candidate  2: 0.410
+  Candidate  3: 0.696
+  Candidate  4: 0.883
+  Candidate  5: 0.667
+  Candidate  6: 0.830
+  Candidate  7: 0.944
+  Candidate  8: 0.794
+  Candidate  9: 0.853
+  Candidate 10: 0.795
+  Candidate 11: 0.552
+  Candidate 12: 0.755
+  Candidate 13: 0.916
+  Candidate 14: 0.817
+  Candidate 15: 0.860
+
+DER scores (all ConsistencyReports):
+  demo_session_001: DER=0.67
+  demo_session_002: DER=0.91
+  demo_session_003: DER=0.88
+
+Ontology files:
+  dsmart-memory.jsonld                        6277 bytes
+  dsmart-memory.ttl                          10119 bytes
+
+SHACL shapes:
+  dsmart-shapes.ttl                        8 NodeShapes, 2 SPARQLConstraints
+
+======================================================================

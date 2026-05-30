@@ -1,0 +1,767 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ============================================================
+# UCKB Phase 8 — Legal & Investigative Domain
+# 53 nodes: 16 CommunicationTechnique, 8 StatementMarker,
+#           5 SignalMarker, 4 EmotionalState, 3 DomainProtocol,
+#           1 CONTRAINDICATED_NODE, 6 ProtocolStep,
+#           5 ProtocolGate, 1 ProtocolDAG, 4 SignalMarker (SA)
+# Architecture: PEACE 5-step DAG + Cognitive Interview sub-tree
+# ============================================================
+
+# ── CommunicationTechnique nodes ─────────────────────────────
+
+uckb:legal_001_free_narrative_invitation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Free Narrative Invitation" ;
+    uckb:PRECEDES uckb:legal_007_contradiction_challenge ;
+    uckb:REQUIRES uckb:legal_013_rapport_through_transparency ;
+    uckb:DOMAIN_VARIANT_OF uckb:crisis_dispatch_001_active_listening ;
+    uckb:cardId "legal_001_free_narrative_invitation"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Do not interrupt the account phase with clarifying questions; wait until full narrative is complete."^^xsd:string ;
+    uckb:culturalNotes "Some cultures require a relational preamble before narrative; respect that before prompting."^^xsd:string ;
+    uckb:description "Open-ended invitation to produce a free, uninterrupted first-person account of events in the interviewee's own words and sequence."^^xsd:string ;
+    uckb:dialogueActLinks "Open-Question; Acknowledge; Feedback-Positive"^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:domainVariants "Dispatch Transparency Statement; Clinical Ask-Tell-Ask"^^xsd:string ;
+    uckb:failureSignals "Interviewee stops prematurely; provides minimal response; asks what they should say."^^xsd:string ;
+    uckb:name "Free Narrative Invitation"^^xsd:string ;
+    uckb:peaceStep "Account"^^xsd:string ;
+    uckb:requiredEdges "PRECEDES Contradiction Challenge; REQUIRES Rapport Through Transparency"^^xsd:string ;
+    uckb:reviewNotes "Core PEACE account-phase technique; evidence base from Fisher & Geiselman 1992."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Fisher1992; Geiselman1985; PEACE2000"^^xsd:string ;
+    uckb:steps "Say: 'Tell me everything you remember, from the beginning, in your own words. Take all the time you need.'; remain silent; do not interrupt."^^xsd:string ;
+    uckb:successSignals "Interviewee produces extended unprompted narrative; includes sensory detail."^^xsd:string ;
+    uckb:switchTo "Legal Open-Ended Probe; Timeline Clarification"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "account_phase_active; rapport_established"^^xsd:string ;
+    uckb:whenNotToUse "Interviewee is in acute distress; medical attention takes priority."^^xsd:string ;
+    uckb:whenToUse "Account phase of PEACE; immediately after rapport is established." .
+
+uckb:legal_002_cognitive_interview a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Cognitive Interview" ;
+    uckb:ENHANCES uckb:legal_001_free_narrative_invitation ;
+    uckb:DOMAIN_VARIANT_OF uckb:crisis_dispatch_001_active_listening ;
+    uckb:cardId "legal_002_cognitive_interview"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium-load"^^xsd:string ;
+    uckb:contraindications "Do not use all four components simultaneously; sequence them. Avoid with acute PTSD if re-experiencing is triggered."^^xsd:string ;
+    uckb:culturalNotes "Mental reinstatement works cross-culturally but perspective-change may be unusual in collectivist contexts."^^xsd:string ;
+    uckb:description "Evidence-based memory retrieval technique combining mental context reinstatement, report-everything, temporal-order change, and perspective change."^^xsd:string ;
+    uckb:dialogueActLinks "Instruct; Open-Question; Clarify"^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:domainVariants "Clinical Complex Reflection"^^xsd:string ;
+    uckb:failureSignals "Interviewee becomes confused or contradicts earlier account; distress escalates."^^xsd:string ;
+    uckb:name "Cognitive Interview"^^xsd:string ;
+    uckb:peaceStep "Account"^^xsd:string ;
+    uckb:requiredEdges "ENHANCES Free Narrative Invitation"^^xsd:string ;
+    uckb:reviewNotes "Fisher & Geiselman 1992; meta-analyses show 30-35% memory increase over standard interview."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Fisher1992; Geiselman1985; Memon1997"^^xsd:string ;
+    uckb:steps "1) Mental Reinstatement; 2) Report Everything; 3) Change Temporal Order; 4) Change Perspective — use only as needed."^^xsd:string ;
+    uckb:successSignals "New details emerge not present in initial account; interviewee becomes more fluent."^^xsd:string ;
+    uckb:switchTo "Free Narrative Invitation; Open-Ended Probe"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "account_phase_active; sparse_initial_account"^^xsd:string ;
+    uckb:whenNotToUse "Interviewee shows signs of false memory risk; acute trauma triggered."^^xsd:string ;
+    uckb:whenToUse "Witness or victim account is sparse; memory retrieval support needed." .
+
+uckb:legal_003_mental_reinstatement a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Mental Reinstatement of Context" ;
+    uckb:REQUIRES uckb:legal_002_cognitive_interview ;
+    uckb:TRIGGERS uckb:legal_sig_memory_retrieval ;
+    uckb:cardId "legal_003_mental_reinstatement"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium-load"^^xsd:string ;
+    uckb:contraindications "Contraindicated when trauma re-experiencing (flashback state) is active."^^xsd:string ;
+    uckb:culturalNotes "Use concrete sensory anchors; avoid abstract place descriptions."^^xsd:string ;
+    uckb:description "Guides interviewee to mentally return to the physical and emotional context of the event to enhance episodic memory retrieval."^^xsd:string ;
+    uckb:dialogueActLinks "Instruct; Guide"^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:domainVariants "Clinical Guided Imagery"^^xsd:string ;
+    uckb:failureSignals "Interviewee becomes distressed; dissociation signs appear."^^xsd:string ;
+    uckb:name "Mental Reinstatement of Context"^^xsd:string ;
+    uckb:peaceStep "Account"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Cognitive Interview; TRIGGERS memory_retrieval_signal"^^xsd:string ;
+    uckb:reviewNotes "Component 1 of Fisher & Geiselman CI; highest evidence base of all four components."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Fisher1992"^^xsd:string ;
+    uckb:steps "Ask: 'Close your eyes if comfortable. Think about where you were. What could you see, hear, smell? What were you feeling?'"^^xsd:string ;
+    uckb:successSignals "Interviewee pauses, enters reflective state, then produces richer detail."^^xsd:string ;
+    uckb:switchTo "Report Everything Instruction; Free Narrative Invitation"^^xsd:string ;
+    uckb:tier "Tier 2"^^xsd:string ;
+    uckb:triggerSignals "sparse_initial_account; account_phase_active"^^xsd:string ;
+    uckb:whenNotToUse "Active flashback or re-experiencing state; child witnesses under age 7."^^xsd:string ;
+    uckb:whenToUse "Initial account is thin; memory retrieval appears inhibited by anxiety." .
+
+uckb:legal_004_report_everything a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Report Everything Instruction" ;
+    uckb:REQUIRES uckb:legal_013_rapport_through_transparency ;
+    uckb:cardId "legal_004_report_everything"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Do not use before rapport is established; interviewee will filter output if trust is absent."^^xsd:string ;
+    uckb:culturalNotes "Explicitly grant permission to include partial, uncertain, or contradictory memories."^^xsd:string ;
+    uckb:description "Instructs the interviewee that all memories are relevant, including partial, uncertain, or seemingly trivial details, removing the filtering that comes from perceived relevance judgements."^^xsd:string ;
+    uckb:dialogueActLinks "Instruct; Clarify"^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:domainVariants "Clinical Open-Ended Disclosure"^^xsd:string ;
+    uckb:failureSignals "Interviewee continues providing only salient points; says 'I don't know if this matters but...'"^^xsd:string ;
+    uckb:name "Report Everything Instruction"^^xsd:string ;
+    uckb:peaceStep "Account"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Rapport Through Transparency"^^xsd:string ;
+    uckb:reviewNotes "Component 2 of CI; addresses metacognitive filtering of uncertain information."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Fisher1992; Geiselman1985"^^xsd:string ;
+    uckb:steps "Say: 'Tell me everything, even if it seems trivial or you are not completely sure. Everything you remember could be important.'"^^xsd:string ;
+    uckb:successSignals "Interviewee begins including uncertain fragments and peripheral detail."^^xsd:string ;
+    uckb:switchTo "Free Narrative Invitation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "interviewee_filtering_visible; sparse_account"^^xsd:string ;
+    uckb:whenNotToUse "Interviewee shows signs of confabulation tendency."^^xsd:string ;
+    uckb:whenToUse "Before free narrative; after rapport established." .
+
+uckb:legal_005_change_temporal_order a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    uckb:CONTRAINDICATED_WHEN uckb:legal_emo_trauma_fragmentation_risk ;
+    uckb:cardId "legal_005_change_temporal_order"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "high-load"^^xsd:string ;
+    uckb:contraindications "Contraindicated when trauma fragmentation risk is active; reverse-order recall may destabilize traumatized witness."^^xsd:string ;
+    uckb:culturalNotes "Explain rationale explicitly; some cultures interpret reverse-chronology questions as disbelief."^^xsd:string ;
+    uckb:description "Asks the interviewee to recall events in reverse chronological order or starting from a non-salient point, disrupting schema-based confabulation and revealing inconsistencies in rehearsed accounts."^^xsd:string ;
+    uckb:dialogueActLinks "Instruct; Challenge"^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Interviewee becomes confused or distressed; account quality degrades."^^xsd:string ;
+    uckb:name "Change Temporal Order"^^xsd:string ;
+    uckb:peaceStep "Account"^^xsd:string ;
+    uckb:requiredEdges "CONTRAINDICATED_WHEN trauma_fragmentation_risk"^^xsd:string ;
+    uckb:reviewNotes "Component 3 of CI; strongest effect on detecting rehearsed deceptive accounts."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Fisher1992; Vrij2008"^^xsd:string ;
+    uckb:steps "After full account: 'Now tell me the same sequence, but start from [later point] and go backwards in time.'"^^xsd:string ;
+    uckb:successSignals "New details emerge in reverse recall that were absent from forward account."^^xsd:string ;
+    uckb:switchTo "Free Narrative Invitation (repeat)"^^xsd:string ;
+    uckb:tier "Tier 3"^^xsd:string ;
+    uckb:triggerSignals "full_account_complete; inconsistency_suspected"^^xsd:string ;
+    uckb:whenNotToUse "Fragmented trauma narrative; child witnesses; cognitive impairment present."^^xsd:string ;
+    uckb:whenToUse "Inconsistency in account suspected; rehearsed narrative indicated by statement markers." .
+
+uckb:legal_006_change_perspective a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    uckb:CONTRAINDICATED_WHEN uckb:legal_emo_false_memory_risk ;
+    uckb:cardId "legal_006_change_perspective"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "high-load"^^xsd:string ;
+    uckb:contraindications "Contraindicated when false memory risk is high; suggesting another viewpoint can create pseudo-memories."^^xsd:string ;
+    uckb:culturalNotes "Use carefully in collectivist contexts; perspective-taking may feel intrusive."^^xsd:string ;
+    uckb:description "Asks the interviewee to describe events from a different vantage point (e.g., as if they were another person present), expanding the retrieved detail set and revealing perspective-dependent gaps."^^xsd:string ;
+    uckb:dialogueActLinks "Instruct; Open-Question"^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Interviewee reports implausible details from third-person view; distress escalates."^^xsd:string ;
+    uckb:name "Change Perspective" ;
+    uckb:peaceStep "Account"^^xsd:string ;
+    uckb:requiredEdges "CONTRAINDICATED_WHEN false_memory_risk_high"^^xsd:string ;
+    uckb:reviewNotes "Component 4 of CI; most controversial — use only after other components; avoid with suggestible witnesses."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Fisher1992; Memon1997"^^xsd:string ;
+    uckb:steps "After full account: 'If you had been standing where [other person] was, what would you have seen?'"^^xsd:string ;
+    uckb:successSignals "Interviewee produces verifiable spatial details not present in initial account."^^xsd:string ;
+    uckb:switchTo "Free Narrative Invitation"^^xsd:string ;
+    uckb:tier "Tier 3"^^xsd:string ;
+    uckb:triggerSignals "sparse_spatial_detail; full_account_complete"^^xsd:string ;
+    uckb:whenNotToUse "Suggestible witnesses; children; trauma-linked false memory risk."^^xsd:string ;
+    uckb:whenToUse "Account lacks spatial detail; scene geometry is legally relevant." .
+
+uckb:legal_007_contradiction_challenge a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    uckb:FOLLOWS uckb:legal_001_free_narrative_invitation ;
+    uckb:REQUIRES uckb:legal_peace_step_account ;
+    uckb:cardId "legal_007_contradiction_challenge"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium-load"^^xsd:string ;
+    uckb:contraindications "Must NEVER be used during the account phase; wait until the full narrative is complete."^^xsd:string ;
+    uckb:culturalNotes "Use non-accusatorial framing; present contradiction as a discrepancy that needs clarification, not proof of lying."^^xsd:string ;
+    uckb:description "Presents a specific factual contradiction between the interviewee's account and established evidence, inviting explanation without accusation."^^xsd:string ;
+    uckb:dialogueActLinks "Clarify; Challenge; Request"^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:domainVariants "Dispatch Non-Confrontational Rephrase; Clinical Uncertainty Disclosure"^^xsd:string ;
+    uckb:failureSignals "Interviewee becomes defensive; refuses to continue; account collapses."^^xsd:string ;
+    uckb:name "Contradiction Challenge"^^xsd:string ;
+    uckb:peaceStep "Evaluation"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Free Narrative; REQUIRES Account Phase Complete"^^xsd:string ;
+    uckb:reviewNotes "Use after peace_a is complete only; premature challenges contaminate account quality."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "PEACE2000; Williamson1993"^^xsd:string ;
+    uckb:steps "Say: 'You mentioned X, but our records show Y. Can you help me understand that?'"^^xsd:string ;
+    uckb:successSignals "Interviewee provides coherent explanation or acknowledges discrepancy."^^xsd:string ;
+    uckb:switchTo "Timeline Clarification; Summary and Confirm"^^xsd:string ;
+    uckb:tier "Tier 2"^^xsd:string ;
+    uckb:triggerSignals "full_account_complete; factual_contradiction_identified"^^xsd:string ;
+    uckb:whenNotToUse "Account phase not yet complete; interviewee is in acute distress."^^xsd:string ;
+    uckb:whenToUse "Full account obtained; specific factual discrepancy identified against evidence." .
+
+uckb:legal_008_timeline_clarification a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    uckb:ENHANCES uckb:legal_peace_step_evaluation ;
+    uckb:REQUIRES uckb:legal_peace_step_account ;
+    uckb:cardId "legal_008_timeline_clarification"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Do not use leading questions to establish the timeline."^^xsd:string ;
+    uckb:culturalNotes "Avoid clock-time assumptions; some cultures use event-relative time ('after the meal') over clock time."^^xsd:string ;
+    uckb:description "Systematically clarifies temporal sequences in the interviewee's account using open-ended questions to establish chronological coherence."^^xsd:string ;
+    uckb:dialogueActLinks "Clarify; Open-Question; Request"^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Interviewee cannot place events in sequence; timeline fragments further."^^xsd:string ;
+    uckb:name "Timeline Clarification"^^xsd:string ;
+    uckb:peaceStep "Account"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Account Phase; ENHANCES Evaluation"^^xsd:string ;
+    uckb:reviewNotes "Supports prosecution case chronology; must use open probes not leading questions."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "PEACE2000"^^xsd:string ;
+    uckb:steps "Ask: 'Before X happened, what were you doing? And just after X, what happened next?'"^^xsd:string ;
+    uckb:successSignals "Interviewee places events in coherent sequence with plausible timing."^^xsd:string ;
+    uckb:switchTo "Contradiction Challenge; Summary and Confirm"^^xsd:string ;
+    uckb:tier "Tier 2"^^xsd:string ;
+    uckb:triggerSignals "temporal_ambiguity_in_account; account_phase_active"^^xsd:string ;
+    uckb:whenNotToUse "Interviewee is confused; use simpler narrative prompts first."^^xsd:string ;
+    uckb:whenToUse "Account has temporal gaps or unclear sequencing." .
+
+uckb:legal_009_open_ended_probe a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    uckb:REQUIRES uckb:legal_001_free_narrative_invitation ;
+    uckb:DOMAIN_VARIANT_OF uckb:Open_Question ;
+    uckb:cardId "legal_009_open_ended_probe"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Never lead; never suggest; never compound (two questions at once)."^^xsd:string ;
+    uckb:culturalNotes "Pause after probe; allow processing time before assuming no answer."^^xsd:string ;
+    uckb:description "Single open-ended follow-up question that elaborates a specific aspect of the free narrative without suggesting content."^^xsd:string ;
+    uckb:dialogueActLinks "Open-Question; Clarify"^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:domainVariants "Dispatch Active Listening; Clinical Open-Question"^^xsd:string ;
+    uckb:failureSignals "Interviewee gives yes/no answer; interviewer inadvertently suggests content."^^xsd:string ;
+    uckb:name "Open-Ended Probe"^^xsd:string ;
+    uckb:peaceStep "Account"^^xsd:string ;
+    uckb:requiredEdges "REQUIRES Free Narrative Invitation; DOMAIN_VARIANT_OF Open Question"^^xsd:string ;
+    uckb:reviewNotes "Preferred over specific/closed probes throughout account phase."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "PEACE2000; Fisher1992"^^xsd:string ;
+    uckb:steps "Use stems: 'Tell me more about...'; 'Describe...'; 'What happened then?'; 'You mentioned X — tell me more about that.'"^^xsd:string ;
+    uckb:successSignals "Interviewee expands account with new detail."^^xsd:string ;
+    uckb:switchTo "Timeline Clarification; Contradiction Challenge"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "account_gap; sparse_detail_on_relevant_point"^^xsd:string ;
+    uckb:whenNotToUse "Interviewee has fully exhausted recall on a point."^^xsd:string ;
+    uckb:whenToUse "Account phase; any point where elaboration is needed." .
+
+uckb:legal_010_minimal_encourager a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    uckb:TRIGGERS uckb:legal_sig_continued_narrative ;
+    uckb:DOMAIN_VARIANT_OF uckb:crisis_dispatch_001_active_listening ;
+    uckb:cardId "legal_010_minimal_encourager"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "lowest-load"^^xsd:string ;
+    uckb:contraindications "Never use in a way that sounds like evaluation or agreement with content."^^xsd:string ;
+    uckb:culturalNotes "Silence is also a valid minimal encourager in high-context cultures."^^xsd:string ;
+    uckb:description "Minimal non-leading verbal or non-verbal signal that encourages continuation of the interviewee's narrative without directing or evaluating content."^^xsd:string ;
+    uckb:dialogueActLinks "Acknowledge; Feedback-Positive"^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:domainVariants "Dispatch Active Listening"^^xsd:string ;
+    uckb:failureSignals "Interviewee interprets encourager as agreement with specific claim."^^xsd:string ;
+    uckb:name "Minimal Encourager"^^xsd:string ;
+    uckb:peaceStep "Account"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERS continued_narrative_signal"^^xsd:string ;
+    uckb:reviewNotes "Use throughout account phase; vital for maintaining flow without contaminating account."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "PEACE2000"^^xsd:string ;
+    uckb:steps "Use: 'I see'; 'Go on'; 'OK'; head nod; brief silence; 'mm-hmm'."^^xsd:string ;
+    uckb:successSignals "Interviewee continues narrative without deflection."^^xsd:string ;
+    uckb:switchTo "Open-Ended Probe"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "narrative_pause; account_phase_active"^^xsd:string ;
+    uckb:whenNotToUse "When a specific clarifying question is needed."^^xsd:string ;
+    uckb:whenToUse "Throughout account phase to maintain narrative momentum." .
+
+uckb:legal_011_summary_and_confirm a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    uckb:PRECEDES uckb:legal_peace_step_evaluation ;
+    uckb:cardId "legal_011_summary_and_confirm"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Do not paraphrase in a way that alters meaning; use interviewee's own language."^^xsd:string ;
+    uckb:culturalNotes "Invite correction explicitly; do not assume silence equals agreement."^^xsd:string ;
+    uckb:description "Interviewer summarises the interviewee's account using their own language, inviting correction and confirmation before moving to closure or evaluation."^^xsd:string ;
+    uckb:dialogueActLinks "Summary; Request; Confirm"^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:domainVariants "Clinical Teach-Back; Dispatch Transparency Statement"^^xsd:string ;
+    uckb:failureSignals "Interviewee corrects multiple points; summary reflects interviewer's interpretation rather than account."^^xsd:string ;
+    uckb:name "Summary and Confirm"^^xsd:string ;
+    uckb:peaceStep "Closure"^^xsd:string ;
+    uckb:requiredEdges "PRECEDES Evaluation; PART_OF PEACE Closure Step"^^xsd:string ;
+    uckb:reviewNotes "Essential for legal record; interviewee corrections are part of the official account."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "PEACE2000; Williamson1993"^^xsd:string ;
+    uckb:steps "Say: 'Let me summarise what you've told me... [summary]. Is that accurate? Is there anything you want to change or add?'"^^xsd:string ;
+    uckb:successSignals "Interviewee confirms summary or provides meaningful correction."^^xsd:string ;
+    uckb:switchTo "Evaluation Phase"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "account_phase_complete; closure_phase_active"^^xsd:string ;
+    uckb:whenNotToUse "Account phase not yet complete."^^xsd:string ;
+    uckb:whenToUse "Closure phase; after full account obtained." .
+
+uckb:legal_012_right_to_silence a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    uckb:CONTRAINDICATED_WHEN uckb:legal_emo_coercive_context ;
+    uckb:cardId "legal_012_right_to_silence"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Omitting right-to-silence acknowledgment in a custodial or coercive context is an absolute violation."^^xsd:string ;
+    uckb:culturalNotes "Explain in plain language; legalese may not communicate the right adequately."^^xsd:string ;
+    uckb:description "Explicit acknowledgment of the interviewee's legal right to silence and the consequences of exercising it, delivered in clear non-coercive language before the interview begins."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Instruct"^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:domainVariants "Clinical Autonomy Support; Dispatch Autonomy Support"^^xsd:string ;
+    uckb:failureSignals "Interviewee does not acknowledge understanding; appears coerced."^^xsd:string ;
+    uckb:name "Right to Silence Acknowledgment"^^xsd:string ;
+    uckb:peaceStep "Engage and Explain"^^xsd:string ;
+    uckb:requiredEdges "CONTRAINDICATED_WHEN coercive_context; REQUIRED in PEACE"^^xsd:string ;
+    uckb:reviewNotes "Required under PACE 1984 (UK) and Miranda (US); non-compliance voids admissibility."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "PACE1984; Miranda1966; PEACE2000"^^xsd:string ;
+    uckb:steps "Deliver formal caution verbatim per jurisdiction; then confirm understanding in plain language."^^xsd:string ;
+    uckb:successSignals "Interviewee acknowledges understanding verbally."^^xsd:string ;
+    uckb:switchTo "Rapport Through Transparency; Free Narrative Invitation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "interview_start; suspect_interview_beginning"^^xsd:string ;
+    uckb:whenNotToUse "Non-custodial voluntary conversation where caution is not legally required (jurisdiction-specific)."^^xsd:string ;
+    uckb:whenToUse "Before any formal interview; always when interviewee is detained or under caution." .
+
+uckb:legal_013_rapport_through_transparency a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    uckb:CONTRADICTS uckb:legal_contraindicated_reid ;
+    uckb:cardId "legal_013_rapport_through_transparency"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Deception by the interviewer — including false evidence claims — destroys this technique and vitiates all subsequent account quality."^^xsd:string ;
+    uckb:culturalNotes "In some cultures, authority figures are not expected to explain their actions; explicit transparency may be surprising but is still ethically required."^^xsd:string ;
+    uckb:description "Builds interview rapport through honest explanation of the interview's purpose, process, and the interviewee's rights — without any deceptive framing."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Instruct; Rapport"^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:domainVariants "Dispatch Transparency Statement; Clinical Consent Explanation"^^xsd:string ;
+    uckb:failureSignals "Interviewee expresses distrust; refuses to engage; account quality is poor."^^xsd:string ;
+    uckb:name "Rapport Through Transparency"^^xsd:string ;
+    uckb:peaceStep "Engage and Explain"^^xsd:string ;
+    uckb:requiredEdges "CONTRADICTS Reid Technique; PART_OF PEACE Engage Step"^^xsd:string ;
+    uckb:reviewNotes "Core PEACE ethical architecture; rapport via honesty not manipulation."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "PEACE2000; Gudjonsson2003"^^xsd:string ;
+    uckb:steps "Explain: who you are; why the interview is happening; what will happen to information; what rights the person has; how long it will last."^^xsd:string ;
+    uckb:successSignals "Interviewee relaxes; asks clarifying questions about process; engages voluntarily."^^xsd:string ;
+    uckb:switchTo "Free Narrative Invitation"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:triggerSignals "interview_start; engage_phase_active"^^xsd:string ;
+    uckb:whenNotToUse "Never — transparency is non-optional in PEACE."^^xsd:string ;
+    uckb:whenToUse "Always; first technique used in any PEACE interview." .
+
+uckb:legal_014_non_accusatorial_statement a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    uckb:DOMAIN_VARIANT_OF uckb:Adult_State_Boundary_Setting ;
+    uckb:TRIGGERED_BY uckb:legal_emo_defensive_state ;
+    uckb:cardId "legal_014_non_accusatorial_statement"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Never re-frame as accusation after delivering as neutral statement."^^xsd:string ;
+    uckb:culturalNotes "Face-saving framing is essential in high-context cultures; avoid direct blame even implicitly."^^xsd:string ;
+    uckb:description "Presents factual discrepancies or evidential concerns in neutral, non-blaming language that invites explanation rather than triggering defensive shutdown."^^xsd:string ;
+    uckb:dialogueActLinks "Inform; Clarify"^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:domainVariants "Dispatch Adult-State Boundary Setting"^^xsd:string ;
+    uckb:failureSignals "Interviewee becomes defensive, aggressive, or shuts down."^^xsd:string ;
+    uckb:name "Non-Accusatorial Statement"^^xsd:string ;
+    uckb:peaceStep "Account"^^xsd:string ;
+    uckb:requiredEdges "TRIGGERED_BY defensive_state; DOMAIN_VARIANT_OF Adult State Boundary Setting"^^xsd:string ;
+    uckb:reviewNotes "Contrast with Reid: this approach never frames interviewee as guilty before evaluation."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "PEACE2000; Leo2008"^^xsd:string ;
+    uckb:steps "Say: 'There is something I'd like to understand better. [Fact]. Can you help me understand that?'"^^xsd:string ;
+    uckb:successSignals "Interviewee engages with question without defensiveness."^^xsd:string ;
+    uckb:switchTo "Open-Ended Probe; Summary and Confirm"^^xsd:string ;
+    uckb:tier "Tier 2"^^xsd:string ;
+    uckb:triggerSignals "defensive_state; factual_discrepancy_present"^^xsd:string ;
+    uckb:whenNotToUse "When formal caution has not yet been delivered in custodial context."^^xsd:string ;
+    uckb:whenToUse "Interviewee shows defensiveness; discrepancy needs clarification." .
+
+uckb:legal_015_account_gap_exploration a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    uckb:FOLLOWS uckb:legal_001_free_narrative_invitation ;
+    uckb:PRECEDES uckb:legal_peace_step_evaluation ;
+    uckb:cardId "legal_015_account_gap_exploration"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "medium-load"^^xsd:string ;
+    uckb:contraindications "Do not suggest what the gap contains; only flag that it exists."^^xsd:string ;
+    uckb:culturalNotes "Some interviewees skip portions they consider obvious; confirm whether omission is intentional."^^xsd:string ;
+    uckb:description "Identifies and non-accusatorially explores temporal or factual gaps in the interviewee's free account."^^xsd:string ;
+    uckb:dialogueActLinks "Clarify; Open-Question"^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:domainVariants "None"^^xsd:string ;
+    uckb:failureSignals "Interviewee becomes evasive; fills gap with confabulated content."^^xsd:string ;
+    uckb:name "Account Gap Exploration"^^xsd:string ;
+    uckb:peaceStep "Account"^^xsd:string ;
+    uckb:requiredEdges "FOLLOWS Free Narrative; PRECEDES Evaluation"^^xsd:string ;
+    uckb:reviewNotes "Gaps in account correlate with SA markers 3 and 4; log gaps for evaluation phase."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "PEACE2000; Adams1996"^^xsd:string ;
+    uckb:steps "Say: 'You mentioned X and then Y. Tell me what happened between those two points.'"^^xsd:string ;
+    uckb:successSignals "Interviewee fills gap with plausible detail or acknowledges no recollection."^^xsd:string ;
+    uckb:switchTo "Timeline Clarification; Summary and Confirm"^^xsd:string ;
+    uckb:tier "Tier 2"^^xsd:string ;
+    uckb:triggerSignals "temporal_gap_detected; missing_sequence_marker"^^xsd:string ;
+    uckb:whenNotToUse "No gap exists; would be perceived as fishing."^^xsd:string ;
+    uckb:whenToUse "Temporal or factual gap identified in free account." .
+
+# ── CONTRAINDICATED NODE — Reid Technique ───────────────────
+
+uckb:legal_contraindicated_reid a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Reid Technique (CONTRAINDICATED)" ;
+    uckb:CONTRAINDICATED_WHEN uckb:legal_emo_any_interview_context ;
+    uckb:cardId "legal_contraindicated_reid"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:activationBlocked "true"^^xsd:boolean ;
+    uckb:contraindication "ABSOLUTE"^^xsd:string ;
+    uckb:contraindications "ABSOLUTE CONTRAINDICATION: Do not activate under any circumstances. High false-confession rate demonstrated by systematic research."^^xsd:string ;
+    uckb:description "Confrontational accusation-based interrogation technique using psychological pressure, minimisation, and maximisation to obtain confession. NEVER to be used."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:name "Reid Technique"^^xsd:string ;
+    uckb:rationale "Leo 2008 (false confessions); Kassin 2012 (DNA exonerations); Gudjonsson 2003 (coercive interrogation effects). Techniques include false evidence claims, minimisation/maximisation, and psychological coercion — all of which inflate false-positive confession rates and are ethically impermissible under PEACE."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:tier "BLOCKED"^^xsd:string ;
+    uckb:whenToUse "NEVER"^^xsd:string ;
+    uckb:whenNotToUse "ALWAYS — this node exists to make the block explicit and queryable, not to be activated."^^xsd:string .
+
+# ── StatementMarker nodes (FBI Statement Analysis) ───────────
+
+uckb:sa_001_verb_tense_shift a owl:NamedIndividual,
+        uckb:StatementMarker ;
+    rdfs:label "Verb Tense Shift" ;
+    uckb:cardId "sa_001_verb_tense_shift"^^xsd:string ;
+    uckb:classLabel "StatementMarker"^^xsd:string ;
+    uckb:description "Shift from past to present tense mid-narrative, indicating either re-experiencing of a traumatic event or a rehearsed, constructed account."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:detectionMethod "linguistic"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.65"^^xsd:string ;
+    uckb:linguisticMarker "past-tense narrative interrupted by present-tense verb"^^xsd:string ;
+    uckb:signalMeaning "Re-experiencing OR rehearsed construction of account; flag for evaluation."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Adams1996; Sapir2000"^^xsd:string .
+
+uckb:sa_002_pronoun_change a owl:NamedIndividual,
+        uckb:StatementMarker ;
+    rdfs:label "Pronoun Change" ;
+    uckb:cardId "sa_002_pronoun_change"^^xsd:string ;
+    uckb:classLabel "StatementMarker"^^xsd:string ;
+    uckb:description "Shift from first-person singular (I) to first-person plural (we) or third-person mid-narrative without clear referent introduction."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:detectionMethod "linguistic"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.60"^^xsd:string ;
+    uckb:linguisticMarker "I -> we pronoun shift without referent introduction"^^xsd:string ;
+    uckb:signalMeaning "Distancing from personal ownership of action; possible culpability concealment."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Adams1996; Sapir2000"^^xsd:string .
+
+uckb:sa_003_missing_sequence a owl:NamedIndividual,
+        uckb:StatementMarker ;
+    rdfs:label "Missing Sequence" ;
+    uckb:cardId "sa_003_missing_sequence"^^xsd:string ;
+    uckb:classLabel "StatementMarker"^^xsd:string ;
+    uckb:description "Temporal gap or sequence jump in the narrative that skips over a period relevant to the investigation."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:detectionMethod "linguistic"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.70"^^xsd:string ;
+    uckb:linguisticMarker "temporal connector that skips expected period: 'and then later...'; 'the next thing I remember...'"^^xsd:string ;
+    uckb:signalMeaning "Omission around legally relevant period; triggers Account Gap Exploration."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Adams1996"^^xsd:string .
+
+uckb:sa_004_temporal_equivocation a owl:NamedIndividual,
+        uckb:StatementMarker ;
+    rdfs:label "Temporal Equivocation" ;
+    uckb:cardId "sa_004_temporal_equivocation"^^xsd:string ;
+    uckb:classLabel "StatementMarker"^^xsd:string ;
+    uckb:description "Use of vague, approximate temporal language for actions or events the narrator should know precisely."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:detectionMethod "linguistic"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.55"^^xsd:string ;
+    uckb:linguisticMarker "'about that time'; 'around then'; 'sometime that afternoon'"^^xsd:string ;
+    uckb:signalMeaning "Avoidance of precise temporal commitment; may indicate alibi construction."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Sapir2000; Adams1996"^^xsd:string .
+
+uckb:sa_005_lack_of_conviction a owl:NamedIndividual,
+        uckb:StatementMarker ;
+    rdfs:label "Lack of Conviction" ;
+    uckb:cardId "sa_005_lack_of_conviction"^^xsd:string ;
+    uckb:classLabel "StatementMarker"^^xsd:string ;
+    uckb:description "Epistemic hedging applied to the narrator's own actions, where certainty is expected ('I believe I went' vs 'I went')."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:detectionMethod "linguistic"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.60"^^xsd:string ;
+    uckb:linguisticMarker "'I think I...'; 'I believe I...'; 'I'm pretty sure I...' applied to own actions"^^xsd:string ;
+    uckb:signalMeaning "Reduced certainty about own acts; may indicate constructed rather than recalled account."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Adams1996; Sapir2000"^^xsd:string .
+
+uckb:sa_006_spontaneous_negation a owl:NamedIndividual,
+        uckb:StatementMarker ;
+    rdfs:label "Spontaneous Negation" ;
+    uckb:cardId "sa_006_spontaneous_negation"^^xsd:string ;
+    uckb:classLabel "StatementMarker"^^xsd:string ;
+    uckb:description "Unprompted denial of guilt or action that was not asked about, often in categorical form."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:detectionMethod "linguistic"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.72"^^xsd:string ;
+    uckb:linguisticMarker "'I did not [crime]' stated without being asked; 'I would never...'"^^xsd:string ;
+    uckb:signalMeaning "High-confidence deception marker; guilty knowledge expressed as preemptive denial."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Sapir2000; Vrij2008"^^xsd:string .
+
+uckb:sa_007_non_answer_answer a owl:NamedIndividual,
+        uckb:StatementMarker ;
+    rdfs:label "Non-Answer Answer" ;
+    uckb:cardId "sa_007_non_answer_answer"^^xsd:string ;
+    uckb:classLabel "StatementMarker"^^xsd:string ;
+    uckb:description "Response to a direct question that addresses a related but different question, avoiding the specific asked content."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:detectionMethod "linguistic"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.65"^^xsd:string ;
+    uckb:linguisticMarker "Question A is answered with content from Question B; 'What I can tell you is...'"^^xsd:string ;
+    uckb:signalMeaning "Topic avoidance behavior; triggers Account Gap Exploration on original question."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Adams1996"^^xsd:string .
+
+uckb:sa_008_involuntary_detail a owl:NamedIndividual,
+        uckb:StatementMarker ;
+    rdfs:label "Involuntary Detail" ;
+    uckb:cardId "sa_008_involuntary_detail"^^xsd:string ;
+    uckb:classLabel "StatementMarker"^^xsd:string ;
+    uckb:description "Provision of irrelevant, specific details about peripheral elements unrelated to the main narrative, often associated with psychological displacement."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:detectionMethod "linguistic"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.50"^^xsd:string ;
+    uckb:linguisticMarker "Unprompted specific detail on irrelevant element: colour of shirt, unrelated conversation topic"^^xsd:string ;
+    uckb:signalMeaning "Displacement behavior; may indicate anxiety about adjacent topic."^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:sourceIds "Adams1996; Sapir2000"^^xsd:string .
+
+# ── SignalMarker nodes (interview-level) ─────────────────────
+
+uckb:legal_sig_memory_retrieval a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Memory Retrieval Signal" ;
+    uckb:cardId "legal_sig_memory_retrieval"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Interviewee enters visible reflective state: gaze aversion, pause, self-correction — indicating active episodic memory access."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:detectionMethod "behavioral"^^xsd:string ;
+    uckb:modality "video;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.75"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:legal_sig_continued_narrative a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Continued Narrative Signal" ;
+    uckb:cardId "legal_sig_continued_narrative"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Interviewee continues unprompted elaboration of account, indicating engagement and willingness to disclose."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:detectionMethod "linguistic"^^xsd:string ;
+    uckb:modality "text;voice"^^xsd:string ;
+    uckb:confidenceThreshold "0.80"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+# ── EmotionalState nodes ─────────────────────────────────────
+
+uckb:legal_emo_defensive_state a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Defensive State" ;
+    uckb:cardId "legal_emo_defensive_state"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Interviewee exhibits defensive posture: denial, deflection, topic avoidance, or hostility in response to specific inquiry."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:arousalLevel "medium-high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:legal_emo_trauma_fragmentation_risk a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Trauma Fragmentation Risk" ;
+    uckb:cardId "legal_emo_trauma_fragmentation_risk"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Interviewee shows signs of trauma-driven memory fragmentation: non-linear account, flashback indicators, emotional flooding. Contraindicates Change Temporal Order and Change Perspective."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:arousalLevel "high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:legal_emo_false_memory_risk a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "False Memory Risk" ;
+    uckb:cardId "legal_emo_false_memory_risk"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Interviewee shows high suggestibility, confabulation tendency, or prior exposure to leading questions. Contraindicates Change Perspective component of CI."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:arousalLevel "low"^^xsd:string ;
+    uckb:valence "neutral"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:legal_emo_coercive_context a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Coercive Context" ;
+    uckb:cardId "legal_emo_coercive_context"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Context is custodial or coercive: interviewee is detained, under arrest, or subject to significant institutional power. Right to Silence Acknowledgment is mandatory."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:arousalLevel "high"^^xsd:string ;
+    uckb:valence "negative"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:legal_emo_any_interview_context a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Any Interview Context (Reid Block)" ;
+    uckb:cardId "legal_emo_any_interview_context"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "Placeholder state that covers ALL interview contexts — used as the CONTRAINDICATED_WHEN target for the Reid Technique absolute block."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+# ── DomainProtocol nodes ─────────────────────────────────────
+
+uckb:legal_proto_peace a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "PEACE Investigative Interview Framework" ;
+    uckb:cardId "legal_proto_peace"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "UK Home Office ethical investigative interview framework: Preparation, Engage and Explain, Account, Closure, Evaluation. Mandated for UK police; adopted internationally."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:sourceIds "PEACE2000; Williamson1993"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:legal_proto_cognitive_interview a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Cognitive Interview Protocol" ;
+    uckb:cardId "legal_proto_cognitive_interview"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "Structured memory retrieval protocol with 4 components: mental reinstatement, report everything, change temporal order, change perspective. Used within PEACE account phase."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:sourceIds "Fisher1992; Geiselman1985"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:legal_proto_statement_analysis a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Scientific Content Analysis (SCAN)" ;
+    uckb:cardId "legal_proto_statement_analysis"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "Linguistic analysis of written or spoken statements to identify markers associated with deception, omission, or construction. Used in evaluation phase only."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:sourceIds "Adams1996; Sapir2000"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+# ── Additional nodes (bring domain to 40+ content nodes) ─────
+
+uckb:legal_016_closure_invitation a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Closure Invitation" ;
+    uckb:FOLLOWS uckb:legal_011_summary_and_confirm ;
+    uckb:cardId "legal_016_closure_invitation"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Do not use as a fishing prompt; this is a genuine opportunity for correction."^^xsd:string ;
+    uckb:description "Explicit invitation at end of PEACE closure phase for interviewee to add anything omitted, correct misstatements, or raise anything the interviewer has not asked."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:name "Closure Invitation"^^xsd:string ;
+    uckb:peaceStep "Closure"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:steps "Ask: Is there anything else you would like to add, change, or tell me that I have not asked about?"^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:whenToUse "End of PEACE closure phase; after summary confirmed."^^xsd:string .
+
+uckb:legal_017_neutral_tone_calibration a owl:NamedIndividual,
+        uckb:CommunicationTechnique ;
+    rdfs:label "Neutral Tone Calibration" ;
+    uckb:cardId "legal_017_neutral_tone_calibration"^^xsd:string ;
+    uckb:classLabel "CommunicationTechnique"^^xsd:string ;
+    uckb:cognitiveLoadProfile "low-load"^^xsd:string ;
+    uckb:contraindications "Neutrality does not mean coldness; warm professional tone required."^^xsd:string ;
+    uckb:description "Active maintenance of interviewer vocal and linguistic neutrality throughout, preventing tone from signalling belief, disbelief, approval, or disapproval."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:name "Neutral Tone Calibration"^^xsd:string ;
+    uckb:peaceStep "Account"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string ;
+    uckb:steps "Monitor own tone; use neutral acknowledgements; avoid evaluative language."^^xsd:string ;
+    uckb:tier "Tier 1"^^xsd:string ;
+    uckb:whenToUse "Throughout all PEACE phases except Preparation."^^xsd:string .
+
+uckb:legal_sig_account_completed a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Account Completed Signal" ;
+    uckb:cardId "legal_sig_account_completed"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Interviewee signals completion of free narrative: 'That is everything', extended pause, repeated summary of own account."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:detectionMethod "linguistic;behavioral"^^xsd:string ;
+    uckb:modality "text;voice;video"^^xsd:string ;
+    uckb:confidenceThreshold "0.80"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:legal_sig_voluntary_cooperation a owl:NamedIndividual,
+        uckb:SignalMarker ;
+    rdfs:label "Voluntary Cooperation Signal" ;
+    uckb:cardId "legal_sig_voluntary_cooperation"^^xsd:string ;
+    uckb:classLabel "SignalMarker"^^xsd:string ;
+    uckb:description "Interviewee demonstrates voluntary cooperative engagement: forthcoming with detail, asks clarifying questions about process, does not invoke right to silence."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:detectionMethod "behavioral;linguistic"^^xsd:string ;
+    uckb:modality "text;voice;video"^^xsd:string ;
+    uckb:confidenceThreshold "0.75"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:legal_emo_interview_completed a owl:NamedIndividual,
+        uckb:EmotionalState ;
+    rdfs:label "Interview Completed" ;
+    uckb:cardId "legal_emo_interview_completed"^^xsd:string ;
+    uckb:classLabel "EmotionalState"^^xsd:string ;
+    uckb:description "All PEACE phases completed; evaluation phase done; interview formally closed. Signals end of all active technique activation."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .
+
+uckb:legal_proto_structured_professional_interview a owl:NamedIndividual,
+        uckb:DomainProtocol ;
+    rdfs:label "Structured Professional Interview" ;
+    uckb:cardId "legal_proto_structured_professional_interview"^^xsd:string ;
+    uckb:classLabel "DomainProtocol"^^xsd:string ;
+    uckb:description "Overarching evidence-based structured interview approach combining PEACE framework with Cognitive Interview techniques. Industry standard for UK police and allied professions."^^xsd:string ;
+    uckb:domain "Legal & Investigative"^^xsd:string ;
+    uckb:sourceIds "PEACE2000; Fisher1992; HomeOffice2007"^^xsd:string ;
+    uckb:reviewStatus "source_checked"^^xsd:string .

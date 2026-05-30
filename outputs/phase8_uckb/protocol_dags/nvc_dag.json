@@ -1,0 +1,45 @@
+{
+  "id": "nvc_dag",
+  "name": "NVC Protocol",
+  "domain": "Corporate & Engineering",
+  "description": "Rosenberg NVC: Observation, Feeling, Need, Request.",
+  "steps": [
+    {
+      "id": "nvc_step_1",
+      "name": "Observation",
+      "stepNumber": 1,
+      "gate": null
+    },
+    {
+      "id": "nvc_step_2",
+      "name": "Feeling",
+      "stepNumber": 2,
+      "gate": "nvc_gate_observation"
+    },
+    {
+      "id": "nvc_step_3",
+      "name": "Need",
+      "stepNumber": 3,
+      "gate": null
+    },
+    {
+      "id": "nvc_step_4",
+      "name": "Request",
+      "stepNumber": 4,
+      "gate": null
+    }
+  ],
+  "gates": [
+    {
+      "id": "nvc_gate_observation",
+      "condition": "no_interpretations_present",
+      "note": "Rewrite observation as fact before proceeding."
+    }
+  ],
+  "techniques": {
+    "1": "corp_009_nvc_observation",
+    "2": "corp_010_nvc_feeling",
+    "3": "corp_011_nvc_need",
+    "4": "corp_012_nvc_request"
+  }
+}

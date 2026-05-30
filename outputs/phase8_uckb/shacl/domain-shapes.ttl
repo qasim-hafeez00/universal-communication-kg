@@ -1,0 +1,328 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ============================================================
+# UCKB Phase 8 — Domain-Level SHACL Shapes
+# Extends universal technique shapes from Phase 3 with
+# per-domain constraints for all 6 domain sub-graphs.
+# ============================================================
+
+# ── Universal Phase 8 technique shape (extends Phase 3) ──────
+
+uckb:Phase8TechniqueShape a sh:NodeShape ;
+    sh:targetClass uckb:CommunicationTechnique ;
+    sh:property [
+        sh:path uckb:domain ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Every Phase 8 technique must declare its domain."
+    ] ;
+    sh:property [
+        sh:path uckb:reviewStatus ;
+        sh:minCount 1 ;
+        sh:in ( "source_checked" "expert_reviewed" "production_ready" "BLOCKED" ) ;
+        sh:message "reviewStatus must be one of: source_checked, expert_reviewed, production_ready, BLOCKED."
+    ] ;
+    sh:property [
+        sh:path uckb:tier ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "All Phase 8 techniques must have a tier property."
+    ] .
+
+# ── Legal & Investigative domain shape ───────────────────────
+
+uckb:LegalTechniqueShape a sh:NodeShape ;
+    sh:targetClass uckb:CommunicationTechnique ;
+    sh:property [
+        sh:path uckb:domain ;
+        sh:hasValue "Legal & Investigative"
+    ] ;
+    sh:property [
+        sh:path uckb:peaceStep ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Every legal technique must declare its PEACE step position or 'none'."
+    ] ;
+    sh:property [
+        sh:path uckb:contraindications ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Every legal technique must have explicit contraindications declared."
+    ] .
+
+uckb:ReidTechniqueShape a sh:NodeShape ;
+    rdfs:label "Reid Technique Absolute Block Shape" ;
+    sh:targetClass uckb:CommunicationTechnique ;
+    sh:property [
+        sh:path uckb:domain ;
+        sh:hasValue "Legal & Investigative"
+    ] ;
+    sh:property [
+        sh:path uckb:activationBlocked ;
+        sh:in ( true ) ;
+        sh:message "Reid Technique node must have activationBlocked = true."
+    ] ;
+    sh:sparql [
+        sh:message "Reid Technique must never be the target of a TRIGGERS relationship from a ProtocolStep." ;
+        sh:prefixes uckb: ;
+        sh:select """
+            SELECT $this WHERE {
+                $this uckb:activationBlocked "true"^^xsd:boolean .
+                ?step uckb:TRIGGERS $this .
+            }
+        """
+    ] .
+
+uckb:StatementMarkerShape a sh:NodeShape ;
+    sh:targetClass uckb:StatementMarker ;
+    sh:property [
+        sh:path uckb:domain ;
+        sh:minCount 1 ;
+        sh:message "StatementMarker must have a domain."
+    ] ;
+    sh:property [
+        sh:path uckb:detectionMethod ;
+        sh:minCount 1 ;
+        sh:in ( "linguistic" "behavioral" "prosodic" "temporal" "system" ) ;
+        sh:message "StatementMarker detectionMethod must be one of: linguistic, behavioral, prosodic, temporal, system."
+    ] ;
+    sh:property [
+        sh:path uckb:modality ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "StatementMarker must declare modality (text, voice, video, system)."
+    ] ;
+    sh:property [
+        sh:path uckb:confidenceThreshold ;
+        sh:minCount 1 ;
+        sh:message "StatementMarker must have a confidenceThreshold."
+    ] .
+
+# ── Corporate & Engineering domain shape ─────────────────────
+
+uckb:CorporateTechniqueShape a sh:NodeShape ;
+    sh:targetClass uckb:CommunicationTechnique ;
+    sh:property [
+        sh:path uckb:domain ;
+        sh:hasValue "Corporate & Engineering"
+    ] ;
+    sh:property [
+        sh:path uckb:cognitiveLoadProfile ;
+        sh:minCount 1 ;
+        sh:message "Every corporate technique must have a cognitiveLoadProfile."
+    ] ;
+    sh:property [
+        sh:path uckb:tier ;
+        sh:minCount 1 ;
+        sh:in ( "Tier 1" "Tier 2" "Tier 3" ) ;
+        sh:message "Corporate technique tier must be Tier 1, 2, or 3."
+    ] .
+
+uckb:CommunicationStyleShape a sh:NodeShape ;
+    sh:targetClass uckb:CommunicationStyle ;
+    sh:property [
+        sh:path uckb:domain ;
+        sh:minCount 1 ;
+        sh:message "CommunicationStyle must have a domain."
+    ] ;
+    sh:property [
+        sh:path uckb:dimension1 ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "CommunicationStyle must declare dimension1 (care_personally level)."
+    ] ;
+    sh:property [
+        sh:path uckb:dimension2 ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "CommunicationStyle must declare dimension2 (challenge_directly level)."
+    ] ;
+    sh:property [
+        sh:path uckb:targetState ;
+        sh:minCount 1 ;
+        sh:message "CommunicationStyle must declare whether it is a target state."
+    ] .
+
+uckb:PrivateChannelShape a sh:NodeShape ;
+    rdfs:label "Private Channel Enforcement Shape" ;
+    sh:targetClass uckb:CommunicationTechnique ;
+    sh:property [
+        sh:path uckb:cardId ;
+        sh:hasValue "corp_005_private_channel_enforcement"
+    ] ;
+    sh:property [
+        sh:path uckb:reviewNotes ;
+        sh:minCount 1 ;
+        sh:message "Private Channel Enforcement must document that it has an environmental (not emotional-state) constraint."
+    ] .
+
+# ── Education domain shape ────────────────────────────────────
+
+uckb:EducationTechniqueShape a sh:NodeShape ;
+    sh:targetClass uckb:CommunicationTechnique ;
+    sh:property [
+        sh:path uckb:domain ;
+        sh:hasValue "Education"
+    ] ;
+    sh:property [
+        sh:path uckb:bktTrigger ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Every education technique must declare its BKT trigger condition."
+    ] ;
+    sh:property [
+        sh:path uckb:tier ;
+        sh:minCount 1 ;
+        sh:message "Every education technique must have a tier."
+    ] .
+
+uckb:KnowledgeStateShape a sh:NodeShape ;
+    sh:targetClass uckb:KnowledgeState ;
+    sh:property [
+        sh:path uckb:domain ;
+        sh:minCount 1 ;
+        sh:message "KnowledgeState must have a domain."
+    ] ;
+    sh:property [
+        sh:path uckb:p_know_range ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "KnowledgeState must declare a p_know_range string."
+    ] ;
+    sh:property [
+        sh:path uckb:triggeredAct ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "KnowledgeState must declare what CoachIDL act it triggers."
+    ] .
+
+uckb:ScaffoldTierShape a sh:NodeShape ;
+    rdfs:label "Scaffold Hierarchy Ordering Shape" ;
+    sh:targetClass uckb:CommunicationTechnique ;
+    sh:property [
+        sh:path uckb:domain ;
+        sh:hasValue "Education"
+    ] ;
+    sh:property [
+        sh:path uckb:name ;
+        sh:pattern "^Scaffolded Hint Tier [1-3]$" ;
+        sh:message "Scaffold hints must follow the 3-tier naming pattern."
+    ] ;
+    sh:sparql [
+        sh:message "Tier 1 scaffold must precede Tier 2; Tier 2 must precede Tier 3." ;
+        sh:prefixes uckb: ;
+        sh:select """
+            SELECT $this WHERE {
+                $this uckb:name "Scaffolded Hint Tier 2" .
+                FILTER NOT EXISTS { ?t1 uckb:name "Scaffolded Hint Tier 1" . ?t1 uckb:PRECEDES $this . }
+            }
+        """
+    ] .
+
+# ── Protocol DAG shape ────────────────────────────────────────
+
+uckb:ProtocolDAGShape a sh:NodeShape ;
+    sh:targetClass uckb:ProtocolDAG ;
+    sh:property [
+        sh:path uckb:protocol ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "ProtocolDAG must have a protocol identifier."
+    ] ;
+    sh:property [
+        sh:path uckb:domain ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "ProtocolDAG must have a domain."
+    ] ;
+    sh:property [
+        sh:path uckb:stepCount ;
+        sh:minCount 1 ;
+        sh:message "ProtocolDAG must declare its step count."
+    ] .
+
+uckb:ProtocolStepShape a sh:NodeShape ;
+    sh:targetClass uckb:ProtocolStep ;
+    sh:property [
+        sh:path uckb:protocol ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "ProtocolStep must declare which protocol it belongs to."
+    ] ;
+    sh:property [
+        sh:path uckb:stepNumber ;
+        sh:minCount 1 ;
+        sh:message "ProtocolStep must have a stepNumber."
+    ] ;
+    sh:property [
+        sh:path uckb:domain ;
+        sh:minCount 1 ;
+        sh:message "ProtocolStep must have a domain."
+    ] .
+
+uckb:ProtocolGateShape a sh:NodeShape ;
+    sh:targetClass uckb:ProtocolGate ;
+    sh:property [
+        sh:path uckb:protocol ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "ProtocolGate must declare which protocol it belongs to."
+    ] ;
+    sh:property [
+        sh:path uckb:condition ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "ProtocolGate must declare the gate condition."
+    ] .
+
+# ── DomainBoundary shape ──────────────────────────────────────
+
+uckb:DomainBoundaryShape a sh:NodeShape ;
+    sh:targetClass uckb:DomainBoundary ;
+    sh:property [
+        sh:path uckb:sourceDomain ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "DomainBoundary must declare sourceDomain."
+    ] ;
+    sh:property [
+        sh:path uckb:targetDomain ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "DomainBoundary must declare targetDomain."
+    ] ;
+    sh:property [
+        sh:path uckb:rule ;
+        sh:minCount 1 ;
+        sh:in ( "BLOCK_ALL" "PARTIAL_BLOCK" "SELECTIVE_BLOCK" "ALLOW_MOST" "SELECTIVE_ALLOW" ) ;
+        sh:message "DomainBoundary rule must be one of: BLOCK_ALL, PARTIAL_BLOCK, SELECTIVE_BLOCK, ALLOW_MOST, SELECTIVE_ALLOW."
+    ] ;
+    sh:property [
+        sh:path uckb:rationale ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "DomainBoundary must document rationale for the rule."
+    ] .
+
+# ── Cross-domain contamination shape ─────────────────────────
+
+uckb:ContaminationGuardShape a sh:NodeShape ;
+    rdfs:label "Cross-Domain CONTRAINDICATED_WHEN Guard Shape" ;
+    sh:targetClass uckb:CommunicationTechnique ;
+    sh:sparql [
+        sh:message "Techniques from Sales & Negotiation must have at least one CONTRAINDICATED_WHEN edge to a crisis context state." ;
+        sh:prefixes uckb: ;
+        sh:select """
+            SELECT $this WHERE {
+                $this uckb:domain "Sales & Negotiation" .
+                FILTER NOT EXISTS {
+                    $this uckb:CONTRAINDICATED_WHEN ?e .
+                    ?e uckb:cardId "crisis_active_domain_state" .
+                }
+            }
+        """
+    ] .

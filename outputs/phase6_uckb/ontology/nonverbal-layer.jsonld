@@ -1,0 +1,1693 @@
+[
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#lowValueMeaning",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Interpretation when feature value is below threshold"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#ProsodicFeature"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "lowValueMeaning"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#prosodic_speech_rate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#ProsodicFeature"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Speech Rate"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#extractionDomain": [
+      {
+        "@value": "voice-only"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#featureType": [
+      {
+        "@value": "rate"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#highValueMeaning": [
+      {
+        "@value": "anxiety escalation"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#lowValueMeaning": [
+      {
+        "@value": "cognitive overload or dissociation"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#modality": [
+      {
+        "@value": "paralinguistic"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#signalsState": [
+      {
+        "@value": "Dissociated"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#threshold": [
+      {
+        "@value": "drop >30% from baseline or rise >50% from baseline"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#threshold",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Decision boundary expression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#ProsodicFeature"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "threshold"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#emotionLabel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Human-readable emotion name"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#FacsMapping"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "emotionLabel"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#modality_semantic",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#ModalityWeight"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The words themselves — lowest priority in affective conflicts"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Semantic Content"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#applyDomain": [
+      {
+        "@value": "affective"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#modalityType": [
+      {
+        "@value": "semantic"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#priority": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 3
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#weight": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0.07"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#prosodic_voice_quality",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#ProsodicFeature"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Voice Quality"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#extractionDomain": [
+      {
+        "@value": "voice-only"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#featureType": [
+      {
+        "@value": "quality"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#highValueMeaning": [
+      {
+        "@value": "elevated arousal state (breathiness, tremor)"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#lowValueMeaning": [
+      {
+        "@value": "calm or neutral baseline"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#modality": [
+      {
+        "@value": "paralinguistic"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#signalsState": [
+      {
+        "@value": "Distress"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#threshold": [
+      {
+        "@value": "tremor or creak detected above baseline variability"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#modalityType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "semantic, paralinguistic, or kinesic"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#ModalityWeight"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "modalityType"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#routingAction",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Agent routing instruction when this FACS pattern is detected"
+      },
+      {
+        "@language": "en",
+        "@value": "Agent routing instruction when this adaptor is detected"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#FacsMapping"
+      },
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#BehavioralAdaptor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "routingAction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#requiresCulturalCalibration",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "True for emblems that vary by culture"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#BehavioralAdaptor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "requiresCulturalCalibration"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#modality_paralinguistic",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#ModalityWeight"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Tone, pitch, speed, volume — overrides semantic content when incongruent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Paralinguistics"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#applyDomain": [
+      {
+        "@value": "affective"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#modalityOverrides": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#modality_semantic"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#modalityType": [
+      {
+        "@value": "paralinguistic"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#priority": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 2
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#weight": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0.38"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#auCombination",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "AU code string, e.g. AU6+AU12"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#FacsMapping"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "auCombination"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#weight",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Mehrabian weight (0.07, 0.38, or 0.55)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#ModalityWeight"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "weight"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#facs_happiness",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#FacsMapping"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "FACS — Happiness"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#auCode": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 6
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 12
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#auCombination": [
+      {
+        "@value": "AU6+AU12"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#conflictsVerbal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#emotionLabel": [
+      {
+        "@value": "Happiness"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#isMicroexpression": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#isUnilateral": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#routingAction": [
+      {
+        "@value": "Positive reinforcement; increase complexity; advance to next protocol step"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#facs_sadness",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#FacsMapping"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "FACS — Sadness"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#auCode": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 4
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 15
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#auCombination": [
+      {
+        "@value": "AU1+AU4+AU15"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#conflictsVerbal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#emotionLabel": [
+      {
+        "@value": "Sadness"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#isMicroexpression": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#isUnilateral": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#routingAction": [
+      {
+        "@value": "Empathic pacing; reflective listening; switch to SPIKES Emotion step"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#facs_anger",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#FacsMapping"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "FACS — Anger"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#auCode": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 4
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 5
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 23
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#auCombination": [
+      {
+        "@value": "AU4+AU5+AU7+AU23"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#conflictsVerbal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#emotionLabel": [
+      {
+        "@value": "Anger"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#isMicroexpression": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#isUnilateral": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#routingAction": [
+      {
+        "@value": "Defensive negotiation mode; redirect to Objective Criteria; maintain Adult ego state"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#adaptorType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "self, object, emblem, or illustrator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#BehavioralAdaptor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "adaptorType"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#signalsState",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "EmotionalState name signalled at threshold"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#ProsodicFeature"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "signalsState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#modality_kinesic",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#ModalityWeight"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Facial expressions and body language — highest priority in affective conflicts"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Kinesics / Facial Expressions"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#applyDomain": [
+      {
+        "@value": "affective"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#modalityOverrides": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#modality_semantic"
+      },
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#modality_paralinguistic"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#modalityType": [
+      {
+        "@value": "kinesic"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#priority": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#weight": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+        "@value": "0.55"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#applyDomain",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Context restriction: affective (not factual) content only"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#ModalityWeight"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "applyDomain"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#adaptor_object",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#BehavioralAdaptor"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Pen clicking, phone manipulation, object fidgeting"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Object-Adaptor"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#adaptorType": [
+      {
+        "@value": "object"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#arousalSignal": [
+      {
+        "@value": "Boredom or anxiety"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#modality": [
+      {
+        "@value": "kinesic"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#requiresCulturalCalibration": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#routingAction": [
+      {
+        "@value": "Check engagement level; increase interactivity or topic relevance"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#highValueMeaning",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Interpretation when feature value is above threshold"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#ProsodicFeature"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "highValueMeaning"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#FacsMapping",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "FACS Action Unit combination mapped to an emotion and graph routing action."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "FacsMapping"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://uckb.io/ontology#PsychologicalConstruct"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#adaptor_emblem",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#BehavioralAdaptor"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Deliberate culturally-specific gestures with precise semantic translations (thumbs up, head shake)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Emblem Gesture"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#adaptorType": [
+      {
+        "@value": "emblem"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#arousalSignal": [
+      {
+        "@value": "Direct communicative intent — requires cultural calibration before interpretation"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#modality": [
+      {
+        "@value": "kinesic"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#requiresCulturalCalibration": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#routingAction": [
+      {
+        "@value": "Route to cultural calibration check before interpreting; flag for Phase 7 cross-cultural layer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#prosodic_filler_frequency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#ProsodicFeature"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Filler Word Frequency"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#extractionDomain": [
+      {
+        "@value": "voice-only"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#featureType": [
+      {
+        "@value": "count"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#highValueMeaning": [
+      {
+        "@value": "working memory load or potential falsehood or confusion"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#lowValueMeaning": [
+      {
+        "@value": "cognitive fluency"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#modality": [
+      {
+        "@value": "paralinguistic"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#signalsState": [
+      {
+        "@value": "Cognitive Overload"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#threshold": [
+      {
+        "@value": ">2x baseline filler rate (um, uh, like)"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#isMicroexpression",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "True when duration < 1/15 second"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#FacsMapping"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "isMicroexpression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#indicatesEmotion",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "indicatesEmotion"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#facs_contempt",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#FacsMapping"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "FACS — Contempt"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#auCode": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 12
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 14
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#auCombination": [
+      {
+        "@value": "AU12+AU14"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#conflictsVerbal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#emotionLabel": [
+      {
+        "@value": "Contempt"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#isMicroexpression": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#isUnilateral": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#routingAction": [
+      {
+        "@value": "CRITICAL — flag communication breakdown risk; shift to mutual respect restoration protocol"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#facs_fear",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#FacsMapping"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "FACS — Fear"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#auCode": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 2
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 4
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 5
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 20
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 26
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#auCombination": [
+      {
+        "@value": "AU1+AU2+AU4+AU5+AU7+AU20+AU26"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#conflictsVerbal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#emotionLabel": [
+      {
+        "@value": "Fear"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#isMicroexpression": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#isUnilateral": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#routingAction": [
+      {
+        "@value": "Activate de-escalation; prevent confrontational assertions; use BCSM Steps 1-2"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#prosodic_pitch",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#ProsodicFeature"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Fundamental Frequency (Pitch)"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#extractionDomain": [
+      {
+        "@value": "voice-only"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#featureType": [
+      {
+        "@value": "frequency"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#highValueMeaning": [
+      {
+        "@value": "anxiety or excitement"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#lowValueMeaning": [
+      {
+        "@value": "depression or potential deception"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#modality": [
+      {
+        "@value": "paralinguistic"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#signalsState": [
+      {
+        "@value": "Fear"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#threshold": [
+      {
+        "@value": "variance >2 standard deviations from baseline"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#conflictsVerbal",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "True when FACS signal typically contradicts verbal content"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#FacsMapping"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "conflictsVerbal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#facs_microexpression",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#FacsMapping"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "FACS — Microexpression"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#auCombination": [
+      {
+        "@value": "any AU <1/15s contradicting baseline"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#conflictsVerbal": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#durationMs": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 67
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#emotionLabel": [
+      {
+        "@value": "Microexpression"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#isMicroexpression": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#isUnilateral": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#routingAction": [
+      {
+        "@value": "Flag domain for deeper probing; do NOT confront directly; increase clarification questions"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#modalityOverrides",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "When modalities are incongruent in affective contexts, the higher-priority modality overrides the lower."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#ModalityWeight"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "modalityOverrides"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#ModalityWeight"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#adaptor_self",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#BehavioralAdaptor"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Face touching, neck rubbing, hair manipulation — subconscious ANS arousal responses"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Self-Adaptor"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#adaptorType": [
+      {
+        "@value": "self"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#arousalSignal": [
+      {
+        "@value": "ANS arousal and elevated stress"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#modality": [
+      {
+        "@value": "kinesic"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#requiresCulturalCalibration": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#routingAction": [
+      {
+        "@value": "Activate grounding or de-escalation technique; slow interaction pace"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#PsychologicalConstruct",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#prosodic_pause_duration",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#ProsodicFeature"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Pause Duration"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#extractionDomain": [
+      {
+        "@value": "voice-only"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#featureType": [
+      {
+        "@value": "duration"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#highValueMeaning": [
+      {
+        "@value": "deception processing or trauma recall"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#lowValueMeaning": [
+      {
+        "@value": "fluency and cognitive engagement"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#modality": [
+      {
+        "@value": "paralinguistic"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#signalsState": [
+      {
+        "@value": "Distress"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#threshold": [
+      {
+        "@value": ">400ms before answering a direct question"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#featureType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Type: frequency, rate, energy, quality, duration, count"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#ProsodicFeature"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "featureType"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#ModalityWeight",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Mehrabian 7-38-55 weighting for conflict resolution when modalities produce incongruent signals in affective contexts."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "ModalityWeight"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://uckb.io/ontology#PsychologicalConstruct"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#isUnilateral",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "True for contempt (shown on one side of face only)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#FacsMapping"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "isUnilateral"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#ProsodicFeature",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Voice channel signal feature used for emotional state detection in voice-only agents."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "ProsodicFeature"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://uckb.io/ontology#PsychologicalConstruct"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#BehavioralAdaptor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Subconscious kinesic behavior triggered by ANS arousal, used in video-enabled interactions."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "BehavioralAdaptor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://uckb.io/ontology#PsychologicalConstruct"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#extractionDomain",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "voice-only or multimodal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#ProsodicFeature"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "extractionDomain"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#arousalSignal",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "What ANS state this adaptor signals"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#BehavioralAdaptor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "arousalSignal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#priority",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Override priority; 1 = highest (kinesic)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#ModalityWeight"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "priority"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#adaptor_illustrator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#BehavioralAdaptor"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Involuntary hand movements tracking verbal rhythm; rate correlates with cognitive fluency"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Illustrator Gesture"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#adaptorType": [
+      {
+        "@value": "illustrator"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#arousalSignal": [
+      {
+        "@value": "High rate = fluency and engagement; low rate = stress or rehearsed deception"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#modality": [
+      {
+        "@value": "kinesic"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#requiresCulturalCalibration": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#routingAction": [
+      {
+        "@value": "Low rate: flag for deception probe or distress check; high rate: advance interaction"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#durationMs",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Duration in ms; null for non-micro"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology/nonverbal#FacsMapping"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "durationMs"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal-layer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "FACS facial action unit mappings, prosodic voice features, behavioral adaptors, and Mehrabian modality weights."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "UCKB Phase 6 — Non-Verbal & Multimodal Layer"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/nonverbal#prosodic_energy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology/nonverbal#ProsodicFeature"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Speech Energy (Amplitude)"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#extractionDomain": [
+      {
+        "@value": "multimodal"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#featureType": [
+      {
+        "@value": "energy"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#highValueMeaning": [
+      {
+        "@value": "emotional activation and arousal"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#lowValueMeaning": [
+      {
+        "@value": "suppression or withdrawal"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#modality": [
+      {
+        "@value": "paralinguistic"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#signalsState": [
+      {
+        "@value": "Hostile"
+      }
+    ],
+    "https://uckb.io/ontology/nonverbal#threshold": [
+      {
+        "@value": "spike >10dB above baseline"
+      }
+    ]
+  }
+]

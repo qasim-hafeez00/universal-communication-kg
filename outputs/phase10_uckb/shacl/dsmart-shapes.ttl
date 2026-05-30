@@ -1,0 +1,302 @@
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix uckb:   <https://uckb.io/ontology#> .
+@prefix dsmart: <https://uckb.io/ontology/dsmart#> .
+@prefix dss:    <https://uckb.io/shacl/dsmart#> .
+
+# ─────────────────────────────────────────────────────────────────────────────
+# UCKB Phase 10 — D-SMART SHACL Shapes
+# 8 shapes: 6 node-level + 2 SPARQL constraint shapes.
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+# ── Shape 1: ConversationFact ─────────────────────────────────────────────────
+
+dss:ConversationFactShape
+    a sh:NodeShape ;
+    sh:targetClass dsmart:ConversationFact ;
+    rdfs:label "ConversationFact shape" ;
+    rdfs:comment "Validates DSM fact nodes: required fields, controlled vocabulary, score range." ;
+
+    sh:property [
+        sh:path dsmart:factType ;
+        sh:in ("commitment" "position" "information" "denial") ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "factType must be one of: commitment, position, information, denial"
+    ] ;
+    sh:property [
+        sh:path uckb:speakerRole ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "speakerRole is required"
+    ] ;
+    sh:property [
+        sh:path uckb:validFrom ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message "validFrom must be an integer >= 1"
+    ] ;
+    sh:property [
+        sh:path uckb:weight ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:message "weight must be in [0.0, 1.0]"
+    ] ;
+    sh:property [
+        sh:path dsmart:superseded ;
+        sh:minCount 1 ;
+        sh:datatype xsd:boolean ;
+        sh:message "superseded flag is required"
+    ] .
+
+
+# ── Shape 2: GoalState ────────────────────────────────────────────────────────
+
+dss:GoalStateShape
+    a sh:NodeShape ;
+    sh:targetClass dsmart:GoalState ;
+    rdfs:label "GoalState shape" ;
+    rdfs:comment "Validates goal tracking nodes: status vocabulary, confidence range, detection turn." ;
+
+    sh:property [
+        sh:path dsmart:goalStatus ;
+        sh:in ("active" "drifted" "resolved" "blocked") ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "status must be one of: active, drifted, resolved, blocked"
+    ] ;
+    sh:property [
+        sh:path dsmart:confidenceScore ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:message "confidenceScore must be in [0.0, 1.0]"
+    ] ;
+    sh:property [
+        sh:path uckb:detectedAt ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message "detectedAt turn must be an integer >= 1"
+    ] .
+
+
+# ── Shape 3: ProtocolTracker ──────────────────────────────────────────────────
+
+dss:ProtocolTrackerShape
+    a sh:NodeShape ;
+    sh:targetClass dsmart:ProtocolTracker ;
+    rdfs:label "ProtocolTracker shape" ;
+
+    sh:property [
+        sh:path dsmart:deviationCount ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:message "deviationCount must be a non-negative integer"
+    ] ;
+    sh:property [
+        sh:path uckb:status ;
+        sh:in ("on_track" "deviated" "completed" "abandoned") ;
+        sh:minCount 1 ;
+        sh:message "status must be one of: on_track, deviated, completed, abandoned"
+    ] ;
+    sh:property [
+        sh:path uckb:currentStep ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message "currentStep must be an integer >= 1"
+    ] ;
+    sh:property [
+        sh:path dsmart:tracks ;
+        sh:minCount 1 ;
+        sh:class uckb:ProtocolDAG ;
+        sh:message "ProtocolTracker must link to a ProtocolDAG via tracks"
+    ] .
+
+
+# ── Shape 4: ConsistencyConflict ──────────────────────────────────────────────
+
+dss:ConsistencyConflictShape
+    a sh:NodeShape ;
+    sh:targetClass dsmart:ConsistencyConflict ;
+    rdfs:label "ConsistencyConflict shape" ;
+
+    sh:property [
+        sh:path uckb:conflictType ;
+        sh:in ("factual" "goal" "protocol") ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "conflictType must be one of: factual, goal, protocol"
+    ] ;
+    sh:property [
+        sh:path uckb:severity ;
+        sh:in ("critical" "moderate" "minor") ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "severity must be one of: critical, moderate, minor"
+    ] ;
+    sh:property [
+        sh:path uckb:detectedAtTurn ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message "detectedAtTurn must be an integer >= 1"
+    ] .
+
+
+# ── Shape 5: ReasoningCandidate ───────────────────────────────────────────────
+
+dss:ReasoningCandidateShape
+    a sh:NodeShape ;
+    sh:targetClass dsmart:ReasoningCandidate ;
+    rdfs:label "ReasoningCandidate shape" ;
+
+    sh:property [
+        sh:path dsmart:nliScore ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:message "nliScore must be in [0.0, 1.0]"
+    ] ;
+    sh:property [
+        sh:path uckb:protocolDeviation ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:message "protocolDeviation must be in [0.0, 1.0]"
+    ] ;
+    sh:property [
+        sh:path uckb:goalAlignment ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:message "goalAlignment must be in [0.0, 1.0]"
+    ] ;
+    sh:property [
+        sh:path dsmart:compositeScore ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:message "compositeScore must be in [0.0, 1.0]"
+    ] ;
+    sh:property [
+        sh:path dsmart:candidateFor ;
+        sh:minCount 1 ;
+        sh:class uckb:Turn ;
+        sh:message "ReasoningCandidate must link to a Turn via candidateFor"
+    ] .
+
+
+# ── Shape 6: ConsistencyReport ────────────────────────────────────────────────
+
+dss:ConsistencyReportShape
+    a sh:NodeShape ;
+    sh:targetClass dsmart:ConsistencyReport ;
+    rdfs:label "ConsistencyReport shape" ;
+
+    sh:property [
+        sh:path dsmart:derScore ;
+        sh:minCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:message "derScore must be in [0.0, 1.0]"
+    ] ;
+    sh:property [
+        sh:path uckb:factCount ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:message "factCount must be a non-negative integer"
+    ] ;
+    sh:property [
+        sh:path uckb:conflictCount ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:message "conflictCount must be a non-negative integer"
+    ] .
+
+
+# ── Shape 7 (SPARQL): SupersedesPathShape — no cycles ────────────────────────
+# A ConversationFact must not supersede itself (directly or indirectly).
+
+dss:SupersedesPathShape
+    a sh:NodeShape ;
+    sh:targetClass dsmart:ConversationFact ;
+    rdfs:label "Supersedes acyclic constraint" ;
+    rdfs:comment "SPARQL constraint: a SUPERSEDES chain must not form a cycle." ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Cyclic SUPERSEDES chain detected — fact cannot supersede itself" ;
+        sh:prefixes [
+            sh:declare [
+                sh:prefix "dsmart" ;
+                sh:namespace "https://uckb.io/ontology/dsmart#"
+            ]
+        ] ;
+        sh:select """
+            SELECT $this
+            WHERE {
+                $this dsmart:supersedes+ $this .
+            }
+        """
+    ] .
+
+
+# ── Shape 8 (SPARQL): SelectionInvariantShape — exactly 1 selected per turn ──
+# For each (sessionId × turnNumber) group, exactly one ReasoningCandidate
+# must have selected=true.
+
+dss:SelectionInvariantShape
+    a sh:NodeShape ;
+    sh:targetClass dsmart:ReasoningCandidate ;
+    rdfs:label "RT selection invariant" ;
+    rdfs:comment "SPARQL constraint: exactly one ReasoningCandidate per session+turn group has selected=true." ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Exactly one ReasoningCandidate per turn group must have selected=true" ;
+        sh:prefixes [
+            sh:declare [
+                sh:prefix "dsmart" ;
+                sh:namespace "https://uckb.io/ontology/dsmart#"
+            ] ;
+            sh:declare [
+                sh:prefix "uckb" ;
+                sh:namespace "https://uckb.io/ontology#"
+            ]
+        ] ;
+        sh:select """
+            SELECT $this
+            WHERE {
+                $this a dsmart:ReasoningCandidate ;
+                      uckb:sessionId ?sid ;
+                      uckb:turnNumber ?turn .
+                {
+                    SELECT ?sid ?turn (COUNT(?sel) AS ?selCount)
+                    WHERE {
+                        ?rc a dsmart:ReasoningCandidate ;
+                            uckb:sessionId ?sid ;
+                            uckb:turnNumber ?turn ;
+                            uckb:selected true .
+                    }
+                    GROUP BY ?sid ?turn
+                }
+                FILTER (?selCount != 1)
+            }
+        """
+    ] .

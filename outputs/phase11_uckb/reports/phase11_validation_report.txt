@@ -1,0 +1,90 @@
+UCKB Phase 11 — Real-Time Hybrid Retrieval Engine (BM25 + Vector + Cypher, RRF) — Validation Report
+Generated: 2026-05-31 01:29:51
+======================================================================
+
+ACCEPTANCE CRITERIA
+----------------------------------------------------------------------
+  AC-P11-1  [PASS]  All 6 Phase 11 node types present (FullTextIndex, VectorIndex, FusionConfig, HybridQuery, RetrievalLeg, HybridResult)
+            FullTextIndex=1, VectorIndex=1, FusionConfig=6, HybridQuery=6, RetrievalLeg=18, HybridResult=6
+
+  AC-P11-2  [PASS]  FullTextIndex: 1 node; labels contains Technique; fields contain name/steps/whenToUse; analyzer=standard-no-stopwords
+            labels=['Technique', 'SignalMarker', 'ProtocolStep'], fields=['name', 'steps', 'whenToUse', 'failureSignals', 'culturalNotes'], analyzer='standard-no-stopwords', hasTechnique=True, hasNameField=True, hasStepsField=True, hasWhenField=True, correctAnalyzer=True
+
+  AC-P11-3  [PASS]  VectorIndex: 1 node; dims=384; similarity=cosine; >=100 Technique nodes have 384-dim embedding
+            dims=384, similarity='cosine', model='sentence-transformers/all-MiniLM-L6-v2', embeddingCount=148 (need >=100), firstEmbeddingDims=384 (need 384)
+
+  AC-P11-4  [PASS]  FusionConfig: exactly 6 nodes; all k=60; bm25Weight+vectorWeight+cypherWeight=1.0 (+-0.001)
+            total=6 (need 6), allK60=True, weightSums=[('dispatch', 1.0), ('clinical', 1.0), ('negotiation', 1.0), ('legal', 1.0), ('corporate', 1.0), ('education', 1.0)], allSumOK=True
+
+  AC-P11-5  [PASS]  HybridQuery: exactly 6 nodes; each has USES_FUSION + QUERIES_INDEX(x2) + FILTERS_BY; cypherTemplate, bm25Fields, vectorProperty set
+            total=6 (need 6), hasFusion=True, hasFilter=True, hasTemplate=True, hasBM25Fields=True, hasVectorProperty=True
+
+  AC-P11-6  [PASS]  RetrievalLeg: >=18 nodes; all legType in [bm25/vector/cypher]; all rank>=1; linked via HAS_LEG
+            total=18 (need >=18), validLegTypes=True, validRanks=True, distinctTypes=['cypher', 'bm25', 'vector']
+
+  AC-P11-7  [PASS]  HybridResult: >=6 nodes; all safetyValidated=true; all activationBlocked=false; linked via PRODUCED_BY
+            total=6 (need >=6), safetyValidated=True, notBlocked=True, fusedRank1Count=6
+
+  AC-P11-8  [PASS]  RRF formula: |stored_rrfScore - Σ(w_i/(k+rank_i))| < 0.001 for all 6 HybridResults
+            dispatch:stored=0.016327 computed=0.016327 Δ=3.40e-07 [True]  clinical:stored=0.016341 computed=0.016341 Δ=4.39e-07 [True]  negotiation:stored=0.016314 computed=0.016314 Δ=1.20e-07 [True]  legal:stored=0.016327 computed=0.016327 Δ=3.40e-07 [True]  corporate:stored=0.016327 computed=0.016327 Δ=3.40e-07 [True]  education:stored=0.016289 computed=0.016289 Δ=3.57e-07 [True]
+
+  AC-P11-9  [PASS]  Cross-domain safety: 0 HybridResults return techniques blocked by the active domain's SchemaFilterRegistry
+            0 cross-domain violations across 6 HybridResults
+
+  AC-P11-10  [PASS]  Hybrid templates: exactly 6 Text2CypherTemplate with category='hybrid'; all include ORDER BY rrfScore
+            templates=6 (need 6), categoryHybrid=6 (need 6), found=['HYBRID_DISPATCH', 'HYBRID_CLINICAL', 'HYBRID_NEGOTIATION', 'HYBRID_LEGAL', 'HYBRID_CORPORATE', 'HYBRID_EDUCATION'], orderByRRF=7 (need >=6)
+
+======================================================================
+  OVERALL: ALL PASS 10/10
+======================================================================
+
+DIAGNOSTICS
+----------------------------------------------------------------------
+
+Cypher file inventory:
+  29_hybrid_schema.cypher                          2080 bytes
+  30_index_registry.cypher                         2659 bytes
+  31_fusion_config.cypher                          3941 bytes
+  32_hybrid_queries.cypher                         7763 bytes
+  33_retrieval_legs.cypher                        15626 bytes
+  34_hybrid_templates.cypher                      11164 bytes
+  35_phase11_validation.cypher                     5716 bytes
+
+Phase 11 node counts (from phase11_data.json):
+  FullTextIndex                          1
+  VectorIndex                            1
+  FusionConfig                           6
+  HybridQuery                            6
+  RetrievalLeg                           18
+  HybridResult                           6
+  Text2CypherTemplate_hybrid             6
+  total_new_nodes                        44
+
+Embeddings file: present
+  Technique nodes with embeddings: 148
+  First embedding dims:            384
+
+FusionConfig weight sums:
+  dispatch        1.000000  k=60
+  clinical        1.000000  k=60
+  negotiation     1.000000  k=60
+  legal           1.000000  k=60
+  corporate       1.000000  k=60
+  education       1.000000  k=60
+
+HybridResult RRF scores:
+  dispatch        t_bcsm_minimal_enc                       stored=0.016327  computed=0.016327  delta=3.40e-07
+  clinical        t_spikes_empathy_response                stored=0.016341  computed=0.016341  delta=4.39e-07
+  negotiation     t_spin_implication_q                     stored=0.016314  computed=0.016314  delta=1.20e-07
+  legal           t_peace_probing                          stored=0.016327  computed=0.016327  delta=3.40e-07
+  corporate       t_sbi_feedback                           stored=0.016327  computed=0.016327  delta=3.40e-07
+  education       t_scaffold_tier1                         stored=0.016289  computed=0.016289  delta=3.57e-07
+
+Ontology files:
+  hybrid-retrieval.jsonld                          6968 bytes
+  hybrid-retrieval.ttl                             8921 bytes
+
+SHACL shapes:
+  hybrid-shapes.ttl                             8 NodeShapes, 2 SPARQLConstraints
+
+======================================================================

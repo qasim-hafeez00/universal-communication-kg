@@ -1,0 +1,54 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+
+uckb:Aggressive a owl:NamedIndividual,
+        uckb:CommunicationStyle ;
+    rdfs:label "Aggressive" ;
+    rdfs:comment "Dominates, interrupts, and disregards others' boundaries." .
+
+uckb:Amiable a owl:NamedIndividual,
+        uckb:CommunicationStyle ;
+    rdfs:label "Amiable" ;
+    rdfs:comment "Cooperative, empathic, consensus-seeking; avoids confrontation." .
+
+uckb:Analytical a owl:NamedIndividual,
+        uckb:CommunicationStyle ;
+    rdfs:label "Analytical" ;
+    rdfs:comment "Data-driven, systematic, detail-oriented; requires evidence before commitment." .
+
+uckb:Assertive a owl:NamedIndividual,
+        uckb:CommunicationStyle ;
+    rdfs:label "Assertive" ;
+    rdfs:comment "Direct, confident, and respectful; expresses needs and boundaries clearly." .
+
+uckb:Driver a owl:NamedIndividual,
+        uckb:CommunicationStyle ;
+    rdfs:label "Driver" ;
+    rdfs:comment "Results-oriented, decisive, direct; low tolerance for ambiguity or delay." .
+
+uckb:Expressive a owl:NamedIndividual,
+        uckb:CommunicationStyle ;
+    rdfs:label "Expressive" ;
+    rdfs:comment "Emotional, spontaneous, relationship-focused; high interpersonal energy." .
+
+uckb:Formal a owl:NamedIndividual,
+        uckb:CommunicationStyle ;
+    rdfs:label "Formal" ;
+    rdfs:comment "Protocol-bound, structured, distance-maintaining." .
+
+uckb:Informal a owl:NamedIndividual,
+        uckb:CommunicationStyle ;
+    rdfs:label "Informal" ;
+    rdfs:comment "Casual, rapport-centred, flexible register." .
+
+uckb:Passive a owl:NamedIndividual,
+        uckb:CommunicationStyle ;
+    rdfs:label "Passive" ;
+    rdfs:comment "Avoids conflict; own needs minimised; may build resentment over time." .
+
+uckb:PassiveAggressive a owl:NamedIndividual,
+        uckb:CommunicationStyle ;
+    rdfs:label "Passive-Aggressive" ;
+    rdfs:comment "Indirect hostility; superficial compliance with covert resistance." .
+

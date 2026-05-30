@@ -1,0 +1,381 @@
+[
+  {
+    "@id": "https://uckb.io/ontology#ChallengerInsight",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#NeedsAssessment"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#NegotiationRapport",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#Rapport"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#CollaborativeProblSolving",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#NeedsAssessment"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#CrisisEmpathy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#EmpathicValidation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Rapport",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationTechnique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Core rapport-building framework."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Rapport"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#TraumaInformedGrounding",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#Grounding"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#EmpathicValidation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationTechnique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Core universal empathic validation framework."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Empathic Validation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#TeachBackVerification",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#InformationGathering"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#ConflictDeEscalation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationTechnique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Core de-escalation framework."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Conflict De-escalation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#SafetyPlanning",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#ConflictDeEscalation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#HarvardPrincipledNeg",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#Negotiation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#MotivationalInterviewing",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#DomainProtocol"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Core MI protocol for ambivalence resolution."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Motivational Interviewing"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#TacticalEmpathy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#ActiveListening"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Empathy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationTechnique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Core empathy expression framework."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Empathy"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#ClinicalGrounding",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#Grounding"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#InformationGathering",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationTechnique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Core structured elicitation framework."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Information Gathering"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#ReflectiveListening",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#ActiveListening"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#MEDDIC_Qualification",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#NeedsAssessment"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#SPIN_Selling",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#NeedsAssessment"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#MotivationalListening",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#ActiveListening"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#ClinicalEmpathy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#EmpathicValidation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Grounding",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationTechnique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Core present-focus grounding framework."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Grounding"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#SPIKES_SupportStep",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#EmpathicValidation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#SOLER",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#ActiveListening"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#SandlerPainFunnel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#NeedsAssessment"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#Negotiation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#DomainProtocol"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Core negotiation framework."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Negotiation"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#ActiveListening",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationTechnique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Core universal active listening framework."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Active Listening"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#NeedsAssessment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://uckb.io/ontology#CommunicationTechnique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Core needs-elicitation framework."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Needs Assessment"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#SalesEmpathy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#DOMAIN_VARIANT_OF": [
+      {
+        "@id": "https://uckb.io/ontology#EmpathicValidation"
+      }
+    ]
+  }
+]

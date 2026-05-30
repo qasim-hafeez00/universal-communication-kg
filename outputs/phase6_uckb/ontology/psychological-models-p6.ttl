@@ -1,0 +1,103 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uckb: <https://uckb.io/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+uckb:agentAction a owl:DatatypeProperty ;
+    rdfs:label "agentAction"@en ;
+    rdfs:comment "Prescribed agent action when this ego state is detected"@en ;
+    rdfs:domain uckb:EgoState ;
+    rdfs:range xsd:string .
+
+uckb:belongsToModel a owl:ObjectProperty ;
+    rdfs:label "belongsToModel"@en ;
+    rdfs:comment "Relates an EgoState to its parent psychological model (TA, Karpman, Winner's Triangle)"@en ;
+    rdfs:domain uckb:EgoState .
+
+uckb:berneCategory a owl:DatatypeProperty ;
+    rdfs:label "berneCategory"@en ;
+    rdfs:comment "Berne category: Parent, Adult, or Child"@en ;
+    rdfs:domain uckb:EgoState ;
+    rdfs:range xsd:string .
+
+uckb:ego_adapted_child a owl:NamedIndividual,
+        uckb:EgoState ;
+    rdfs:label "Adapted Child"@en ;
+    uckb:agentAction "Encourage explicit need-articulation; do NOT rescue" ;
+    uckb:berneCategory "Child" ;
+    uckb:isDysfunctional true ;
+    uckb:karpmanRole "Victim" ;
+    uckb:linguisticMarker "helpless tone",
+        "nobody listens to me",
+        "pleading requests",
+        "self-deprecation" ;
+    uckb:winnerTriangleTarget "Vulnerable/Survivor" .
+
+uckb:ego_adult a owl:NamedIndividual,
+        uckb:EgoState ;
+    rdfs:label "Adult"@en ;
+    uckb:agentAction "Reinforce with collaborative dialogue acts and logical sequencing" ;
+    uckb:berneCategory "Adult" ;
+    uckb:isDysfunctional false ;
+    uckb:karpmanRole "None" ;
+    uckb:linguisticMarker "I statements",
+        "factual framing",
+        "measured tone",
+        "objective language" ;
+    uckb:winnerTriangleTarget "Maintain" .
+
+uckb:ego_critical_parent a owl:NamedIndividual,
+        uckb:EgoState ;
+    rdfs:label "Critical Parent"@en ;
+    uckb:agentAction "Mirror Adult state; set objective boundaries; never match aggression" ;
+    uckb:berneCategory "Parent" ;
+    uckb:isDysfunctional true ;
+    uckb:karpmanRole "Persecutor" ;
+    uckb:linguisticMarker "absolutist language",
+        "blame statements",
+        "contemptuous FACS",
+        "it is your fault" ;
+    uckb:winnerTriangleTarget "Assertive" .
+
+uckb:ego_nurturing_parent a owl:NamedIndividual,
+        uckb:EgoState ;
+    rdfs:label "Nurturing Parent"@en ;
+    uckb:agentAction "Provide scaffolding; empower the other party to solve their own problem" ;
+    uckb:berneCategory "Parent" ;
+    uckb:isDysfunctional true ;
+    uckb:karpmanRole "Rescuer" ;
+    uckb:linguisticMarker "condescending care",
+        "over-helping",
+        "solving others problems unsolicited" ;
+    uckb:winnerTriangleTarget "Caring/Coach" .
+
+uckb:isDysfunctional a owl:DatatypeProperty ;
+    rdfs:label "isDysfunctional"@en ;
+    rdfs:comment "True for Child and Parent states; False for Adult"@en ;
+    rdfs:domain uckb:EgoState ;
+    rdfs:range xsd:boolean .
+
+uckb:karpmanRole a owl:DatatypeProperty ;
+    rdfs:label "karpmanRole"@en ;
+    rdfs:comment "Role in Karpman Drama Triangle"@en ;
+    rdfs:domain uckb:EgoState ;
+    rdfs:range xsd:string .
+
+uckb:winnerTriangleTarget a owl:DatatypeProperty ;
+    rdfs:label "winnerTriangleTarget"@en ;
+    rdfs:comment "Target state in Winner's Triangle"@en ;
+    rdfs:domain uckb:EgoState ;
+    rdfs:range xsd:string .
+
+<https://uckb.io/ontology/psychological-models-p6> a owl:Ontology ;
+    rdfs:label "UCKB Phase 6 — Psychological Models Extension"@en ;
+    rdfs:comment "Extends UCKB Phase 3 ontology with TA ego states, Karpman/Winner mapping, and FACS emotion classification nodes."@en .
+
+uckb:PsychologicalConstruct a owl:Class ;
+    rdfs:label "PsychologicalConstruct"@en .
+
+uckb:EgoState a owl:Class ;
+    rdfs:label "EgoState"@en ;
+    rdfs:comment "Transactional Analysis ego state (Berne 1961). One of: Adapted Child, Critical Parent, Nurturing Parent, Adult."@en ;
+    rdfs:subClassOf uckb:PsychologicalConstruct .
+

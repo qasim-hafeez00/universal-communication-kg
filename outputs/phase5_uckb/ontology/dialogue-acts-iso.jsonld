@@ -1,0 +1,3326 @@
+[
+  {
+    "@id": "https://uckb.io/ontology#DialogueActsOntology",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "en",
+        "@value": "OWL ontology defining the ISO 24617-2 dialogue act taxonomy for the Universal Communication Knowledge Base. Extends Phase 3 communication-acts.ttl."
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      {
+        "@language": "en",
+        "@value": "UCKB Phase 5: Dialogue Acts & ISO 24617-2"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "UCKB Dialogue Acts — ISO 24617-2"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_apology",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker expresses regret for a prior act that affected the addressee negatively."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Apology"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_social"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Apology"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "social"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_apology"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "negative"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#typicalSender",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "typical sender role"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#conditionality",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "conditionality qualifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_allo_positive_da_request",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_request"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_give_turn",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker relinquishes the floor to the addressee."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "GiveTurn"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_turn_taking"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "GiveTurn"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "turntaking"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_give_turn"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_disconfirm",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker denies or corrects a proposition previously asserted."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Disconfirm"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_task"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Disconfirm"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "task"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_disconfirm_da_inform"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_disconfirm"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "negative"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_answer",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker provides information in direct response to a prior Request."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Answer"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_task"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "uncertain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Answer"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "task"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_answer_da_request"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_answer"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#requiresGrounding",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "requires grounding act first"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_accept_proposal_da_proposal",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_proposal"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_greeting",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Conventional opening act establishing social contact."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Greeting"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_social"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Greeting"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "social"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_greeting"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "positive"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#communicativeFunction",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "communicative function"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#functionalDependency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology#DialogueAct"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "functional dependency"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://uckb.io/ontology#DialogueAct"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_contact_check",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker verifies that the communication channel is open (e.g., 'Are you still there?')."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "ContactCheck"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_feedback"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "uncertain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "ContactCheck"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "feedback"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_contact_check"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Agent"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#certainty",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "certainty qualifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_clarification_request_da_inform",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_inform"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_interrupt",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker takes the floor while the addressee is still speaking."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Interrupt"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_turn_taking"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Interrupt"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "turntaking"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_interrupt"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "negative"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dim_turn_taking",
+    "@type": [
+      "https://uckb.io/ontology#DialogueDimension",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Acts that manage the allocation and transfer of speaking turns."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "TurnTaking"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "dim_turn_taking"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#DialogueDimension",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://uckb.io/ontology#DialogueActsOntology"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Dialogue Dimension"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_correction_da_inform",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_inform"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_auto_negative",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker signals they have not understood or need clarification."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "AutoNegative"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_feedback"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "uncertain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "AutoNegative"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "feedback"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_auto_negative_da_inform"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_auto_negative"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "negative"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_disconfirm_da_inform",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_inform"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_request_repair",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker asks the addressee to repair or clarify a problematic utterance."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "RequestRepair"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_partner_comm"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "uncertain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "RequestRepair"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "partnercomm"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_request_repair_da_inform"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_request_repair"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_inform",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker asserts a proposition as true for the addressee's benefit."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Inform"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_task"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Inform"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "task"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_inform"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_take_turn",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker claims the speaking turn."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "TakeTurn"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_turn_taking"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "TakeTurn"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "turntaking"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_take_turn_da_offer_turn"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_take_turn"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_auto_positive_da_inform",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_inform"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_take_turn_da_offer_turn",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_offer_turn"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dim_task",
+    "@type": [
+      "https://uckb.io/ontology#DialogueDimension",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Acts that directly advance the task or information exchange. The primary functional dimension."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Task"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "dim_task"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_allo_positive",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker evaluates the preceding act as adequate or correct."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "AlloPositive"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_feedback"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "AlloPositive"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "feedback"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_allo_positive_da_request"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_allo_positive"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "positive"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_request",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker asks addressee to perform an action or provide information."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Request"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_task"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Request"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "task"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_request"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_accept_proposal",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker accepts a previously proposed course of action."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "AcceptProposal"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_task"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "AcceptProposal"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "task"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_accept_proposal_da_proposal"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_accept_proposal"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "positive"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#DialogueAct",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://uckb.io/ontology#DialogueActsOntology"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Dialogue Act"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dim_feedback",
+    "@type": [
+      "https://uckb.io/ontology#DialogueDimension",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Acts signalling whether a preceding act has been understood and accepted."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Feedback"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "dim_feedback"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_stalling_da_request",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_request"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#dimension",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "ISO 24617-2 dimension name"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_goodbye",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Conventional closing act terminating social contact."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Goodbye"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_social"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Goodbye"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "social"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_goodbye_da_greeting"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_goodbye"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "positive"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_allo_negative",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker evaluates the preceding act as inadequate or incorrect."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "AlloNegative"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_feedback"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "AlloNegative"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "feedback"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_allo_negative_da_request"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_allo_negative"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "negative"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_approval",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker expresses positive evaluation of the addressee's action or statement."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Approval"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_social"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Approval"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "social"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_approval"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "positive"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Agent"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dim_social",
+    "@type": [
+      "https://uckb.io/ontology#DialogueDimension",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Conventional social acts governed by social norms and politeness obligations."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "SocialObligations"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "dim_social"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_decline_proposal",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker declines a previously proposed course of action."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DeclineProposal"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_task"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "DeclineProposal"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "task"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_decline_proposal_da_proposal"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_decline_proposal"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "negative"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_retraction",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker withdraws a previously made commitment or assertion."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Retraction"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_own_comm"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "uncertain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Retraction"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "owncomm"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_retraction"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_proposal",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker proposes a course of action for addressee to accept or reject. Requires rapport/empathy prerequisite in high-stakes domains."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Proposal"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_task"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "uncertain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Proposal"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "if-then"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "task"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_proposal"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Agent"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_disagreement",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker opposes or rejects a proposition or proposal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Disagreement"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_task"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Disagreement"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "task"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_disagreement_da_proposal"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_disagreement"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "negative"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_confirm_da_inform",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_inform"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_request_repair_da_inform",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_inform"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_indicate_understanding_da_inform",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_inform"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_auto_negative_da_inform",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_inform"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_thanking",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker expresses gratitude for a prior act by the addressee."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Thanking"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_social"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Thanking"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "social"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_thanking"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "positive"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_self_correction",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker repairs their own preceding utterance."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "SelfCorrection"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_own_comm"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "SelfCorrection"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "owncomm"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_self_correction"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_answer_da_request",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_request"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_welcome",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker accepts the addressee's thanks, indicating the prior act was not burdensome."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Welcome"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_social"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Welcome"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "social"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_welcome_da_thanking"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_welcome"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "positive"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Agent"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dim_own_comm",
+    "@type": [
+      "https://uckb.io/ontology#DialogueDimension",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Acts by which a speaker manages their own ongoing contribution (self-repair, stalling)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "OwnComm"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "dim_own_comm"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dim_partner_comm",
+    "@type": [
+      "https://uckb.io/ontology#DialogueDimension",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Acts addressing the partner's contribution or communication difficulties."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "PartnerComm"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "dim_partner_comm"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_decline_proposal_da_proposal",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_proposal"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_farewell_da_goodbye",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_goodbye"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_correction",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker replaces an erroneous proposition with a correct one."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Correction"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_task"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Correction"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "task"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_correction_da_inform"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_correction"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_confirm",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker verifies or reaffirms a proposition previously asserted."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Confirm"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_task"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Confirm"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "task"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_confirm_da_inform"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_confirm"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "positive"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#sentiment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "sentiment qualifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_indicate_understanding",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker signals that they have understood the addressee's utterance."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "IndicateUnderstanding"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_partner_comm"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "IndicateUnderstanding"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "partnercomm"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_indicate_understanding_da_inform"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_indicate_understanding"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "positive"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Agent"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_stalling",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker uses fillers or delays to hold the floor while processing (e.g., 'um', 'well...')."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Stalling"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_own_comm"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "uncertain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Stalling"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "owncomm"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_stalling_da_request"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_stalling"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#belongsToDimension",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uckb.io/ontology#DialogueAct"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "belongs to dimension"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://uckb.io/ontology#DialogueDimension"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_hold_turn",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker signals intent to continue their turn (backchannels, fillers)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "HoldTurn"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_turn_taking"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "HoldTurn"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "turntaking"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_hold_turn"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_welcome_da_thanking",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_thanking"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_allo_negative_da_request",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_request"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_offer_turn",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker explicitly offers the speaking turn to the addressee."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "OfferTurn"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_turn_taking"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "OfferTurn"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "turntaking"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_offer_turn"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Agent"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_agreement_da_proposal",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_proposal"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_clarification_request",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker asks the addressee to elaborate or clarify a specific aspect of their utterance."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "ClarificationRequest"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_partner_comm"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "uncertain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "ClarificationRequest"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "partnercomm"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_clarification_request_da_inform"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_clarification_request"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_goodbye_da_greeting",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "initiates"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_greeting"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#dep_da_disagreement_da_proposal",
+    "@type": [
+      "https://uckb.io/ontology#FunctionalDependency",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "https://uckb.io/ontology#dependencyType": [
+      {
+        "@value": "responds-to"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#da_proposal"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_reformulation",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker restates their own prior utterance with different wording for clarity."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Reformulation"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_own_comm"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Reformulation"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "owncomm"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_reformulation"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "neutral"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_farewell",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker signals the end of an interaction with a culturally appropriate closing ritual."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Farewell"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_social"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Farewell"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "social"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_farewell_da_goodbye"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_farewell"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "positive"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#dependencyType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "functional dependency type (responds-to|initiates)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology#requiresInfluencePrereq",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "requires empathy/rapport prerequisite"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_auto_positive",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker signals they have understood the preceding utterance (e.g., 'uh-huh', 'okay')."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "AutoPositive"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_feedback"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "AutoPositive"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "feedback"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_auto_positive_da_inform"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_auto_positive"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "positive"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  },
+  {
+    "@id": "https://uckb.io/ontology/iso24617#da_agreement",
+    "@type": [
+      "https://uckb.io/ontology#DialogueAct",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Speaker commits to or aligns with a proposition or proposal."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Agreement"
+      }
+    ],
+    "https://uckb.io/ontology#belongsToDimension": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dim_task"
+      }
+    ],
+    "https://uckb.io/ontology#certainty": [
+      {
+        "@value": "certain"
+      }
+    ],
+    "https://uckb.io/ontology#communicativeFunction": [
+      {
+        "@value": "Agreement"
+      }
+    ],
+    "https://uckb.io/ontology#conditionality": [
+      {
+        "@value": "unconditional"
+      }
+    ],
+    "https://uckb.io/ontology#dimension": [
+      {
+        "@value": "task"
+      }
+    ],
+    "https://uckb.io/ontology#functionalDependency": [
+      {
+        "@id": "https://uckb.io/ontology/iso24617#dep_da_agreement_da_proposal"
+      }
+    ],
+    "https://uckb.io/ontology#id": [
+      {
+        "@value": "da_agreement"
+      }
+    ],
+    "https://uckb.io/ontology#requiresGrounding": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": true
+      }
+    ],
+    "https://uckb.io/ontology#requiresInfluencePrereq": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "@value": false
+      }
+    ],
+    "https://uckb.io/ontology#sentiment": [
+      {
+        "@value": "positive"
+      }
+    ],
+    "https://uckb.io/ontology#typicalSender": [
+      {
+        "@value": "Either"
+      }
+    ]
+  }
+]
