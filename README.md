@@ -33,9 +33,9 @@
 
 A live interactive graph explorer is included. Run it locally to browse all 876 nodes across 15 domains.
 
-<!-- SCREENSHOT: Replace this block with a screenshot of localhost:3000 -->
-> **To add a screenshot:** start the frontend (`cd frontend && npm run dev`), open `http://localhost:3000`, take a screenshot, save it as `docs/graph-preview.png`, then replace this block with:
-> `![UCKB Graph Explorer](docs/graph-preview.png)`
+![UCKB Graph Explorer — full graph](docs/graph-preview-1.png)
+
+![UCKB Graph Explorer — domain detail](docs/graph-preview-2.png)
 
 ### Start the Explorer
 
