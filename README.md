@@ -33,9 +33,7 @@
 
 A live interactive graph explorer is included. Run it locally to browse all 876 nodes across 15 domains.
 
-![UCKB Graph Explorer — full graph](docs/graph-preview-1.png)
-
-![UCKB Graph Explorer — domain detail](docs/graph-preview-2.png)
+<img src="docs/graph-preview-1.png" width="48%" alt="UCKB Graph Explorer — full graph" /> <img src="docs/graph-preview-2.png" width="48%" alt="UCKB Graph Explorer — domain detail" />
 
 ### Start the Explorer
 
