@@ -59,7 +59,7 @@ MERGE (sm)-[:MAPS_TO_EGO_STATE {
 
 // 6. absolutist_language → ego_critical_parent
 MATCH (sm:SignalMarker) WHERE toLower(sm.name) CONTAINS "absolutist"
-   OR sm.id = "absolutist_language"
+   OR (sm.cardId = "absolutist_language" OR sm.id = "absolutist_language")
 MATCH (e:EgoState {id: "ego_critical_parent"})
 MERGE (sm)-[:MAPS_TO_EGO_STATE {
   confidence: 0.87,
@@ -69,7 +69,7 @@ MERGE (sm)-[:MAPS_TO_EGO_STATE {
 
 // 7. blame_language → ego_critical_parent
 MATCH (sm:SignalMarker) WHERE toLower(sm.name) CONTAINS "blame"
-   OR sm.id = "blame_language"
+   OR (sm.cardId = "blame_language" OR sm.id = "blame_language")
 MATCH (e:EgoState {id: "ego_critical_parent"})
 MERGE (sm)-[:MAPS_TO_EGO_STATE {
   confidence: 0.90,
@@ -79,7 +79,7 @@ MERGE (sm)-[:MAPS_TO_EGO_STATE {
 
 // 8. Filler Increase (prosodic) → ego_adapted_child (overwhelmed/child state)
 MATCH (sm:SignalMarker) WHERE toLower(sm.name) CONTAINS "filler"
-   OR sm.id IN ["crisis_dispatch_032_filler_increase"]
+   OR (sm.cardId IN ["crisis_dispatch_032_filler_increase"] OR sm.id IN ["crisis_dispatch_032_filler_increase"])
 MATCH (e:EgoState {id: "ego_adapted_child"})
 MERGE (sm)-[:MAPS_TO_EGO_STATE {
   confidence: 0.72,
@@ -89,7 +89,7 @@ MERGE (sm)-[:MAPS_TO_EGO_STATE {
 
 // 9. Speech Rate Drop → ego_adapted_child (dissociation → child regression)
 MATCH (sm:SignalMarker) WHERE toLower(sm.name) CONTAINS "speech rate drop"
-   OR sm.id = "crisis_dispatch_030_speech_rate_drop"
+   OR (sm.cardId = "crisis_dispatch_030_speech_rate_drop" OR sm.id = "crisis_dispatch_030_speech_rate_drop")
 MATCH (e:EgoState {id: "ego_adapted_child"})
 MERGE (sm)-[:MAPS_TO_EGO_STATE {
   confidence: 0.75,
@@ -99,7 +99,7 @@ MERGE (sm)-[:MAPS_TO_EGO_STATE {
 
 // 10. ambivalence / Ambivalent signal → ego_adapted_child (conflicted child state)
 MATCH (sm:SignalMarker) WHERE toLower(sm.name) CONTAINS "ambivalen"
-   OR sm.id = "ambivalence"
+   OR (sm.cardId = "ambivalence" OR sm.id = "ambivalence")
 MATCH (e:EgoState {id: "ego_adapted_child"})
 MERGE (sm)-[:MAPS_TO_EGO_STATE {
   confidence: 0.68,
@@ -109,7 +109,7 @@ MERGE (sm)-[:MAPS_TO_EGO_STATE {
 
 // 11. anxiety_signal → ego_adapted_child (anxious child state)
 MATCH (sm:SignalMarker) WHERE toLower(sm.name) CONTAINS "anxiety"
-   OR sm.id = "anxiety_signal"
+   OR (sm.cardId = "anxiety_signal" OR sm.id = "anxiety_signal")
 MATCH (e:EgoState {id: "ego_adapted_child"})
 MERGE (sm)-[:MAPS_TO_EGO_STATE {
   confidence: 0.73,
